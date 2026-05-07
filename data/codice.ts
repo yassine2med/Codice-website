@@ -516,28 +516,28 @@ export const team = [
     title: 'Founder & President',
     bio: '20+ years in healthcare and government technology. Founded CODICE in 2009 with a vision to modernize government IT from the ground up.',
     education: 'MBA, Johns Hopkins University · BA Economics, Clarion University',
-    photo: '/images/team/dash.png',
+    photo: '/images/team/dash.jpg',
   },
   {
     name: 'Emmash Sudusinghe',
     title: 'Chief Financial Officer',
     bio: 'CPA and CMA with deep expertise in government financial operations and compliance auditing.',
     education: "Master's Finance, American University · BS Accounting, University of Maryland Eastern Shore",
-    photo: '/images/team/emmash.png',
+    photo: '/images/team/emmash.jpg',
   },
   {
     name: 'Ashanthi Kiridena',
     title: 'VP Business Development & Human Capital',
     bio: 'Leads business growth strategies and human resources, ensuring Codice attracts top-tier mission-driven talent.',
     education: 'BA Business Administration',
-    photo: '/images/team/ashanthi.png',
+    photo: '/images/team/ashanthi.jpg',
   },
   {
     name: 'Sully Ayubi',
     title: 'Chief Information Officer',
     bio: '20+ years in enterprise IT strategy and delivery. Expert in cloud migration and security modernization.',
     education: 'MS Technology Management · BS IT, George Mason University',
-    photo: '/images/team/sully.png',
+    photo: '/images/team/sully.jpg',
   },
 ]
 
