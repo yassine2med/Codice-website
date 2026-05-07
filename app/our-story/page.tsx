@@ -361,7 +361,7 @@ export default function OurStoryPage() {
                 className="group bg-[#111827] border border-[#1E293B] rounded-2xl overflow-hidden hover:border-[#2563EB]/40 hover:shadow-[0_0_32px_rgba(37,99,235,0.1)] transition-colors duration-300"
               >
                 <div
-                  className="relative w-full h-72 bg-[#0A1628] overflow-hidden cursor-pointer"
+                  className="relative w-full aspect-square bg-[#0A1628] overflow-hidden cursor-pointer"
                   onClick={() => {
                     setSelectedMember(member);
                     setModalOpen(true);
@@ -372,10 +372,9 @@ export default function OurStoryPage() {
                     src={member.photo}
                     alt={member.name}
                     fill
-                    className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                    className="object-cover group-hover:scale-105 transition-all duration-500"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-[#111827] via-transparent to-transparent opacity-60" />
                   
                   {/* Hover Hint */}
                   <div className="absolute inset-0 z-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">

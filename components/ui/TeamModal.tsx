@@ -69,12 +69,10 @@ export function TeamModal({ member, isOpen, onClose }: TeamModalProps) {
                     src={member.photo}
                     alt={member.name}
                     fill
-                    className="object-cover object-top"
+                    className="object-cover"
                     sizes="(max-width: 768px) 100vw, 40vw"
                     priority
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-[#0F172A] via-transparent to-transparent opacity-80 md:hidden" />
-                  <div className="absolute inset-0 bg-linear-to-r from-transparent via-transparent to-[#0F172A] opacity-80 hidden md:block" />
                 </>
               ) : (
                 <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-[#1E293B] to-[#0A1628]">
