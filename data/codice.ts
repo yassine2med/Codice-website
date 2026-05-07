@@ -624,6 +624,10 @@ export const navigation = [
     title: 'COMPANY',
     items: [
       { label: 'Our Story', href: '/our-story', description: 'Our 16-year journey in government tech.' },
+      { label: 'Clients & Partners', href: '/clients', description: '17 DC agencies and industry partners we serve.' },
+      { label: 'Case Studies', href: '/case-studies', description: 'Real outcomes for real government agencies.' },
+      { label: 'Careers', href: '/careers', description: 'Join a team building technology for public service.' },
+      { label: 'News & Events', href: '/news', description: 'Latest updates, launches, and milestones.' },
     ]
   },
   {
