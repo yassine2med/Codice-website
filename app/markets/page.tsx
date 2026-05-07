@@ -71,7 +71,7 @@ export default function MarketsPage() {
             variants={stagger}
             className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-9 gap-3"
           >
-            {sectorHighlights.map(({ Icon, label, stat, desc }) => (
+            {sectorHighlights.map(({ Icon, label, stat }) => (
               <motion.div key={label} variants={fadeUp}>
                 <SpotlightCard
                   className="group p-5 rounded-2xl bg-[#111827] border border-[#1E293B] hover:border-[#2563EB]/40 transition-all duration-300 flex flex-col gap-3 h-full"

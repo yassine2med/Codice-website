@@ -512,13 +512,6 @@ export const testimonials = [
 
 export const team = [
   {
-    name: 'Linwood Jolly',
-    title: 'Chief Executive Officer',
-    bio: 'Leads CODICE\'s strategic direction and client relationships across Washington DC government agencies. Drives the firm\'s mission to deliver technology that actually works for government.',
-    education: 'Cyber/Vulnerability Advisor - Federal Government',
-    photo: '/images/team/linwood.jpg',
-  },
-  {
     name: 'Dash Kiridena',
     title: 'Founder & President',
     bio: '20+ years in healthcare and government technology. Founded CODICE in 2009 with a vision to modernize government IT from the ground up.',
@@ -545,13 +538,6 @@ export const team = [
     bio: '20+ years in enterprise IT strategy and delivery. Expert in cloud migration and security modernization.',
     education: 'MS Technology Management · BS IT, George Mason University',
     photo: '/images/team/sully.png',
-  },
-  {
-    name: 'Hiranya Samarasekera',
-    title: 'Head of Engineering',
-    bio: 'Leads the technical architecture and engineering teams, focusing on cloud-native solutions and enterprise scalability.',
-    education: 'MS Computer Science',
-    photo: '/images/team/hiranya.png',
   },
 ]
 
