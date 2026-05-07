@@ -147,7 +147,7 @@ export default function ProductsShowcase() {
 
             {/* Visual Stage */}
             <div 
-              className="lg:w-[600px] bg-slate-50/50 border-t lg:border-t-0 lg:border-l border-black/5 relative overflow-hidden group/stage cursor-pointer"
+              className="lg:w-[600px] bg-white border-t lg:border-t-0 lg:border-l border-black/5 relative overflow-hidden group/stage cursor-pointer"
               onClick={() => setLightboxOpen(true)}
             >
               {images.length > 0 ? (
@@ -194,7 +194,7 @@ export default function ProductsShowcase() {
                   </div>
                 </div>
               ) : (
-                <div className="flex items-center justify-center h-full bg-slate-100/50">
+                <div className="flex items-center justify-center h-full bg-white">
                    <div className="relative w-64 h-64 animate-float">
                       <Image src={product.logo!} alt={product.name} fill className="object-contain brightness-0 opacity-10" />
                    </div>

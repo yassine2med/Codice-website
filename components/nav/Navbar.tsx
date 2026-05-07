@@ -41,7 +41,7 @@ export default function Navbar() {
                 src="/images/brand/codice-logo-full.png"
                 alt="CODICE Technology"
                 fill
-                className="object-contain brightness-0" // Black logo for light theme
+                className="object-contain" // Original colors for high-fidelity branding
                 loading="eager"
                 priority
               />

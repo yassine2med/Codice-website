@@ -143,10 +143,10 @@ export default function ArticlesPage() {
                 className="group relative glass-card p-10 rounded-[2.5rem] border-black/5 hover:border-brand-primary/30 transition-all duration-500 flex flex-col h-full shadow-xl"
               >
                 <div className="flex items-start justify-between mb-10">
-                  <div className="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center text-brand-navy group-hover:bg-brand-primary transition-all duration-500 group-hover:text-white group-hover:scale-110 group-hover:rotate-3 shadow-sm">
+                  <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center text-brand-navy group-hover:bg-brand-primary transition-all duration-500 group-hover:text-white group-hover:scale-110 group-hover:rotate-3 shadow-sm border border-black/5">
                     <Icon size={32} />
                   </div>
-                  <span className="px-4 py-1.5 rounded-full border border-black/5 bg-slate-100 text-[10px] font-bold tracking-widest text-gray-500 uppercase">
+                  <span className="px-4 py-1.5 rounded-full border border-black/5 bg-white text-[10px] font-bold tracking-widest text-gray-500 uppercase">
                     {article.source}
                   </span>
                 </div>
@@ -160,7 +160,7 @@ export default function ArticlesPage() {
 
                 <div className="flex flex-wrap gap-2 mb-10">
                   {article.points.map((p) => (
-                    <span key={p} className="px-3 py-1 rounded-lg bg-slate-100 border border-black/5 text-[11px] font-bold text-gray-500 group-hover:border-brand-primary/20 transition-colors uppercase tracking-widest">
+                    <span key={p} className="px-3 py-1 rounded-lg bg-white border border-black/5 text-[11px] font-bold text-gray-500 group-hover:border-brand-primary/20 transition-colors uppercase tracking-widest">
                       {p}
                     </span>
                   ))}

@@ -1058,3 +1058,20 @@ Creating turbopack project { dir: 'D:\\Codex\\Codice-website', testMode: true }
 ✓ Compiled in 710ms
 ✓ Compiled in 418ms
  GET / 500 in 703ms (next.js: 393ms, application-code: 310ms)
+✓ Compiled in 1705ms
+ GET / 200 in 4.8s (next.js: 3.3s, application-code: 1457ms)
+ GET /our-story 200 in 1389ms (next.js: 292ms, application-code: 1097ms)
+ GET /our-story 200 in 147ms (next.js: 6ms, application-code: 141ms)
+✓ Compiled in 368ms
+ GET /our-story 200 in 382ms (next.js: 167ms, application-code: 215ms)
+ GET /our-story 200 in 154ms (next.js: 4ms, application-code: 150ms)
+ GET /our-story 200 in 124ms (next.js: 5ms, application-code: 119ms)
+ GET /our-story 200 in 124ms (next.js: 60ms, application-code: 65ms)
+ GET /our-story 200 in 126ms (next.js: 29ms, application-code: 97ms)
+ GET /our-story 200 in 186ms (next.js: 83ms, application-code: 103ms)
+ GET /our-story 200 in 766ms (next.js: 8ms, application-code: 758ms)
+ GET /our-story 200 in 777ms (next.js: 41ms, application-code: 736ms)
+ GET /our-story 200 in 728ms (next.js: 5ms, application-code: 723ms)
+ GET /our-story 200 in 742ms (next.js: 26ms, application-code: 716ms)
+ GET /our-story 200 in 1007ms (next.js: 55ms, application-code: 952ms)
+ GET /our-story 200 in 1046ms (next.js: 28ms, application-code: 1018ms)

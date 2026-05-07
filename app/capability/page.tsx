@@ -147,7 +147,7 @@ export default function CapabilityPage() {
       </section>
 
       {/* NAICS Section */}
-      <section className="py-32 bg-slate-50/50 border-y border-black/5 relative overflow-hidden">
+      <section className="py-32 bg-white border-y border-black/5 relative overflow-hidden">
         <div className="absolute inset-0 mesh-gradient opacity-20 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <SectionHeader 

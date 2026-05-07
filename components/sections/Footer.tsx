@@ -42,7 +42,7 @@ export default function Footer() {
                 alt="CODICE Technology"
                 width={1536}
                 height={1024}
-                className="h-12 w-56 object-contain brightness-0"
+                className="h-12 w-56 object-contain"
               />
             </Link>
             <p className="text-gray-500 text-base leading-relaxed mb-8 max-w-xs">
