@@ -23,7 +23,7 @@ export function SectionHeader({ label, title, subtitle, className = "" }: Sectio
           {label}
         </p>
       )}
-      <h2 className="text-[clamp(32px,5vw,56px)] font-bold text-[#0A1628] mb-4 tracking-[-0.02em] leading-[1.2]">
+      <h2 className="text-[clamp(32px,5vw,56px)] font-bold text-[#F8FAFC] mb-4 tracking-[-0.02em] leading-[1.2]">
         {title}
       </h2>
       {subtitle && (

@@ -7,47 +7,39 @@ import { useEffect, useState } from "react";
 
 export default function TrustMarquee() {
   const controls = useAnimationControls();
-  const [isHovered, setIsHovered] = useState(false);
-  const doubled = [...clientLogos, ...clientLogos, ...clientLogos];
+  const [hovered, setHovered] = useState(false);
+  const tripled = [...clientLogos, ...clientLogos, ...clientLogos];
 
   useEffect(() => {
     controls.start({
       x: "-33.33%",
-      transition: { 
-        duration: 40, 
-        repeat: Infinity, 
-        ease: "linear",
-      }
+      transition: { duration: 45, repeat: Infinity, ease: "linear" },
     });
   }, [controls]);
 
   useEffect(() => {
-    if (isHovered) {
+    if (hovered) {
       controls.stop();
     } else {
       controls.start({
         x: "-33.33%",
-        transition: { 
-          duration: 40, 
-          repeat: Infinity, 
-          ease: "linear",
-        }
+        transition: { duration: 45, repeat: Infinity, ease: "linear" },
       });
     }
-  }, [isHovered, controls]);
+  }, [hovered, controls]);
 
   return (
-    <div className="py-12 border-y border-[#1E293B] overflow-hidden bg-[#0A1628]">
-      <p className="text-center text-[10px] font-bold tracking-[0.3em] uppercase text-[#64748B] mb-10">
+    <div className="py-14 border-y border-[#1E293B] bg-[#0A1628] overflow-hidden">
+      <p className="text-center text-[10px] font-bold tracking-[0.35em] uppercase text-[#475569] mb-10">
         Trusted by Washington DC&apos;s Leading Agencies
       </p>
 
-      <div 
+      <div
         className="relative w-full overflow-hidden"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
       >
-        {/* Fade Masks */}
+        {/* Fade masks match dark bg */}
         <div className="absolute left-0 top-0 bottom-0 w-40 z-10 bg-gradient-to-r from-[#0A1628] to-transparent pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-40 z-10 bg-gradient-to-l from-[#0A1628] to-transparent pointer-events-none" />
 
@@ -56,14 +48,17 @@ export default function TrustMarquee() {
           style={{ width: "max-content" }}
           animate={controls}
         >
-          {doubled.map((logo, i) => (
-            <div key={i} className="shrink-0 h-12 w-32 relative grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-default">
+          {tripled.map((logo, i) => (
+            <div
+              key={i}
+              className="shrink-0 relative h-10 w-28 opacity-30 hover:opacity-80 grayscale hover:grayscale-0 transition-all duration-500"
+            >
               <Image
                 src={logo}
                 alt="Client logo"
                 fill
                 className="object-contain mix-blend-screen"
-                sizes="128px"
+                sizes="112px"
               />
             </div>
           ))}
