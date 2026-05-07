@@ -5,7 +5,7 @@ import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
 export default function StatsSection() {
   return (
-    <section id="stats" className="py-32 px-6 bg-[#0A1628] border-y border-[#1E293B]">
+    <section id="stats" className="py-32 px-6 bg-white border-y border-[#1E293B]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-0 relative">
           {stats.map((stat, index) => (
@@ -13,7 +13,7 @@ export default function StatsSection() {
               {/* Blue Glow Background */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#2563EB]/10 blur-[80px] rounded-full pointer-events-none" />
               
-              <div className="text-6xl md:text-8xl font-bold text-[#F8FAFC] font-mono tracking-tighter leading-none relative z-10">
+              <div className="text-6xl md:text-8xl font-bold text-[#0A1628] font-mono tracking-tighter leading-none relative z-10">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </div>
               

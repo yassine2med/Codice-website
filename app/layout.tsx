@@ -38,7 +38,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${dmMono.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col bg-[#0A1628] text-[#F8FAFC] antialiased font-[family-name:var(--font-inter)]">
+      <body className="min-h-full flex flex-col bg-white text-[#0A1628] antialiased font-[family-name:var(--font-inter)]">
         {children}
       </body>
     </html>

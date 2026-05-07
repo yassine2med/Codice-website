@@ -27,3 +27,13 @@
 - Verified `http://localhost:3000` returns `HTTP 200` and serves the Hero headline, CTAs, and stat labels.
 - Removed `mode="wait"` from `components/sections/ProductsShowcase.tsx` because `AnimatePresence` wraps multiple tab panels.
 - Current known non-blocking warning: Next Image still reports aspect-ratio sizing for `/images/brand/codice-logo-full.png`; no fresh `stat.value.replace` runtime error appears in the restarted dev logs.
+
+## 2026-05-07 - Frontend testing/debugging pass
+
+- Used the `build-web-apps:frontend-testing-debugging` workflow for the local homepage render path.
+- Browser plugin was listed, but the required Node REPL browser-control tool was not exposed, so verification used local HTTP probes and dev logs.
+- Fixed Framer Motion warning in `components/ui/animated-hero.tsx` by changing `y: "-100"` to numeric `y: -100`.
+- Fixed Base UI Tabs warning in `components/sections/ProductsShowcase.tsx` by making the tabs controlled with React state.
+- Ran `npm run build`: passed clean.
+- Clean restarted `npm run dev`; `http://localhost:3000` returned `HTTP 200`.
+- Fresh dev stderr only shows the existing non-blocking Next Image aspect-ratio warning for `/images/brand/codice-logo-full.png`.

@@ -27,6 +27,19 @@ Build the Codice company website (DC Gov-Tech firm) using Next.js 16 + Tailwind 
 - `as any` on framer-motion ease array (line 33) — linter added it, acceptable but worth revisiting
 - `react-countup` requires `mounted` guard (already in place) to avoid SSR mismatch
 
+## 🛠️ Specialized Agent Roles
+To ensure a world-class delivery, we are moving to a specialized agent model:
+
+1.  **Codex (Performance & Architecture Lead)**:
+    *   **Goal**: Ensure 95+ Lighthouse scores.
+    *   **Mandate**: Follow **`GUIDE_PERFORMANCE.md`** for every task.
+2.  **Claude (Accessibility & Content Lead)**:
+    *   **Goal**: Section 508 / WCAG 2.1 compliance.
+    *   **Mandate**: Follow **`GUIDE_ACCESSIBILITY.md`** for every task.
+3.  **Antigravity (Visual & Motion Lead)**:
+    *   **Goal**: High-fidelity visual polish and fluid animations.
+    *   **Mandate**: Follow **`SKILL.md`** and **`normalize_brief.md`**.
+
 ## 🤖 URGENT: Managed Agent Setup (For Claude)
 The user has requested the creation of an **Anthropic Managed Agent** (BrowserUse Agent).
 1.  Antigravity has already installed the `@anthropic-ai/sdk`.

@@ -34,7 +34,7 @@ export default function TechStack() {
           {doubled.map((tech, i) => (
             <div
               key={i}
-              className="shrink-0 bg-[#111827] border border-[#1E293B] rounded-2xl px-8 py-4 text-base font-bold text-[#64748B] hover:text-[#2563EB] hover:border-[#2563EB]/50 transition-all cursor-default whitespace-nowrap"
+              className="shrink-0 bg-gray-50 border border-[#1E293B] rounded-2xl px-8 py-4 text-base font-bold text-[#64748B] hover:text-[#2563EB] hover:border-[#2563EB]/50 transition-all cursor-default whitespace-nowrap"
             >
               {tech}
             </div>

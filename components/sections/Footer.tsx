@@ -8,7 +8,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0A1628] border-t border-[#1E293B] py-24 px-6 relative overflow-hidden">
+    <footer className="bg-white border-t border-[#1E293B] py-24 px-6 relative overflow-hidden">
       {/* Subtle Glow */}
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#2563EB]/5 blur-[120px] rounded-full pointer-events-none" />
 
@@ -22,7 +22,7 @@ export default function Footer() {
                 alt="CODICE Technology"
                 width={160}
                 height={40}
-                className="mix-blend-screen"
+                className=""
               />
             </Link>
             <p className="text-base text-[#64748B] leading-relaxed mb-8 max-w-xs">
@@ -45,7 +45,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-[#F8FAFC] mb-8">Services</h4>
+            <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-[#0A1628] mb-8">Services</h4>
             <ul className="flex flex-col gap-4">
               {services.slice(0, 5).map((s) => (
                 <li key={s.id}>
@@ -59,7 +59,7 @@ export default function Footer() {
 
           {/* Products */}
           <div>
-            <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-[#F8FAFC] mb-8">Products</h4>
+            <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-[#0A1628] mb-8">Products</h4>
             <ul className="flex flex-col gap-4">
               {products.slice(0, 5).map((p) => (
                 <li key={p.id}>
@@ -73,7 +73,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-[#F8FAFC] mb-8">Contact</h4>
+            <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-[#0A1628] mb-8">Contact</h4>
             <div className="flex flex-col gap-6">
                <div className="space-y-1">
                  <p className="text-xs font-bold uppercase text-[#2563EB] tracking-widest">Office</p>

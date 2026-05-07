@@ -38,12 +38,12 @@ export default function CaseStudies() {
           <motion.div 
             key={i} 
             variants={item}
-            className="group bg-[#111827] border border-[#1E293B] border-l-4 border-l-[#2563EB] rounded-2xl p-10 hover:bg-[#0A1628] transition-all duration-300"
+            className="group bg-gray-50 border border-[#1E293B] border-l-4 border-l-[#2563EB] rounded-2xl p-10 hover:bg-white transition-all duration-300"
           >
             <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-4">
               {study.product}
             </div>
-            <h3 className="text-xl font-bold text-[#F8FAFC] mb-2 group-hover:text-white transition-colors">
+            <h3 className="text-xl font-bold text-[#0A1628] mb-2 group-hover:text-white transition-colors">
               {study.client}
             </h3>
             <div className="text-4xl md:text-5xl font-bold font-mono tracking-tighter mb-8 bg-linear-to-r from-white to-[#64748B] bg-clip-text text-transparent">
@@ -52,13 +52,13 @@ export default function CaseStudies() {
             
             <div className="space-y-4">
               <p className="text-sm md:text-base text-[#64748B] leading-relaxed">
-                <strong className="text-[#F8FAFC] font-semibold">Challenge:</strong> {study.challenge}
+                <strong className="text-[#0A1628] font-semibold">Challenge:</strong> {study.challenge}
               </p>
               <p className="text-sm md:text-base text-[#64748B] leading-relaxed">
-                <strong className="text-[#F8FAFC] font-semibold">Solution:</strong> {study.solution}
+                <strong className="text-[#0A1628] font-semibold">Solution:</strong> {study.solution}
               </p>
               <p className="text-sm md:text-base text-[#64748B] leading-relaxed">
-                <strong className="text-[#F8FAFC] font-semibold">Outcome:</strong> {study.outcome}
+                <strong className="text-[#0A1628] font-semibold">Outcome:</strong> {study.outcome}
               </p>
             </div>
           </motion.div>

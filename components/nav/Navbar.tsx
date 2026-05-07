@@ -20,7 +20,7 @@ export default function Navbar() {
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
         scrolled 
-          ? "bg-[#0A1628]/80 backdrop-blur-xl border-[#1E293B] py-3" 
+          ? "bg-[#0A1628]/90 backdrop-blur-xl border-[#1E293B] py-3" 
           : "bg-transparent border-transparent py-5"
       }`}
     >
@@ -32,7 +32,7 @@ export default function Navbar() {
             alt="CODICE Technology"
             width={160}
             height={40}
-            className="mix-blend-screen hidden md:block w-auto h-8 lg:h-10"
+            className="hidden md:block w-auto h-8 lg:h-10"
             priority
           />
           <Image
@@ -40,7 +40,7 @@ export default function Navbar() {
             alt="CODICE"
             width={36}
             height={36}
-            className="mix-blend-screen md:hidden w-8 h-8"
+            className="md:hidden w-8 h-8"
             priority
           />
         </Link>
@@ -93,7 +93,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 bg-[#0A1628] z-40 flex flex-col justify-center px-12 gap-8"
+            className="fixed inset-0 bg-white z-40 flex flex-col justify-center px-12 gap-8"
           >
             {[
               { href: "/", label: "Home" },
@@ -106,7 +106,7 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className="text-3xl font-bold text-[#F8FAFC] hover:text-[#2563EB] transition-colors"
+                className="text-3xl font-bold text-[#0A1628] hover:text-[#2563EB] transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 {label}

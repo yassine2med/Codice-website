@@ -14,6 +14,12 @@
 - Deploy to Vercel: `vercel --prod`
 - Share production URL with Yaz
 
+### [user] PHASE 4: AGENT SKILL INJECTION
+- [ ] Create `GUIDE_ACCESSIBILITY.md`
+- [ ] Create `GUIDE_PERFORMANCE.md`
+- [ ] Update Agent System Prompts with specialized roles
+- [ ] Perform first "Skill Audit" on the full site
+
 ---
 
 ## DONE

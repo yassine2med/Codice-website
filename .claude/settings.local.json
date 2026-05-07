@@ -2,7 +2,32 @@
   "permissions": {
     "allow": [
       "PowerShell(git *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(node -e \"const p=require\\('./package.json'\\); const deps={...p.dependencies,...p.devDependencies}; ['framer-motion','lucide-react','@radix-ui/react-slot','class-variance-authority'].forEach\\(d=>console.log\\(d,deps[d]||'MISSING'\\)\\)\")",
+      "Bash(npm install *)",
+      "WebFetch(domain:codicetech.com)",
+      "Bash(curl -s -o public/images/brand/codice-logo.png \"https://codicetech.com/wp-content/uploads/2024/04/CODICE-Resized-New.png\")",
+      "Bash(curl -s -o public/images/team/dash.png \"https://codicetech.com/wp-content/uploads/2024/04/dash-new.png\")",
+      "Bash(curl -s -o public/images/team/emmash.png \"https://codicetech.com/wp-content/uploads/2024/04/Emmash.png\")",
+      "Bash(curl -s -o public/images/team/dinesh.png \"https://codicetech.com/wp-content/uploads/2024/11/ds.png\")",
+      "Bash(curl -s -o public/images/team/ashanthi.png \"https://codicetech.com/wp-content/uploads/2024/04/ashanthi-600x600-1.png\")",
+      "Bash(curl -s -o public/images/team/sully.png \"https://codicetech.com/wp-content/uploads/2024/04/Sully.png\")",
+      "Bash(curl -s -o public/images/testimonials/marco.jpg \"https://codicetech.com/wp-content/uploads/2024/10/marco-100x100-1.jpg\")",
+      "Bash(curl -s -o public/images/testimonials/maria.jpg \"https://codicetech.com/wp-content/uploads/2024/10/MariaPerrin-Pic-100x100-1.jpg\")",
+      "Bash(curl -s -o public/images/testimonials/jimmy.jpg \"https://codicetech.com/wp-content/uploads/2024/10/Jimmy-Ieng-100x100-1.jpg\")",
+      "Bash(curl -s -o public/images/services/software.png \"https://codicetech.com/wp-content/uploads/2025/06/coding1.png\")",
+      "Bash(curl -s -o public/images/services/permits.png \"https://codicetech.com/wp-content/uploads/2025/06/Vector-4.png\")",
+      "Bash(curl -s -o public/images/services/analytics.png \"https://codicetech.com/wp-content/uploads/2025/06/analysis1.png\")",
+      "Bash(curl -s -o public/images/services/cloud.png \"https://codicetech.com/wp-content/uploads/2025/06/server1.png\")",
+      "Bash(curl -s -o public/images/services/security.png \"https://codicetech.com/wp-content/uploads/2025/06/it-department1.png\")",
+      "Bash(curl -s -o public/images/products/travo.png \"https://codicetech.com/wp-content/uploads/2024/10/trew.png\")",
+      "Bash(curl -s -o public/images/products/celercase.png \"https://codicetech.com/wp-content/uploads/2024/10/celcase.png\")",
+      "Bash(curl -s -o public/images/products/celermed.png \"https://codicetech.com/wp-content/uploads/2024/10/celmed.png\")",
+      "Bash(curl -s -o public/images/products/codicepay.png \"https://codicetech.com/wp-content/uploads/2024/10/codpay.png\")",
+      "Bash(curl -s -o public/images/products/celerkost.png \"https://codicetech.com/wp-content/uploads/2024/10/celer.png\")",
+      "Bash(curl -s -o public/images/news/news-1.jpg \"https://codicetech.com/wp-content/uploads/2025/05/488361574_1300257728777134_3440881090467514119_n-1-1024x682.jpg\")",
+      "Bash(curl -s -o public/images/news/news-2.jpg \"https://codicetech.com/wp-content/uploads/2025/05/491293576_1299095625560011_9199002874210182525_n-1-1024x683.jpg\")",
+      "Bash(curl -s -o public/images/news/news-3.jpg \"https://codicetech.com/wp-content/uploads/2025/05/492042952_1295045702631670_7265861767373642027_n-1-1024x680.jpg\")"
     ]
   }
 }

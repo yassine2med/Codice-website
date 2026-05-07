@@ -62,4 +62,5 @@ Handing to Antigravity: Ready for Hero section.
 - Restarted `npm run dev`; `http://localhost:3000` returns `HTTP 200`.
 - Verified served page content includes the Hero headline, CTAs, and stat labels.
 - Removed `mode="wait"` from `ProductsShowcase` `AnimatePresence` because multiple tab panels are rendered.
+- Fixed current frontend-debugging warnings by changing `components/ui/animated-hero.tsx` motion `y` from a string to a number and making `ProductsShowcase` Tabs controlled.
 - Known non-blocking warning remains: Next Image reports aspect-ratio sizing for `/images/brand/codice-logo-full.png`.

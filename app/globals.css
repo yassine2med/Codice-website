@@ -147,8 +147,8 @@
 }
 
 body {
-  background-color: var(--navy);
-  color: var(--white);
+  background-color: #ffffff;
+  color: #0A1628;
   -webkit-font-smoothing: antialiased;
 }
 
