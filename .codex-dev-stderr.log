@@ -17738,3 +17738,14 @@ Error: Route "/services/[slug]" used `params.slug`. `params` is a Promise and mu
   6 |   if (!service) return { title: "Service" };
   7 |   return {
   8 |     title: service.title,
+Error: Cannot apply unknown utility class `border-border`
+    [2m[at onInvalidCandidate (D:\Codex\Codice-website\node_modules\tailwindcss\dist\lib.js:21:1511)][0m
+    [2m[at Ne (D:\Codex\Codice-website\node_modules\tailwindcss\dist\lib.js:16:38252)][0m
+    [2m[at D:\Codex\Codice-website\node_modules\tailwindcss\dist\lib.js:21:355][0m
+    [2m[at Ur (D:\Codex\Codice-website\node_modules\tailwindcss\dist\lib.js:3:1733)][0m
+    [2m[at I (D:\Codex\Codice-website\node_modules\tailwindcss\dist\lib.js:3:1377)][0m
+    [2m[at Ee (D:\Codex\Codice-website\node_modules\tailwindcss\dist\lib.js:21:172)][0m
+    [2m[at vn (D:\Codex\Codice-website\node_modules\tailwindcss\dist\lib.js:38:294)][0m
+    [2m[at async kn (D:\Codex\Codice-website\node_modules\tailwindcss\dist\lib.js:38:631)][0m
+    [2m[at async Xr (D:\Codex\Codice-website\node_modules\@tailwindcss\node\dist\index.js:10:3415)][0m
+    [2m[at async E (D:\Codex\Codice-website\node_modules\@tailwindcss\postcss\dist\index.js:10:3979)][0m

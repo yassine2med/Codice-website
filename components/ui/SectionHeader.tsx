@@ -20,20 +20,20 @@ export function SectionHeader({ label, title, subtitle, className = "" }: Sectio
     >
       {label && (
         <div className="inline-flex items-center justify-center mb-6">
-          <span className="text-[10px] md:text-[11px] font-bold tracking-[0.3em] uppercase text-brand-accent bg-brand-primary/10 border border-brand-primary/20 px-4 py-2 rounded-full">
+          <span className="text-[10px] md:text-[11px] font-bold tracking-[0.3em] uppercase text-brand-primary bg-brand-primary/5 border border-brand-primary/10 px-4 py-2 rounded-full shadow-sm">
             {label}
           </span>
         </div>
       )}
-      <h2 className="text-[clamp(36px,6vw,68px)] font-bold text-white mb-6 tracking-tight leading-[1.05]">
+      <h2 className="text-[clamp(36px,6vw,68px)] font-bold text-brand-navy mb-6 tracking-tight leading-[1.05]">
         {title}
       </h2>
       {subtitle && (
-        <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+        <p className="text-gray-500 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-medium">
           {subtitle}
         </p>
       )}
-      <div className="mt-8 w-24 h-1 bg-linear-to-r from-brand-primary to-transparent mx-auto rounded-full opacity-50" />
+      <div className="mt-8 w-24 h-1 bg-linear-to-r from-brand-primary to-transparent mx-auto rounded-full opacity-30" />
     </motion.div>
   );
 }

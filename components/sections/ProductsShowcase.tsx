@@ -49,8 +49,8 @@ export default function ProductsShowcase() {
             }}
             className={`group relative px-6 py-3 rounded-2xl border transition-all duration-500 ${
               active === p.id
-                ? "bg-brand-primary border-brand-primary text-white shadow-[0_0_30px_rgba(37,99,235,0.4)] scale-105"
-                : "bg-white/5 border-white/10 text-gray-500 hover:border-brand-primary/40 hover:text-white"
+                ? "bg-brand-primary border-brand-primary text-white shadow-xl scale-105"
+                : "bg-slate-100 border-black/5 text-gray-500 hover:border-brand-primary/40 hover:text-brand-navy hover:bg-white"
             }`}
           >
             <span className="text-[11px] font-bold tracking-widest uppercase relative z-10">{p.name}</span>
@@ -62,7 +62,7 @@ export default function ProductsShowcase() {
             {active === p.id && (
               <motion.div
                 layoutId="activeTab"
-                className="absolute inset-0 bg-brand-primary rounded-2xl -z-0"
+                className="absolute inset-0 bg-brand-primary rounded-2xl z-0"
                 transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
               />
             )}
@@ -78,18 +78,18 @@ export default function ProductsShowcase() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.98, y: -20 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="relative glass-card rounded-[3rem] overflow-hidden border-white/10"
+          className="relative glass-card rounded-[3rem] overflow-hidden border-black/5 shadow-2xl"
         >
-          <div className="absolute inset-0 mesh-gradient opacity-30 pointer-events-none" />
+          <div className="absolute inset-0 mesh-gradient opacity-40 pointer-events-none" />
 
           <div className="relative z-10 flex flex-col lg:flex-row min-h-[600px]">
             {/* Content Stage */}
-            <div className="flex-1 p-12 lg:p-20 flex flex-col justify-center">
+            <div className="flex-1 p-12 lg:p-20 flex flex-col justify-center bg-white/40">
               <motion.div 
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.3em] uppercase text-brand-accent mb-8"
+                className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.3em] uppercase text-brand-primary mb-8"
               >
                 <div className="w-1.5 h-1.5 rounded-full bg-brand-primary animate-pulse" />
                 {product.category}
@@ -99,7 +99,7 @@ export default function ProductsShowcase() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-[clamp(32px,5vw,52px)] font-bold text-white mb-6 leading-none"
+                className="text-[clamp(32px,5vw,52px)] font-bold text-brand-navy mb-6 leading-none"
               >
                 {product.name}
               </motion.h3>
@@ -108,7 +108,7 @@ export default function ProductsShowcase() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-gray-400 text-lg md:text-xl leading-relaxed mb-10 max-w-xl"
+                className="text-gray-500 text-lg md:text-xl leading-relaxed mb-10 max-w-xl font-medium"
               >
                 {product.description}
               </motion.p>
@@ -122,10 +122,10 @@ export default function ProductsShowcase() {
                 >
                   {product.highlights.map((h) => (
                     <div key={h} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-brand-primary/10 flex items-center justify-center">
+                      <div className="w-5 h-5 rounded-full bg-brand-primary/5 flex items-center justify-center">
                         <Sparkles size={10} className="text-brand-primary" />
                       </div>
-                      <span className="text-sm font-medium text-gray-300">{h}</span>
+                      <span className="text-sm font-bold text-gray-600">{h}</span>
                     </div>
                   ))}
                 </motion.div>
@@ -138,7 +138,7 @@ export default function ProductsShowcase() {
               >
                 <Link
                   href={"/products/" + product.slug}
-                  className="group relative inline-flex items-center gap-3 bg-white text-brand-navy font-bold px-10 py-5 rounded-2xl text-base transition-all duration-300 hover:shadow-[0_20px_50px_rgba(255,255,255,0.2)] hover:-translate-y-1"
+                  className="group relative inline-flex items-center gap-3 bg-brand-navy text-white font-bold px-10 py-5 rounded-2xl text-base transition-all duration-300 hover:bg-brand-primary hover:shadow-xl hover:-translate-y-1"
                 >
                   Deep Dive Platform <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -147,7 +147,7 @@ export default function ProductsShowcase() {
 
             {/* Visual Stage */}
             <div 
-              className="lg:w-[600px] bg-black/40 border-t lg:border-t-0 lg:border-l border-white/5 relative overflow-hidden group/stage cursor-pointer"
+              className="lg:w-[600px] bg-slate-50/50 border-t lg:border-t-0 lg:border-l border-black/5 relative overflow-hidden group/stage cursor-pointer"
               onClick={() => setLightboxOpen(true)}
             >
               {images.length > 0 ? (
@@ -165,38 +165,38 @@ export default function ProductsShowcase() {
                         src={images[imageIndex]}
                         alt={product.name}
                         fill
-                        className="object-cover opacity-60 mix-blend-luminosity group-hover/stage:opacity-90 group-hover/stage:mix-blend-normal transition-all duration-700"
+                        className="object-cover opacity-80 group-hover/stage:opacity-100 transition-all duration-700"
                       />
                     </motion.div>
                   </AnimatePresence>
                   
                   {/* Glass Interface Overlays */}
-                  <div className="absolute inset-0 bg-linear-to-b from-brand-navy/60 via-transparent to-brand-navy/60 z-10" />
+                  <div className="absolute inset-0 bg-linear-to-b from-white/20 via-transparent to-white/20 z-10" />
                   
                   <div className="absolute top-10 right-10 flex gap-2 z-20">
                     {images.map((_, idx) => (
                       <div 
                         key={idx} 
-                        className={`h-1.5 rounded-full transition-all duration-500 ${idx === imageIndex ? "w-8 bg-brand-primary" : "w-2 bg-white/20"}`}
+                        className={`h-1.5 rounded-full transition-all duration-500 ${idx === imageIndex ? "w-8 bg-brand-primary" : "w-2 bg-black/20"}`}
                       />
                     ))}
                   </div>
 
                   <div className="absolute bottom-12 left-12 z-20">
-                    <div className="glass-card p-6 rounded-[2rem] border-white/10 shadow-3xl group-hover/stage:-translate-y-2 transition-transform duration-500">
+                    <div className="glass-card p-6 rounded-[2rem] border-black/5 shadow-xl group-hover/stage:-translate-y-2 transition-transform duration-500 bg-white/90">
                       {product.logo && (
                         <div className="relative w-32 h-10 mb-4">
-                          <Image src={product.logo} alt={product.name} fill className="object-contain" />
+                          <Image src={product.logo} alt={product.name} fill className="object-contain brightness-0" />
                         </div>
                       )}
-                      <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-brand-accent">Mission Critical Status: Operational</p>
+                      <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-brand-primary">Mission Critical Status: Operational</p>
                     </div>
                   </div>
                 </div>
               ) : (
-                <div className="flex items-center justify-center h-full bg-brand-navy/40">
+                <div className="flex items-center justify-center h-full bg-slate-100/50">
                    <div className="relative w-64 h-64 animate-float">
-                      <Image src={product.logo!} alt={product.name} fill className="object-contain drop-shadow-[0_0_50px_rgba(37,99,235,0.4)]" />
+                      <Image src={product.logo!} alt={product.name} fill className="object-contain brightness-0 opacity-10" />
                    </div>
                 </div>
               )}

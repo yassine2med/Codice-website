@@ -31,7 +31,7 @@ export default function Navbar() {
       }`}>
         <div className={`flex items-center justify-between px-8 py-4 rounded-[2rem] transition-all duration-700 ${
           scrolled 
-            ? "glass-morphism shadow-[0_20px_50px_rgba(0,0,0,0.3)] border-white/10" 
+            ? "glass-morphism shadow-xl border-black/5" 
             : "bg-transparent border-transparent"
         }`}>
           {/* Logo */}
@@ -41,7 +41,7 @@ export default function Navbar() {
                 src="/images/brand/codice-logo-full.png"
                 alt="CODICE Technology"
                 fill
-                className="object-contain"
+                className="object-contain brightness-0" // Black logo for light theme
                 loading="eager"
                 priority
               />
@@ -80,7 +80,9 @@ export default function Navbar() {
 
           {/* CTA Group */}
           <div className="hidden lg:flex items-center gap-8">
-            <SocialIcons compact={true} />
+            <div className="text-brand-navy">
+              <SocialIcons compact={true} />
+            </div>
             <Link 
               href="/contact"
               className="bg-brand-primary text-white text-xs font-bold tracking-widest uppercase px-6 py-3 rounded-xl hover:bg-brand-secondary transition-all duration-300 shadow-lg shadow-brand-primary/20"
@@ -91,7 +93,7 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="lg:hidden relative z-50 text-white p-2 glass-card rounded-full w-12 h-12 flex items-center justify-center border-white/20"
+            className="lg:hidden relative z-50 text-brand-navy p-2 glass-card rounded-full w-12 h-12 flex items-center justify-center border-black/10"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -108,7 +110,7 @@ export default function Navbar() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.1 }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed inset-0 bg-brand-navy z-40 flex flex-col p-8 overflow-y-auto mesh-gradient"
+            className="fixed inset-0 bg-background z-40 flex flex-col p-8 overflow-y-auto mesh-gradient"
           >
             <motion.div 
               initial="hidden"
@@ -129,7 +131,7 @@ export default function Navbar() {
                   }}
                   className="space-y-6"
                 >
-                  <p className="text-[10px] font-bold tracking-[0.4em] text-brand-primary uppercase border-b border-white/5 pb-3">
+                  <p className="text-[10px] font-bold tracking-[0.4em] text-brand-primary uppercase border-b border-black/5 pb-3">
                     {group.title}
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
@@ -142,7 +144,7 @@ export default function Navbar() {
                               <Link
                                 key={item.href}
                                 href={item.href}
-                                className="text-xl font-bold text-white hover:text-brand-primary transition-colors"
+                                className="text-xl font-bold text-brand-navy hover:text-brand-primary transition-colors"
                                 onClick={() => setMobileOpen(false)}
                               >
                                 {item.label}
@@ -155,7 +157,7 @@ export default function Navbar() {
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="text-2xl font-bold text-white hover:text-brand-primary transition-colors"
+                        className="text-2xl font-bold text-brand-navy hover:text-brand-primary transition-colors"
                         onClick={() => setMobileOpen(false)}
                       >
                         {item.label}
@@ -167,7 +169,7 @@ export default function Navbar() {
 
               <Link
                 href="/contact"
-                className="bg-brand-primary text-white text-center font-bold py-5 rounded-2xl text-lg shadow-2xl shadow-brand-primary/40 mt-6"
+                className="bg-brand-primary text-white text-center font-bold py-5 rounded-2xl text-lg shadow-xl shadow-brand-primary/20 mt-6"
                 onClick={() => setMobileOpen(false)}
               >
                 Launch Briefing

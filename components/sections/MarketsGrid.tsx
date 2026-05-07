@@ -47,29 +47,29 @@ export default function MarketsGrid() {
               variants={item}
               className="group"
             >
-              <SpotlightCard className="p-8 rounded-[2.5rem] glass-card hover:border-brand-primary/40 transition-all duration-500 overflow-hidden h-full flex flex-col">
+              <SpotlightCard className="p-8 rounded-[2.5rem] glass-card hover:border-brand-primary/30 transition-all duration-500 overflow-hidden h-full flex flex-col shadow-xl">
                 {/* Background Decor */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/10 blur-3xl -mr-16 -mt-16 group-hover:w-48 group-hover:h-48 transition-all duration-500" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/5 blur-3xl -mr-16 -mt-16 group-hover:w-48 group-hover:h-48 transition-all duration-500" />
                 
                 <div className="relative z-10 flex-1">
-                  <div className="w-12 h-12 rounded-2xl bg-brand-primary/10 flex items-center justify-center mb-6 group-hover:bg-brand-primary/20 transition-colors">
-                    <Icon size={24} className="text-brand-primary" />
+                  <div className="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center mb-6 group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
+                    <Icon size={24} className="text-brand-navy group-hover:text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-brand-primary transition-colors">
+                  <h3 className="text-2xl font-bold text-brand-navy mb-4 group-hover:text-brand-primary transition-colors">
                     {market.name}
                   </h3>
                   
-                  <p className="text-gray-400 text-base leading-relaxed mb-8">
+                  <p className="text-gray-500 text-base leading-relaxed mb-8 font-medium">
                     {market.description}
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-white/5 group-hover:border-brand-primary/20 transition-colors mt-auto">
+                <div className="pt-6 border-t border-black/5 group-hover:border-brand-primary/20 transition-colors mt-auto">
                   <div className="flex items-center gap-2 mb-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-brand-primary" />
-                    <p className="text-[10px] font-bold tracking-widest uppercase text-gray-500">Mission Impact</p>
+                    <p className="text-[10px] font-bold tracking-widest uppercase text-gray-400">Mission Impact</p>
                   </div>
-                  <p className="text-sm text-gray-400 leading-relaxed italic">
+                  <p className="text-sm text-gray-500 leading-relaxed italic font-medium">
                     &ldquo;{market.details}&rdquo;
                   </p>
                 </div>

@@ -58,7 +58,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${dmMono.variable} ${outfit.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col bg-[#0A1628] text-[#F8FAFC] antialiased font-[family-name:var(--font-inter)] selection:bg-[#2563EB]/30 selection:text-white">
+      <body className="min-h-full flex flex-col antialiased font-(family-name:--font-inter)">
         <PageTransition>
           {children}
         </PageTransition>

@@ -37,20 +37,20 @@ function Hero() {
       () => setWordIndex((i) => (i + 1) % words.length),
       2200
     );
-    return () => setTimeout(() => clearTimeout(id), 0);
+    return () => clearTimeout(id);
   }, [wordIndex]);
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-[#060E1A] overflow-hidden mesh-gradient">
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-background overflow-hidden mesh-gradient">
       {/* Decorative Glows */}
-      <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-brand-primary/10 blur-[150px] rounded-full animate-pulse-slow" />
-      <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-brand-accent/5 blur-[120px] rounded-full animate-pulse-slow delay-300" />
+      <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-brand-primary/5 blur-[150px] rounded-full animate-pulse-slow" />
+      <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-brand-accent/3 blur-[120px] rounded-full animate-pulse-slow delay-300" />
       
       {/* Grid Overlay */}
       <div
-        className="absolute inset-0 opacity-[0.15]"
+        className="absolute inset-0 opacity-[0.08]"
         style={{
-          backgroundImage: `linear-gradient(to right,#1E293B 1px,transparent 1px),linear-gradient(to bottom,#1E293B 1px,transparent 1px)`,
+          backgroundImage: `linear-gradient(to right,#0A1628 1px,transparent 1px),linear-gradient(to bottom,#0A1628 1px,transparent 1px)`,
           backgroundSize: "4rem 4rem",
           maskImage: "radial-gradient(ellipse 80% 60% at 50% 50%,#000 30%,transparent 100%)",
         }}
@@ -64,15 +64,15 @@ function Hero() {
       >
         {/* Premium Badge */}
         <motion.div variants={itemVariants}>
-          <div className="inline-flex items-center gap-3 glass-card px-5 py-2.5 rounded-full border-white/20 shadow-[0_0_20px_rgba(37,99,235,0.2)]">
+          <div className="inline-flex items-center gap-3 glass-card px-5 py-2.5 rounded-full border-black/5 shadow-sm">
             <div className="flex -space-x-2">
               {[1, 2, 3].map((i) => (
-                <div key={i} className="w-5 h-5 rounded-full border-2 border-[#0A1628] bg-brand-primary flex items-center justify-center">
+                <div key={i} className="w-5 h-5 rounded-full border-2 border-white bg-brand-primary flex items-center justify-center">
                   <Shield size={10} className="text-white" />
                 </div>
               ))}
             </div>
-            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-accent">
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-primary">
               Trusted by 12+ DC Government Agencies
             </span>
           </div>
@@ -81,7 +81,7 @@ function Hero() {
         {/* Dynamic Headline */}
         <motion.h1
           variants={itemVariants}
-          className="text-[clamp(44px,8vw,96px)] font-extrabold tracking-tighter leading-[0.92] text-white"
+          className="text-[clamp(44px,8vw,96px)] font-extrabold tracking-tighter leading-[0.92] text-brand-navy"
         >
           Modernizing <br className="hidden sm:block" />
           <span className="text-gradient text-glow">Public Service</span> <br className="hidden sm:block" />
@@ -91,9 +91,9 @@ function Hero() {
         {/* Refined Subheadline */}
         <motion.p
           variants={itemVariants}
-          className="text-lg md:text-2xl text-gray-400 max-w-3xl leading-relaxed"
+          className="text-lg md:text-2xl text-gray-500 max-w-3xl leading-relaxed"
         >
-          CODICE is Washington DC&apos;s premier partner for <span className="text-white font-semibold">high-fidelity government technology</span>. 
+          CODICE is Washington DC&apos;s premier partner for <span className="text-brand-navy font-semibold">high-fidelity government technology</span>. 
           16 years of delivery. 100% client retention. ZERO compromise on quality.
         </motion.p>
 
@@ -101,14 +101,13 @@ function Hero() {
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-5 mt-6">
           <Link
             href="/services"
-            className="group relative inline-flex items-center justify-center gap-3 bg-brand-primary text-white font-bold text-lg px-10 py-5 rounded-2xl transition-all duration-300 shadow-[0_20px_50px_rgba(37,99,235,0.3)] hover:shadow-[0_20px_70px_rgba(37,99,235,0.5)] hover:-translate-y-1 overflow-hidden"
+            className="group relative inline-flex items-center justify-center gap-3 bg-brand-primary text-white font-bold text-lg px-10 py-5 rounded-2xl transition-all duration-300 shadow-xl hover:-translate-y-1 overflow-hidden"
           >
-            <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
             Launch Mission <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center gap-3 glass-card hover:bg-white/10 text-white font-bold text-lg px-10 py-5 rounded-2xl transition-all duration-300 hover:-translate-y-1"
+            className="inline-flex items-center justify-center gap-3 glass-card hover:bg-white text-brand-navy font-bold text-lg px-10 py-5 rounded-2xl transition-all duration-300 hover:-translate-y-1"
           >
             Schedule Briefing
           </Link>
@@ -117,7 +116,7 @@ function Hero() {
         {/* Stats Row */}
         <motion.div
           variants={itemVariants}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 mt-12 border-t border-white/5 pt-12 w-full max-w-4xl"
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 mt-12 border-t border-black/5 pt-12 w-full max-w-4xl"
         >
           {[
             { label: "Client Retention", val: "100%" },
@@ -126,8 +125,8 @@ function Hero() {
             { label: "Gov Agencies", val: "12+" },
           ].map((s) => (
             <div key={s.label} className="flex flex-col gap-1">
-              <span className="text-3xl md:text-4xl font-bold text-white tracking-tighter">{s.val}</span>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-brand-accent/60">{s.label}</span>
+              <span className="text-3xl md:text-4xl font-bold text-brand-navy tracking-tighter">{s.val}</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-brand-accent">{s.label}</span>
             </div>
           ))}
         </motion.div>
@@ -136,7 +135,6 @@ function Hero() {
       {/* Floating Decorative Elements */}
       <div className="absolute top-1/4 left-10 w-2 h-2 rounded-full bg-brand-primary animate-float opacity-40" />
       <div className="absolute bottom-1/4 right-10 w-3 h-3 rounded-full bg-brand-accent animate-float delay-1000 opacity-30" />
-      <div className="absolute top-1/3 right-20 w-1.5 h-1.5 rounded-full bg-white animate-float delay-500 opacity-20" />
 
       {/* Scroll indicator */}
       <motion.div
@@ -145,12 +143,10 @@ function Hero() {
         transition={{ delay: 2.5, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
       >
-        <span className="text-[9px] font-bold tracking-[0.5em] uppercase text-gray-500">Initiate</span>
-        <div className="w-[1px] h-12 bg-linear-to-b from-brand-primary to-transparent" />
+        <span className="text-[9px] font-bold tracking-[0.5em] uppercase text-gray-400">Initiate</span>
+        <div className="w-px h-12 bg-linear-to-b from-brand-primary to-transparent" />
       </motion.div>
     </section>
-  );
-}
   );
 }
 

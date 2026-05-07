@@ -137,7 +137,7 @@ export default function ContactPage() {
 
           {/* Right Column: Deployment Form */}
           <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-brand-primary/20 to-brand-accent/20 blur-2xl rounded-[3rem] opacity-50" />
+            <div className="absolute -inset-1 bg-linear-to-r from-brand-primary/20 to-brand-accent/20 blur-2xl rounded-[3rem] opacity-50" />
             
             <div className="glass-card p-12 md:p-16 rounded-[3rem] border-white/10 relative z-10">
               <div className="mb-12">

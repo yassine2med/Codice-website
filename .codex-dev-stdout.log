@@ -1055,3 +1055,5 @@ Creating turbopack project { dir: 'D:\\Codex\\Codice-website', testMode: true }
 ✓ Compiled in 788ms
 ✓ Compiled in 306ms
 ✓ Compiled in 5.9s
+✓ Compiled in 710ms
+✓ Compiled in 418ms
