@@ -62,7 +62,7 @@ export default function ServicesGrid() {
             </p>
 
             <Link
-              href={service.slug}
+              href={"/services/" + service.slug}
               className="inline-flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-[#2563EB] hover:text-[#3B82F6] transition-colors mt-auto group/link"
             >
               Learn more

@@ -3,6 +3,7 @@
 import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/sections/Footer";
 import { team, stats, company } from "@/data/codice";
+import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -37,6 +38,7 @@ const timeline = [
   { year: "2016", title: "Product Division Launched", desc: "Began building proprietary platforms, moving beyond services into purpose-built government software." },
   { year: "2019", title: "PermiOne Goes Live", desc: "Launched PermiOne, our flagship cloud-agnostic permitting platform, now used across DC agencies." },
   { year: "2023", title: "AI Products Released", desc: "Launched FortiMind.ai and Travo AI — bringing enterprise AI to government compliance and accessibility." },
+  { year: "2024", title: "DC DOES UI System Modernization", desc: "Launched the modernized DC Department of Employment Services Unemployment Insurance Benefits System — a landmark project serving thousands of DC residents." },
   { year: "2025", title: "Small Business of the Year", desc: "Named Washington DC's Small Business of the Year — recognizing 16 years of government technology excellence." },
 ];
 
@@ -58,21 +60,29 @@ const values = [
   },
 ];
 
-const certifications = [
+const businessCerts = [
+  "Certified Minority-Owned Small Business",
+  "GSA Schedule Holder",
+  "ISO Compliance Standards",
+  "FISMA / FedRAMP Aligned",
+];
+
+const professionalCerts = [
   "PMP — Project Management Professional",
   "CSM — Certified Scrum Master",
   "CSPO — Certified Scrum Product Owner",
   "CPA — Certified Public Accountant",
   "CMA — Certified Management Accountant",
   "AWS Certified Cloud Practitioner",
-  "ISO Compliance Standards",
-  "FISMA / FedRAMP Aligned",
 ];
 
-const offices = [
-  { city: "Washington, DC", country: "USA", address: "1101 Vermont Avenue NW, Suite 400", flag: "🇺🇸", hq: true },
-  { city: "Colombo", country: "Sri Lanka", address: "International Engineering Office", flag: "🇱🇰", hq: false },
-];
+const offices = company.offices.map((o) => ({
+  city: o.city,
+  country: o.country,
+  address: o.address,
+  flag: o.country === "USA" ? "🇺🇸" : "🇱🇰",
+  hq: o.headquarters,
+}));
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function OurStoryPage() {
@@ -120,6 +130,8 @@ export default function OurStoryPage() {
               { icon: Shield, text: "100% Client Retention" },
               { icon: TrendingUp, text: "16+ Years of Service" },
               { icon: Globe, text: "DC HQ · Colombo Office" },
+              { icon: Award, text: "Minority-Owned Business" },
+              { icon: CheckCircle2, text: "GSA Schedule Holder" },
             ].map(({ icon: Icon, text }) => (
               <span key={text} className="inline-flex items-center gap-2 text-sm text-[#94A3B8] font-medium">
                 <Icon size={14} className="text-[#2563EB]" /> {text}
@@ -157,8 +169,7 @@ export default function OurStoryPage() {
               </p>
               <p>
                 Today, CODICE is both a services firm and a product company — building 8 proprietary
-                platforms that over a dozen DC agencies rely on every day. From permit modernization to
-                AI-powered legal compliance, the mission has always been the same: <em className="text-[#94A3B8]">technology that actually works for government.</em>
+                platforms that over a dozen DC agencies rely on every day. As a <strong className="text-[#94A3B8]">certified minority-owned small business</strong> and <strong className="text-[#94A3B8]">GSA Schedule holder</strong>, CODICE brings mission-aligned delivery to every engagement. From permit modernization to AI-powered legal compliance, the mission has always been the same: <em className="text-[#94A3B8]">technology that actually works for government.</em>
               </p>
             </motion.div>
           </motion.div>
@@ -177,8 +188,8 @@ export default function OurStoryPage() {
                 variants={fadeUp}
                 className="bg-[#111827] border border-[#1E293B] rounded-2xl p-7 flex flex-col gap-2 hover:border-[#2563EB]/40 transition-colors duration-300"
               >
-                <span className="text-[clamp(36px,5vw,56px)] font-bold text-[#F8FAFC] font-mono tracking-tighter leading-none">
-                  {stat.value}{stat.suffix}
+                <span className="text-[clamp(36px,5vw,56px)] font-bold text-[#F8FAFC] font-mono tracking-tighter leading-none tabular-nums">
+                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 </span>
                 <span className="text-[11px] font-bold text-[#2563EB] tracking-[0.2em] uppercase">
                   {stat.label}
@@ -321,35 +332,23 @@ export default function OurStoryPage() {
             viewport={{ once: true }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            {team.map((member) => (
+            {team.filter((m) => m.photo).map((member) => (
               <motion.div
                 key={member.name}
                 variants={fadeUp}
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
                 className="group bg-[#111827] border border-[#1E293B] rounded-2xl overflow-hidden hover:border-[#2563EB]/40 hover:shadow-[0_0_32px_rgba(37,99,235,0.1)] transition-colors duration-300"
               >
-                {/* Photo */}
                 <div className="relative w-full h-56 bg-[#0A1628] overflow-hidden">
-                  {member.photo ? (
-                    <Image
-                      src={member.photo}
-                      alt={member.name}
-                      fill
-                      className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <span className="text-6xl font-bold text-[#1E293B]">
-                        {member.name.charAt(0)}
-                      </span>
-                    </div>
-                  )}
-                  {/* Gradient overlay */}
+                  <Image
+                    src={member.photo}
+                    alt={member.name}
+                    fill
+                    className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#111827] via-transparent to-transparent opacity-60" />
                 </div>
-
-                {/* Content */}
                 <div className="p-6">
                   <h3 className="text-base font-bold text-[#F8FAFC] mb-1 group-hover:text-[#2563EB] transition-colors duration-300">
                     {member.name}
@@ -367,6 +366,33 @@ export default function OurStoryPage() {
               </motion.div>
             ))}
           </motion.div>
+
+          {/* Additional leadership — no photo available */}
+          {team.filter((m) => !m.photo).length > 0 && (
+            <motion.div
+              variants={stagger(0.08)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+            >
+              {team.filter((m) => !m.photo).map((member) => (
+                <motion.div
+                  key={member.name}
+                  variants={fadeUp}
+                  className="bg-[#111827] border border-[#1E293B] rounded-xl px-6 py-5 flex items-center gap-4 hover:border-[#2563EB]/40 transition-colors duration-300"
+                >
+                  <div className="w-10 h-10 rounded-full bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center shrink-0">
+                    <span className="text-sm font-bold text-[#2563EB]">{member.name.charAt(0)}</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-[#F8FAFC]">{member.name}</p>
+                    <p className="text-[10px] font-bold tracking-widest uppercase text-[#2563EB] mt-0.5">{member.title}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
         </div>
       </section>
 
@@ -382,10 +408,33 @@ export default function OurStoryPage() {
           >
             <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#2563EB] mb-4">Credentials</p>
             <h2 className="text-[clamp(24px,3vw,40px)] font-bold text-[#F8FAFC] tracking-tight">
-              Professional Certifications
+              Certifications & Compliance
             </h2>
           </motion.div>
 
+          {/* Business certifications */}
+          <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#475569] mb-4 text-center">Business</p>
+          <motion.div
+            variants={stagger(0.06)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="flex flex-wrap gap-3 justify-center mb-10"
+          >
+            {businessCerts.map((cert) => (
+              <motion.div
+                key={cert}
+                variants={fadeUp}
+                className="inline-flex items-center gap-2.5 bg-[#2563EB]/10 border border-[#2563EB]/25 hover:border-[#2563EB]/60 text-[#93C5FD] text-sm font-semibold px-5 py-3 rounded-xl transition-colors duration-300 cursor-default"
+              >
+                <CheckCircle2 size={14} className="text-[#2563EB] shrink-0" />
+                {cert}
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Professional certifications */}
+          <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#475569] mb-4 text-center">Team Credentials</p>
           <motion.div
             variants={stagger(0.06)}
             initial="hidden"
@@ -393,7 +442,7 @@ export default function OurStoryPage() {
             viewport={{ once: true }}
             className="flex flex-wrap gap-3 justify-center"
           >
-            {certifications.map((cert) => (
+            {professionalCerts.map((cert) => (
               <motion.div
                 key={cert}
                 variants={fadeUp}
@@ -426,7 +475,7 @@ export default function OurStoryPage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-5"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
           >
             {offices.map((office) => (
               <motion.div
@@ -461,6 +510,15 @@ export default function OurStoryPage() {
       <section className="py-28 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0A1628] via-[#0D1F3C] to-[#0A1628]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_100%,rgba(37,99,235,0.15),transparent)]" />
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage: `linear-gradient(to right,#F8FAFC 1px,transparent 1px),linear-gradient(to bottom,#F8FAFC 1px,transparent 1px)`,
+            backgroundSize: "3rem 3rem",
+          }}
+        />
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-[#2563EB]/10 blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-[#2563EB]/10 blur-[100px] rounded-full pointer-events-none" />
 
         <motion.div
           variants={stagger(0.12)}

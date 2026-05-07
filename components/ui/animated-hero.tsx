@@ -87,25 +87,27 @@ function Hero() {
         >
           Government Technology
           <br />
-          That Is{" "}
-          <span className="relative inline-flex justify-center min-w-[320px] md:min-w-[420px]">
-            {words.map((word, i) => (
-              <motion.span
-                key={word}
-                className="absolute text-[#2563EB]"
-                initial={{ opacity: 0, y: 40 }}
-                animate={
-                  wordIndex === i
-                    ? { opacity: 1, y: 0 }
-                    : { opacity: 0, y: wordIndex > i ? -40 : 40 }
-                }
-                transition={{ type: "spring", damping: 22, stiffness: 120 }}
-              >
-                {word}
-              </motion.span>
-            ))}
-            {/* invisible placeholder to hold width */}
-            <span className="invisible">{words.reduce((a, b) => (a.length > b.length ? a : b))}</span>
+          <span className="relative inline-block">
+            That Is{" "}
+            <span className="relative inline-block text-[#2563EB]" style={{ minWidth: "10ch" }}>
+              {words.map((word, i) => (
+                <motion.span
+                  key={word}
+                  className="absolute left-0 top-0 whitespace-nowrap"
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={
+                    wordIndex === i
+                      ? { opacity: 1, y: 0 }
+                      : { opacity: 0, y: wordIndex > i ? -40 : 40 }
+                  }
+                  transition={{ type: "spring", damping: 22, stiffness: 120 }}
+                >
+                  {word}
+                </motion.span>
+              ))}
+              {/* invisible placeholder — widest word */}
+              <span className="invisible">{words.reduce((a, b) => (a.length > b.length ? a : b))}</span>
+            </span>
           </span>
         </motion.h1>
 
@@ -136,16 +138,16 @@ function Hero() {
           </Link>
         </motion.div>
 
-        {/* Trust bar */}
+        {/* Credentials bar */}
         <motion.div
           variants={itemVariants}
           className="flex flex-wrap gap-x-8 gap-y-3 justify-center mt-4 border-t border-[#1E293B] pt-8 w-full"
         >
           {[
-            "12+ Government Agencies",
-            "8 Proprietary Products",
-            "16+ Years in DC",
-            "100% Client Retention",
+            "Certified Minority-Owned Business",
+            "GSA Schedule Holder",
+            "DC Small Business of the Year 2025",
+            "109 Employees · Washington, DC",
           ].map((item) => (
             <span key={item} className="text-xs font-semibold text-[#475569] tracking-widest uppercase">
               <span className="text-[#2563EB] mr-2">✦</span>{item}

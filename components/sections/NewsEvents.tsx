@@ -19,7 +19,7 @@ const card = {
 
 export default function NewsEvents() {
   return (
-    <section id="news" className="py-24 px-6 max-w-7xl mx-auto">
+    <section id="news" className="py-16 px-6 max-w-7xl mx-auto">
       <SectionHeader
         label="News & Insights"
         title="Latest from CODICE"
@@ -42,7 +42,7 @@ export default function NewsEvents() {
           >
             {/* Image */}
             {article.image && (
-              <div className="relative w-full h-44 overflow-hidden">
+              <div className="relative w-full h-36 overflow-hidden">
                 <Image
                   src={article.image}
                   alt={article.title}
@@ -54,7 +54,7 @@ export default function NewsEvents() {
               </div>
             )}
 
-            <div className="p-7">
+            <div className="p-5">
               <div className="flex items-center gap-2 text-[#475569] mb-4">
                 <CalendarDays size={12} />
                 <span className="text-[10px] font-bold tracking-widest uppercase">
@@ -76,6 +76,8 @@ export default function NewsEvents() {
 
               <Link
                 href={article.slug}
+                target={article.slug.startsWith('http') ? '_blank' : undefined}
+                rel={article.slug.startsWith('http') ? 'noopener noreferrer' : undefined}
                 className="inline-flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-[#2563EB] hover:text-[#3B82F6] transition-colors group/link"
               >
                 Read more

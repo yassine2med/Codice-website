@@ -2,9 +2,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-import { company } from "@/data/codice";
+import { Menu, X, ChevronDown, Cpu, Globe, Layers } from "lucide-react";
+import { company, navigation } from "@/data/codice";
 import { motion, AnimatePresence } from "framer-motion";
+import { DropdownNavigation } from "@/components/ui/dorpdown-navigation";
+import { SocialIcons } from "@/components/ui/social-icons";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -30,49 +32,57 @@ export default function Navbar() {
           <Image
             src="/images/brand/codice-logo-full.png"
             alt="CODICE Technology"
-            width={160}
-            height={40}
-            className="hidden md:block w-auto h-8 lg:h-10"
-            priority
+            width={1536}
+            height={1024}
+            className="hidden md:block h-10 w-44 rounded-md object-cover object-center lg:h-12 lg:w-52"
+            loading="eager"
+            fetchPriority="high"
           />
           <Image
-            src="/images/brand/codice-logo.png"
+            src="/images/brand/codice-logo-wtitle.png"
             alt="CODICE"
-            width={36}
-            height={36}
-            className="md:hidden w-8 h-8"
-            priority
+            width={1536}
+            height={1024}
+            className="md:hidden h-10 w-10 rounded-md object-cover object-center"
+            loading="eager"
+            fetchPriority="high"
           />
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-10">
-          {[
-            { href: "/services", label: "Services" },
-            { href: "/products", label: "Products" },
-            { href: "/markets", label: "Markets" },
-            { href: "/case-studies", label: "Case Studies" },
-            { href: "/news", label: "News" },
-          ].map((link) => (
-            <Link 
-              key={link.href}
-              href={link.href} 
-              className="text-xs font-bold tracking-widest uppercase text-[#64748B] hover:text-[#2563EB] transition-colors relative group"
-            >
-              {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#2563EB] transition-all group-hover:w-full" />
-            </Link>
-          ))}
+        <div className="hidden md:flex items-center">
+          <DropdownNavigation navItems={navigation.map((group, idx) => ({
+            id: idx,
+            label: group.title,
+            // Handle both flat items and nested sections
+            subMenus: group.sections 
+              ? group.sections.map(section => ({
+                  title: section.title,
+                  items: section.items.map(item => ({
+                    label: item.label,
+                    description: item.description || "",
+                    icon: section.title === "Services" ? Cpu : section.title === "Products" ? Layers : Globe,
+                    href: item.href
+                  }))
+                }))
+              : group.items && group.items.length > 1 
+                ? [{
+                    title: group.title,
+                    items: group.items.map(item => ({
+                      label: item.label,
+                      description: item.description || "",
+                      icon: group.title === "Services" ? Cpu : Globe,
+                      href: item.href
+                    }))
+                  }] 
+                : undefined,
+            link: group.items && group.items.length === 1 ? group.items[0].href : undefined
+          }))} />
         </div>
 
         {/* CTA */}
-        <div className="hidden md:flex items-center gap-8">
-          <Link
-            href="/contact"
-            className="bg-[#2563EB] hover:bg-[#3B82F6] text-white text-xs font-bold tracking-widest uppercase px-6 py-3 rounded-full transition-all hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:-translate-y-0.5"
-          >
-            Contact Us
-          </Link>
+        <div className="hidden md:flex items-center gap-8 min-w-max">
+          <SocialIcons compact={true} />
         </div>
 
         {/* Mobile toggle */}
@@ -93,32 +103,56 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 bg-white z-40 flex flex-col justify-center px-12 gap-8"
+            className="fixed inset-0 bg-[#0A1628] z-40 flex flex-col p-12 overflow-y-auto"
           >
-            {[
-              { href: "/", label: "Home" },
-              { href: "/services", label: "Services" },
-              { href: "/products", label: "Products" },
-              { href: "/markets", label: "Markets" },
-              { href: "/case-studies", label: "Case Studies" },
-              { href: "/news", label: "News" },
-            ].map(({ href, label }) => (
+            <div className="mt-20 flex flex-col gap-12">
+              {navigation.map((group) => (
+                <div key={group.title} className="space-y-6">
+                  <p className="text-[10px] font-bold tracking-[0.3em] text-[#2563EB] uppercase border-b border-[#1E293B] pb-2">
+                    {group.title}
+                  </p>
+                  <div className="flex flex-col gap-6">
+                    {/* Handle nested sections for mobile */}
+                    {group.sections ? (
+                      group.sections.map(section => (
+                        <div key={section.title} className="space-y-4">
+                          <p className="text-xs font-bold text-[#64748B] uppercase tracking-widest">{section.title}</p>
+                          <div className="flex flex-col gap-4 pl-4 border-l border-[#1E293B]">
+                            {section.items.map(item => (
+                              <Link
+                                key={item.href}
+                                href={item.href}
+                                className="text-lg font-bold text-[#F8FAFC] hover:text-[#2563EB] transition-colors"
+                                onClick={() => setMobileOpen(false)}
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ))
+                    ) : group.items?.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="text-2xl font-bold text-[#F8FAFC] hover:text-[#2563EB] transition-colors"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
+              
               <Link
-                key={href}
-                href={href}
-                className="text-3xl font-bold text-[#0A1628] hover:text-[#2563EB] transition-colors"
+                href="/contact"
+                className="bg-[#2563EB] text-white text-lg font-bold px-8 py-5 rounded-2xl text-center mt-4 shadow-[0_0_32px_rgba(37,99,235,0.2)]"
                 onClick={() => setMobileOpen(false)}
               >
-                {label}
+                Schedule Consultation
               </Link>
-            ))}
-            <Link
-              href="/contact"
-              className="bg-[#2563EB] text-white text-lg font-bold px-8 py-5 rounded-2xl text-center mt-4"
-              onClick={() => setMobileOpen(false)}
-            >
-              Contact Us
-            </Link>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

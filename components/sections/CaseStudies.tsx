@@ -32,7 +32,7 @@ export default function CaseStudies() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8"
       >
         {caseStudies.map((study, i) => (
           <motion.div 

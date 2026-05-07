@@ -35,13 +35,13 @@ export default function Home() {
       {/* Services — 4-col grid preview, link to full /services page */}
       <section className="relative">
         <ServicesGrid />
-        <div className="flex justify-center pb-24 -mt-8 relative z-10">
+        <div className="flex justify-center pb-24 -mt-4 relative z-10">
           <Link
             href="/services"
-            className="group inline-flex items-center gap-3 text-sm font-bold tracking-widest uppercase text-[#2563EB] hover:text-[#3B82F6] transition-all"
+            className="group inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest uppercase text-[#94A3B8] hover:text-[#F8FAFC] border border-[#1E293B] hover:border-[#2563EB]/50 bg-[#111827] hover:bg-[#0D1F3C] px-6 py-3 rounded-full transition-all duration-300"
           >
             View All Services
-            <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-300" />
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300 text-[#2563EB]" />
           </Link>
         </div>
       </section>
@@ -49,13 +49,13 @@ export default function Home() {
       {/* Products — tabbed showcase of all 8 proprietary platforms */}
       <section className="bg-[#111827] border-y border-[#1E293B]">
         <ProductsShowcase />
-        <div className="flex justify-center pb-24 -mt-8 relative z-10">
+        <div className="flex justify-center pb-24 -mt-4 relative z-10">
           <Link
             href="/products"
-            className="group inline-flex items-center gap-3 text-sm font-bold tracking-widest uppercase text-[#2563EB] hover:text-[#3B82F6] transition-all"
+            className="group inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest uppercase text-[#94A3B8] hover:text-[#F8FAFC] border border-[#1E293B] hover:border-[#2563EB]/50 bg-[#0A1628] hover:bg-[#0D1F3C] px-6 py-3 rounded-full transition-all duration-300"
           >
             Explore All Products
-            <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-300" />
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300 text-[#2563EB]" />
           </Link>
         </div>
       </section>
@@ -63,13 +63,13 @@ export default function Home() {
       {/* Markets — 10 government sectors, shows breadth of expertise */}
       <section className="relative">
         <MarketsGrid />
-        <div className="flex justify-center pb-24 -mt-8 relative z-10">
+        <div className="flex justify-center pb-24 -mt-4 relative z-10">
           <Link
             href="/markets"
-            className="group inline-flex items-center gap-3 text-sm font-bold tracking-widest uppercase text-[#2563EB] hover:text-[#3B82F6] transition-all"
+            className="group inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest uppercase text-[#94A3B8] hover:text-[#F8FAFC] border border-[#1E293B] hover:border-[#2563EB]/50 bg-[#111827] hover:bg-[#0D1F3C] px-6 py-3 rounded-full transition-all duration-300"
           >
             View All Markets
-            <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-300" />
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300 text-[#2563EB]" />
           </Link>
         </div>
       </section>
@@ -80,13 +80,13 @@ export default function Home() {
       {/* News — shows the company is active, award visible */}
       <section className="bg-[#111827] border-y border-[#1E293B]">
         <NewsEvents />
-        <div className="flex justify-center pb-24 -mt-8 relative z-10">
+        <div className="flex justify-center pb-24 -mt-4 relative z-10">
           <Link
             href="/news"
-            className="group inline-flex items-center gap-3 text-sm font-bold tracking-widest uppercase text-[#2563EB] hover:text-[#3B82F6] transition-all"
+            className="group inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest uppercase text-[#94A3B8] hover:text-[#F8FAFC] border border-[#1E293B] hover:border-[#2563EB]/50 bg-[#0A1628] hover:bg-[#0D1F3C] px-6 py-3 rounded-full transition-all duration-300"
           >
             All News & Events
-            <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-300" />
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300 text-[#2563EB]" />
           </Link>
         </div>
       </section>

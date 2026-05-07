@@ -1,32 +1,24 @@
 "use client";
 
 import { markets } from "@/data/codice";
-import { SectionHeader } from "@/components/ui/SectionHeader";
 import { motion } from "framer-motion";
 import {
-  Landmark,
-  ShieldCheck,
-  GraduationCap,
-  Leaf,
-  Train,
-  CreditCard,
-  Cloud,
-  Users,
-  Scale,
+  Building2,
   HeartPulse,
+  Bus,
+  Shield,
+  Users,
+  Hammer,
+  Landmark,
 } from "lucide-react";
 
 const iconMap: Record<string, React.ElementType> = {
-  gov: Landmark,
-  safety: ShieldCheck,
-  education: GraduationCap,
-  environment: Leaf,
-  transport: Train,
-  finance: CreditCard,
-  cloud: Cloud,
-  hr: Users,
-  legal: Scale,
+  government: Building2,
   healthcare: HeartPulse,
+  transportation: Bus,
+  "public-safety": Shield,
+  unemployment: Users,
+  facilities: Hammer,
 };
 
 const container = {
@@ -42,42 +34,52 @@ const item = {
 export default function MarketsGrid() {
   return (
     <section id="markets" className="py-24 px-6 max-w-7xl mx-auto">
-      <SectionHeader
-        label="Sectors We Serve"
-        title="Built for Every Corner of Government"
-        subtitle="From justice systems to healthcare to infrastructure — we know your mission because we've lived it."
-      />
+      <div className="mb-20">
+        <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#2563EB] mb-4 text-center md:text-left">Sectors We Serve</p>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <h2 className="text-[clamp(32px,5vw,56px)] font-bold text-[#F8FAFC] tracking-tight leading-tight max-w-2xl text-center md:text-left">
+            Built for Every Corner of Government
+          </h2>
+          <p className="text-[#64748B] text-lg max-w-sm text-center md:text-left">
+            From local DC agencies to federal health departments, our solutions scale to meet the mission.
+          </p>
+        </div>
+      </div>
 
       <motion.div
         variants={container}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
       >
-        {markets.map((market) => {
-          const Icon = iconMap[market.id] ?? Landmark;
-          return (
-            <motion.div
-              key={market.id}
-              variants={item}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="group bg-[#111827] border border-[#1E293B] rounded-2xl p-6 flex flex-col items-start gap-4 hover:border-[#2563EB]/50 hover:shadow-[0_0_24px_rgba(37,99,235,0.1)] transition-colors duration-300 cursor-default"
-            >
-              <div className="w-10 h-10 rounded-xl bg-[#0A1628] border border-[#1E293B] flex items-center justify-center group-hover:border-[#2563EB]/40 group-hover:bg-[#2563EB]/10 transition-all duration-300">
-                <Icon size={18} className="text-[#475569] group-hover:text-[#2563EB] transition-colors duration-300" />
-              </div>
-              <div>
-                <p className="text-sm font-bold text-[#F8FAFC] group-hover:text-[#2563EB] transition-colors duration-300 leading-snug mb-1">
-                  {market.name}
+        {markets.map((market) => (
+          <motion.div
+            key={market.id}
+            variants={item}
+            className="group relative p-8 rounded-[32px] bg-[#111827] border border-[#1E293B] hover:border-[#2563EB]/40 transition-all duration-500 overflow-hidden"
+          >
+            {/* Hover background effect */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#2563EB]/5 blur-3xl -mr-16 -mt-16 group-hover:bg-[#2563EB]/10 transition-all duration-500" />
+            
+            <div className="relative z-10">
+              <h3 className="text-xl font-bold text-[#F8FAFC] mb-4 group-hover:text-[#2563EB] transition-colors">
+                {market.name}
+              </h3>
+              
+              <p className="text-[#94A3B8] text-sm leading-relaxed mb-6">
+                {market.description}
+              </p>
+
+              <div className="pt-6 border-t border-[#1E293B] group-hover:border-[#2563EB]/20 transition-colors">
+                <p className="text-[11px] font-bold tracking-widest uppercase text-[#475569] mb-3">Mission Impact</p>
+                <p className="text-xs text-[#64748B] leading-relaxed italic">
+                  "{market.details}"
                 </p>
-                <p className="text-xs text-[#475569] leading-relaxed line-clamp-2">
-                  {market.description}
-                </p>
               </div>
-            </motion.div>
-          );
-        })}
+            </div>
+          </motion.div>
+        ))}
       </motion.div>
     </section>
   );

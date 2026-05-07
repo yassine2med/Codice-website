@@ -29,7 +29,7 @@ export function PageHero({ title, subtitle, label, gradient = "from-[#2563EB]/20
               {label}
             </p>
           )}
-          <h1 className="text-[clamp(40px,7vw,80px)] font-bold text-[#0A1628] mb-8 leading-[1.1] tracking-tight">
+          <h1 className="text-[clamp(40px,7vw,80px)] font-bold text-[#F8FAFC] mb-8 leading-[1.1] tracking-tight">
             {title}
           </h1>
           {subtitle && (

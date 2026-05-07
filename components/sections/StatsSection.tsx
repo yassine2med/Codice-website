@@ -15,6 +15,9 @@ export default function StatsSection() {
   return (
     <section id="stats" className="py-20 px-6 bg-[#060E1A] border-y border-[#1E293B]">
       <div className="max-w-6xl mx-auto">
+        <p className="text-center text-[10px] font-bold tracking-[0.3em] uppercase text-[#2563EB] mb-14">
+          By the Numbers
+        </p>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-0">
           {stats.map((stat, index) => (
             <motion.div

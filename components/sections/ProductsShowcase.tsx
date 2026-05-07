@@ -4,13 +4,33 @@ import { products } from "@/data/codice";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function ProductsShowcase() {
   const [active, setActive] = useState(products[0].id);
+  const [imageIndex, setImageIndex] = useState(0);
+  
   const product = products.find((p) => p.id === active)!;
+
+  // Reset image carousel when switching products
+  useEffect(() => {
+    setImageIndex(0);
+  }, [active]);
+
+  // Auto-play the image carousel
+  useEffect(() => {
+    // @ts-ignore - showcaseImages is added dynamically to the data structure
+    const images = product.showcaseImages;
+    if (!images || images.length <= 1) return;
+    
+    const interval = setInterval(() => {
+      setImageIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
+    
+    return () => clearInterval(interval);
+  }, [product]);
 
   return (
     <section id="products" className="py-24 px-6 max-w-7xl mx-auto">
@@ -82,27 +102,85 @@ export default function ProductsShowcase() {
               )}
 
               <Link
-                href={product.slug}
+                href={"/products/" + product.slug}
                 className="inline-flex items-center gap-3 bg-[#2563EB] hover:bg-[#3B82F6] text-white font-bold px-7 py-3.5 rounded-xl text-sm transition-all duration-300 hover:shadow-[0_0_24px_rgba(37,99,235,0.35)] hover:-translate-y-0.5 w-fit"
               >
                 Explore {product.name} <ArrowRight size={16} />
               </Link>
             </div>
 
-            {/* Right: logo panel */}
-            <div className="lg:w-[360px] bg-[#0A1628] border-t lg:border-t-0 lg:border-l border-[#1E293B] flex items-center justify-center p-12 min-h-[280px]">
-              {product.logo ? (
-                <div className="relative w-44 h-44">
-                  <Image
-                    src={product.logo}
-                    alt={product.name}
-                    fill
-                    className="object-contain mix-blend-screen"
-                    sizes="176px"
-                  />
+            {/* Right: Showcase Image Panel */}
+            <div className="lg:w-[500px] bg-[#0A1628] border-t lg:border-t-0 lg:border-l border-[#1E293B] relative overflow-hidden group/showcase">
+              {/* @ts-ignore */}
+              {product.showcaseImages && product.showcaseImages.length > 0 ? (
+                <div className="relative w-full h-full min-h-[300px] lg:min-h-full">
+                  <AnimatePresence mode="popLayout">
+                    <motion.div
+                      key={imageIndex}
+                      initial={{ opacity: 0, scale: 1.05 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.8, ease: "easeInOut" }}
+                      className="absolute inset-0"
+                    >
+                      <Image
+                        // @ts-ignore
+                        src={product.showcaseImages[imageIndex]}
+                        alt={`${product.name} interface`}
+                        fill
+                        className="object-cover opacity-80"
+                        sizes="(max-width: 1024px) 100vw, 500px"
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+                  
+                  {/* Subtle Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-[#0A1628]/40 pointer-events-none z-10" />
+                  
+                  {/* Progress Indicators */}
+                  {/* @ts-ignore */}
+                  {product.showcaseImages.length > 1 && (
+                    <div className="absolute top-6 right-6 flex gap-2 z-20">
+                      {/* @ts-ignore */}
+                      {product.showcaseImages.map((_, idx) => (
+                        <div 
+                          key={idx} 
+                          className={`h-1 rounded-full transition-all duration-500 ${idx === imageIndex ? "w-6 bg-[#2563EB]" : "w-2 bg-white/20"}`}
+                        />
+                      ))}
+                    </div>
+                  )}
+                  
+                  {/* Brand Badge Overlay */}
+                  <div className="absolute bottom-8 left-8 flex items-center gap-4 bg-[#111827]/80 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl z-20">
+                    {product.logo ? (
+                      <div className="relative w-24 h-8">
+                        <Image
+                          src={product.logo}
+                          alt={product.name}
+                          fill
+                          className="object-contain mix-blend-screen"
+                        />
+                      </div>
+                    ) : (
+                      <span className="text-xs font-bold text-[#F8FAFC] tracking-widest uppercase">{product.name}</span>
+                    )}
+                  </div>
+                </div>
+              ) : product.logo ? (
+                <div className="flex items-center justify-center h-full p-12">
+                  <div className="relative w-44 h-44 transition-transform duration-500 group-hover/showcase:scale-110">
+                    <Image
+                      src={product.logo}
+                      alt={product.name}
+                      fill
+                      className="object-contain mix-blend-screen"
+                      sizes="176px"
+                    />
+                  </div>
                 </div>
               ) : (
-                <div className="flex flex-col items-center gap-4">
+                <div className="flex flex-col items-center justify-center h-full gap-4">
                   <div className="w-20 h-20 rounded-2xl bg-[#111827] border border-[#1E293B] flex items-center justify-center">
                     <Sparkles size={36} className="text-[#2563EB]" />
                   </div>

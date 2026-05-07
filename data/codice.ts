@@ -5,13 +5,18 @@ export const company = {
   tagline: 'Innovative Technology. Exceptional Value. Outstanding Results.',
   subtagline: 'Trusted technology and operations partner to government for 16+ years. Built in Washington DC.',
   award: "Washington DC's Small Business of the Year 2025",
-  logo: '/images/brand/codice-logo.png',
+  certifications: ['Certified Minority-Owned Small Business', 'GSA Schedule Holder', 'SBA 8(a) Eligible'],
+  revenue: '$6.4M',
+  employees: 137,
+  linkedinFollowers: 4423,
+  logo: '/images/brand/codice-logo-full.png',
   phone: '+1 202-808-9399',
   email: 'info@codicetech.com',
   address: '1101 Vermont Avenue NW Suite 400, Washington, DC 20005',
   offices: [
-    { city: 'Washington, DC', country: 'USA', headquarters: true },
-    { city: 'Colombo', country: 'Sri Lanka', headquarters: false },
+    { city: 'Washington, DC', country: 'USA', address: '1101 Vermont Avenue NW Suite 400', headquarters: true },
+    { city: 'Washington, DC (Branch)', country: 'USA', address: '1711 North Capitol Street NE Suite 200', headquarters: false },
+    { city: 'Colombo', country: 'Sri Lanka', address: 'International Engineering & Finance Center', headquarters: false },
   ],
   social: {
     linkedin: 'https://www.linkedin.com/company/codicetech',
@@ -22,7 +27,7 @@ export const company = {
 }
 
 export const stats = [
-  { value: 16, suffix: '+', label: 'Years of Experience' },
+  { value: 16, suffix: '+', label: 'Years of Excellence' },
   { value: 12, suffix: '+', label: 'Government Agencies' },
   { value: 8, suffix: '', label: 'Proprietary Products' },
   { value: 100, suffix: '%', label: 'Client Retention' },
@@ -33,100 +38,216 @@ export const services = [
     id: 'software',
     title: 'Custom Software & Application Development',
     description: 'Tailored applications built for your specific mission and workflow — fast, secure, and built for government scale.',
+    features: [
+      'Full-stack web and mobile application development',
+      'API design, development, and third-party integration',
+      'Legacy system modernization and refactoring',
+      'User Experience (UX) and Interface (UI) design',
+      'Agile methodology and continuous delivery'
+    ],
+    techStack: ['React', 'Node.js', 'Python', 'Java', 'Next.js', 'Tailwind CSS'],
     icon: '/images/services/software.png',
-    slug: '/custom-software-and-application-development/',
+    slug: 'software-development',
   },
   {
     id: 'permits',
     title: 'Permit System Modernization',
     description: 'Replace legacy permit systems with fast, compliant modern platforms that streamline approvals and inspections.',
+    features: [
+      'End-to-end permit lifecycle automation',
+      'Digital plan review and parallel departmental routing',
+      'Mobile-first inspection apps with offline sync',
+      'Self-service contractor and citizen portals',
+      'Compliance with municipal and federal regulations'
+    ],
+    techStack: ['PermiOne', 'Cloud Native', 'Workflow Engines', 'Mobile Apps'],
     icon: '/images/services/permits.png',
-    slug: '/permit-system-modernization/',
+    slug: 'permit-modernization',
   },
   {
     id: 'analytics',
     title: 'Data Analytics & Business Intelligence',
     description: 'Practical BI solutions that enable informed decisions through dashboards, reporting, and data integration.',
+    features: [
+      'Interactive dashboards and data visualization',
+      'Enterprise data warehousing and ETL processes',
+      'Predictive analytics for operational forecasting',
+      'Performance metrics and KPI tracking',
+      'Data governance and quality management'
+    ],
+    techStack: ['Tableau', 'Power BI', 'SQL', 'Data Factory', 'Python Analytics'],
     icon: '/images/services/analytics.png',
-    slug: '/data-analytics-and-business-intelligence/',
+    slug: 'data-analytics',
   },
   {
     id: 'cloud',
     title: 'Cloud Migration & Modernization',
     description: 'Move from legacy infrastructure to AWS, Azure, and cloud-native systems with improved performance and compliance.',
+    features: [
+      'Cloud readiness assessment and strategic roadmap',
+      'Seamless migration of legacy workloads to AWS/Azure',
+      'Cloud-native architecture and microservices design',
+      'Security hardening and FedRAMP-aligned compliance',
+      'DevOps automation and CI/CD pipeline setup'
+    ],
+    techStack: ['AWS', 'Azure', 'Microservices', 'Docker', 'Kubernetes'],
     icon: '/images/services/cloud.png',
-    slug: '/cloud-migration-and-modernization/',
+    slug: 'cloud-migration',
   },
   {
     id: 'security',
     title: 'IT Security & Privacy Solutions',
     description: 'Comprehensive security services incorporating compliance with industry standards for sensitive government environments.',
+    features: [
+      'Vulnerability assessments and penetration testing',
+      'NIST/FedRAMP compliance auditing and remediation',
+      'Identity and Access Management (IAM) implementation',
+      'Data encryption and privacy impact assessments',
+      'Continuous security monitoring and incident response'
+    ],
+    techStack: ['Cybersecurity', 'IAM', 'Compliance', 'Security Auditing'],
     icon: '/images/services/security.png',
-    slug: '/it-security-and-privacy-solutions/',
+    slug: 'it-security',
   },
   {
     id: 'payments',
     title: 'Payment Processing & Financial Systems',
     description: 'Specialized payment and financial platforms with statistical fraud detection and transparent audit trails.',
+    features: [
+      'Secure payment portal development and hosting',
+      'Automated transaction processing and reconciliation',
+      'Statistical fraud detection and anomaly alerts',
+      'Integration with ERP and accounting systems (Oracle, QuickBooks)',
+      'PCI-DSS compliant architecture and audit logging'
+    ],
+    techStack: ['FinTech', 'PCI-DSS', 'Fraud Analytics', 'Secure APIs'],
     icon: '/images/services/payments.png',
-    slug: '/payment-processing-and-financial-systems/',
+    slug: 'payment-systems',
   },
   {
     id: 'consulting',
     title: 'IT Consulting & Strategic Planning',
     description: 'Strategic and tactical consulting to guide your organization\'s technology decisions with measurable outcomes.',
+    features: [
+      'IT needs assessment and gap analysis',
+      'Strategic IT roadmaps aligned with mission goals',
+      'CIO-level advisory and governance support',
+      'BPM optimization and operational efficiency',
+      'Change management and digital transformation'
+    ],
+    techStack: ['Strategy', 'Governance', 'BPM', 'Agile Consulting'],
     icon: '/images/services/consulting.png',
-    slug: '/it-consulting-and-strategic-planning/',
+    slug: 'it-consulting',
   },
   {
     id: 'workforce',
     title: 'Workforce Management & Administrative Support',
     description: 'IT staffing, HR systems, and administrative support solutions that streamline operations across departments.',
+    features: [
+      'Credentialing and provider data management',
+      'Automated workflow and task management',
+      'IVR and multi-channel support systems',
+      'Salesforce platform integration and optimization',
+      'Workforce productivity and analytics'
+    ],
+    techStack: ['Salesforce', 'IVR', 'Workflow Automation', 'HCM'],
     icon: '/images/services/workforce.png',
-    slug: '/workforce-management-and-administrative-support-solutions/',
+    slug: 'workforce-management',
   },
 ]
 
 export const products = [
   {
     id: 'permione',
-    name: 'PermiOne',
-    category: 'Permit Modernization',
-    description: 'A cloud-agnostic permitting and licensing platform that modernizes approval processes for government agencies. Features automated routing, parallel reviews, mobile inspections, and workflow configuration.',
-    highlights: ['Automated routing', 'Mobile inspections', 'Cross-department collaboration', 'Decision-ready dashboards'],
+    name: 'PermiOne™',
+    category: 'Permitting & Licensing',
+    description: 'A cloud-agnostic permitting and licensing platform that streamlines the entire approval process. Features a robust public portal, staff operations portal, and a powerful drag-and-drop workflow configurator.',
+    highlights: ['End-to-end automation', 'Digital plan review', 'Mobile inspections', 'Citizen portal'],
+    features: [
+      'Comprehensive Public Portal for citizen and contractor self-service',
+      'Internal Operations Portal for staff approvals and routing',
+      'Powerful Workflow Management with drag-and-drop configurability',
+      'Mobile-first Inspection App with real-time sync and offline mode',
+      'Integrated digital signature and fee payment processing'
+    ],
+    techStack: ['Cloud Native', 'Workflow Engine', 'Mobile React', 'Secure Payments'],
     logo: '/images/products/permione.png',
+    showcaseImages: [
+      '/images/products/showcase/permione.png',
+      '/images/products/showcase/permione_2.png',
+      '/images/products/showcase/permione_3.png'
+    ],
     isNew: false,
-    slug: '/products/#permione',
+    slug: 'permione',
   },
   {
     id: 'fortimind',
-    name: 'FortiMind.ai',
-    category: 'AI Regulatory Intelligence',
-    description: 'An AI legal compliance assistant providing instant access to federal, state, municipal, and international regulations. Delivers 90% faster research times through natural language queries.',
-    highlights: ['90% faster research', 'Multi-jurisdictional queries', 'Natural language interface', 'Real-time regulatory updates'],
-    logo: null,
+    name: 'FortiMind.ai™',
+    category: 'AI & Compliance',
+    description: 'AI-driven regulatory intelligence platform designed to help government agencies monitor, track, and act on regulatory changes across jurisdictions in real-time.',
+    highlights: ['AI regulatory monitoring', 'Automated compliance tracking', 'Natural language queries', 'Predictive alerts'],
+    features: [
+      'Real-time monitoring of federal, state, and local regulatory updates',
+      'AI-powered analysis and summarization of legal changes',
+      'Configurable compliance dashboards and task management',
+      'Predictive alerts for upcoming regulatory deadlines',
+      'Natural language search across massive regulatory datasets'
+    ],
+    techStack: ['Python AI', 'NLP', 'Vector Databases', 'Cloud Infrastructure'],
+    logo: '/images/products/fortimind.png',
+    showcaseImages: [
+      '/images/products/showcase/fortimind.png',
+      '/images/products/showcase/fortimind_2.png',
+      '/images/products/showcase/fortimind_3.png'
+    ],
     isNew: true,
-    slug: '/products/#fortimind',
+    slug: 'fortimind',
   },
   {
     id: 'travo',
-    name: 'Travo AI™',
-    category: 'Assistive Technology',
-    description: 'A digital assistive technology assessment platform simplifying device and service recommendations for individuals with disabilities across education, vision, hearing, senior care, and physical disability categories.',
-    highlights: ['AI-powered recommendations', 'Order management', 'Expense tracking', 'Multi-category support'],
+    name: 'Travo.AI™',
+    category: 'Logistics & Transportation',
+    description: 'Advanced AI logistics platform for travel and transportation. Optimizes routing, scheduling, and asset management for large-scale government and enterprise transport operations.',
+    highlights: ['Dynamic route optimization', 'Asset tracking', 'Predictive maintenance', 'Efficiency analytics'],
+    features: [
+      'Real-time dynamic route optimization and re-routing',
+      'Enterprise asset tracking and fleet management',
+      'Predictive maintenance alerts based on usage data',
+      'Automated scheduling and driver dispatching',
+      'Comprehensive fuel efficiency and performance analytics'
+    ],
+    techStack: ['AI Optimization', 'GPS Integration', 'Data Science', 'Node.js'],
     logo: '/images/products/travo.png',
+    showcaseImages: [
+      '/images/products/showcase/travo.png',
+      '/images/products/showcase/travo_2.png',
+      '/images/products/showcase/travo_3.png'
+    ],
     isNew: true,
-    slug: '/products/#travo',
+    slug: 'travo',
   },
   {
     id: 'celerkost',
     name: 'CelerKost™',
     category: 'Healthcare Finance',
-    description: 'An electronic cost reporting system automating Medicaid cost reporting for healthcare providers and state agencies. Cloud-based, secure, and compliant with healthcare IT regulations.',
-    highlights: ['Automated Medicaid reporting', 'Fraud prevention', 'Regulatory compliance', 'Cloud-based & secure'],
+    description: 'Medicaid cost reporting and financial auditing tool. Automates cost reporting while providing statistical fraud prevention and transparent audit trails for healthcare agencies.',
+    highlights: ['Medicaid cost reporting', 'Fraud prevention', 'Audit transparency', 'Data validation'],
+    features: [
+      'Automated Medicaid and Healthcare cost report generation',
+      'Statistical anomaly detection for fraud and error prevention',
+      'Full transparent audit trails for all financial submissions',
+      'Integrated regulatory compliance and validation rules',
+      'Real-time executive dashboards for spend analysis'
+    ],
+    techStack: ['Predictive Analytics', 'HIPAA Security', 'Cloud Data', 'Java'],
     logo: '/images/products/celerkost.png',
+    showcaseImages: [
+      '/images/products/showcase/celerkost.png',
+      '/images/products/showcase/celerkost_2.png',
+      '/images/products/showcase/celerkost_3.png'
+    ],
     isNew: false,
-    slug: '/products/#celerkost',
+    slug: 'celerkost',
   },
   {
     id: 'codicepay',
@@ -134,9 +255,20 @@ export const products = [
     category: 'Payment Processing',
     description: 'An electronic payment tracker using statistical analysis to reduce fraud. Provides analytics with transparent payment trend tracking accessible across any device.',
     highlights: ['Fraud detection', 'Statistical analysis', 'Payment trend tracking', 'Cross-device access'],
+    features: [
+      'Real-time transaction monitoring and anomaly detection',
+      'Transparent payment trend and volume analytics',
+      'Secure third-party payment gateway integrations',
+      'Automated reconciliation with accounting systems',
+      'Multi-device responsive management portal'
+    ],
+    techStack: ['FinTech', 'Data Analytics', 'Secure Gateways', 'PCI-DSS'],
     logo: '/images/products/codicepay.png',
+    showcaseImages: [
+      '/images/products/showcase/codicepay.png'
+    ],
     isNew: false,
-    slug: '/products/#codicepay',
+    slug: 'codicepay',
   },
   {
     id: 'celermed',
@@ -144,9 +276,20 @@ export const products = [
     category: 'Healthcare Administration',
     description: 'A patient-centered financial platform tracking services, expenses, invoices, and payments. Supports Money Follows Person case management documentation and transition planning.',
     highlights: ['Patient financial tracking', 'MFP case management', 'Transition planning', 'Invoice management'],
+    features: [
+      'Money Follows Person (MFP) case management integration',
+      'Detailed transition planning and documentation',
+      'End-to-end patient service and expense tracking',
+      'Automated invoicing and payment reconciliation',
+      'Provider collaboration and status dashboard'
+    ],
+    techStack: ['Health Management', 'Case Management', 'Cloud Forms', '.NET'],
     logo: '/images/products/celermed.png',
+    showcaseImages: [
+      '/images/products/showcase/celermed.png'
+    ],
     isNew: false,
-    slug: '/products/#celermed',
+    slug: 'celermed',
   },
   {
     id: 'celercase',
@@ -154,47 +297,120 @@ export const products = [
     category: 'Case Management',
     description: 'A configurable web-based case management system organizing complaints and cases with trajectory tracking and action monitoring for justice, social services, and beyond.',
     highlights: ['Configurable workflows', 'Trajectory tracking', 'Action monitoring', 'Web-based access'],
+    features: [
+      'Highly configurable case workflows and data fields',
+      'Interactive case trajectory tracking and milestones',
+      'Automated task assignments and action monitoring',
+      'Secure document management and evidence tracking',
+      'Comprehensive reporting and audit logs for justice systems'
+    ],
+    techStack: ['Case Mgmt', 'Workflow Logic', 'SQL Server', 'Cloud API'],
     logo: '/images/products/celercase.png',
+    showcaseImages: [
+      '/images/products/showcase/celercase.png'
+    ],
     isNew: false,
-    slug: '/products/#celercase',
+    slug: 'celercase',
   },
   {
     id: 'cypms',
-    name: 'CYPMS',
-    category: 'Youth Program Management',
-    description: 'The CODICE Youth Program Management System supporting youth employment and exploration programs through four portals for youth, hosts, administration, and parents.',
-    highlights: ['4 role-based portals', 'Youth employment tracking', 'Host management', 'Parent visibility'],
-    logo: null,
+    name: 'CYPMS™',
+    category: 'Program Management',
+    description: 'Codice Youth Program Management System. Designed specifically to track youth engagement, program outcomes, and administrative compliance for municipal youth services.',
+    highlights: ['Youth engagement tracking', 'Outcome measurement', 'Compliance monitoring', 'Program reporting'],
+    features: [
+      'Individual youth profile and participation tracking',
+      'Program-specific outcome and impact measurement',
+      'Administrative compliance and grant reporting',
+      'Parental portal and communication module',
+      'Secure data handling for sensitive minor information'
+    ],
+    techStack: ['Program Mgmt', 'Reporting Engine', 'Secure Forms', 'Next.js'],
+    logo: '/images/products/cypms.png',
+    showcaseImages: [
+      '/images/products/showcase/cypms.png'
+    ],
     isNew: false,
-    slug: '/products/#cypms',
+    slug: 'cypms',
   },
 ]
 
 export const markets = [
-  { id: 'gov', name: 'Government Agencies', description: 'IT solutions for federal, state, and local agencies including Salesforce, Oracle cloud, and permitting systems.', icon: '🏛️' },
-  { id: 'safety', name: 'Public Safety & Justice', description: 'Automating state justice reporting and supporting law enforcement through data management and process automation.', icon: '⚖️' },
-  { id: 'education', name: 'Education & Public Schools', description: 'Custom applications, data integration, and IT staffing for institutions like DC Public Schools.', icon: '🎓' },
-  { id: 'environment', name: 'Environmental & Utility Services', description: 'Cloud migration and ERP modernization for utility companies and environmental agencies.', icon: '🌿' },
-  { id: 'transport', name: 'Transportation & Infrastructure', description: 'Modernized permitting systems for transportation departments that streamline inspections and compliance.', icon: '🚇' },
-  { id: 'finance', name: 'Financial Services & Payment Processing', description: 'Digital transformation enabling organizations to move from legacy financial systems to modern platforms.', icon: '💳' },
-  { id: 'cloud', name: 'Cloud & Digital Transformation', description: 'Governance, Risk, and Compliance suite for evaluating risks and ensuring standards compliance across enterprises.', icon: '☁️' },
-  { id: 'hr', name: 'HR & Workforce Management', description: 'IT staffing and resource scaling across departments including network security and help desk support.', icon: '👥' },
-  { id: 'legal', name: 'Legal & Regulatory Compliance', description: 'IT consulting for regulatory sectors with expertise in system architecture and cloud engineering.', icon: '📋' },
-  { id: 'healthcare', name: 'Healthcare & Social Services', description: 'Medicaid provider data management and child support system modernization for large-scale compliant environments.', icon: '🏥' },
+  {
+    id: 'government',
+    name: 'Government Agencies',
+    description: 'Serving federal and local agencies with mission-aligned technology that improves citizen services and operational efficiency.',
+    details: 'From the DC Department of Buildings to the Criminal Justice Coordinating Council, we help agencies modernize legacy systems and automate complex workflows.',
+    icon: 'Building2',
+  },
+  {
+    id: 'healthcare',
+    name: 'Health IT & Administration',
+    description: 'Specialized solutions for healthcare agencies, including Medicaid cost reporting, patient tracking, and transition planning.',
+    details: 'Our CelerMed and CelerKost platforms are built to handle the rigorous compliance and financial transparency needs of health departments.',
+    icon: 'Stethoscope',
+  },
+  {
+    id: 'transportation',
+    name: 'Transportation & Logistics',
+    description: 'Optimizing the move of people and assets through AI-driven routing, scheduling, and permitting.',
+    details: 'We support DOT agencies with permitting platforms like PermiOne and AI logistics with Travo.AI to reduce delays and improve public safety.',
+    icon: 'Bus',
+  },
+  {
+    id: 'public-safety',
+    name: 'Public Safety & Justice',
+    description: 'Tools for justice departments to track cases, manage evidence, and ensure inter-departmental coordination.',
+    details: 'Our CelerCase platform provides a secure, web-based environment for managing complex case trajectories and ensuring accountability.',
+    icon: 'Shield',
+  },
+  {
+    id: 'unemployment',
+    name: 'Unemployment Insurance',
+    description: 'Modernizing the benefits system to ensure residents get critical support fast and accurately.',
+    details: 'Our 2024 launch for the DC DOES UI Benefits System is a testament to our ability to deliver large-scale, resident-facing modernization.',
+    icon: 'Users',
+  },
+  {
+    id: 'facilities',
+    name: 'Facilities & Infrastructure',
+    description: 'Managing the life-cycle of public facilities and infrastructure with permitting and inspections.',
+    details: 'We provide end-to-end permit modernization for construction and infrastructure agencies, ensuring safety and regulatory compliance.',
+    icon: 'Hammer',
+  },
 ]
 
 export const clients = [
-  'DC Department of Health Care Finance',
-  'DC Department of General Services',
-  'DC Public Schools',
-  'Metropolitan Police Department',
-  'Office of the Chief Technology Officer',
-  'Office of the Attorney General',
-  'DC Department of Transportation',
-  'Metro St. Louis Sewer District',
+  {
+    category: 'Government Agencies',
+    items: [
+      { name: 'DC Department of Buildings (DOB)', logo: '/images/clients/client-220.png' },
+      { name: 'DC Department of Transportation (DDOT)', logo: '/images/clients/client-221.png' },
+      { name: 'DC Department of General Services (DGS)', logo: '/images/clients/client-222.png' },
+      { name: 'DC Public Schools (DCPS)', logo: '/images/clients/client-223.png' },
+      { name: 'DC Department of Employment Services (DOES)', logo: '/images/clients/client-224.png' },
+      { name: 'DC Department of Health Care Finance (DHCF)', logo: '/images/clients/client-225.png' },
+      { name: 'Criminal Justice Coordinating Council (CJCC)', logo: '/images/clients/client-227.png' },
+      { name: 'DC Child and Family Services Agency (CFSA)', logo: '/images/clients/client-228.png' },
+    ]
+  },
+  {
+    category: 'Industry & Corporate Partners',
+    items: [
+      { name: 'Geographic Solutions', logo: '/images/clients/client-gra.png' },
+      { name: 'Public Consulting Group (PCG)', logo: '/images/clients/client-pub.png' },
+      { name: 'UKG (Ultimate Kronos Group)', logo: '/images/clients/client-dl1.png' },
+      { name: 'Salesforce', logo: '/images/clients/client-dl2.png' },
+    ]
+  }
 ]
 
 export const clientLogos = [
+  '/images/clients/client-dl1.png',
+  '/images/clients/client-dl2.png',
+  '/images/clients/client-dl3.png',
+  '/images/clients/client-dl4.png',
+  '/images/clients/client-dl5.png',
   '/images/clients/client-220.png',
   '/images/clients/client-221.png',
   '/images/clients/client-222.png',
@@ -211,11 +427,6 @@ export const clientLogos = [
   '/images/clients/client-233.png',
   '/images/clients/client-234.png',
   '/images/clients/client-235.png',
-  '/images/clients/client-dl1.png',
-  '/images/clients/client-dl2.png',
-  '/images/clients/client-dl3.png',
-  '/images/clients/client-dl4.png',
-  '/images/clients/client-dl5.png',
   '/images/clients/client-gra.png',
   '/images/clients/client-pub.png',
 ]
@@ -257,42 +468,42 @@ export const team = [
   {
     name: 'Dash Kiridena',
     title: 'Founder & President',
-    bio: '20+ years in healthcare and government technology.',
+    bio: '20+ years in healthcare and government technology. Visionary behind Codice\'s expansion into proprietary government software.',
     education: 'MBA, Johns Hopkins University · BA Economics, Clarion University',
     photo: '/images/team/dash.png',
   },
   {
     name: 'Emmash Sudusignhe',
     title: 'Chief Financial Officer',
-    bio: 'CPA and CMA with deep expertise in government financial operations.',
+    bio: 'CPA and CMA with deep expertise in government financial operations and compliance auditing.',
     education: "Master's Finance, American University · BS Accounting, University of Maryland Eastern Shore",
     photo: '/images/team/emmash.png',
   },
   {
     name: 'Hiranya Samarasekera',
     title: 'SVP of Engineering',
-    bio: '20+ years IT experience. Former CTO for the Sri Lanka government. PhD candidate.',
+    bio: '20+ years IT experience. Former CTO for the Sri Lanka government. PhD candidate specializing in enterprise architecture.',
     education: 'PhD candidate, University of Oslo · PMP, CSPO certified',
     photo: '/images/team/hiranya.png',
   },
   {
+    name: 'Ashanthi Kiridena',
+    title: 'VP Business Development & Human Capital',
+    bio: 'Leads business growth strategies and human resources, ensuring Codice attracts top-tier mission-driven talent.',
+    education: 'BA Business Administration',
+    photo: '/images/team/ashanthi.png',
+  },
+  {
     name: 'Sully Ayubi',
     title: 'Chief Information Officer',
-    bio: '20+ years in enterprise IT strategy and delivery.',
+    bio: '20+ years in enterprise IT strategy and delivery. Expert in cloud migration and security modernization.',
     education: 'MS Technology Management · BS IT, George Mason University',
     photo: '/images/team/sully.png',
   },
   {
-    name: 'Ashanthi Kiridena',
-    title: 'VP Business Development & Human Capital',
-    bio: '30+ years of administrative, management, and housing expertise.',
-    education: '',
-    photo: '/images/team/ashanthi.png',
-  },
-  {
     name: 'Dinesh Babu',
     title: 'Project Management & Delivery Director',
-    bio: '15+ years in operational improvement and project delivery.',
+    bio: '15+ years in operational improvement and project delivery for complex municipal contracts.',
     education: 'PMP · CSM · AWS Cloud Practitioner',
     photo: '/images/team/dinesh.png',
   },
@@ -329,6 +540,14 @@ export const caseStudies = [
     outcome: '90% faster research times, enabling compliance without deep legal expertise.',
     metric: '90% faster',
   },
+  {
+    client: 'DC Dept. of Employment Services',
+    product: 'Custom Software Development',
+    challenge: 'Outdated Unemployment Insurance Benefits System creating delays and errors for DC residents seeking benefits.',
+    solution: 'Modernized the UI Benefits System with a new cloud-based platform, launched February 2024.',
+    outcome: 'Improved processing times and resident experience for DC unemployment claimants.',
+    metric: 'Launched Feb 2024',
+  },
 ]
 
 export const news = [
@@ -337,20 +556,71 @@ export const news = [
     date: '2025-01-01',
     excerpt: 'CODICE Technology recognized for excellence in government technology innovation and outstanding client service.',
     image: '/images/news/news-1.jpg',
-    slug: '#',
+    slug: 'https://codicetech.com/news/',
   },
   {
     title: 'FortiMind.ai Launches: AI-Powered Regulatory Intelligence for Government',
     date: '2024-09-01',
     excerpt: 'Our newest product brings real-time AI regulatory monitoring to federal and DC agencies — 90% faster research times.',
     image: '/images/news/news-2.jpg',
-    slug: '#',
+    slug: 'https://codicetech.com/fortimindlaunch/',
   },
   {
     title: 'CODICE Celebrates 16 Years of Government Technology Leadership',
     date: '2025-01-09',
     excerpt: '16 years, 12+ agencies, and 100% client retention — a milestone worth celebrating.',
     image: '/images/news/news-3.jpg',
-    slug: '#',
+    slug: 'https://codicetech.com/news/',
   },
 ]
+
+export const navigation = [
+  {
+    title: 'HOME',
+    items: [
+      { label: 'Home', href: '/', description: 'Return to the Codice homepage.' },
+    ]
+  },
+  {
+    title: 'COMPANY',
+    items: [
+      { label: 'Our Story', href: '/our-story', description: 'Our 16-year journey in government tech.' },
+    ]
+  },
+  {
+    title: 'SOLUTIONS',
+    sections: [
+      {
+        title: 'Services',
+        items: [
+          { label: 'Services Overview', href: '/services', description: 'Explore our end-to-end IT service offerings.' },
+          ...services.map(s => ({ label: s.title, href: '/services/' + s.slug, description: s.description })),
+        ]
+      },
+      {
+        title: 'Products',
+        items: [
+          { label: 'Products Overview', href: '/products', description: 'Discover our proprietary software platforms.' },
+          ...products.map(p => ({ label: p.name, href: '/products/' + p.slug, description: p.description })),
+        ]
+      },
+      {
+        title: 'Markets',
+        items: [
+          { label: 'Markets Overview', href: '/markets', description: 'Sectors we serve across the public sector.' },
+          ...markets.map(m => ({ label: m.name, href: '/markets/#' + m.id, description: m.description })),
+        ]
+      }
+    ]
+  },
+  {
+    title: 'CONNECT',
+    items: [
+      { label: 'Clients', href: '/clients', description: 'Our trusted government and corporate partners.' },
+      { label: 'News & Events', href: '/news', description: 'The latest updates and awards from Codice.' },
+      { label: 'Articles', href: '/articles', description: 'Deep dives into tech trends and solutions.' },
+      { label: 'Careers', href: '/careers', description: 'Join our mission-driven team.' },
+      { label: 'Contact', href: '/contact', description: 'Get in touch for your next project.' },
+    ]
+  }
+];
