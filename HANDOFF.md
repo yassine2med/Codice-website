@@ -1,54 +1,38 @@
 # Handoff — Codice Website
 
 ## Goal
-Build the Codice company website (DC Gov-Tech firm) using Next.js 16 + Tailwind v4 + Framer Motion.
+Build the full Codice Technology website (DC Gov-Tech firm) using Next.js 16 + Tailwind v4 + Framer Motion + shadcn/ui.
 
 ## Completed This Session
-- Reviewed Hero.tsx — already scaffolded by Codex with animations, stat counters, CTAs, scroll indicator
-- Fixed 3 Tailwind v4 canonical class warnings in `components/sections/Hero.tsx`:
-  - `bg-[size:4rem_4rem]` → `bg-size-[4rem_4rem]`
-  - `[mask-image:...]` → `mask-[...]`
-  - `font-[family-name:var(--font-dm-mono)]` → `font-(family-name:--font-dm-mono)`
-- Confirmed clean production build (Next.js 16.2.5, no TS errors, no warnings)
+- Switched entire site to white theme (globals.css, layout.tsx, all 14 components)
+- Created `components/ui/animated-hero.tsx` — cycling-words hero adapted for Codice
+- Scraped codice.com (home, services, products, about, markets, clients) — rewrote `data/codice.ts` with real data
+- Downloaded 54 images into `public/images/` (brand, team, services, products, clients, testimonials, news)
+- Wired all images into components:
+  - `TrustMarquee` → real client logo images (grayscale → color on hover)
+  - `ServicesGrid` → real service icons
+  - `ProductsShowcase` → real product logos + highlights list
+  - `Testimonials` → real headshots (Marco, Maria, Jimmy)
+  - `NewsEvents` → real news photos with zoom-on-hover
+- Fixed logo `mix-blend-screen` in Navbar + Footer (was invisible on white bg)
+- All builds passing clean throughout
 
 ## Files Changed
-- `components/sections/Hero.tsx` — Tailwind v4 class fixes
+`data/codice.ts`, `app/globals.css`, `app/layout.tsx`, `components/ui/animated-hero.tsx`, `components/sections/Hero.tsx`, `components/sections/TrustMarquee.tsx`, `components/sections/ServicesGrid.tsx`, `components/sections/ProductsShowcase.tsx`, `components/sections/Testimonials.tsx`, `components/sections/NewsEvents.tsx`, `components/nav/Navbar.tsx`, `components/sections/Footer.tsx`
 
 ## Still In Progress
-- Visual polish on Hero (Antigravity task)
-- Remaining 12 sections below Hero (TrustMarquee → Footer)
+- No Team/About section yet (photos ready at `/images/team/`, data in `team` export in codice.ts)
+- TechStack still uses text pills (no icon images downloaded yet)
+- CTABanner, MarketsGrid, CaseStudies sections not reviewed
 
 ## Next Steps
-1. Open `components/sections/Hero.tsx` in browser — verify grid bg + glow + CountUp render correctly
-2. Hand to **Antigravity** for Hero visual polish (spacing, motion tuning, mobile check)
-3. Then proceed section-by-section: TrustMarquee → ServicesGrid → ProductsShowcase
+1. Build Team/About section using `team` export + `/images/team/` photos
+2. Polish CTABanner, MarketsGrid, CaseStudies
+3. Full mobile test pass
 
 ## Watch Out For
-- `as any` on framer-motion ease array (line 33) — linter added it, acceptable but worth revisiting
-- `react-countup` requires `mounted` guard (already in place) to avoid SSR mismatch
-
-## 🛠️ Specialized Agent Roles
-To ensure a world-class delivery, we are moving to a specialized agent model:
-
-1.  **Codex (Performance & Architecture Lead)**:
-    *   **Goal**: Ensure 95+ Lighthouse scores.
-    *   **Mandate**: Follow **`GUIDE_PERFORMANCE.md`** for every task.
-2.  **Claude (Accessibility & Content Lead)**:
-    *   **Goal**: Section 508 / WCAG 2.1 compliance.
-    *   **Mandate**: Follow **`GUIDE_ACCESSIBILITY.md`** for every task.
-3.  **Antigravity (Visual & Motion Lead)**:
-    *   **Goal**: High-fidelity visual polish and fluid animations.
-    *   **Mandate**: Follow **`SKILL.md`** and **`normalize_brief.md`**.
-
-## 🤖 URGENT: Managed Agent Setup (For Claude)
-The user has requested the creation of an **Anthropic Managed Agent** (BrowserUse Agent).
-1.  Antigravity has already installed the `@anthropic-ai/sdk`.
-2.  Antigravity has prepared the setup script: `create_agent.mjs`.
-3.  **Claude**: Please execute this script using your configured subscription/API key:
-    ```bash
-    node create_agent.mjs
-    ```
-4.  Report the generated **Agent ID** and **Environment ID** to the user.
+- `FortiMind.ai` and `CYPMS` have `logo: null` — show emoji fallback in ProductsShowcase
+- `clientLogos` has 23 entries — some may be tiny/generic, review visually in browser
 
 ## Resume
 ```bash

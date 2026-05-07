@@ -4,7 +4,7 @@ import { products } from "@/data/codice";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import ArrowRight from "lucide-react/dist/esm/icons/arrow-right";
+import { ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
@@ -94,3 +94,6 @@ export default function ProductsShowcase() {
           ))}
         </AnimatePresence>
       </Tabs>
+    </section>
+  );
+}
