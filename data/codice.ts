@@ -408,13 +408,6 @@ export const markets = [
     icon: 'DollarSign',
   },
   {
-    id: 'education',
-    name: 'Education & Public Schools',
-    description: 'Technology solutions for school systems that streamline operations, HR, and student data management.',
-    details: 'We support DC Public Schools (DCPS) with workforce platforms, administrative automation, and data management systems.',
-    icon: 'GraduationCap',
-  },
-  {
     id: 'environment',
     name: 'Environmental & Utility Services',
     description: 'Digital permitting and compliance platforms for environmental agencies managing inspections and regulatory reporting.',
@@ -660,11 +653,8 @@ export const navigation = [
   {
     title: 'CONNECT',
     items: [
-      { label: 'Clients', href: '/clients', description: 'Our trusted government and corporate partners.' },
-      { label: 'News & Events', href: '/news', description: 'The latest updates and awards from Codice.' },
       { label: 'Articles', href: '/articles', description: 'Deep dives into tech trends and solutions.' },
       { label: 'Capability Statement', href: '/capability', description: 'Certifications, NAICS codes, and past performance.' },
-      { label: 'Careers', href: '/careers', description: 'Join our mission-driven team.' },
       { label: 'Contact', href: '/contact', description: 'Get in touch for your next project.' },
     ]
   }
