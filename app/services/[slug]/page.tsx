@@ -97,7 +97,7 @@ export default function ServiceDetailPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-10 rounded-3xl bg-gradient-to-br from-[#111827] to-[#0A1628] border border-[#1E293B] relative overflow-hidden"
+              className="p-10 rounded-3xl bg-linear-to-br from-[#111827] to-[#0A1628] border border-[#1E293B] relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#2563EB]/10 blur-[80px] -mr-32 -mt-32 pointer-events-none" />
               <h3 className="text-2xl font-bold mb-6">Our Approach</h3>

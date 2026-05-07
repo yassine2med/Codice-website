@@ -216,7 +216,7 @@ export default function OurStoryPage() {
 
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#1E293B] to-transparent md:-translate-x-1/2" />
+            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-linear-to-b from-transparent via-[#1E293B] to-transparent md:-translate-x-1/2" />
 
             <div className="flex flex-col gap-0">
               {timeline.map((event, i) => {
@@ -330,7 +330,7 @@ export default function OurStoryPage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6"
           >
             {team.filter((m) => m.photo).map((member) => (
               <motion.div
@@ -347,7 +347,7 @@ export default function OurStoryPage() {
                     className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#111827] via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-linear-to-t from-[#111827] via-transparent to-transparent opacity-60" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-base font-bold text-[#F8FAFC] mb-1 group-hover:text-[#2563EB] transition-colors duration-300">
@@ -508,7 +508,7 @@ export default function OurStoryPage() {
 
       {/* ── 8. CTA ───────────────────────────────────────────────────────────── */}
       <section className="py-28 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0A1628] via-[#0D1F3C] to-[#0A1628]" />
+        <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0D1F3C] to-[#0A1628]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_100%,rgba(37,99,235,0.15),transparent)]" />
         <div
           className="absolute inset-0 opacity-[0.04]"
@@ -558,3 +558,4 @@ export default function OurStoryPage() {
     </main>
   );
 }
+

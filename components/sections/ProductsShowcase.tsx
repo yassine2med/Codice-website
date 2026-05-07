@@ -15,6 +15,11 @@ export default function ProductsShowcase() {
   const product = products.find((p) => p.id === active)!;
   const images = useMemo(() => product.showcaseImages ?? [], [product]);
 
+  // Reset image index when product changes
+  useEffect(() => {
+    setImageIndex(0);
+  }, [active]);
+
   // Auto-play the image carousel
   useEffect(() => {
     if (!images || images.length <= 1) return;
@@ -39,10 +44,7 @@ export default function ProductsShowcase() {
         {products.map((p) => (
           <button
             key={p.id}
-            onClick={() => {
-              setActive(p.id);
-              setImageIndex(0);
-            }}
+            onClick={() => setActive(p.id)}
             className={`relative text-[11px] font-bold tracking-widest uppercase px-5 py-2.5 rounded-full border transition-all duration-300 ${
               active === p.id
                 ? "bg-[#2563EB] border-[#2563EB] text-white shadow-[0_0_20px_rgba(37,99,235,0.3)]"
@@ -130,7 +132,7 @@ export default function ProductsShowcase() {
                   </AnimatePresence>
                   
                   {/* Subtle Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-[#0A1628]/40 pointer-events-none z-10" />
+                  <div className="absolute inset-0 bg-linear-to-t from-[#0A1628] via-transparent to-[#0A1628]/40 pointer-events-none z-10" />
                   
                   {/* Progress Indicators */}
                   {images.length > 1 && (
@@ -187,3 +189,4 @@ export default function ProductsShowcase() {
     </section>
   );
 }
+

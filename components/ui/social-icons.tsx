@@ -61,7 +61,7 @@ export function SocialIcons({ compact = false }: { compact?: boolean }) {
 
   return (
     <div className="relative flex items-center gap-1 px-2 py-1.5 rounded-2xl bg-[#111827] border border-[#1E293B]">
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/[0.02] to-transparent pointer-events-none" />
+      <div className="absolute inset-0 rounded-2xl bg-linear-to-b from-white/2 to-transparent pointer-events-none" />
 
       {displaySocials.map((social, index) => (
         <a
@@ -107,3 +107,4 @@ export function SocialIcons({ compact = false }: { compact?: boolean }) {
     </div>
   )
 }
+

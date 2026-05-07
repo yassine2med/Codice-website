@@ -658,6 +658,7 @@ export const navigation = [
       { label: 'Clients', href: '/clients', description: 'Our trusted government and corporate partners.' },
       { label: 'News & Events', href: '/news', description: 'The latest updates and awards from Codice.' },
       { label: 'Articles', href: '/articles', description: 'Deep dives into tech trends and solutions.' },
+      { label: 'Capability Statement', href: '/capability', description: 'Certifications, NAICS codes, and past performance.' },
       { label: 'Careers', href: '/careers', description: 'Join our mission-driven team.' },
       { label: 'Contact', href: '/contact', description: 'Get in touch for your next project.' },
     ]

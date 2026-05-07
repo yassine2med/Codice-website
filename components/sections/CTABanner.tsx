@@ -8,7 +8,7 @@ export default function CTABanner() {
   return (
     <section id="cta" className="py-28 px-6 relative overflow-hidden bg-[#0A1628]">
       {/* Layered backgrounds */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0A1628] via-[#0D1F3C] to-[#0A1628]" />
+      <div className="absolute inset-0 bg-linear-to-br from-[#0A1628] via-[#0D1F3C] to-[#0A1628]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_100%,rgba(37,99,235,0.15),transparent)]" />
       <div
         className="absolute inset-0 opacity-[0.04]"
@@ -62,3 +62,4 @@ export default function CTABanner() {
     </section>
   );
 }
+

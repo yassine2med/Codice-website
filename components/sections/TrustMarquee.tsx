@@ -66,7 +66,7 @@ export default function TrustMarquee() {
   return (
     <section className="relative overflow-hidden border-y border-[#1E293B] bg-[#071121] py-20">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.22),transparent_42%),linear-gradient(to_right,#1E293B_1px,transparent_1px)] bg-size-[auto,4rem_4rem] opacity-40" />
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#60A5FA]/70 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#60A5FA]/70 to-transparent" />
 
       <div className="relative z-10 mx-auto mb-12 max-w-7xl px-6">
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
@@ -98,8 +98,8 @@ export default function TrustMarquee() {
       </div>
 
       <div className="relative z-10">
-        <div className="pointer-events-none absolute bottom-0 left-0 top-0 z-10 w-24 bg-gradient-to-r from-[#071121] to-transparent md:w-44" />
-        <div className="pointer-events-none absolute bottom-0 right-0 top-0 z-10 w-24 bg-gradient-to-l from-[#071121] to-transparent md:w-44" />
+        <div className="pointer-events-none absolute bottom-0 left-0 top-0 z-10 w-24 bg-linear-to-r from-[#071121] to-transparent md:w-44" />
+        <div className="pointer-events-none absolute bottom-0 right-0 top-0 z-10 w-24 bg-linear-to-l from-[#071121] to-transparent md:w-44" />
 
         <div
           className="space-y-4"
@@ -157,7 +157,7 @@ function LogoCard({
         compact ? "h-24 w-44" : "h-28 w-52"
       }`}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-[#E2E8F0]" />
+      <div className="absolute inset-0 bg-linear-to-br from-white via-white to-[#E2E8F0]" />
       <Image
         src={logo}
         alt={`CODICE client and partner logo ${index + 1}`}
@@ -168,3 +168,4 @@ function LogoCard({
     </div>
   );
 }
+

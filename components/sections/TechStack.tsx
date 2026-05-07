@@ -17,8 +17,8 @@ export default function TechStack() {
       
       <div className="relative w-full">
         {/* Fade Masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-r from-[#0A1628] via-[#0A1628]/80 to-transparent pointer-events-none md:block hidden" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l from-[#0A1628] via-[#0A1628]/80 to-transparent pointer-events-none md:block hidden" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 z-10 bg-linear-to-r from-[#0A1628] via-[#0A1628]/80 to-transparent pointer-events-none md:block hidden" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 z-10 bg-linear-to-l from-[#0A1628] via-[#0A1628]/80 to-transparent pointer-events-none md:block hidden" />
 
         <motion.div 
           className="flex gap-6 whitespace-nowrap px-4"
@@ -43,3 +43,4 @@ export default function TechStack() {
     </section>
   );
 }
+

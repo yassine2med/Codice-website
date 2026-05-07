@@ -5,7 +5,7 @@ import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { motion } from "framer-motion";
 
 const descriptions: Record<string, string> = {
-  "Years of Experience": "Serving DC government since 2009",
+  "Years of Excellence": "Serving DC government since 2009",
   "Government Agencies": "Active client relationships",
   "Proprietary Products": "Purpose-built platforms",
   "Client Retention": "Every client, every year",
@@ -44,7 +44,7 @@ export default function StatsSection() {
               </span>
 
               {index < stats.length - 1 && (
-                <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-20 w-px bg-gradient-to-b from-transparent via-[#1E293B] to-transparent" />
+                <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-20 w-px bg-linear-to-b from-transparent via-[#1E293B] to-transparent" />
               )}
             </motion.div>
           ))}
@@ -53,3 +53,4 @@ export default function StatsSection() {
     </section>
   );
 }
+

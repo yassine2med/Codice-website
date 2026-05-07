@@ -86,7 +86,7 @@ export default function ClientsPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(37,99,235,0.24),transparent_32%),linear-gradient(to_right,#1E293B_1px,transparent_1px),linear-gradient(to_bottom,#1E293B_1px,transparent_1px)] bg-size-[auto,4rem_4rem,4rem_4rem] opacity-35" />
         <div className="absolute left-[-10%] top-24 h-[520px] w-[520px] rounded-full bg-[#2563EB]/20 blur-[120px]" />
         <div className="absolute right-[-18%] top-0 h-[640px] w-[640px] rounded-full bg-[#38BDF8]/12 blur-[140px]" />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0A1628] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-[#0A1628] to-transparent" />
 
         <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[0.96fr_1.04fr]">
           <div className="max-w-3xl">
@@ -132,7 +132,7 @@ export default function ClientsPage() {
           </div>
 
           <div className="relative">
-            <div className="absolute -inset-8 rounded-[2.5rem] bg-gradient-to-br from-[#2563EB]/28 via-[#0F172A] to-cyan-400/12 blur-3xl" />
+            <div className="absolute -inset-8 rounded-[2.5rem] bg-linear-to-br from-[#2563EB]/28 via-[#0F172A] to-cyan-400/12 blur-3xl" />
             <div className="relative rounded-[2rem] border border-[#334155]/80 bg-[#0F172A]/82 p-4 shadow-[0_40px_120px_rgba(2,6,23,0.55)] backdrop-blur">
               <div className="grid gap-4 sm:grid-cols-[0.9fr_1.1fr]">
                 <div className="space-y-4">
@@ -248,7 +248,7 @@ export default function ClientsPage() {
                       key={client.name}
                       className="group flex flex-col items-center justify-center rounded-3xl border border-[#1E293B] bg-white/5 p-8 transition-all duration-300 hover:border-[#2563EB]/40 hover:bg-white/10"
                     >
-                      <div className="relative w-full aspect-[2/1] mb-4 bg-white rounded-xl p-4 flex items-center justify-center">
+                      <div className="relative w-full aspect-2/1 mb-4 bg-white rounded-xl p-4 flex items-center justify-center">
                         <Image
                           src={client.logo}
                           alt={client.name}
@@ -270,7 +270,7 @@ export default function ClientsPage() {
       </section>
 
       <section className="relative py-28">
-        <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-[#2563EB]/50 to-transparent" />
+        <div className="absolute inset-x-0 top-1/2 h-px bg-linear-to-r from-transparent via-[#2563EB]/50 to-transparent" />
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="mb-14 max-w-3xl">
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#60A5FA]">
@@ -335,7 +335,7 @@ export default function ClientsPage() {
                 key={`${study.client}-${study.product}`}
                 className="group relative flex min-h-[410px] flex-col justify-between overflow-hidden rounded-[1.5rem] border border-[#1E293B] bg-[#0A1628] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#60A5FA]/60"
               >
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#2563EB] via-[#38BDF8] to-transparent" />
+                <div className="absolute inset-x-0 top-0 h-1 bg-linear-to-r from-[#2563EB] via-[#38BDF8] to-transparent" />
                 <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[#2563EB]/10 blur-3xl transition duration-300 group-hover:bg-[#2563EB]/20" />
                 <div>
                   <div className="mb-8 flex items-start justify-between gap-4">
@@ -466,3 +466,4 @@ export default function ClientsPage() {
     </main>
   );
 }
+

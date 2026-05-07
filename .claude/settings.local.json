@@ -29,7 +29,20 @@
       "Bash(curl -s -o public/images/news/news-2.jpg \"https://codicetech.com/wp-content/uploads/2025/05/491293576_1299095625560011_9199002874210182525_n-1-1024x683.jpg\")",
       "Bash(curl -s -o public/images/news/news-3.jpg \"https://codicetech.com/wp-content/uploads/2025/05/492042952_1295045702631670_7265861767373642027_n-1-1024x680.jpg\")",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(npx tsc *)",
+      "WebFetch(domain:www.linkedin.com)",
+      "WebSearch",
+      "WebFetch(domain:rocketreach.co)",
+      "WebFetch(domain:www.zoominfo.com)",
+      "mcp__claude_ai_Vercel__deploy_to_vercel",
+      "Bash(vercel deploy *)",
+      "Bash(git -C \"D:\\\\Codex\\\\Codice-website\" status)",
+      "Bash(git -C \"D:\\\\Codex\\\\Codice-website\" diff HEAD --stat)",
+      "Bash(New-Item -Path \"D:\\\\Codex\\\\Codice-website\\\\HANDOFF.md\" -ItemType File -Force)",
+      "Bash(Out-Null)",
+      "Bash(Write-Output \"created\")",
+      "Bash(git push *)"
     ]
   }
 }

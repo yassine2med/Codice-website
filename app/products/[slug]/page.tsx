@@ -86,10 +86,10 @@ export default function ProductDetailPage() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
-              className="relative aspect-square lg:aspect-[4/3] rounded-[40px] overflow-hidden border border-[#1E293B] shadow-2xl bg-[#0F172A]"
+              className="relative aspect-square lg:aspect-4/3 rounded-[40px] overflow-hidden border border-[#1E293B] shadow-2xl bg-[#0F172A]"
             >
               {/* Gradient placeholder background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1E293B] via-[#0F172A] to-[#0A1628]">
+              <div className="absolute inset-0 bg-linear-to-br from-[#1E293B] via-[#0F172A] to-[#0A1628]">
                 <div className="absolute inset-0 opacity-[0.06]" style={{
                   backgroundImage: `linear-gradient(to right,#fff 1px,transparent 1px),linear-gradient(to bottom,#fff 1px,transparent 1px)`,
                   backgroundSize: "3rem 3rem",
@@ -116,7 +116,7 @@ export default function ProductDetailPage() {
                 </motion.div>
               </AnimatePresence>
               
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-transparent opacity-60 pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-t from-[#0A1628] via-transparent to-transparent opacity-60 pointer-events-none" />
               
               {/* Product Floating Badges */}
               <div className="absolute top-8 left-8 flex flex-col gap-4">
@@ -175,7 +175,7 @@ export default function ProductDetailPage() {
 
       {/* Technical Integration */}
       <section className="py-32 px-6 max-w-7xl mx-auto">
-        <div className="p-12 rounded-[40px] bg-gradient-to-br from-[#1E293B] to-[#0A1628] border border-[#1E293B] flex flex-col lg:flex-row items-center gap-16">
+        <div className="p-12 rounded-[40px] bg-linear-to-br from-[#1E293B] to-[#0A1628] border border-[#1E293B] flex flex-col lg:flex-row items-center gap-16">
           <div className="lg:flex-1">
             <h2 className="text-3xl font-bold mb-6 leading-tight">Technical Ecosystem</h2>
             <p className="text-[#94A3B8] text-lg leading-relaxed mb-8">

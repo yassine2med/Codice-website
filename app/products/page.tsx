@@ -80,7 +80,7 @@ export default function ProductsPage() {
                   className="group relative bg-[#111827] border border-[#1E293B] rounded-3xl overflow-hidden hover:border-[#2563EB]/40 hover:shadow-[0_0_40px_rgba(37,99,235,0.1)] transition-all duration-300 flex flex-col"
                 >
                   {/* Visual header */}
-                  <div className={`relative h-44 bg-gradient-to-br ${grad} flex items-center justify-center border-b border-[#1E293B] overflow-hidden`}>
+                  <div className={`relative h-44 bg-linear-to-br ${grad} flex items-center justify-center border-b border-[#1E293B] overflow-hidden`}>
                     <div className="absolute inset-0 opacity-[0.07]" style={{
                       backgroundImage: `linear-gradient(to right,#fff 1px,transparent 1px),linear-gradient(to bottom,#fff 1px,transparent 1px)`,
                       backgroundSize: "2rem 2rem",

@@ -3,9 +3,11 @@ import {
   ArrowRight,
   BookOpen,
   BrainCircuit,
+  Building2,
   CloudCog,
   FileText,
   ShieldCheck,
+  Users,
 } from "lucide-react";
 import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/sections/Footer";
@@ -47,6 +49,24 @@ const articles = [
     summary:
       "A compact overview of CODICE services, markets, credentials, NAICS codes, and government-ready delivery capabilities.",
     points: ["Legacy modernization", "Cybersecurity and compliance", "Health IT and public sector apps"],
+  },
+  {
+    title: "Attending the Annual DC Economic Partnership Meeting",
+    source: "CODICE news",
+    href: "https://codicetech.com/attending-the-annual-dc-economic-partnership-meeting/",
+    icon: Building2,
+    summary:
+      "CODICE had the pleasure of attending the annual DC Economic Partnership meeting — connecting with agency leaders, business owners, and public-sector innovators shaping Washington DC's economic future.",
+    points: ["Government partnerships", "DC economic ecosystem", "Community engagement"],
+  },
+  {
+    title: "CFO Emmash Sudusignhe Welcomed by Sri Lanka Engineering Team",
+    source: "CODICE news",
+    href: "https://codicetech.com/a-quick-throwback-to-our-cfo/",
+    icon: Users,
+    summary:
+      "A look at the international reach of CODICE's operations as CFO Emmash Sudusignhe visits the Colombo engineering and finance center — strengthening the global team behind DC's government technology.",
+    points: ["International engineering hub", "Sri Lanka operations", "Global talent strategy"],
   },
 ];
 
@@ -108,7 +128,7 @@ export default function ArticlesPage() {
                 key={article.title}
                 className="group relative overflow-hidden rounded-[1.5rem] border border-[#1E293B] bg-[#0A1628] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#60A5FA]/60"
               >
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#2563EB] via-[#38BDF8] to-transparent" />
+                <div className="absolute inset-x-0 top-0 h-1 bg-linear-to-r from-[#2563EB] via-[#38BDF8] to-transparent" />
                 <div className="mb-8 flex items-start justify-between gap-5">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#2563EB]/14 text-[#60A5FA]">
                     <Icon size={24} />

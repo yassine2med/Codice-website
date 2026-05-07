@@ -50,7 +50,7 @@ export default function NewsEvents() {
                   className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111827] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#111827] via-transparent to-transparent" />
               </div>
             )}
 
@@ -90,3 +90,4 @@ export default function NewsEvents() {
     </section>
   );
 }
+
