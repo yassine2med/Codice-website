@@ -37,3 +37,9 @@
 - Ran `npm run build`: passed clean.
 - Clean restarted `npm run dev`; `http://localhost:3000` returned `HTTP 200`.
 - Fresh dev stderr only shows the existing non-blocking Next Image aspect-ratio warning for `/images/brand/codice-logo-full.png`.
+
+## 2026-05-07 - React best practices pass
+
+- Applied a narrow hook dependency cleanup in `components/ui/animated-hero.tsx`, depending on `titles.length` instead of the memoized array object.
+- Tested direct `lucide-react/dist/esm/icons/...` imports for bundle hygiene, but this package/version lacks TypeScript declarations for that path; reverted to supported `lucide-react` named imports.
+- Ran `npm run build`: passed clean after reverting the unsupported deep imports.

@@ -2,8 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import MoveRight from "lucide-react/dist/esm/icons/move-right";
-import PhoneCall from "lucide-react/dist/esm/icons/phone-call";
+import { MoveRight, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 function Hero() {
