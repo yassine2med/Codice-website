@@ -17749,3 +17749,245 @@ Error: Cannot apply unknown utility class `border-border`
     [2m[at async kn (D:\Codex\Codice-website\node_modules\tailwindcss\dist\lib.js:38:631)][0m
     [2m[at async Xr (D:\Codex\Codice-website\node_modules\@tailwindcss\node\dist\index.js:10:3415)][0m
     [2m[at async E (D:\Codex\Codice-website\node_modules\@tailwindcss\postcss\dist\index.js:10:3979)][0m
+⨯ ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: D:\Codex\Codice-website\app\globals.css:1:1: Cannot apply unknown utility class `border-border`
+    [at error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (D:\Codex\Codice-website\node_modules\@tailwindcss\postcss\dist\index.js:10:6913)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+
+
+[browser] Uncaught Error: ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: D:\Codex\Codice-website\app\globals.css:1:1: Cannot apply unknown utility class `border-border`
+    [at error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (D:\Codex\Codice-website\node_modules\@tailwindcss\postcss\dist\index.js:10:6913)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+
+
+[browser] ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: D:\Codex\Codice-website\app\globals.css:1:1: Cannot apply unknown utility class `border-border`
+    [at error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (D:\Codex\Codice-website\node_modules\@tailwindcss\postcss\dist\index.js:10:6913)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] 
+[browser] ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: D:\Codex\Codice-website\app\globals.css:1:1: Cannot apply unknown utility class `border-border`
+    [at error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (D:\Codex\Codice-website\node_modules\@tailwindcss\postcss\dist\index.js:10:6913)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] 
+[browser] ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: D:\Codex\Codice-website\app\globals.css:1:1: Cannot apply unknown utility class `border-border`
+    [at error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (D:\Codex\Codice-website\node_modules\@tailwindcss\postcss\dist\index.js:10:6913)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] 
+[browser] ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: D:\Codex\Codice-website\app\globals.css:1:1: Cannot apply unknown utility class `border-border`
+    [at error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (D:\Codex\Codice-website\node_modules\@tailwindcss\postcss\dist\index.js:10:6913)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] 
+[browser] ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: D:\Codex\Codice-website\app\globals.css:1:1: Cannot apply unknown utility class `border-border`
+    [at error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (D:\Codex\Codice-website\node_modules\@tailwindcss\postcss\dist\index.js:10:6913)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] 
+[browser] ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: D:\Codex\Codice-website\app\globals.css:1:1: Cannot apply unknown utility class `border-border`
+    [at error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (D:\Codex\Codice-website\node_modules\@tailwindcss\postcss\dist\index.js:10:6913)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] 
+[browser] ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: D:\Codex\Codice-website\app\globals.css:1:1: Cannot apply unknown utility class `border-border`
+    [at error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (D:\Codex\Codice-website\node_modules\@tailwindcss\postcss\dist\index.js:10:6913)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] 
+[browser] ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: D:\Codex\Codice-website\app\globals.css:1:1: Cannot apply unknown utility class `border-border`
+    [at error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (D:\Codex\Codice-website\node_modules\@tailwindcss\postcss\dist\index.js:10:6913)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] 
+[browser] ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: D:\Codex\Codice-website\app\globals.css:1:1: Cannot apply unknown utility class `border-border`
+    [at error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (D:\Codex\Codice-website\node_modules\@tailwindcss\postcss\dist\index.js:10:6913)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] 
+[browser] ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: D:\Codex\Codice-website\app\globals.css:1:1: Cannot apply unknown utility class `border-border`
+    [at error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (D:\Codex\Codice-website\node_modules\@tailwindcss\postcss\dist\index.js:10:6913)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] 
+[browser] ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: D:\Codex\Codice-website\app\globals.css:1:1: Cannot apply unknown utility class `border-border`
+    [at error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (D:\Codex\Codice-website\node_modules\@tailwindcss\postcss\dist\index.js:10:6913)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] 
+[browser] ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: D:\Codex\Codice-website\app\globals.css:1:1: Cannot apply unknown utility class `border-border`
+    [at error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (D:\Codex\Codice-website\node_modules\@tailwindcss\postcss\dist\index.js:10:6913)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] 
+[browser] ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: D:\Codex\Codice-website\app\globals.css:1:1: Cannot apply unknown utility class `border-border`
+    [at error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (D:\Codex\Codice-website\node_modules\@tailwindcss\postcss\dist\index.js:10:6913)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] 
+[browser] ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: D:\Codex\Codice-website\app\globals.css:1:1: Cannot apply unknown utility class `border-border`
+    [at error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (D:\Codex\Codice-website\node_modules\@tailwindcss\postcss\dist\index.js:10:6913)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] 
+[browser] ./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: D:\Codex\Codice-website\app\globals.css:1:1: Cannot apply unknown utility class `border-border`
+    [at error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at error (turbopack:///[project]/node_modules/postcss/lib/node.js:146:32)]
+    [at Object.Once (D:\Codex\Codice-website\node_modules\@tailwindcss\postcss\dist\index.js:10:6913)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:293:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23)]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component] 

@@ -1057,3 +1057,4 @@ Creating turbopack project { dir: 'D:\\Codex\\Codice-website', testMode: true }
 ✓ Compiled in 5.9s
 ✓ Compiled in 710ms
 ✓ Compiled in 418ms
+ GET / 500 in 703ms (next.js: 393ms, application-code: 310ms)

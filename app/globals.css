@@ -16,6 +16,9 @@
   --color-brand-accent: #60A5FA;
   --color-brand-navy: #0A1628;
   --color-brand-dark: #F8FAFC;
+  
+  --color-border: var(--border);
+  --color-card: var(--card);
 }
 
 :root {
