@@ -3,6 +3,8 @@
 import { caseStudies } from "@/data/codice";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const container = {
   hidden: { opacity: 0 },
@@ -34,7 +36,7 @@ export default function CaseStudies() {
         viewport={{ once: true }}
         className="grid grid-cols-1 md:grid-cols-2 gap-8"
       >
-        {caseStudies.map((study, i) => (
+        {caseStudies.slice(0, 4).map((study, i) => (
           <motion.div 
             key={i} 
             variants={item}
@@ -64,6 +66,16 @@ export default function CaseStudies() {
           </motion.div>
         ))}
       </motion.div>
+
+      <div className="flex justify-center mt-12">
+        <Link
+          href="/case-studies"
+          className="group inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest uppercase text-[#94A3B8] hover:text-[#F8FAFC] border border-[#1E293B] hover:border-[#2563EB]/50 bg-[#111827] hover:bg-[#0D1F3C] px-6 py-3 rounded-full transition-all duration-300"
+        >
+          View All Case Studies
+          <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300 text-[#2563EB]" />
+        </Link>
+      </div>
     </section>
   );
 }

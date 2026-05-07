@@ -83,32 +83,15 @@ function Hero() {
         {/* Headline */}
         <motion.h1
           variants={itemVariants}
-          className="text-[clamp(40px,7vw,80px)] font-bold tracking-tight leading-[1.08] text-[#F8FAFC]"
+          className="text-[clamp(40px,7vw,80px)] font-bold tracking-tight leading-[1.05] text-[#F8FAFC]"
         >
-          Government Technology
+          Washington DC&apos;s
           <br />
-          <span className="relative inline-block">
-            That Is{" "}
-            <span className="relative inline-block text-[#2563EB]" style={{ minWidth: "10ch" }}>
-              {words.map((word, i) => (
-                <motion.span
-                  key={word}
-                  className="absolute left-0 top-0 whitespace-nowrap"
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={
-                    wordIndex === i
-                      ? { opacity: 1, y: 0 }
-                      : { opacity: 0, y: wordIndex > i ? -40 : 40 }
-                  }
-                  transition={{ type: "spring", damping: 22, stiffness: 120 }}
-                >
-                  {word}
-                </motion.span>
-              ))}
-              {/* invisible placeholder — widest word */}
-              <span className="invisible">{words.reduce((a, b) => (a.length > b.length ? a : b))}</span>
-            </span>
+          <span className="relative inline-block text-[#2563EB]">
+            Government Technology
           </span>
+          <br />
+          Partner Since 2009
         </motion.h1>
 
         {/* Subheadline */}
@@ -116,10 +99,10 @@ function Hero() {
           variants={itemVariants}
           className="text-lg md:text-xl text-[#64748B] max-w-2xl leading-relaxed"
         >
-          CODICE Technology has been the trusted IT partner to Washington DC&apos;s
-          government agencies for <strong className="text-[#94A3B8] font-semibold">16 years</strong> — delivering
-          custom software, permitting platforms, AI compliance tools, and cloud
-          infrastructure that agencies rely on every day.
+          <strong className="text-[#94A3B8] font-semibold">100% client retention. 16 years. 12+ agencies.</strong>
+          {" "}When the mission is too important to get wrong, DC government agencies
+          call CODICE — for custom software, permitting systems, AI compliance
+          tools, and cloud infrastructure built for public service.
         </motion.p>
 
         {/* CTA buttons */}
@@ -147,7 +130,7 @@ function Hero() {
             "Certified Minority-Owned Business",
             "GSA Schedule Holder",
             "DC Small Business of the Year 2025",
-            "109 Employees · Washington, DC",
+            "137 Employees · Washington, DC",
           ].map((item) => (
             <span key={item} className="text-xs font-semibold text-[#475569] tracking-widest uppercase">
               <span className="text-[#2563EB] mr-2">✦</span>{item}

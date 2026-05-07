@@ -351,6 +351,13 @@ export const markets = [
     icon: 'Stethoscope',
   },
   {
+    id: 'education',
+    name: 'Education & Public Schools',
+    description: 'Technology solutions for school districts and education agencies — from data integration to IT staffing and application development.',
+    details: 'We serve DC Public Schools with custom software, data systems, and IT support that keep one of the largest urban school districts running efficiently.',
+    icon: 'GraduationCap',
+  },
+  {
     id: 'transportation',
     name: 'Transportation & Logistics',
     description: 'Optimizing the move of people and assets through AI-driven routing, scheduling, and permitting.',
@@ -363,6 +370,13 @@ export const markets = [
     description: 'Tools for justice departments to track cases, manage evidence, and ensure inter-departmental coordination.',
     details: 'Our CelerCase platform provides a secure, web-based environment for managing complex case trajectories and ensuring accountability.',
     icon: 'Shield',
+  },
+  {
+    id: 'legal',
+    name: 'Legal & Regulatory Compliance',
+    description: 'AI-powered regulatory intelligence and compliance tools for legal offices and regulated government entities.',
+    details: 'FortiMind.ai enables legal and compliance teams to research multi-jurisdictional regulations in natural language — 90% faster than manual review.',
+    icon: 'Scale',
   },
   {
     id: 'unemployment',
@@ -378,6 +392,34 @@ export const markets = [
     details: 'We provide end-to-end permit modernization for construction and infrastructure agencies, ensuring safety and regulatory compliance.',
     icon: 'Hammer',
   },
+  {
+    id: 'financial',
+    name: 'Financial Services & Payments',
+    description: 'Secure payment processing and financial platforms with fraud detection and full audit transparency for government finance.',
+    details: 'CodicePay and CelerKost bring government-grade fraud prevention and reconciliation to payment operations across agencies.',
+    icon: 'DollarSign',
+  },
+  {
+    id: 'education',
+    name: 'Education & Public Schools',
+    description: 'Technology solutions for school systems that streamline operations, HR, and student data management.',
+    details: 'We support DC Public Schools (DCPS) with workforce platforms, administrative automation, and data management systems.',
+    icon: 'GraduationCap',
+  },
+  {
+    id: 'environment',
+    name: 'Environmental & Utility Services',
+    description: 'Digital permitting and compliance platforms for environmental agencies managing inspections and regulatory reporting.',
+    details: 'Our permitting and inspection tools streamline environmental compliance workflows for utility and environmental regulatory agencies.',
+    icon: 'Leaf',
+  },
+  {
+    id: 'hr-workforce',
+    name: 'Human Resources & Workforce',
+    description: 'HR systems and workforce management platforms built for the operational demands of government agencies.',
+    details: 'From credentialing and provider data management to IVR support systems and Salesforce integration, we streamline HR at scale.',
+    icon: 'Users2',
+  },
 ]
 
 export const clients = [
@@ -390,8 +432,11 @@ export const clients = [
       { name: 'DC Public Schools (DCPS)', logo: '/images/clients/client-223.png' },
       { name: 'DC Department of Employment Services (DOES)', logo: '/images/clients/client-224.png' },
       { name: 'DC Department of Health Care Finance (DHCF)', logo: '/images/clients/client-225.png' },
+      { name: 'Metropolitan Police Department (MPD)', logo: '/images/clients/client-229.png' },
+      { name: 'Office of the Attorney General (OAG)', logo: '/images/clients/client-230.png' },
       { name: 'Criminal Justice Coordinating Council (CJCC)', logo: '/images/clients/client-227.png' },
       { name: 'DC Child and Family Services Agency (CFSA)', logo: '/images/clients/client-228.png' },
+      { name: 'Office of the Chief Technology Officer (OCTO)', logo: '/images/clients/client-231.png' },
     ]
   },
   {
@@ -401,6 +446,8 @@ export const clients = [
       { name: 'Public Consulting Group (PCG)', logo: '/images/clients/client-pub.png' },
       { name: 'UKG (Ultimate Kronos Group)', logo: '/images/clients/client-dl1.png' },
       { name: 'Salesforce', logo: '/images/clients/client-dl2.png' },
+      { name: 'ICOSMOS Corp', logo: '/images/clients/client-232.png' },
+      { name: 'Gide Public Affairs', logo: '/images/clients/client-233.png' },
     ]
   }
 ]
@@ -465,9 +512,16 @@ export const testimonials = [
 
 export const team = [
   {
+    name: 'Linwood Jolly',
+    title: 'Chief Executive Officer',
+    bio: 'Leads CODICE\'s strategic direction and client relationships across Washington DC government agencies. Drives the firm\'s mission to deliver technology that actually works for government.',
+    education: '',
+    photo: '',
+  },
+  {
     name: 'Dash Kiridena',
-    title: 'Founder & President',
-    bio: '20+ years in healthcare and government technology. Visionary behind Codice\'s expansion into proprietary government software.',
+    title: 'Founder',
+    bio: '20+ years in healthcare and government technology. Founded CODICE in 2009 with a vision to modernize government IT from the ground up.',
     education: 'MBA, Johns Hopkins University · BA Economics, Clarion University',
     photo: '/images/team/dash.png',
   },
@@ -477,13 +531,6 @@ export const team = [
     bio: 'CPA and CMA with deep expertise in government financial operations and compliance auditing.',
     education: "Master's Finance, American University · BS Accounting, University of Maryland Eastern Shore",
     photo: '/images/team/emmash.png',
-  },
-  {
-    name: 'Hiranya Samarasekera',
-    title: 'SVP of Engineering',
-    bio: '20+ years IT experience. Former CTO for the Sri Lanka government. PhD candidate specializing in enterprise architecture.',
-    education: 'PhD candidate, University of Oslo · PMP, CSPO certified',
-    photo: '/images/team/hiranya.png',
   },
   {
     name: 'Ashanthi Kiridena',
@@ -499,13 +546,6 @@ export const team = [
     education: 'MS Technology Management · BS IT, George Mason University',
     photo: '/images/team/sully.png',
   },
-  {
-    name: 'Dinesh Babu',
-    title: 'Project Management & Delivery Director',
-    bio: '15+ years in operational improvement and project delivery for complex municipal contracts.',
-    education: 'PMP · CSM · AWS Cloud Practitioner',
-    photo: '/images/team/dinesh.png',
-  },
 ]
 
 export const techStack = [
@@ -516,35 +556,35 @@ export const techStack = [
 
 export const caseStudies = [
   {
-    client: 'DC Dept. of Transportation',
-    product: 'PermiOne',
-    challenge: 'Outdated legacy permitting system causing delays and compliance gaps across departments.',
-    solution: 'Deployed PermiOne — a cloud-agnostic permitting platform with automated routing and mobile inspections.',
-    outcome: 'Faster permit processing, full compliance, and cross-department adoption.',
+    client: 'DC Dept. of Transportation (DDOT)',
+    product: 'PermiOne™',
+    challenge: 'Outdated legacy permitting system causing multi-week delays and compliance gaps across departments.',
+    solution: 'Deployed PermiOne — a cloud-agnostic permitting platform with automated routing, digital plan review, and mobile inspections.',
+    outcome: 'Fully digital permit lifecycle, faster processing, and cross-department adoption across DC transportation infrastructure.',
     metric: '100% digital',
   },
   {
-    client: 'State Healthcare Agency',
+    client: 'DC Dept. of Health Care Finance (DHCF)',
     product: 'CelerKost™',
-    challenge: 'Medicaid cost reporting errors creating fraud exposure and transparency gaps.',
-    solution: 'Implemented CelerKost with automated validation and real-time audit trails.',
-    outcome: 'Significant fraud reduction and improved regulatory compliance.',
+    challenge: 'Medicaid cost reporting errors creating fraud exposure, audit risk, and transparency gaps.',
+    solution: 'Implemented CelerKost with automated validation, statistical anomaly detection, and real-time audit trails.',
+    outcome: 'Eliminated reporting errors, reduced fraud exposure, and improved regulatory compliance for DC Medicaid programs.',
     metric: 'Fraud eliminated',
   },
   {
-    client: 'Government Legal Office',
-    product: 'FortiMind.ai',
-    challenge: 'Manual regulatory research unable to keep pace with evolving multi-jurisdictional requirements.',
-    solution: 'Deployed FortiMind.ai for AI-powered natural language regulatory queries across federal and local law.',
-    outcome: '90% faster research times, enabling compliance without deep legal expertise.',
+    client: 'Office of the Attorney General (OAG)',
+    product: 'FortiMind.ai™',
+    challenge: 'Manual regulatory research unable to keep pace with evolving multi-jurisdictional legal requirements.',
+    solution: 'Deployed FortiMind.ai for AI-powered natural language regulatory queries across federal, state, and local law.',
+    outcome: '90% faster legal research, enabling compliance staff to work without deep legal expertise.',
     metric: '90% faster',
   },
   {
-    client: 'DC Dept. of Employment Services',
+    client: 'DC Dept. of Employment Services (DOES)',
     product: 'Custom Software Development',
-    challenge: 'Outdated Unemployment Insurance Benefits System creating delays and errors for DC residents seeking benefits.',
-    solution: 'Modernized the UI Benefits System with a new cloud-based platform, launched February 2024.',
-    outcome: 'Improved processing times and resident experience for DC unemployment claimants.',
+    challenge: 'Outdated Unemployment Insurance Benefits System creating processing delays and errors for DC residents.',
+    solution: 'Modernized the UI Benefits System with a new cloud-based platform — launched February 2024.',
+    outcome: 'Dramatically improved processing times and resident experience for DC unemployment claimants.',
     metric: 'Launched Feb 2024',
   },
 ]
@@ -552,24 +592,24 @@ export const caseStudies = [
 export const news = [
   {
     title: 'CODICE Named Washington DC Small Business of the Year 2025',
-    date: '2025-01-01',
-    excerpt: 'CODICE Technology recognized for excellence in government technology innovation and outstanding client service.',
+    date: 'January 2025',
+    excerpt: 'CODICE Technology recognized for excellence in government technology innovation and outstanding client service across DC agencies.',
     image: '/images/news/news-1.jpg',
-    slug: 'https://codicetech.com/news/',
+    slug: 'https://codicetech.com/washington-dcs-small-business-of-the-year/',
   },
   {
     title: 'FortiMind.ai Launches: AI-Powered Regulatory Intelligence for Government',
-    date: '2024-09-01',
-    excerpt: 'Our newest product brings real-time AI regulatory monitoring to federal and DC agencies — 90% faster research times.',
+    date: 'November 2024',
+    excerpt: 'Our newest product brings real-time AI regulatory monitoring to federal and DC agencies — delivering cited answers 90% faster than manual research.',
     image: '/images/news/news-2.jpg',
     slug: 'https://codicetech.com/fortimindlaunch/',
   },
   {
-    title: 'CODICE Celebrates 16 Years of Government Technology Leadership',
-    date: '2025-01-09',
-    excerpt: '16 years, 12+ agencies, and 100% client retention — a milestone worth celebrating.',
+    title: 'CODICE Modernizes DC DOES Unemployment Insurance Benefits System',
+    date: 'February 2024',
+    excerpt: 'CODICE delivered a landmark modernization of the DC Department of Employment Services UI Benefits System — improving processing times for thousands of DC residents.',
     image: '/images/news/news-3.jpg',
-    slug: 'https://codicetech.com/news/',
+    slug: 'https://codicetech.com/news-events/',
   },
 ]
 

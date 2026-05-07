@@ -2,6 +2,11 @@
 
 import { markets } from "@/data/codice";
 import { motion } from "framer-motion";
+import { Building2, HeartPulse, Bus, Shield, Users, Hammer, GraduationCap, Scale, DollarSign, Leaf, Users2, type LucideIcon } from "lucide-react";
+
+const iconMap: Record<string, LucideIcon> = {
+  Building2, HeartPulse, Bus, Shield, Users, Hammer, GraduationCap, Scale, DollarSign, Leaf, Users2,
+};
 
 const container = {
   hidden: {},
@@ -45,6 +50,7 @@ export default function MarketsGrid() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#2563EB]/5 blur-3xl -mr-16 -mt-16 group-hover:bg-[#2563EB]/10 transition-all duration-500" />
             
             <div className="relative z-10">
+              {iconMap[market.icon] && (() => { const Icon = iconMap[market.icon]; return <Icon size={22} className="text-[#2563EB] mb-5" />; })()}
               <h3 className="text-xl font-bold text-[#F8FAFC] mb-4 group-hover:text-[#2563EB] transition-colors">
                 {market.name}
               </h3>

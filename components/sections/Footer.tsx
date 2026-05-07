@@ -67,10 +67,10 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-[#F8FAFC] mb-8">Services</h4>
-            <ul className="flex flex-col gap-4">
-              {services.slice(0, 5).map((s) => (
+            <ul className="flex flex-col gap-3">
+              {services.map((s) => (
                 <li key={s.id}>
-                  <Link href={s.slug} className="text-sm md:text-base text-[#64748B] hover:text-[#2563EB] transition-colors">
+                  <Link href={`/services/${s.slug}`} className="text-sm text-[#64748B] hover:text-[#2563EB] transition-colors leading-snug">
                     {s.title}
                   </Link>
                 </li>
@@ -81,10 +81,10 @@ export default function Footer() {
           {/* Products */}
           <div>
             <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-[#F8FAFC] mb-8">Products</h4>
-            <ul className="flex flex-col gap-4">
-              {products.slice(0, 5).map((p) => (
+            <ul className="flex flex-col gap-3">
+              {products.map((p) => (
                 <li key={p.id}>
-                  <Link href={p.slug} className="text-sm md:text-base text-[#64748B] hover:text-[#2563EB] transition-colors">
+                  <Link href={`/products/${p.slug}`} className="text-sm text-[#64748B] hover:text-[#2563EB] transition-colors">
                     {p.name}
                   </Link>
                 </li>
@@ -120,9 +120,19 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-[#1E293B] pt-12 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B]">
-            © {year} {company.fullName}
-          </p>
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#64748B]">
+              © {year} {company.fullName}
+            </p>
+            <div className="flex items-center gap-4 text-xs text-[#475569]">
+              <span className="hidden md:block">·</span>
+              <a href={`mailto:${company.email}`} className="hover:text-[#2563EB] transition-colors">Privacy Policy</a>
+              <span>·</span>
+              <a href={`mailto:${company.email}`} className="hover:text-[#2563EB] transition-colors">Terms of Use</a>
+              <span>·</span>
+              <Link href="/contact" className="hover:text-[#2563EB] transition-colors">Accessibility</Link>
+            </div>
+          </div>
           <div className="flex items-center gap-3">
             <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] bg-[#2563EB]/10 border border-[#2563EB]/20 px-3 py-1.5 rounded-full">
               <Award size={11} /> DC Small Business of the Year 2025

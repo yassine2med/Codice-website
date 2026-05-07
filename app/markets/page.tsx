@@ -6,7 +6,7 @@ import MarketsGrid from "@/components/sections/MarketsGrid";
 import CaseStudies from "@/components/sections/CaseStudies";
 import CTABanner from "@/components/sections/CTABanner";
 import { motion } from "framer-motion";
-import { Building2, HeartPulse, Bus, Shield, Users, Hammer } from "lucide-react";
+import { Building2, HeartPulse, Bus, Shield, Users, Hammer, GraduationCap, Scale, DollarSign } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -14,42 +14,15 @@ const fadeUp = {
 };
 
 const sectorHighlights = [
-  {
-    Icon: Building2,
-    label: "Government Agencies",
-    stat: "12+",
-    desc: "DC agencies served across permits, finance, workforce, and public safety.",
-  },
-  {
-    Icon: HeartPulse,
-    label: "Health IT",
-    stat: "3",
-    desc: "Healthcare platforms operating across Medicaid, transitions, and patient finance.",
-  },
-  {
-    Icon: Bus,
-    label: "Transportation",
-    stat: "1M+",
-    desc: "Permit applications processed through PermiOne for DC transportation infrastructure.",
-  },
-  {
-    Icon: Shield,
-    label: "Public Safety",
-    stat: "CJCC",
-    desc: "Supporting the Criminal Justice Coordinating Council with case management technology.",
-  },
-  {
-    Icon: Users,
-    label: "Unemployment Insurance",
-    stat: "2024",
-    desc: "Modernized DC DOES UI benefits system, serving thousands of DC residents.",
-  },
-  {
-    Icon: Hammer,
-    label: "Facilities",
-    stat: "DOB",
-    desc: "End-to-end permit modernization for DC's Department of Buildings.",
-  },
+  { Icon: Building2, label: "Government", stat: "12+", desc: "DC agencies served across permits, finance, and public safety." },
+  { Icon: HeartPulse, label: "Health IT", stat: "3", desc: "Healthcare platforms for Medicaid, transitions, and patient finance." },
+  { Icon: GraduationCap, label: "Education", stat: "DCPS", desc: "Serving DC Public Schools with custom software and IT support." },
+  { Icon: Bus, label: "Transportation", stat: "DDOT", desc: "PermiOne powers DC transportation permitting infrastructure." },
+  { Icon: Shield, label: "Public Safety", stat: "CJCC", desc: "Case management for the Criminal Justice Coordinating Council." },
+  { Icon: Scale, label: "Legal", stat: "OAG", desc: "FortiMind.ai powers regulatory research for the DC AG's office." },
+  { Icon: Users, label: "Unemployment", stat: "DOES", desc: "Modernized DC UI Benefits System launched February 2024." },
+  { Icon: Hammer, label: "Facilities", stat: "DOB", desc: "End-to-end permit modernization for DC's Department of Buildings." },
+  { Icon: DollarSign, label: "Finance", stat: "PCI", desc: "Fraud-resistant payment processing and financial audit platforms." },
 ];
 
 export default function MarketsPage() {
