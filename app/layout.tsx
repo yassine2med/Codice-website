@@ -15,17 +15,30 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://codicetech.com"),
-  title: "CODICE Technology — Transforming Government Through Technology",
-  description: "CODICE Technology LLC. 16 years. 12+ agencies. 100% client retention. Washington DC's premier government technology firm.",
-  openGraph: {
-    title: "CODICE Technology — Transforming Government Through Technology",
-    description: "Washington DC's premier government technology firm. Custom software, permit modernization, data analytics, cloud migration, and 8 proprietary products.",
-    url: "https://codicetech.com",
-    siteName: "CODICE Technology",
-    images: [{ url: "/images/brand/codice-logo-full.png" }],
-    type: "website",
+  metadataBase: new URL("https://codice-website.vercel.app"),
+  title: {
+    default: "CODICE Technology — Washington DC Government Technology",
+    template: "%s | CODICE Technology",
   },
+  description: "CODICE Technology LLC — 16 years, 12+ agencies, 100% client retention. Washington DC's premier government technology firm delivering custom software, AI products, cloud migration, and permitting systems.",
+  keywords: ["government technology", "Washington DC", "gov-tech", "permitting software", "DC agencies", "CODICE Technology", "FedRAMP", "cloud migration"],
+  authors: [{ name: "CODICE Technology LLC" }],
+  openGraph: {
+    title: "CODICE Technology — Washington DC Government Technology",
+    description: "16 years. 12+ agencies. 100% client retention. Custom software, AI compliance tools, cloud migration, and 8 proprietary platforms built for DC government.",
+    url: "https://codice-website.vercel.app",
+    siteName: "CODICE Technology",
+    images: [{ url: "/images/brand/codice-logo-full.png", width: 1200, height: 630, alt: "CODICE Technology" }],
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CODICE Technology — Washington DC Government Technology",
+    description: "16 years. 12+ agencies. 100% client retention.",
+    images: ["/images/brand/codice-logo-full.png"],
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

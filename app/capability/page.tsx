@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/nav/Navbar";
+
+export const metadata: Metadata = {
+  title: "Capability Statement",
+  description: "CODICE Technology capability statement — certifications, NAICS codes, GSA schedule, past performance across 12+ DC agencies, and core government IT services.",
+  openGraph: {
+    title: "Capability Statement | CODICE Technology",
+    description: "Government-ready. Mission-proven. Everything procurement officers need to evaluate CODICE Technology as a trusted partner.",
+  },
+};
 import Footer from "@/components/sections/Footer";
 import CTABanner from "@/components/sections/CTABanner";
 import { company, services, products } from "@/data/codice";

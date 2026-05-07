@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Articles",
+  description: "CODICE Technology articles on legacy modernization, AI regulatory intelligence, Medicaid cost reporting, cloud architecture, and public-sector digital transformation.",
+  openGraph: {
+    title: "Articles | CODICE Technology",
+    description: "Field notes from government modernization — CODICE thinking on legacy systems, AI compliance, health IT, and digital services.",
+  },
+};
 import {
   ArrowRight,
   BookOpen,
