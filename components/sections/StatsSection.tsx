@@ -23,7 +23,7 @@ export default function StatsSection() {
 
               {/* Vertical Divider (Desktop Only) */}
               {index < stats.length - 1 && (
-                <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-20 w-px bg-gradient-to-b from-transparent via-[#1E293B] to-transparent" />
+                <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-20 w-px bg-linear-to-b from-transparent via-[#1E293B] to-transparent" />
               )}
             </div>
           ))}

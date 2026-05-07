@@ -14,10 +14,10 @@ export default function TrustMarquee() {
       
       <div className="relative w-full overflow-hidden">
         {/* Fade Mask Left */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-r from-[#0A1628] to-transparent pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 z-10 bg-linear-to-r from-[#0A1628] to-transparent pointer-events-none" />
         
         {/* Fade Mask Right */}
-        <div className="absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l from-[#0A1628] to-transparent pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 z-10 bg-linear-to-l from-[#0A1628] to-transparent pointer-events-none" />
 
         <motion.div 
           className="flex gap-16 whitespace-nowrap px-8"
@@ -33,7 +33,7 @@ export default function TrustMarquee() {
           {doubled.map((client, i) => (
             <span 
               key={i} 
-              className="text-lg md:text-xl font-medium text-[#64748B]/60 hover:text-[#2563EB] transition-colors cursor-default flex-shrink-0"
+              className="text-lg md:text-xl font-medium text-[#64748B]/60 hover:text-[#2563EB] transition-colors cursor-default shrink-0"
             >
               {client}
             </span>

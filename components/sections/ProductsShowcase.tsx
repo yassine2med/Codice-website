@@ -61,7 +61,7 @@ export default function ProductsShowcase() {
 
                 {/* Abstract Visual Placeholder */}
                 <div className="w-full lg:w-1/3 aspect-square bg-[#0A1628] rounded-2xl border border-[#1E293B] flex items-center justify-center relative z-10 group overflow-hidden">
-                   <div className="absolute inset-0 bg-gradient-to-br from-[#2563EB]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                   <div className="absolute inset-0 bg-linear-to-br from-[#2563EB]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                    <span className="text-6xl group-hover:scale-110 transition-transform duration-500">🚀</span>
                 </div>
               </motion.div>

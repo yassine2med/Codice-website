@@ -19,7 +19,7 @@ export default function ServicesGrid() {
             <h3 className="text-xl font-bold text-[#F8FAFC] mb-3 leading-snug">
               {service.title}
             </h3>
-            <p className="text-[#64748B] text-sm md:text-base leading-relaxed mb-6 flex-grow">
+            <p className="text-[#64748B] text-sm md:text-base leading-relaxed mb-6 grow">
               {service.description}
             </p>
             <a

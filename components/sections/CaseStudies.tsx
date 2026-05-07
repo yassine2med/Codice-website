@@ -46,7 +46,7 @@ export default function CaseStudies() {
             <h3 className="text-xl font-bold text-[#F8FAFC] mb-2 group-hover:text-white transition-colors">
               {study.client}
             </h3>
-            <div className="text-4xl md:text-5xl font-bold text-[#F8FAFC] font-mono tracking-tighter mb-8 bg-gradient-to-r from-white to-[#64748B] bg-clip-text text-transparent">
+            <div className="text-4xl md:text-5xl font-bold font-mono tracking-tighter mb-8 bg-linear-to-r from-white to-[#64748B] bg-clip-text text-transparent">
               {study.metric}
             </div>
             
