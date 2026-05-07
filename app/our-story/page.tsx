@@ -33,7 +33,7 @@ const stagger = (delay = 0.1) => ({
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const timeline = [
-  { year: "2009", title: "Founded in Washington DC", desc: "Dash Kiridena launches CODICE Technology with a vision to modernize government IT from the ground up." },
+  { year: "2009", title: "Founded in Washington DC", desc: "CODICE Technology is established with a vision to modernize government IT from the ground up — starting in Washington DC." },
   { year: "2012", title: "First Government Contract", desc: "Secured our first multi-year engagement with a DC agency — the beginning of 100% client retention." },
   { year: "2016", title: "Product Division Launched", desc: "Began building proprietary platforms, moving beyond services into purpose-built government software." },
   { year: "2019", title: "PermiOne Goes Live", desc: "Launched PermiOne, our flagship cloud-agnostic permitting platform, now used across DC agencies." },
@@ -158,7 +158,7 @@ export default function OurStoryPage() {
             </motion.h2>
             <motion.div variants={fadeUp} className="space-y-5 text-[#64748B] text-base md:text-lg leading-relaxed">
               <p>
-                In 2009, <strong className="text-[#94A3B8]">Dash Kiridena</strong> founded CODICE Technology with a clear conviction:
+                In 2009, CODICE Technology was founded with a clear conviction:
                 government agencies deserved better software than what the market offered — solutions
                 built specifically for their missions, their compliance requirements, and their people.
               </p>

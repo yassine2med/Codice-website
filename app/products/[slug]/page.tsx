@@ -88,6 +88,15 @@ export default function ProductDetailPage() {
               transition={{ duration: 1 }}
               className="relative aspect-square lg:aspect-[4/3] rounded-[40px] overflow-hidden border border-[#1E293B] shadow-2xl bg-[#0F172A]"
             >
+              {/* Gradient placeholder background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#1E293B] via-[#0F172A] to-[#0A1628]">
+                <div className="absolute inset-0 opacity-[0.06]" style={{
+                  backgroundImage: `linear-gradient(to right,#fff 1px,transparent 1px),linear-gradient(to bottom,#fff 1px,transparent 1px)`,
+                  backgroundSize: "3rem 3rem",
+                }} />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#2563EB]/20 blur-[80px] rounded-full" />
+              </div>
+
               <AnimatePresence mode="popLayout">
                 <motion.div
                   key={imageIndex}
@@ -97,11 +106,12 @@ export default function ProductDetailPage() {
                   transition={{ duration: 0.8 }}
                   className="absolute inset-0"
                 >
-                  <Image 
-                    src={product.showcaseImages[imageIndex]} 
+                  <Image
+                    src={product.showcaseImages[imageIndex]}
                     alt={product.name}
                     fill
                     className="object-cover opacity-90"
+                    onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                   />
                 </motion.div>
               </AnimatePresence>

@@ -15,18 +15,18 @@ import { company } from "@/data/codice";
 const culture = [
   {
     icon: HeartHandshake,
-    title: "Collaborative by design",
-    text: "CODICE describes a collaborative, diverse, growth-driven environment where professionals can thrive.",
+    title: "Minority-owned, mission-driven",
+    text: "As a certified minority-owned small business, we bring diverse perspectives to every engagement — and we build teams that reflect the communities we serve.",
   },
   {
     icon: GraduationCap,
-    title: "Learning culture",
-    text: "The careers page emphasizes learning, development, and opportunities for both experienced and early-career talent.",
+    title: "Grow while you deliver",
+    text: "Whether you're a senior engineer or an early-career analyst, CODICE invests in your credentials, certifications, and long-term career path alongside the work.",
   },
   {
     icon: Rocket,
-    title: "Impact work",
-    text: "Teams work on technology, finance, healthcare operations, and consulting programs for government agencies and beyond.",
+    title: "Work that actually ships",
+    text: "You won't maintain a product no one uses. CODICE builds platforms that DC agencies depend on every day — from permitting systems to Medicaid finance to AI compliance tools.",
   },
 ];
 
