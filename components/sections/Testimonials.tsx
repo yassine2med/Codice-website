@@ -1,33 +1,67 @@
+"use client";
+
 import { testimonials } from "@/data/codice";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import { Quote } from "lucide-react";
 
 export default function Testimonials() {
   return (
-    <div className="py-24 px-6 bg-[#111827]">
+    <section id="testimonials" className="py-32 px-6 bg-[#0A1628] overflow-hidden">
       <div className="max-w-4xl mx-auto">
         <SectionHeader
-          label="What Clients Say"
-          title="Trusted. Proven. Retained."
+          label="Testimonials"
+          title="What Our Clients Say"
+          subtitle="Trusted by over 12 government agencies for 16+ years."
         />
-        <Carousel className="w-full">
+        
+        <Carousel 
+          className="w-full"
+          plugins={[
+            Autoplay({
+              delay: 5000,
+            }),
+          ]}
+          opts={{
+            loop: true,
+          }}
+        >
           <CarouselContent>
             {testimonials.map((t, i) => (
               <CarouselItem key={i}>
-                <div className="bg-[#0A1628] border border-[#1E293B] rounded-xl p-10 text-center">
-                  <p className="text-xl text-[#F8FAFC] leading-relaxed mb-8 italic">&ldquo;{t.quote}&rdquo;</p>
-                  <div>
-                    <p className="text-sm font-semibold text-[#F8FAFC]">{t.name}</p>
-                    <p className="text-xs text-[#64748B]">{t.title}, {t.company}</p>
+                <div className="relative bg-[#111827] border border-[#1E293B] rounded-2xl p-12 md:p-16 text-center group transition-all duration-500 hover:border-[#2563EB]/50">
+                  {/* Quote Icon Background */}
+                  <div className="absolute top-8 left-8 text-[#2563EB]/10 group-hover:text-[#2563EB]/20 transition-colors">
+                    <Quote size={120} fill="currentColor" strokeWidth={0} />
+                  </div>
+                  
+                  <div className="relative z-10">
+                    <p className="text-xl md:text-2xl text-[#F8FAFC] leading-relaxed mb-10 italic font-medium">
+                      &ldquo;{t.quote}&rdquo;
+                    </p>
+                    
+                    <div className="flex flex-col items-center">
+                      <div className="w-12 h-1 bg-[#2563EB] mb-6 rounded-full" />
+                      <p className="text-lg font-bold text-[#F8FAFC]">{t.name}</p>
+                      <p className="text-sm font-semibold text-[#64748B] tracking-wide uppercase mt-1">
+                        {t.title} <span className="text-[#2563EB] mx-2">/</span> {t.company}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="border-[#1E293B] text-[#F8FAFC] hover:bg-[#111827]" />
-          <CarouselNext className="border-[#1E293B] text-[#F8FAFC] hover:bg-[#111827]" />
         </Carousel>
+
+        {/* Custom Progress Dots (simplified as static indicators for now) */}
+        <div className="flex justify-center gap-2 mt-8">
+          {testimonials.map((_, i) => (
+            <div key={i} className="w-2 h-2 rounded-full bg-[#1E293B] hover:bg-[#2563EB] transition-colors cursor-pointer" />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

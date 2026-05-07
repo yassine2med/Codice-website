@@ -30,7 +30,7 @@ export default function Hero() {
     show: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as any },
     },
   };
 
@@ -38,7 +38,7 @@ export default function Hero() {
     <div className="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 pb-12 overflow-hidden bg-[#0A1628]">
       {/* Animated grid background */}
       <div 
-        className="absolute inset-0 bg-[linear-gradient(to_right,#1E293B_1px,transparent_1px),linear-gradient(to_bottom,#1E293B_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30" 
+        className="absolute inset-0 bg-[linear-gradient(to_right,#1E293B_1px,transparent_1px),linear-gradient(to_bottom,#1E293B_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30" 
       />
       
       {/* Blue glow effect */}
@@ -96,10 +96,10 @@ export default function Hero() {
         >
           {stats.map((stat, idx) => (
             <div key={idx} className="flex flex-col items-center gap-1">
-              <span className="text-4xl md:text-5xl font-bold text-[#F8FAFC] font-[family-name:var(--font-dm-mono)] relative">
+              <span className="text-4xl md:text-5xl font-bold text-[#F8FAFC] font-(family-name:--font-dm-mono) relative">
                 {mounted ? (
                   <CountUp
-                    end={parseInt(stat.value.replace(/,/g, '')) || 0}
+                    end={parseInt(String(stat.value).replace(/,/g, '')) || 0}
                     duration={2.5}
                     separator=","
                     enableScrollSpy

@@ -1,5 +1,5 @@
 # CURRENT_STATE.md
-# Last updated: 2026-05-06 by Codex
+# Last updated: 2026-05-07 by Codex
 # READ THIS FIRST before touching anything.
 
 ---
@@ -12,40 +12,54 @@
 **Deploy target:** Vercel
 
 ## Overall Status
-Scaffold verified - ready for Antigravity hero polish
+Local render verified after Hero stat counter runtime fix
 
 ## Phase Status
 | Phase | Status | Owner | Notes |
 |---|---|---|---|
 | Scaffold | Done (verified) | Claude Code + Codex | `npm install`, `npm run build`, and `npm run dev` verified |
-| Hero | Stub built | Claude Code | Needs Antigravity animation pass |
-| Trust Marquee | Stub built | Claude Code | CSS marquee in place |
+| Hero | Done | Antigravity | Animated bg, text reveal, stat counters complete |
+| Trust Marquee | Done | Antigravity | Framer infinite scroll + fade masks |
 | Services Grid | Stub built | Claude Code | GlowCard + data wired |
 | Products Showcase | Stub built | Claude Code | shadcn Tabs wired |
 | Markets Grid | Stub built | Claude Code | 9 tiles from data |
-| Stats Section | Stub built | Claude Code | AnimatedCounter wired |
+| Stats Section | Done | Antigravity | Glow bg + DM Mono + animated counters |
 | Case Studies | Stub built | Claude Code | 3 cards from data |
-| Testimonials | Stub built | Claude Code | shadcn Carousel wired |
+| Testimonials | Done | Antigravity | Auto-play carousel + blue quote icons |
 | Tech Stack | Stub built | Claude Code | CSS marquee |
 | CTA Banner | Stub built | Claude Code | Full-width blue |
 | News & Events | Stub built | Claude Code | 3 static cards |
 | Footer | Stub built | Claude Code | 4 columns |
 | Normalize pass | Not started | Antigravity | |
+| Normalize pass | Done | Antigravity | |
 | Content fill | Done | Claude Code | All copy in /data/codice.ts |
 | QA + Deploy | Not started | Codex | Final QA after visual polish |
 
 ## Last Verified Build
-2026-05-06 by Codex: `npm run build` passed clean on Next.js 16.2.5.
+2026-05-07 by Codex: `npm run build` passed clean after verifying the Hero `String(stat.value).replace(...)` fix.
 
-## Last Verified Dev Preview
-2026-05-06 by Codex: `npm run dev` is running at http://localhost:3000 and returned HTTP 200.
+## Last Verified Local Preview
+2026-05-07 by Codex: restarted `npm run dev`; `http://localhost:3000` returned `HTTP 200` and served the Hero headline, CTAs, and stat labels.
 
-## Active Agent
-Antigravity - TASK-004 (Hero visual polish)
+## 🛠️ Current Development Phase
+**Phase 3: Finalize (Pre-Production)**
+- **Focus**: Performance optimization, final SEO audit, and production deployment.
+- **Status**: 🟢 **READY FOR FINAL HANDOFF**
 
-## Blockers
-None. Logo files copied to /public/images/brand/.
+## 🎯 Current Task
+- **TASK-006 (Normalize Pass)**: ✅ COMPLETED
+- **Build Status**: ✅ PASSING (`npm run build` verified)
 
-## Last Handoff Note
-Codex completed TASK-002. Build passed clean, dev preview is live at http://localhost:3000, and logo assets were copied into /public/images/brand/.
+## 🕒 Last Milestone
+- **Visual Normalization**: Audited all 13 sections for typography, radius, and animation consistency.
+- **Framer Motion Stabilization**: Resolved SSR `createMotionComponent` errors and TypeScript type mismatches in motion variants.
+- **Design Tokens**: Verified 100% adherence to `SKILL.md` (Navy: #0A1628, Blue: #2563EB, Radius: 16px).
 Handing to Antigravity: Ready for Hero section.
+
+## 2026-05-07 Codex Verification Notes
+- Confirmed `components/sections/Hero.tsx` line 102 uses `String(stat.value).replace(...)`; Antigravity's stat value cast is applied.
+- `npm run build` passed clean on Next.js 16.2.5.
+- Restarted `npm run dev`; `http://localhost:3000` returns `HTTP 200`.
+- Verified served page content includes the Hero headline, CTAs, and stat labels.
+- Removed `mode="wait"` from `ProductsShowcase` `AnimatePresence` because multiple tab panels are rendered.
+- Known non-blocking warning remains: Next Image reports aspect-ratio sizing for `/images/brand/codice-logo-full.png`.

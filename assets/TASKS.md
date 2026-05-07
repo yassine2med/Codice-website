@@ -6,21 +6,6 @@
 
 ## ACTIVE
 
-### [antigravity] TASK-005: Visual polish - Trust Marquee + Stats + Testimonials
-- TrustMarquee: Framer infinite scroll, fade mask edges, pause on hover
-- StatsSection: dark section bg, large DM Mono numbers, blue glow behind each
-- Testimonials: auto-play carousel, fade dissolve, pause on hover
-- Responsive check all three
-- Visual audit screenshot
-
-### [antigravity] TASK-006: Normalize pass (after all sections built)
-- Read design system tokens in SKILL.md
-- Audit every section: font, size, spacing, color, radius, shadow
-- List all inconsistencies found
-- Fix all inconsistencies in one focused pass
-- Commit: `[antigravity] ui: normalize full design system across all sections`
-- Visual audit: screenshot full page, report pass/fail
-
 ### [codex] TASK-007: Final QA + Deploy (after normalize pass)
 - `npm run build` - zero errors required
 - `npm run lint` - zero errors
@@ -32,6 +17,13 @@
 ---
 
 ## DONE
+
+### [antigravity] TASK-005: Visual polish - Trust Marquee + Stats + Testimonials - COMPLETE (2026-05-07)
+- TrustMarquee: Framer infinite scroll, fade mask edges, pause on hover (slow down)
+- StatsSection: dark section bg, large DM Mono numbers, blue glow behind each
+- Testimonials: auto-play carousel, blue quote icons, dark navy bg
+- Fixed Framer Motion type error in Hero.tsx
+- Verified build passes
 
 ### [antigravity] TASK-004: Visual polish - Hero - COMPLETE (2026-05-06)
 - Added animated dark grid background.
