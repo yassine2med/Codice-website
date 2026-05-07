@@ -19,16 +19,16 @@ const stagger = {
   show: { transition: { staggerChildren: 0.08 } },
 };
 
-// Gradient per category
+// Gradient per category - Refined for premium look
 const categoryGradient: Record<string, string> = {
-  "Permitting & Licensing": "from-blue-500/20 to-cyan-500/10",
-  "AI & Compliance": "from-violet-500/20 to-blue-500/10",
-  "Logistics & Transportation": "from-emerald-500/20 to-teal-500/10",
-  "Healthcare Finance": "from-rose-500/20 to-pink-500/10",
-  "Payment Processing": "from-amber-500/20 to-yellow-500/10",
-  "Healthcare Administration": "from-indigo-500/20 to-sky-500/10",
-  "Case Management": "from-orange-500/20 to-red-500/10",
-  "Program Management": "from-teal-500/20 to-green-500/10",
+  "Permitting & Licensing": "from-[#1E3A8A]/30 to-[#2563EB]/10",
+  "AI & Compliance": "from-[#F97316]/20 to-[#FFB800]/10",
+  "Logistics & Transportation": "from-[#64748B]/30 to-[#94A3B8]/10",
+  "Healthcare Finance": "from-[#1E3A8A]/20 to-[#64748B]/10",
+  "Payment Processing": "from-[#F97316]/30 to-[#64748B]/10",
+  "Healthcare Administration": "from-[#2563EB]/20 to-[#F97316]/10",
+  "Case Management": "from-[#64748B]/40 to-[#1E3A8A]/10",
+  "Program Management": "from-[#1E3A8A]/30 to-[#F97316]/10",
 };
 
 export default function ProductsPage() {
@@ -91,7 +91,7 @@ export default function ProductsPage() {
                           src={product.logo}
                           alt={product.name}
                           fill
-                          className="object-contain mix-blend-screen"
+                          className="object-contain"
                           sizes="160px"
                         />
                       </div>

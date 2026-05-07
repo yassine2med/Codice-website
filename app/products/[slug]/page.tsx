@@ -132,9 +132,9 @@ export default function ProductDetailPage() {
               </div>
 
               {product.logo && (
-                <div className="absolute bottom-8 right-8 bg-[#111827]/80 backdrop-blur-xl p-6 rounded-3xl border border-white/10">
+                <div className="absolute bottom-8 right-8 bg-[#111827]/90 backdrop-blur-2xl p-6 rounded-3xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                   <div className="relative w-32 h-10">
-                    <Image src={product.logo} alt={product.name} fill className="object-contain mix-blend-screen" />
+                    <Image src={product.logo} alt={product.name} fill className="object-contain" />
                   </div>
                 </div>
               )}
