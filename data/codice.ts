@@ -265,7 +265,9 @@ export const products = [
     techStack: ['FinTech', 'Data Analytics', 'Secure Gateways', 'PCI-DSS'],
     logo: '/images/products/codicepay.png',
     showcaseImages: [
-      '/images/products/showcase/codicepay.png'
+      '/images/products/showcase/codicepay.png',
+      '/images/products/showcase/codicepay_2.png',
+      '/images/products/showcase/codicepay_3.png'
     ],
     isNew: false,
     slug: 'codicepay',
@@ -286,7 +288,9 @@ export const products = [
     techStack: ['Health Management', 'Case Management', 'Cloud Forms', '.NET'],
     logo: '/images/products/celermed.png',
     showcaseImages: [
-      '/images/products/showcase/celermed.png'
+      '/images/products/showcase/celermed.png',
+      '/images/products/showcase/celermed_2.png',
+      '/images/products/showcase/celermed_3.png'
     ],
     isNew: false,
     slug: 'celermed',
@@ -307,7 +311,9 @@ export const products = [
     techStack: ['Case Mgmt', 'Workflow Logic', 'SQL Server', 'Cloud API'],
     logo: '/images/products/celercase.png',
     showcaseImages: [
-      '/images/products/showcase/celercase.png'
+      '/images/products/showcase/celercase.png',
+      '/images/products/showcase/celercase_2.png',
+      '/images/products/showcase/celercase_3.png'
     ],
     isNew: false,
     slug: 'celercase',
@@ -328,7 +334,9 @@ export const products = [
     techStack: ['Program Mgmt', 'Reporting Engine', 'Secure Forms', 'Next.js'],
     logo: '/images/products/cypms.png',
     showcaseImages: [
-      '/images/products/showcase/cypms.png'
+      '/images/products/showcase/cypms.png',
+      '/images/products/showcase/cypms_2.png',
+      '/images/products/showcase/cypms_3.png'
     ],
     isNew: false,
     slug: 'cypms',
