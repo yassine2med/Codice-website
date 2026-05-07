@@ -6,7 +6,7 @@ import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/sections/Footer";
 import CTABanner from "@/components/sections/CTABanner";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, CheckCircle2, ArrowRight, ShieldCheck, Globe, Zap, Cpu } from "lucide-react";
+import { Sparkles, CheckCircle2, ArrowRight, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";

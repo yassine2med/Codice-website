@@ -6,9 +6,7 @@ import { motion, useAnimationControls } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Building2, ShieldCheck, Sparkles } from "lucide-react";
 
-const trustedLogos = [...clientLogos, ...industryPartnerLogos].filter(
-  (logo) => !logo.includes("client-226")
-);
+const trustedLogos = [...clientLogos, ...industryPartnerLogos];
 
 const firstRow = trustedLogos.filter((_, index) => index % 2 === 0);
 const secondRow = trustedLogos.filter((_, index) => index % 2 !== 0);

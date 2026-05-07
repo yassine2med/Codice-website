@@ -4,7 +4,7 @@ import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/sections/Footer";
 import { PageHero } from "@/components/ui/PageHero";
 import { company } from "@/data/codice";
-import { Mail, Phone, MapPin, Send, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import { SocialIcons } from "@/components/ui/social-icons";
 import { useState } from "react";
@@ -47,7 +47,7 @@ export default function ContactPage() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as any } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } }
   };
 
   return (

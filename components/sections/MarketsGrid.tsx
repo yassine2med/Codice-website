@@ -2,24 +2,6 @@
 
 import { markets } from "@/data/codice";
 import { motion } from "framer-motion";
-import {
-  Building2,
-  HeartPulse,
-  Bus,
-  Shield,
-  Users,
-  Hammer,
-  Landmark,
-} from "lucide-react";
-
-const iconMap: Record<string, React.ElementType> = {
-  government: Building2,
-  healthcare: HeartPulse,
-  transportation: Bus,
-  "public-safety": Shield,
-  unemployment: Users,
-  facilities: Hammer,
-};
 
 const container = {
   hidden: {},
@@ -74,7 +56,7 @@ export default function MarketsGrid() {
               <div className="pt-6 border-t border-[#1E293B] group-hover:border-[#2563EB]/20 transition-colors">
                 <p className="text-[11px] font-bold tracking-widest uppercase text-[#475569] mb-3">Mission Impact</p>
                 <p className="text-xs text-[#64748B] leading-relaxed italic">
-                  "{market.details}"
+                  &ldquo;{market.details}&rdquo;
                 </p>
               </div>
             </div>

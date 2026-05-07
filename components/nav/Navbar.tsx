@@ -2,8 +2,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, Cpu, Globe, Layers } from "lucide-react";
-import { company, navigation } from "@/data/codice";
+import { Menu, X, Cpu, Globe, Layers } from "lucide-react";
+import { navigation } from "@/data/codice";
 import { motion, AnimatePresence } from "framer-motion";
 import { DropdownNavigation } from "@/components/ui/dorpdown-navigation";
 import { SocialIcons } from "@/components/ui/social-icons";

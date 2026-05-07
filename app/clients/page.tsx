@@ -4,7 +4,6 @@ import {
   ArrowRight,
   BadgeCheck,
   Building2,
-  CheckCircle2,
   CircleDot,
   Handshake,
   Landmark,
@@ -26,7 +25,7 @@ import {
   testimonials,
 } from "@/data/codice";
 
-const trustedLogos = clientLogos.filter((logo) => !logo.includes("client-226"));
+const trustedLogos = clientLogos;
 
 const proofPoints = [
   {
@@ -54,7 +53,6 @@ const featuredClientNames = [
 ];
 
 const logoConstellation = trustedLogos.slice(0, 9);
-const logoWall = trustedLogos.slice(9);
 
 const deliverySignals = [
   {
@@ -157,7 +155,7 @@ export default function ClientsPage() {
                   <div className="rounded-[1.35rem] border border-[#1E293B] bg-[#111827] p-5">
                     <Quote className="mb-5 h-7 w-7 text-[#2563EB]" />
                     <p className="text-sm leading-relaxed text-[#CBD5E1]">
-                      "{testimonials[0].quote}"
+                      &ldquo;{testimonials[0].quote}&rdquo;
                     </p>
                     <p className="mt-5 text-xs font-bold uppercase tracking-widest text-[#64748B]">
                       {testimonials[0].name}
@@ -391,7 +389,7 @@ export default function ClientsPage() {
                   <Quote className="h-9 w-9 text-[#2563EB]" />
                   <div>
                     <blockquote className="text-lg leading-relaxed text-[#CBD5E1]">
-                      "{item.quote}"
+                      &ldquo;{item.quote}&rdquo;
                     </blockquote>
                     <figcaption className="mt-6 border-t border-[#1E293B] pt-5">
                       <p className="font-bold text-white">{item.name}</p>

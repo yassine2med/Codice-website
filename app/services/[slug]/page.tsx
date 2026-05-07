@@ -6,7 +6,7 @@ import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/sections/Footer";
 import CTABanner from "@/components/sections/CTABanner";
 import { motion } from "framer-motion";
-import { CheckCircle2, Cpu, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function ServiceDetailPage() {
@@ -29,7 +29,7 @@ export default function ServiceDetailPage() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as any } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } },
   };
 
   return (
@@ -102,7 +102,7 @@ export default function ServiceDetailPage() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#2563EB]/10 blur-[80px] -mr-32 -mt-32 pointer-events-none" />
               <h3 className="text-2xl font-bold mb-6">Our Approach</h3>
               <p className="text-[#94A3B8] leading-relaxed mb-6">
-                At CODICE, we don't just deliver technology; we deliver mission success. Our approach to {service.title.toLowerCase()} is rooted in deep government domain expertise and a commitment to modern, scalable, and secure architectures.
+                At CODICE, we don&apos;t just deliver technology; we deliver mission success. Our approach to {service.title.toLowerCase()} is rooted in deep government domain expertise and a commitment to modern, scalable, and secure architectures.
               </p>
               <div className="flex flex-wrap gap-3">
                 {service.techStack?.map((tech) => (
@@ -120,7 +120,7 @@ export default function ServiceDetailPage() {
               <div className="p-8 rounded-3xl bg-[#2563EB] text-white shadow-[0_0_40px_rgba(37,99,235,0.2)]">
                 <h3 className="text-2xl font-bold mb-4">Ready to Modernize?</h3>
                 <p className="text-white/90 mb-8 leading-relaxed">
-                  Learn how CODICE can transform your agency's operations with our {service.title.toLowerCase()} expertise.
+                  Learn how CODICE can transform your agency&apos;s operations with our {service.title.toLowerCase()} expertise.
                 </p>
                 <Link 
                   href="/contact"

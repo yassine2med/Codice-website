@@ -1,36 +1,32 @@
-# Handoff — Codice Website
+# HANDOFF — CODICE Technology Website
 
 ## Goal
-Build a high-fidelity, multi-page platform for Codice Technology (DC Gov-Tech firm) using Next.js 16 + Tailwind v4 + Framer Motion. 
+Build and deploy the CODICE Technology LLC marketing website (Next.js 16 + Tailwind v4 + Framer Motion). Design north star: "Palantir meets Vercel, built for DC government."
 
-**Design North Star**: "Palantir meets Vercel, built for DC government."
+## Completed This Session
+- Integrated real LinkedIn data: minority-owned cert, GSA schedule, 109 employees, Linwood Jolly
+- Fixed Hero: cycling word mobile overflow, credentials bar replacing duplicate stats
+- Fixed Footer: inline SVG social icons (linter-resistant), award pill badge
+- Fixed Our Story: animated stat counters, split cert categories, derived offices from `company.offices`
+- Fixed contact form: real mailto submission with encoded subject/body
+- Fixed CaseStudies: 2×2 grid layout
+- Fixed NewsEvents: external link handling for real codicetech.com URLs
+- Fixed Products detail page: CheckCircle2 feature bullets
+- Fixed MarketsGrid: iconMap matching new market IDs
+- Fixed client logos: mapped to actually-existing numbered files in /public/images/clients/
+- Added StatsSection eyebrow label, "View All" pill chip links on homepage
+- **Deployed to Vercel**: https://codice-website.vercel.app
+- GitHub repo auto-deploy connected: https://github.com/yassine2med/Codice-website
 
-## Completed This Session (Visual & Agentic Phase)
-- **Visual Overhaul**: Switched entire site to a permanent premium Dark Theme (#0A1628 / #111827).
-- **Hero & Motion**: Implemented animated grid backgrounds, staggered H1 reveals, and radial glows.
-- **Data Fidelity**: Normalized all 13 sections for design parity:
-  - `StatsSection`: Large DM Mono counters (16, 12, 8, 100%) with blue glow effects.
-  - `TrustMarquee`: Infinite scroll with pause-on-hover and left/right fade masks.
-  - `ServiceCards` & `Products`: Dark surface cards (#111827) with interactive hover-lift.
-  - `CTABanner`: High-impact navy-to-blue gradient with grid overlay.
-- **Agent Skill Injection**: 
-  - Established specialized roles: Codex (Performance) and Claude (Accessibility).
-  - Created `create_agent.mjs` for Managed BrowserUse Agent integration.
-  - Added technical guides: `GUIDE_PERFORMANCE.md` and `GUIDE_ACCESSIBILITY.md`.
-- **Synchronization**: All changes pushed to GitHub (`github.com/yassine2med/Codice-website`).
-
-## Files Changed (Major)
-`components/sections/*.tsx`, `components/ui/*.tsx`, `app/globals.css`, `HANDOFF.md`, `assets/TASKS.md`, `assets/CONTENT.md`.
-
-## Still In Progress
-- **Team/About**: Photos ready at `/images/team/`, section needs to be built with new dark-theme standards.
-- **Agent Execution**: `node create_agent.mjs` needs to be run once `ANTHROPIC_API_KEY` is provided.
-- **Audit Pass**: Need to run the first official Performance/Accessibility audit using the new guides.
+## Watch Out For
+- **Codex/linter agent actively rewrites files** — use inline SVGs (not lucide imports in Footer) and derive data from `company.*` fields, never hardcode
+- `data/codice.ts` is the single source of truth
+- Navigation SOLUTIONS group uses `sections[]` not `items[]`
 
 ## Next Steps
-1. Build **Team/About** section using the new `GlowCard` standards.
-2. Execute **Skill Audit** on all normalized sections.
-3. Integrate **BrowserUse Agent** for automated data extraction workflows.
+1. Add real product showcase images to `/public/images/products/showcase/`
+2. Set up custom domain on Vercel dashboard
+3. Design polish pass (animations, mobile spacing)
 
 ## Resume
 ```bash

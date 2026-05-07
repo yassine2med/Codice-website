@@ -27,7 +27,7 @@ export default function TechStack() {
           transition={{
             duration: 60,
             repeat: Infinity,
-            ease: "linear" as any,
+            ease: "linear",
           }}
         >
           {doubled.map((tech, i) => (

@@ -121,7 +121,7 @@ export default function OurStoryPage() {
           </motion.h1>
 
           <motion.p variants={fadeUp} className="text-lg md:text-xl text-[#64748B] max-w-2xl mx-auto leading-relaxed mb-12">
-            For 16 years, CODICE Technology has been the trusted partner that Washington DC's
+            For 16 years, CODICE Technology has been the trusted partner that Washington DC&apos;s
             government agencies call when the mission is too important to get wrong.
           </motion.p>
 
@@ -154,7 +154,7 @@ export default function OurStoryPage() {
               The Origin
             </motion.p>
             <motion.h2 variants={fadeUp} className="text-[clamp(28px,4vw,48px)] font-bold text-[#F8FAFC] mb-6 leading-tight tracking-tight">
-              Built to Solve Government's Hardest Technology Problems
+              Built to Solve Government&apos;s Hardest Technology Problems
             </motion.h2>
             <motion.div variants={fadeUp} className="space-y-5 text-[#64748B] text-base md:text-lg leading-relaxed">
               <p>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Shield, Award } from "lucide-react";
 import Link from "next/link";
@@ -116,7 +116,7 @@ function Hero() {
           variants={itemVariants}
           className="text-lg md:text-xl text-[#64748B] max-w-2xl leading-relaxed"
         >
-          CODICE Technology has been the trusted IT partner to Washington DC's
+          CODICE Technology has been the trusted IT partner to Washington DC&apos;s
           government agencies for <strong className="text-[#94A3B8] font-semibold">16 years</strong> — delivering
           custom software, permitting platforms, AI compliance tools, and cloud
           infrastructure that agencies rely on every day.

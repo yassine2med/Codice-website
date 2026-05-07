@@ -4,7 +4,7 @@ import { products } from "@/data/codice";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,16 +13,10 @@ export default function ProductsShowcase() {
   const [imageIndex, setImageIndex] = useState(0);
   
   const product = products.find((p) => p.id === active)!;
-
-  // Reset image carousel when switching products
-  useEffect(() => {
-    setImageIndex(0);
-  }, [active]);
+  const images = useMemo(() => product.showcaseImages ?? [], [product]);
 
   // Auto-play the image carousel
   useEffect(() => {
-    // @ts-ignore - showcaseImages is added dynamically to the data structure
-    const images = product.showcaseImages;
     if (!images || images.length <= 1) return;
     
     const interval = setInterval(() => {
@@ -30,7 +24,7 @@ export default function ProductsShowcase() {
     }, 4000);
     
     return () => clearInterval(interval);
-  }, [product]);
+  }, [images]);
 
   return (
     <section id="products" className="py-24 px-6 max-w-7xl mx-auto">
@@ -45,7 +39,10 @@ export default function ProductsShowcase() {
         {products.map((p) => (
           <button
             key={p.id}
-            onClick={() => setActive(p.id)}
+            onClick={() => {
+              setActive(p.id);
+              setImageIndex(0);
+            }}
             className={`relative text-[11px] font-bold tracking-widest uppercase px-5 py-2.5 rounded-full border transition-all duration-300 ${
               active === p.id
                 ? "bg-[#2563EB] border-[#2563EB] text-white shadow-[0_0_20px_rgba(37,99,235,0.3)]"
@@ -111,8 +108,7 @@ export default function ProductsShowcase() {
 
             {/* Right: Showcase Image Panel */}
             <div className="lg:w-[500px] bg-[#0A1628] border-t lg:border-t-0 lg:border-l border-[#1E293B] relative overflow-hidden group/showcase">
-              {/* @ts-ignore */}
-              {product.showcaseImages && product.showcaseImages.length > 0 ? (
+              {images.length > 0 ? (
                 <div className="relative w-full h-full min-h-[300px] lg:min-h-full">
                   <AnimatePresence mode="popLayout">
                     <motion.div
@@ -124,8 +120,7 @@ export default function ProductsShowcase() {
                       className="absolute inset-0"
                     >
                       <Image
-                        // @ts-ignore
-                        src={product.showcaseImages[imageIndex]}
+                        src={images[imageIndex]}
                         alt={`${product.name} interface`}
                         fill
                         className="object-cover opacity-80"
@@ -138,11 +133,9 @@ export default function ProductsShowcase() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-[#0A1628]/40 pointer-events-none z-10" />
                   
                   {/* Progress Indicators */}
-                  {/* @ts-ignore */}
-                  {product.showcaseImages.length > 1 && (
+                  {images.length > 1 && (
                     <div className="absolute top-6 right-6 flex gap-2 z-20">
-                      {/* @ts-ignore */}
-                      {product.showcaseImages.map((_, idx) => (
+                      {images.map((_, idx) => (
                         <div 
                           key={idx} 
                           className={`h-1 rounded-full transition-all duration-500 ${idx === imageIndex ? "w-6 bg-[#2563EB]" : "w-2 bg-white/20"}`}

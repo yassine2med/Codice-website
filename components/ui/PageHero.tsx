@@ -22,7 +22,7 @@ export function PageHero({ title, subtitle, label, gradient = "from-[#2563EB]/20
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as any }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
         >
           {label && (
             <p className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-6">

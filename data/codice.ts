@@ -417,7 +417,6 @@ export const clientLogos = [
   '/images/clients/client-223.png',
   '/images/clients/client-224.png',
   '/images/clients/client-225.png',
-  '/images/clients/client-226.png',
   '/images/clients/client-227.png',
   '/images/clients/client-228.png',
   '/images/clients/client-229.png',
