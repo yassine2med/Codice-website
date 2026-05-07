@@ -162,12 +162,12 @@ export default function ProductsShowcase() {
                   {/* Brand Badge Overlay */}
                   <div className="absolute bottom-8 left-8 flex items-center gap-4 bg-[#111827]/90 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl z-20 transition-transform duration-300 group-hover/showcase:-translate-y-2">
                     {product.logo ? (
-                      <div className="relative w-24 h-8">
+                      <div className="relative w-24 h-8 transition-transform duration-500 group-hover/showcase:scale-110">
                         <Image
                           src={product.logo}
                           alt={product.name}
                           fill
-                          className="object-contain mix-blend-screen"
+                          className="object-contain"
                         />
                       </div>
                     ) : (
@@ -176,14 +176,14 @@ export default function ProductsShowcase() {
                   </div>
                 </div>
               ) : product.logo ? (
-                <div className="flex items-center justify-center h-full p-12">
-                  <div className="relative w-44 h-44 transition-transform duration-500 group-hover/showcase:scale-110">
+                <div className="flex items-center justify-center h-full p-12 bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.08),transparent_70%)]">
+                  <div className="relative w-48 h-48 transition-transform duration-700 group-hover/showcase:scale-110 group-hover/showcase:rotate-3">
                     <Image
                       src={product.logo}
                       alt={product.name}
                       fill
-                      className="object-contain mix-blend-screen"
-                      sizes="176px"
+                      className="object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                      sizes="192px"
                     />
                   </div>
                 </div>

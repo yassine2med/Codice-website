@@ -25,31 +25,35 @@ export default function ServicesPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-40 pb-24 overflow-hidden">
+      <section className="relative pt-48 pb-24 overflow-hidden">
+        {/* Background Effects */}
         <div className="absolute inset-0 opacity-[0.12]" style={{
           backgroundImage: `linear-gradient(to right,#1E293B 1px,transparent 1px),linear-gradient(to bottom,#1E293B 1px,transparent 1px)`,
           backgroundSize: "4rem 4rem",
           maskImage: "radial-gradient(ellipse 80% 60% at 50% 0%,#000 40%,transparent 100%)",
           WebkitMaskImage: "radial-gradient(ellipse 80% 60% at 50% 0%,#000 40%,transparent 100%)",
         }} />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#2563EB]/10 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-[#2563EB]/10 blur-[160px] rounded-full pointer-events-none" />
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#2563EB]/5 blur-[120px] rounded-full pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <motion.div variants={stagger} initial="hidden" animate="show" className="max-w-4xl">
-            <motion.p variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.3em] text-[#2563EB] mb-6">
-              Our Expertise
-            </motion.p>
-            <motion.h1 variants={fadeUp} className="text-[clamp(44px,7vw,86px)] font-bold leading-[1.02] tracking-tight mb-8">
-              Eight Services.<br />One Mission.
+            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-[#2563EB] bg-[#2563EB]/10 border border-[#2563EB]/20 px-4 py-2 rounded-full mb-8">
+              Expertise & Delivery
+            </motion.div>
+            <motion.h1 variants={fadeUp} className="text-[clamp(48px,8vw,92px)] font-bold leading-[0.95] tracking-tight mb-8">
+              Eight Services.<br />
+              <span className="text-[#2563EB]">One Mission.</span>
             </motion.h1>
             <motion.p variants={fadeUp} className="text-lg md:text-xl text-[#64748B] max-w-2xl leading-relaxed mb-12">
               End-to-end technology solutions purpose-built for government — from custom software and AI compliance tools to cloud migration and workforce management.
             </motion.p>
-            <motion.div variants={fadeUp} className="flex flex-wrap gap-x-10 gap-y-4">
+            <motion.div variants={fadeUp} className="flex flex-wrap gap-x-12 gap-y-6">
               {stats.map((s) => (
-                <div key={s.label} className="border-l-2 border-[#2563EB]/50 pl-4">
-                  <p className="font-mono text-2xl font-bold text-white">{s.value}{s.suffix}</p>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#475569]">{s.label}</p>
+                <div key={s.label} className="group relative">
+                  <div className="absolute -left-4 top-0 bottom-0 w-[2px] bg-[#2563EB]/30 group-hover:bg-[#2563EB] transition-colors" />
+                  <p className="font-mono text-3xl font-bold text-white tracking-tighter tabular-nums">{s.value}{s.suffix}</p>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#475569] mt-1 group-hover:text-[#2563EB] transition-colors">{s.label}</p>
                 </div>
               ))}
             </motion.div>

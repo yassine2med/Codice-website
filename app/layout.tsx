@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, DM_Mono } from "next/font/google";
 import "./globals.css";
+import { PageTransition } from "@/components/ui/PageTransition";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -52,7 +53,9 @@ export default function RootLayout({
       className={`${inter.variable} ${dmMono.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-white text-[#0A1628] antialiased font-[family-name:var(--font-inter)]">
-        {children}
+        <PageTransition>
+          {children}
+        </PageTransition>
       </body>
     </html>
   );

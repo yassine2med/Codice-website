@@ -37,22 +37,25 @@ export default function MarketsPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-40 pb-24 overflow-hidden">
+      <section className="relative pt-48 pb-24 overflow-hidden">
+        {/* Background Effects */}
         <div className="absolute inset-0 opacity-[0.12]" style={{
           backgroundImage: `linear-gradient(to right,#1E293B 1px,transparent 1px),linear-gradient(to bottom,#1E293B 1px,transparent 1px)`,
           backgroundSize: "4rem 4rem",
           maskImage: "radial-gradient(ellipse 80% 60% at 50% 0%,#000 40%,transparent 100%)",
           WebkitMaskImage: "radial-gradient(ellipse 80% 60% at 50% 0%,#000 40%,transparent 100%)",
         }} />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#2563EB]/10 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[600px] bg-[#2563EB]/10 blur-[180px] rounded-full pointer-events-none" />
+        <div className="absolute top-0 right-0 w-80 h-80 bg-[#2563EB]/5 blur-[100px] rounded-full pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <motion.div initial="hidden" animate="show" variants={stagger}>
-            <motion.p variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.3em] text-[#2563EB] mb-6">
-              Sectors We Serve
-            </motion.p>
-            <motion.h1 variants={fadeUp} className="text-[clamp(44px,7vw,86px)] font-bold leading-[1.02] tracking-tight mb-8">
-              Impact Across Government
+            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-[#2563EB] bg-[#2563EB]/10 border border-[#2563EB]/20 px-4 py-2 rounded-full mb-8">
+              Government Sectors
+            </motion.div>
+            <motion.h1 variants={fadeUp} className="text-[clamp(48px,8vw,92px)] font-bold leading-[0.95] tracking-tight mb-8">
+              Impact Across<br />
+              <span className="text-[#2563EB]">Government.</span>
             </motion.h1>
             <motion.p variants={fadeUp} className="text-lg md:text-xl text-[#64748B] max-w-2xl mx-auto leading-relaxed">
               From local DC agencies to federal health departments — CODICE delivers technology that scales to meet the mission across every corner of government.
