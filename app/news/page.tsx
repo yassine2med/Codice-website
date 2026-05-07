@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   CalendarDays,
@@ -7,8 +10,11 @@ import {
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
+import { AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/sections/Footer";
+import Lightbox from "@/components/ui/Lightbox";
 import { company, news } from "@/data/codice";
 
 const featuredUpdates = [
@@ -53,8 +59,15 @@ const sourceItems = [
 ];
 
 export default function NewsPage() {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#0A1628] text-[#F8FAFC]">
+      <AnimatePresence>
+        {lightbox && (
+          <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />
+        )}
+      </AnimatePresence>
       <Navbar />
 
       <section className="relative overflow-hidden pt-40 pb-24">
@@ -121,24 +134,43 @@ export default function NewsPage() {
             {sourceItems.map((item) => {
               const external = item.slug.startsWith("http");
               return (
-                <article key={item.title} className="group flex min-h-[340px] flex-col justify-between rounded-[1.5rem] border border-[#1E293B] bg-[#0A1628] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#60A5FA]/60">
-                  <div>
-                    <div className="mb-8 flex items-center gap-3 text-[#64748B]">
-                      <CalendarDays size={17} />
-                      <p className="font-mono text-xs uppercase tracking-widest">{item.date}</p>
+                <article key={item.title} className="group flex flex-col rounded-[1.5rem] border border-[#1E293B] bg-[#0A1628] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-[#60A5FA]/60">
+                  {item.image && (
+                    <button
+                      type="button"
+                      className="relative w-full h-48 overflow-hidden cursor-zoom-in shrink-0"
+                      onClick={() => setLightbox({ src: item.image!, alt: item.title })}
+                      aria-label={`View image for ${item.title}`}
+                    >
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 1024px) 100vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-linear-to-t from-[#0A1628]/60 to-transparent" />
+                    </button>
+                  )}
+                  <div className="flex flex-1 flex-col justify-between p-7">
+                    <div>
+                      <div className="mb-4 flex items-center gap-3 text-[#64748B]">
+                        <CalendarDays size={15} />
+                        <p className="font-mono text-xs uppercase tracking-widest">{item.date}</p>
+                      </div>
+                      <h3 className="text-xl font-bold leading-tight text-white">{item.title}</h3>
+                      <p className="mt-3 text-sm leading-relaxed text-[#94A3B8]">{item.excerpt}</p>
                     </div>
-                    <h3 className="text-2xl font-bold leading-tight text-white">{item.title}</h3>
-                    <p className="mt-4 text-sm leading-relaxed text-[#94A3B8]">{item.excerpt}</p>
+                    <Link
+                      href={item.slug}
+                      target={external ? "_blank" : undefined}
+                      rel={external ? "noopener noreferrer" : undefined}
+                      className="group/link mt-6 inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-[#60A5FA] hover:text-white"
+                    >
+                      Read More
+                      <ArrowRight size={18} className="transition-transform group-hover/link:translate-x-1" />
+                    </Link>
                   </div>
-                  <Link
-                    href={item.slug}
-                    target={external ? "_blank" : undefined}
-                    rel={external ? "noopener noreferrer" : undefined}
-                    className="group/link mt-8 inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-[#60A5FA] hover:text-white"
-                  >
-                    Read More
-                    <ArrowRight size={18} className="transition-transform group-hover/link:translate-x-1" />
-                  </Link>
                 </article>
               );
             })}

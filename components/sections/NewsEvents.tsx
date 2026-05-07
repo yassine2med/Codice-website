@@ -42,7 +42,7 @@ export default function NewsEvents() {
           >
             {/* Image */}
             {article.image && (
-              <div className="relative w-full h-36 overflow-hidden">
+              <div className="relative w-full h-48 overflow-hidden">
                 <Image
                   src={article.image}
                   alt={article.title}

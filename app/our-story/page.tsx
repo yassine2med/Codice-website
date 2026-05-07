@@ -4,9 +4,11 @@ import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/sections/Footer";
 import { team, stats, company } from "@/data/codice";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import Lightbox from "@/components/ui/Lightbox";
+import { useState } from "react";
 import {
   Award,
   MapPin,
@@ -86,8 +88,15 @@ const offices = company.offices.map((o) => ({
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function OurStoryPage() {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+
   return (
     <main className="min-h-screen bg-[#0A1628] overflow-x-hidden">
+      <AnimatePresence>
+        {lightbox && (
+          <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />
+        )}
+      </AnimatePresence>
       <Navbar />
 
       {/* ── 1. HERO ─────────────────────────────────────────────────────────── */}
@@ -339,7 +348,12 @@ export default function OurStoryPage() {
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
                 className="group bg-[#111827] border border-[#1E293B] rounded-2xl overflow-hidden hover:border-[#2563EB]/40 hover:shadow-[0_0_32px_rgba(37,99,235,0.1)] transition-colors duration-300"
               >
-                <div className="relative w-full h-56 bg-[#0A1628] overflow-hidden">
+                <button
+                  type="button"
+                  className="relative w-full h-72 bg-[#0A1628] overflow-hidden cursor-zoom-in"
+                  onClick={() => setLightbox({ src: member.photo, alt: member.name })}
+                  aria-label={`View photo of ${member.name}`}
+                >
                   <Image
                     src={member.photo}
                     alt={member.name}
@@ -348,7 +362,7 @@ export default function OurStoryPage() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-[#111827] via-transparent to-transparent opacity-60" />
-                </div>
+                </button>
                 <div className="p-6">
                   <h3 className="text-base font-bold text-[#F8FAFC] mb-1 group-hover:text-[#2563EB] transition-colors duration-300">
                     {member.name}
