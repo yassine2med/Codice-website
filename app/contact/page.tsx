@@ -43,7 +43,6 @@ export default function ContactPage() {
       
       {/* Hero Section */}
       <section className="relative pt-48 pb-24 overflow-hidden mesh-gradient">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-primary/10 blur-[150px] rounded-full animate-pulse-slow" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <motion.div
@@ -137,7 +136,6 @@ export default function ContactPage() {
 
           {/* Right Column: Deployment Form */}
           <div className="relative">
-            <div className="absolute -inset-1 bg-linear-to-r from-brand-primary/20 to-brand-accent/20 blur-2xl rounded-[3rem] opacity-50" />
             
             <div className="glass-card p-12 md:p-16 rounded-[3rem] border-white/10 relative z-10">
               <div className="mb-12">

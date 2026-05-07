@@ -24,7 +24,6 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 export default function MarketsGrid() {
   return (
     <section id="markets" className="py-24 px-6 max-w-7xl mx-auto relative">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-primary/5 blur-[120px] rounded-full pointer-events-none" />
       
       <SectionHeader 
         label="Sectors We Serve"
@@ -48,8 +47,6 @@ export default function MarketsGrid() {
               className="group"
             >
               <SpotlightCard className="p-8 rounded-[2.5rem] glass-card hover:border-brand-primary/30 transition-all duration-500 overflow-hidden h-full flex flex-col shadow-xl">
-                {/* Background Decor */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/5 blur-3xl -mr-16 -mt-16 group-hover:w-48 group-hover:h-48 transition-all duration-500" />
                 
                 <div className="relative z-10 flex-1">
                   <div className="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center mb-6 group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">

@@ -30,7 +30,6 @@ export default function ProductsShowcase() {
 
   return (
     <section id="products" className="py-24 px-6 max-w-7xl mx-auto relative">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-primary/5 blur-[100px] rounded-full pointer-events-none" />
       
       <SectionHeader
         label="Proprietary Platforms"
@@ -80,7 +79,6 @@ export default function ProductsShowcase() {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="relative glass-card rounded-[3rem] overflow-hidden border-black/5 shadow-2xl"
         >
-          <div className="absolute inset-0 mesh-gradient opacity-40 pointer-events-none" />
 
           <div className="relative z-10 flex flex-col lg:flex-row min-h-[600px]">
             {/* Content Stage */}
@@ -170,8 +168,6 @@ export default function ProductsShowcase() {
                     </motion.div>
                   </AnimatePresence>
                   
-                  {/* Glass Interface Overlays */}
-                  <div className="absolute inset-0 bg-linear-to-b from-white/20 via-transparent to-white/20 z-10" />
                   
                   <div className="absolute top-10 right-10 flex gap-2 z-20">
                     {images.map((_, idx) => (

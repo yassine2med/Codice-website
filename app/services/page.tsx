@@ -26,7 +26,6 @@ export default function ServicesPage() {
 
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 overflow-hidden mesh-gradient">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-primary/5 blur-[150px] rounded-full animate-pulse-slow" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <motion.div variants={stagger} initial="hidden" animate="show" className="max-w-4xl">

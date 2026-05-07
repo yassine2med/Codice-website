@@ -42,9 +42,6 @@ function Hero() {
 
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-background overflow-hidden mesh-gradient">
-      {/* Decorative Glows */}
-      <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-brand-primary/5 blur-[150px] rounded-full animate-pulse-slow" />
-      <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-brand-accent/3 blur-[120px] rounded-full animate-pulse-slow delay-300" />
       
       {/* Grid Overlay */}
       <div

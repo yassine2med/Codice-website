@@ -88,7 +88,6 @@ export default function ArticlesPage() {
 
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 overflow-hidden mesh-gradient">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-primary/5 blur-[150px] rounded-full animate-pulse-slow" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
           <motion.div

@@ -6,21 +6,15 @@ import Link from "next/link";
 
 export default function CTABanner() {
   return (
-    <section id="cta" className="py-28 px-6 relative overflow-hidden bg-slate-50">
+    <section id="cta" className="py-28 px-6 relative overflow-hidden bg-white">
       {/* Layered backgrounds */}
-      <div className="absolute inset-0 mesh-gradient opacity-30 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_100%,rgba(37,99,235,0.05),transparent)]" />
       <div
-        className="absolute inset-0 opacity-[0.08]"
+        className="absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage: `linear-gradient(to right,#0A1628 1px,transparent 1px),linear-gradient(to bottom,#0A1628 1px,transparent 1px)`,
           backgroundSize: "3rem 3rem",
         }}
       />
-
-      {/* Side glows */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-brand-primary/5 blur-[100px] rounded-full" />
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-brand-primary/5 blur-[100px] rounded-full" />
 
       <motion.div
         initial={{ opacity: 0, y: 24 }}
