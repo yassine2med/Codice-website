@@ -122,3 +122,12 @@
 - Final `npm run build`: passed clean.
 - Verified HTTP 200 for `/`, `/clients`, `/news`, `/articles`, `/careers`, `/contact`, `/our-story`, `/products`, `/services`, `/markets`, `/case-studies`, `/products/permione`, `/products/fortimind`, `/services/software-development`, and `/services/permit-modernization`.
 - Verified those probed routes do not serve `client-226.png`.
+
+## 2026-05-07 - Follow-up issue fix pass
+
+- Re-ran `git status`, `npm run lint`, and `npm run build` after the user asked to fix all issues again.
+- Build was passing, but lint found new issues introduced by later edits in `/capability`, `/news`, `/our-story`, `/products`, `ProductsShowcase`, `Lightbox`, and `TeamModal`.
+- Fixed unused imports, `no-explicit-any`, unescaped JSX apostrophe, and React hook set-state-in-effect violations.
+- Final `npm run lint`: passed clean.
+- Final `npm run build`: passed clean.
+- Verified HTTP 200 for `/`, `/clients`, `/news`, `/articles`, `/careers`, `/capability`, `/contact`, `/our-story`, `/products`, `/services`, `/markets`, `/case-studies`, `/products/permione`, `/products/fortimind`, `/services/software-development`, and `/services/permit-modernization`.

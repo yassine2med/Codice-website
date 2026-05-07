@@ -4,7 +4,7 @@ import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/sections/Footer";
 import { team, stats, company } from "@/data/codice";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Lightbox from "@/components/ui/Lightbox";
@@ -88,10 +88,12 @@ const offices = company.offices.map((o) => ({
 }));
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
+type TeamMember = (typeof team)[number];
+
 export default function OurStoryPage() {
   const [lightbox, setLightbox] = useState<{ images: string[]; index: number; alt: string } | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedMember, setSelectedMember] = useState<any>(null);
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
 
   return (
     <main className="min-h-screen bg-[#0A1628] overflow-x-hidden">
@@ -591,4 +593,3 @@ export default function OurStoryPage() {
     </main>
   );
 }
-

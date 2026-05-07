@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { X, GraduationCap, Briefcase, Award } from "lucide-react";
+import { X, GraduationCap, Briefcase } from "lucide-react";
 import { useEffect } from "react";
 
 interface TeamMember {
@@ -43,12 +43,12 @@ export function TeamModal({ member, isOpen, onClose }: TeamModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#0A1628]/95 backdrop-blur-2xl p-4 md:p-6"
+          className="fixed inset-0 z-9999 flex items-center justify-center bg-[#0A1628]/95 backdrop-blur-2xl p-4 md:p-6"
           onClick={onClose}
         >
           <button
             onClick={onClose}
-            className="absolute top-6 right-6 z-[10000] p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+            className="absolute top-6 right-6 z-10000 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
           >
             <X size={24} />
           </button>

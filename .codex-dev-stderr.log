@@ -17677,3 +17677,64 @@ Import traces:
 [browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
 [browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
 [browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Image with src "/images/brand/codice-logo-full.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] The final argument passed to useEffect changed size between renders. The order and size of this array must remain constant.
+
+Previous: [false, 3, 0, ()=>setLightboxOpen(false)]
+Incoming: [false, 3, ()=>setLightboxOpen(false)] 
+    at Lightbox (components/ui/Lightbox.tsx:19:12)
+    at Set.forEach (<anonymous>)
+  17 |   const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  18 |
+> 19 |   useEffect(() => {
+     |            ^
+  20 |     if (!isOpen) return;
+  21 |     const handleKey = (e: KeyboardEvent) => {
+  22 |       if (e.key === "Escape") onClose(); (components/ui/Lightbox.tsx:19:12)
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+Error: Route "/products/[slug]" used `params.slug`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at <unknown> (app\products\[slug]\layout.tsx:5:58)
+    at Array.find (<anonymous>)
+    at Module.generateMetadata (app\products\[slug]\layout.tsx:5:28)
+  3 |
+  4 | export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+> 5 |   const product = products.find((p) => p.slug === params.slug);
+    |                                                          ^
+  6 |   if (!product) return { title: "Product" };
+  7 |   return {
+  8 |     title: product.name,
+Error: Route "/products/[slug]" used `params.slug`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at <unknown> (app\products\[slug]\layout.tsx:5:58)
+    at Array.find (<anonymous>)
+    at Module.generateMetadata (app\products\[slug]\layout.tsx:5:28)
+  3 |
+  4 | export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+> 5 |   const product = products.find((p) => p.slug === params.slug);
+    |                                                          ^
+  6 |   if (!product) return { title: "Product" };
+  7 |   return {
+  8 |     title: product.name,
+Error: Route "/services/[slug]" used `params.slug`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at <unknown> (app\services\[slug]\layout.tsx:5:58)
+    at Array.find (<anonymous>)
+    at Module.generateMetadata (app\services\[slug]\layout.tsx:5:28)
+  3 |
+  4 | export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+> 5 |   const service = services.find((s) => s.slug === params.slug);
+    |                                                          ^
+  6 |   if (!service) return { title: "Service" };
+  7 |   return {
+  8 |     title: service.title,
+Error: Route "/services/[slug]" used `params.slug`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at <unknown> (app\services\[slug]\layout.tsx:5:58)
+    at Array.find (<anonymous>)
+    at Module.generateMetadata (app\services\[slug]\layout.tsx:5:28)
+  3 |
+  4 | export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+> 5 |   const service = services.find((s) => s.slug === params.slug);
+    |                                                          ^
+  6 |   if (!service) return { title: "Service" };
+  7 |   return {
+  8 |     title: service.title,

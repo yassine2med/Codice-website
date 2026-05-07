@@ -7,10 +7,16 @@ import CaseStudies from "@/components/sections/CaseStudies";
 import CTABanner from "@/components/sections/CTABanner";
 import { motion } from "framer-motion";
 import { Building2, HeartPulse, Bus, Shield, Users, Hammer, GraduationCap, Scale, DollarSign } from "lucide-react";
+import { SpotlightCard } from "@/components/ui/SpotlightCard";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } },
+};
+
+const stagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08 } },
 };
 
 const sectorHighlights = [
@@ -41,7 +47,7 @@ export default function MarketsPage() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#2563EB]/10 blur-[140px] rounded-full pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <motion.div initial="hidden" animate="show" variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1 } } }}>
+          <motion.div initial="hidden" animate="show" variants={stagger}>
             <motion.p variants={fadeUp} className="text-xs font-bold uppercase tracking-[0.3em] text-[#2563EB] mb-6">
               Sectors We Serve
             </motion.p>
@@ -62,21 +68,23 @@ export default function MarketsPage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.07 } } }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
+            variants={stagger}
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-9 gap-3"
           >
             {sectorHighlights.map(({ Icon, label, stat, desc }) => (
-              <motion.div
-                key={label}
-                variants={fadeUp}
-                className="group p-6 rounded-2xl bg-[#111827] border border-[#1E293B] hover:border-[#2563EB]/40 transition-all duration-300 flex flex-col gap-3"
-              >
-                <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 flex items-center justify-center group-hover:bg-[#2563EB]/20 transition-colors">
-                  <Icon size={18} className="text-[#2563EB]" />
-                </div>
-                <p className="font-mono text-2xl font-bold text-white">{stat}</p>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-[#2563EB]">{label}</p>
-                <p className="text-xs text-[#475569] leading-relaxed hidden lg:block">{desc}</p>
+              <motion.div key={label} variants={fadeUp}>
+                <SpotlightCard
+                  className="group p-5 rounded-2xl bg-[#111827] border border-[#1E293B] hover:border-[#2563EB]/40 transition-all duration-300 flex flex-col gap-3 h-full"
+                  spotlightColor="rgba(37, 99, 235, 0.05)"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 flex items-center justify-center group-hover:bg-[#2563EB]/20 transition-colors">
+                    <Icon size={18} className="text-[#2563EB]" />
+                  </div>
+                  <div>
+                    <p className="font-mono text-xl font-bold text-white mb-1">{stat}</p>
+                    <p className="text-[9px] font-bold uppercase tracking-widest text-[#2563EB]">{label}</p>
+                  </div>
+                </SpotlightCard>
               </motion.div>
             ))}
           </motion.div>

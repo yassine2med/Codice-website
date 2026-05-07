@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   ArrowRight,
@@ -11,6 +13,18 @@ import {
 import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/sections/Footer";
 import { company } from "@/data/codice";
+import { motion } from "framer-motion";
+import { SpotlightCard } from "@/components/ui/SpotlightCard";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } },
+};
+
+const stagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08 } },
+};
 
 const culture = [
   {
@@ -75,53 +89,55 @@ export default function CareersPage() {
         <div className="absolute left-[-12%] top-28 h-[520px] w-[520px] rounded-full bg-[#2563EB]/18 blur-[120px]" />
 
         <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div>
-            <p className="mb-5 text-xs font-bold uppercase tracking-[0.3em] text-[#60A5FA]">
+          <motion.div initial="hidden" animate="show" variants={stagger}>
+            <motion.p variants={fadeUp} className="mb-5 text-xs font-bold uppercase tracking-[0.3em] text-[#60A5FA]">
               Careers
-            </p>
-            <h1 className="text-[clamp(44px,7vw,86px)] font-bold leading-[1.01] tracking-tight">
+            </motion.p>
+            <motion.h1 variants={fadeUp} className="text-[clamp(44px,7vw,86px)] font-bold leading-[1.01] tracking-tight">
               Build technology that keeps public services moving.
-            </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-[#94A3B8]">
+            </motion.h1>
+            <motion.p variants={fadeUp} className="mt-7 max-w-2xl text-lg leading-relaxed text-[#94A3B8]">
               CODICE is shaping technology with innovation and expertise,
               serving government agencies and mission-driven organizations from Washington, DC.
-            </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            </motion.p>
+            <motion.div variants={fadeUp} className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="https://www.ziprecruiter.com/c/Codice/Jobs"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center gap-3 rounded-full bg-white px-7 py-4 text-sm font-bold uppercase tracking-widest text-[#0A1628]"
+                className="group inline-flex items-center justify-center gap-3 rounded-full bg-white px-7 py-4 text-sm font-bold uppercase tracking-widest text-[#0A1628] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all"
               >
                 View Openings
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 href={`mailto:${company.email}`}
-                className="inline-flex items-center justify-center rounded-full border border-[#334155] px-7 py-4 text-sm font-bold uppercase tracking-widest text-[#CBD5E1] hover:border-[#60A5FA] hover:text-white"
+                className="inline-flex items-center justify-center rounded-full border border-[#334155] px-7 py-4 text-sm font-bold uppercase tracking-widest text-[#CBD5E1] hover:border-[#60A5FA] hover:text-white transition-all"
               >
                 Send Resume
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="rounded-[1.7rem] border border-[#1E293B] bg-[#0F172A]/88 p-6 shadow-[0_40px_110px_rgba(2,6,23,0.42)]">
-            <div className="mb-6 flex items-center justify-between gap-4">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#60A5FA]">CODICE team</p>
-                <p className="mt-2 text-sm text-[#94A3B8]">Washington, DC headquarters with international engineering reach.</p>
-              </div>
-              <Users className="h-8 w-8 text-[#60A5FA]" />
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {hiringAreas.map((area) => (
-                <div key={area} className="rounded-xl border border-[#1E293B] bg-[#0A1628] p-4">
-                  <BriefcaseBusiness className="mb-4 h-5 w-5 text-[#60A5FA]" />
-                  <p className="text-sm font-bold text-[#E2E8F0]">{area}</p>
+          <motion.div initial="hidden" animate="show" variants={stagger}>
+            <SpotlightCard className="rounded-[1.7rem] border border-[#1E293B] bg-[#0F172A]/88 p-8 shadow-[0_40px_110px_rgba(2,6,23,0.42)]">
+              <div className="mb-8 flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#60A5FA]">CODICE team</p>
+                  <p className="mt-2 text-sm text-[#94A3B8]">Washington, DC headquarters with international engineering reach.</p>
                 </div>
-              ))}
-            </div>
-          </div>
+                <Users className="h-8 w-8 text-[#60A5FA]" />
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {hiringAreas.map((area) => (
+                  <div key={area} className="group/item rounded-xl border border-[#1E293B] bg-[#0A1628] p-4 hover:border-[#2563EB]/40 transition-colors">
+                    <BriefcaseBusiness className="mb-4 h-5 w-5 text-[#475569] group-hover/item:text-[#2563EB] transition-colors" />
+                    <p className="text-sm font-bold text-[#94A3B8] group-hover/item:text-white transition-colors">{area}</p>
+                  </div>
+                ))}
+              </div>
+            </SpotlightCard>
+          </motion.div>
         </div>
       </section>
 
@@ -135,13 +151,13 @@ export default function CareersPage() {
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {culture.map(({ icon: Icon, title, text }) => (
-              <div key={title} className="rounded-2xl border border-[#1E293B] bg-[#0A1628] p-7">
+              <SpotlightCard key={title} className="rounded-2xl border border-[#1E293B] bg-[#0A1628] p-8" spotlightColor="rgba(37, 99, 235, 0.08)">
                 <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[#2563EB]/14 text-[#60A5FA]">
                   <Icon size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-white">{title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-[#94A3B8]">{text}</p>
-              </div>
+                <h3 className="text-xl font-bold text-white mb-4">{title}</h3>
+                <p className="text-sm leading-relaxed text-[#94A3B8]">{text}</p>
+              </SpotlightCard>
             ))}
           </div>
         </div>
@@ -168,9 +184,10 @@ export default function CareersPage() {
           </div>
           <div className="flex flex-col gap-5">
             {openRoles.map((role) => (
-              <div
+              <SpotlightCard
                 key={role.title}
                 className="group flex flex-col gap-4 rounded-2xl border border-[#1E293B] bg-[#0F172A] p-7 transition-all duration-300 hover:border-[#2563EB]/40 md:flex-row md:items-center md:gap-8"
+                spotlightColor="rgba(37, 99, 235, 0.05)"
               >
                 <div className="flex-1">
                   <div className="mb-3 flex flex-wrap items-center gap-2">
@@ -193,7 +210,7 @@ export default function CareersPage() {
                     <ArrowRight size={15} className="absolute -translate-x-6 transition-transform duration-300 group-hover/btn:translate-x-0" />
                   </div>
                 </Link>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>
@@ -201,25 +218,25 @@ export default function CareersPage() {
 
       <section className="py-24">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-          <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#60A5FA]">Location</p>
-            <h2 className="text-4xl font-bold leading-tight text-white md:text-5xl">
+          <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={stagger}>
+            <motion.p variants={fadeUp} className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[#60A5FA]">Location</motion.p>
+            <motion.h2 variants={fadeUp} className="text-4xl font-bold leading-tight text-white md:text-5xl">
               Work with a government-tech team rooted in Washington, DC.
-            </h2>
-          </div>
-          <div className="rounded-[1.5rem] border border-[#1E293B] bg-[#111827] p-8">
+            </motion.h2>
+          </motion.div>
+          <SpotlightCard className="rounded-[1.5rem] border border-[#1E293B] bg-[#111827] p-8">
             <MapPin className="mb-6 h-8 w-8 text-[#60A5FA]" />
             <p className="text-xl font-bold text-white">{company.fullName}</p>
             <p className="mt-3 text-[#94A3B8]">{company.address}</p>
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
-              <a className="rounded-xl border border-[#1E293B] px-4 py-3 text-sm font-semibold text-[#CBD5E1]" href={`tel:${company.phone}`}>
+              <a className="rounded-xl border border-[#1E293B] bg-[#0A1628] hover:border-[#2563EB]/50 px-4 py-3 text-sm font-semibold text-[#CBD5E1] transition-colors" href={`tel:${company.phone}`}>
                 {company.phone}
               </a>
-              <a className="rounded-xl border border-[#1E293B] px-4 py-3 text-sm font-semibold text-[#CBD5E1]" href={`mailto:${company.email}`}>
+              <a className="rounded-xl border border-[#1E293B] bg-[#0A1628] hover:border-[#2563EB]/50 px-4 py-3 text-sm font-semibold text-[#CBD5E1] transition-colors" href={`mailto:${company.email}`}>
                 {company.email}
               </a>
             </div>
-          </div>
+          </SpotlightCard>
         </div>
       </section>
 

@@ -106,3 +106,11 @@ Handing to Antigravity: Ready for Hero section.
 - `npm run build` passes clean.
 - Verified HTTP 200 for `/`, `/clients`, `/news`, `/articles`, `/careers`, `/contact`, `/our-story`, `/products`, `/services`, `/markets`, `/case-studies`, `/products/permione`, `/products/fortimind`, `/services/software-development`, and `/services/permit-modernization`.
 - Verified the probed routes do not serve `client-226.png`.
+
+## 2026-05-07 Codex Follow-up Issue Fix
+- Re-ran checks after additional agent edits introduced new lint issues in `/capability`, `/news`, `/our-story`, `/products`, `ProductsShowcase`, `Lightbox`, and `TeamModal`.
+- Fixed unused imports, unsafe `any`, unescaped JSX apostrophe, and React hook set-state-in-effect issues.
+- `npm run lint` passes clean.
+- `npm run build` passes clean.
+- Verified HTTP 200 for `/`, `/clients`, `/news`, `/articles`, `/careers`, `/capability`, `/contact`, `/our-story`, `/products`, `/services`, `/markets`, `/case-studies`, `/products/permione`, `/products/fortimind`, `/services/software-development`, and `/services/permit-modernization`.
+- Direct probe confirmed `/capability` returns `HTTP 200`.

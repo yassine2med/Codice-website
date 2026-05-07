@@ -10,7 +10,6 @@ import {
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
-import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/sections/Footer";

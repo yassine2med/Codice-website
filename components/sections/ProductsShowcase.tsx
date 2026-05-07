@@ -17,11 +17,6 @@ export default function ProductsShowcase() {
   const product = products.find((p) => p.id === active)!;
   const images = useMemo(() => product.showcaseImages ?? [], [product]);
 
-  // Reset image index when product changes
-  useEffect(() => {
-    setImageIndex(0);
-  }, [active]);
-
   // Auto-play the image carousel
   useEffect(() => {
     if (!images || images.length <= 1) return;
@@ -46,7 +41,10 @@ export default function ProductsShowcase() {
         {products.map((p) => (
           <button
             key={p.id}
-            onClick={() => setActive(p.id)}
+            onClick={() => {
+              setActive(p.id);
+              setImageIndex(0);
+            }}
             className={`relative text-[11px] font-bold tracking-widest uppercase px-5 py-2.5 rounded-full border transition-all duration-300 ${
               active === p.id
                 ? "bg-[#2563EB] border-[#2563EB] text-white shadow-[0_0_20px_rgba(37,99,235,0.3)]"
@@ -113,7 +111,10 @@ export default function ProductsShowcase() {
             {/* Right: Showcase Image Panel */}
             <div 
               className="lg:w-[500px] bg-[#0A1628] border-t lg:border-t-0 lg:border-l border-[#1E293B] relative overflow-hidden group/showcase cursor-pointer"
-              onClick={() => setLightboxOpen(true)}
+              onClick={() => {
+                setImageIndex(imageIndex);
+                setLightboxOpen(true);
+              }}
             >
               {images.length > 0 ? (
                 <div className="relative w-full h-full min-h-[300px] lg:min-h-full">

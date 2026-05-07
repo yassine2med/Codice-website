@@ -148,7 +148,7 @@ export default function ProductsPage() {
             Software we own. Outcomes we guarantee.
           </h2>
           <p className="text-[#64748B] max-w-2xl mx-auto leading-relaxed mb-12">
-            Unlike integrators who assemble third-party tools, CODICE owns every line of code in our product suite — meaning faster upgrades, tighter security, and a roadmap that responds to your agency's needs.
+            Unlike integrators who assemble third-party tools, CODICE owns every line of code in our product suite — meaning faster upgrades, tighter security, and a roadmap that responds to your agency&apos;s needs.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[

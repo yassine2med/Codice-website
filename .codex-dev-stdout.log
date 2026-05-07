@@ -1018,3 +1018,31 @@ Creating turbopack project { dir: 'D:\\Codex\\Codice-website', testMode: true }
 ✓ Compiled in 770ms
  GET / 200 in 225ms (next.js: 140ms, application-code: 85ms)
  GET / 200 in 39ms (next.js: 5ms, application-code: 34ms)
+✓ Compiled in 1053ms
+ GET / 200 in 1996ms (next.js: 1594ms, application-code: 402ms)
+ GET / 200 in 130ms (next.js: 7ms, application-code: 123ms)
+ GET / 200 in 75ms (next.js: 9ms, application-code: 66ms)
+✓ Compiled in 160ms
+ GET / 200 in 543ms (next.js: 325ms, application-code: 218ms)
+ GET / 200 in 137ms (next.js: 13ms, application-code: 124ms)
+ GET / 200 in 69ms (next.js: 6ms, application-code: 62ms)
+ GET / 200 in 1542ms (next.js: 25ms, application-code: 1517ms)
+ GET /clients 200 in 1840ms (next.js: 730ms, application-code: 1110ms)
+ GET /news 200 in 687ms (next.js: 311ms, application-code: 376ms)
+ GET /articles 200 in 1062ms (next.js: 281ms, application-code: 781ms)
+ GET /careers 200 in 5.2s (next.js: 1753ms, application-code: 3.4s)
+○ Compiling /capability ...
+ GET /capability 200 in 10.1s (next.js: 9.5s, application-code: 549ms)
+ GET /contact 200 in 633ms (next.js: 268ms, application-code: 365ms)
+ GET /our-story 200 in 581ms (next.js: 276ms, application-code: 306ms)
+ GET /products 200 in 515ms (next.js: 243ms, application-code: 273ms)
+ GET /services 200 in 501ms (next.js: 215ms, application-code: 286ms)
+ GET /markets 200 in 501ms (next.js: 215ms, application-code: 285ms)
+ GET /case-studies 200 in 677ms (next.js: 236ms, application-code: 441ms)
+ GET /products/permione 200 in 777ms (next.js: 282ms, application-code: 495ms)
+ GET /products/fortimind 200 in 178ms (next.js: 7ms, application-code: 171ms)
+ GET /services/software-development 200 in 867ms (next.js: 423ms, application-code: 444ms)
+ GET /services/permit-modernization 200 in 136ms (next.js: 6ms, application-code: 130ms)
+ GET /capability 200 in 221ms (next.js: 7ms, application-code: 215ms)
+✓ Compiled in 1358ms
+✓ Compiled in 5.2s

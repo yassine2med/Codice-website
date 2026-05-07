@@ -17,12 +17,6 @@ export default function Lightbox({ images, initialIndex = 0, isOpen, onClose, al
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
   useEffect(() => {
-    if (isOpen) {
-      setCurrentIndex(initialIndex);
-    }
-  }, [isOpen, initialIndex]);
-
-  useEffect(() => {
     if (!isOpen) return;
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -57,12 +51,12 @@ export default function Lightbox({ images, initialIndex = 0, isOpen, onClose, al
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/85 backdrop-blur-md p-4"
+          className="fixed inset-0 z-9999 flex items-center justify-center bg-black/85 backdrop-blur-md p-4"
           onClick={onClose}
         >
           <button
             onClick={onClose}
-            className="absolute top-6 right-6 z-[10000] p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+            className="absolute top-6 right-6 z-10000 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
           >
             <X size={24} />
           </button>
@@ -71,13 +65,13 @@ export default function Lightbox({ images, initialIndex = 0, isOpen, onClose, al
             <>
               <button
                 onClick={handlePrev}
-                className="absolute left-6 top-1/2 -translate-y-1/2 z-[10000] p-4 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors hidden md:block"
+                className="absolute left-6 top-1/2 -translate-y-1/2 z-10000 p-4 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors hidden md:block"
               >
                 <ChevronLeft size={32} />
               </button>
               <button
                 onClick={handleNext}
-                className="absolute right-6 top-1/2 -translate-y-1/2 z-[10000] p-4 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors hidden md:block"
+                className="absolute right-6 top-1/2 -translate-y-1/2 z-10000 p-4 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors hidden md:block"
               >
                 <ChevronRight size={32} />
               </button>
@@ -103,7 +97,7 @@ export default function Lightbox({ images, initialIndex = 0, isOpen, onClose, al
           </motion.div>
 
           {images.length > 1 && (
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3 z-[10000]">
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3 z-10000">
               {images.map((_, idx) => (
                 <button
                   key={idx}

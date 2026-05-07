@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 import Footer from "@/components/sections/Footer";
 import CTABanner from "@/components/sections/CTABanner";
-import { company, services, products } from "@/data/codice";
+import { company, services } from "@/data/codice";
 import { ArrowRight, Award, CheckCircle2, ExternalLink, FileText, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
