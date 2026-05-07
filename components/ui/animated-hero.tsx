@@ -37,123 +37,120 @@ function Hero() {
       () => setWordIndex((i) => (i + 1) % words.length),
       2200
     );
-    return () => clearTimeout(id);
+    return () => setTimeout(() => clearTimeout(id), 0);
   }, [wordIndex]);
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-[#0A1628] overflow-hidden">
-
-      {/* Grid overlay */}
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-[#060E1A] overflow-hidden mesh-gradient">
+      {/* Decorative Glows */}
+      <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-brand-primary/10 blur-[150px] rounded-full animate-pulse-slow" />
+      <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-brand-accent/5 blur-[120px] rounded-full animate-pulse-slow delay-300" />
+      
+      {/* Grid Overlay */}
       <div
-        className="absolute inset-0 opacity-[0.12]"
+        className="absolute inset-0 opacity-[0.15]"
         style={{
           backgroundImage: `linear-gradient(to right,#1E293B 1px,transparent 1px),linear-gradient(to bottom,#1E293B 1px,transparent 1px)`,
           backgroundSize: "4rem 4rem",
-          maskImage: "radial-gradient(ellipse 80% 70% at 50% 40%,#000 30%,transparent 100%)",
-          WebkitMaskImage: "radial-gradient(ellipse 80% 70% at 50% 40%,#000 30%,transparent 100%)",
+          maskImage: "radial-gradient(ellipse 80% 60% at 50% 50%,#000 30%,transparent 100%)",
         }}
       />
-
-      {/* Blue radial glow */}
-      <div className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-[#2563EB]/10 blur-[140px] rounded-full pointer-events-none" />
-
-      {/* Corner accent glows */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-[#2563EB]/5 blur-[80px] rounded-full" />
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#2563EB]/5 blur-[80px] rounded-full" />
 
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto gap-8 pt-32 pb-24"
+        className="relative z-10 flex flex-col items-center text-center px-6 max-w-6xl mx-auto gap-8 pt-32 pb-24"
       >
-        {/* Award badge row */}
-        <motion.div variants={itemVariants} className="flex flex-wrap gap-3 justify-center">
-          {badges.map(({ icon: Icon, text }) => (
-            <span
-              key={text}
-              className="inline-flex items-center gap-2 bg-[#111827] border border-[#1E293B] text-[#94A3B8] text-[11px] font-semibold tracking-widest uppercase px-4 py-2 rounded-full"
-            >
-              <Icon size={12} className="text-[#2563EB]" />
-              {text}
+        {/* Premium Badge */}
+        <motion.div variants={itemVariants}>
+          <div className="inline-flex items-center gap-3 glass-card px-5 py-2.5 rounded-full border-white/20 shadow-[0_0_20px_rgba(37,99,235,0.2)]">
+            <div className="flex -space-x-2">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="w-5 h-5 rounded-full border-2 border-[#0A1628] bg-brand-primary flex items-center justify-center">
+                  <Shield size={10} className="text-white" />
+                </div>
+              ))}
+            </div>
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-brand-accent">
+              Trusted by 12+ DC Government Agencies
             </span>
-          ))}
+          </div>
         </motion.div>
 
-        {/* Headline */}
+        {/* Dynamic Headline */}
         <motion.h1
           variants={itemVariants}
-          className="text-[clamp(40px,7vw,80px)] font-bold tracking-tight leading-[1.05] text-[#F8FAFC]"
+          className="text-[clamp(44px,8vw,96px)] font-extrabold tracking-tighter leading-[0.92] text-white"
         >
-          Washington DC&apos;s
-          <br />
-          <span className="relative inline-block text-[#2563EB]">
-            Government Technology
-          </span>
-          <br />
-          Partner Since 2009
+          Modernizing <br className="hidden sm:block" />
+          <span className="text-gradient text-glow">Public Service</span> <br className="hidden sm:block" />
+          at the Speed of Mission.
         </motion.h1>
 
-        {/* Subheadline */}
+        {/* Refined Subheadline */}
         <motion.p
           variants={itemVariants}
-          className="text-lg md:text-xl text-[#64748B] max-w-2xl leading-relaxed"
+          className="text-lg md:text-2xl text-gray-400 max-w-3xl leading-relaxed"
         >
-          <strong className="text-[#94A3B8] font-semibold">100% client retention. 16 years. 12+ agencies.</strong>
-          {" "}When the mission is too important to get wrong, DC government agencies
-          call CODICE — for custom software, permitting systems, AI compliance
-          tools, and cloud infrastructure built for public service.
+          CODICE is Washington DC&apos;s premier partner for <span className="text-white font-semibold">high-fidelity government technology</span>. 
+          16 years of delivery. 100% client retention. ZERO compromise on quality.
         </motion.p>
 
-        {/* CTA buttons */}
-        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mt-2">
+        {/* High-Fidelity CTAs */}
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-5 mt-6">
           <Link
             href="/services"
-            className="inline-flex items-center justify-center gap-3 bg-[#2563EB] hover:bg-[#3B82F6] text-white font-bold text-base px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-[0_0_32px_rgba(37,99,235,0.35)] hover:-translate-y-0.5"
+            className="group relative inline-flex items-center justify-center gap-3 bg-brand-primary text-white font-bold text-lg px-10 py-5 rounded-2xl transition-all duration-300 shadow-[0_20px_50px_rgba(37,99,235,0.3)] hover:shadow-[0_20px_70px_rgba(37,99,235,0.5)] hover:-translate-y-1 overflow-hidden"
           >
-            Explore Our Services <ArrowRight size={18} />
+            <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+            Launch Mission <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center gap-3 bg-transparent border border-[#1E293B] hover:border-[#2563EB]/50 text-[#F8FAFC] font-bold text-base px-8 py-4 rounded-xl transition-all duration-300 hover:bg-white/5 hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center gap-3 glass-card hover:bg-white/10 text-white font-bold text-lg px-10 py-5 rounded-2xl transition-all duration-300 hover:-translate-y-1"
           >
-            <Phone size={16} /> Schedule a Consultation
+            Schedule Briefing
           </Link>
         </motion.div>
 
-        {/* Credentials bar */}
+        {/* Stats Row */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-wrap gap-x-8 gap-y-3 justify-center mt-4 border-t border-[#1E293B] pt-8 w-full"
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 mt-12 border-t border-white/5 pt-12 w-full max-w-4xl"
         >
           {[
-            "Certified Minority-Owned Business",
-            "GSA Schedule Holder",
-            "DC Small Business of the Year 2025",
-            "137 Employees · Washington, DC",
-          ].map((item) => (
-            <span key={item} className="text-xs font-semibold text-[#475569] tracking-widest uppercase">
-              <span className="text-[#2563EB] mr-2">✦</span>{item}
-            </span>
+            { label: "Client Retention", val: "100%" },
+            { label: "Years of Service", val: "16+" },
+            { label: "Proprietary Platforms", val: "8" },
+            { label: "Gov Agencies", val: "12+" },
+          ].map((s) => (
+            <div key={s.label} className="flex flex-col gap-1">
+              <span className="text-3xl md:text-4xl font-bold text-white tracking-tighter">{s.val}</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-brand-accent/60">{s.label}</span>
+            </div>
           ))}
         </motion.div>
       </motion.div>
+
+      {/* Floating Decorative Elements */}
+      <div className="absolute top-1/4 left-10 w-2 h-2 rounded-full bg-brand-primary animate-float opacity-40" />
+      <div className="absolute bottom-1/4 right-10 w-3 h-3 rounded-full bg-brand-accent animate-float delay-1000 opacity-30" />
+      <div className="absolute top-1/3 right-20 w-1.5 h-1.5 rounded-full bg-white animate-float delay-500 opacity-20" />
 
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.5, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
       >
-        <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#475569]">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-          className="w-5 h-5 border-b-2 border-r-2 border-[#2563EB] rotate-45"
-        />
+        <span className="text-[9px] font-bold tracking-[0.5em] uppercase text-gray-500">Initiate</span>
+        <div className="w-[1px] h-12 bg-linear-to-b from-brand-primary to-transparent" />
       </motion.div>
     </section>
+  );
+}
   );
 }
 

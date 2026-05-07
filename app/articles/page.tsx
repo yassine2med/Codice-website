@@ -91,106 +91,127 @@ const editorialThemes = [
 
 export default function ArticlesPage() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#0A1628] text-[#F8FAFC]">
+    <main className="min-h-screen bg-brand-navy text-white selection:bg-brand-primary/30">
       <Navbar />
 
-      <section className="relative overflow-hidden pt-40 pb-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(37,99,235,0.22),transparent_34%),linear-gradient(to_right,#1E293B_1px,transparent_1px),linear-gradient(to_bottom,#1E293B_1px,transparent_1px)] bg-size-[auto,4rem_4rem,4rem_4rem] opacity-35" />
-        <div className="absolute right-[-14%] top-16 h-[520px] w-[520px] rounded-full bg-cyan-400/10 blur-[120px]" />
-
-        <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <div>
-            <p className="mb-5 text-xs font-bold uppercase tracking-[0.3em] text-[#60A5FA]">
-              Articles
-            </p>
-            <h1 className="text-[clamp(44px,7vw,84px)] font-bold leading-[1.02] tracking-tight">
-              Field notes from government modernization.
-            </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-[#94A3B8]">
-              Curated CODICE thinking on legacy transformation, compliance, health IT,
-              AI, cloud architecture, and public-sector operations.
-            </p>
-          </div>
-
-          <div className="rounded-[1.5rem] border border-[#1E293B] bg-[#0F172A]/86 p-6 shadow-[0_30px_90px_rgba(2,6,23,0.38)]">
-            <div className="mb-6 flex items-center gap-3">
-              <BookOpen className="h-6 w-6 text-[#60A5FA]" />
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#60A5FA]">
-                Editorial Focus
-              </p>
+      {/* Hero Section */}
+      <section className="relative pt-48 pb-32 overflow-hidden mesh-gradient">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-primary/10 blur-[150px] rounded-full animate-pulse-slow" />
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-flex items-center gap-3 glass-card px-4 py-2 rounded-full mb-8 border-white/20">
+              <BookOpen size={14} className="text-brand-accent" />
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-brand-accent">Knowledge Hub</span>
             </div>
-            <div className="grid gap-3 sm:grid-cols-2">
+            <h1 className="text-[clamp(48px,8vw,92px)] font-extrabold tracking-tighter leading-[0.9] mb-8">
+              Field Notes from <br />
+              <span className="text-gradient text-glow">The Mission.</span>
+            </h1>
+            <p className="text-xl text-gray-400 leading-relaxed max-w-xl">
+              Curated thinking on legacy transformation, AI compliance, and the high-fidelity future of public sector operations.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="glass-card p-10 rounded-[3rem] border-white/10 relative overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-brand-primary/5 pointer-events-none" />
+            <h3 className="text-xs font-bold tracking-[0.4em] uppercase text-brand-primary mb-8 border-b border-white/5 pb-4">Editorial Strategy</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {editorialThemes.map((theme) => (
-                <div key={theme} className="rounded-xl border border-[#1E293B] bg-[#0A1628] px-4 py-3 text-sm font-semibold text-[#CBD5E1]">
-                  {theme}
+                <div key={theme} className="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-brand-primary/30 transition-colors">
+                  <div className="w-1.5 h-1.5 rounded-full bg-brand-primary" />
+                  <span className="text-sm font-semibold text-gray-300">{theme}</span>
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      <section className="border-y border-[#1E293B] bg-[#0F172A] py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-6 lg:grid-cols-2">
-            {articles.map(({ icon: Icon, ...article }) => (
-              <article
+      {/* Articles Grid */}
+      <section className="py-32 relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-8">
+            {articles.map(({ icon: Icon, ...article }, idx) => (
+              <motion.article
                 key={article.title}
-                className="group relative overflow-hidden rounded-[1.5rem] border border-[#1E293B] bg-[#0A1628] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#60A5FA]/60"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="group relative glass-card p-10 rounded-[2.5rem] border-white/10 hover:border-brand-primary/40 transition-all duration-500 flex flex-col h-full"
               >
-                <div className="absolute inset-x-0 top-0 h-1 bg-linear-to-r from-[#2563EB] via-[#38BDF8] to-transparent" />
-                <div className="mb-8 flex items-start justify-between gap-5">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#2563EB]/14 text-[#60A5FA]">
-                    <Icon size={24} />
+                <div className="flex items-start justify-between mb-10">
+                  <div className="w-16 h-16 rounded-2xl bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary transition-all duration-500 group-hover:text-white group-hover:scale-110 group-hover:rotate-3">
+                    <Icon size={32} />
                   </div>
-                  <p className="rounded-full border border-[#1E293B] px-3 py-1 font-mono text-xs text-[#64748B]">
+                  <span className="px-4 py-1.5 rounded-full border border-white/5 bg-white/5 text-[10px] font-bold tracking-widest text-gray-500 uppercase">
                     {article.source}
-                  </p>
+                  </span>
                 </div>
-                <h2 className="text-2xl font-bold leading-tight text-white">{article.title}</h2>
-                <p className="mt-4 text-sm leading-relaxed text-[#94A3B8]">{article.summary}</p>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {article.points.map((point) => (
-                    <span key={point} className="rounded-full bg-[#111827] px-3 py-1.5 text-xs font-semibold text-[#CBD5E1]">
-                      {point}
+
+                <h2 className="text-3xl font-bold mb-6 group-hover:text-brand-primary transition-colors leading-tight">
+                  {article.title}
+                </h2>
+                <p className="text-gray-400 text-lg leading-relaxed mb-8 flex-1">
+                  {article.summary}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-10">
+                  {article.points.map((p) => (
+                    <span key={p} className="px-3 py-1 rounded-lg bg-brand-navy border border-white/5 text-[11px] font-medium text-gray-400 group-hover:border-brand-primary/20 transition-colors">
+                      {p}
                     </span>
                   ))}
                 </div>
+
                 <Link
                   href={article.href}
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="group/link mt-8 inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-[#60A5FA] hover:text-white"
+                  className="inline-flex items-center gap-3 text-brand-primary font-bold text-sm tracking-widest uppercase group/link"
                 >
-                  Read Source
-                  <ArrowRight size={18} className="transition-transform group-hover/link:translate-x-1" />
+                  Explore Insight <ArrowRight size={18} className="group-hover/link:translate-x-2 transition-transform" />
                 </Link>
-              </article>
+              </motion.article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-24">
-        <div className="absolute inset-0 bg-[#2563EB]/10" />
-        <div className="relative mx-auto max-w-5xl px-6 text-center">
-          <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-[#93C5FD]">
-            More from {company.name}
-          </p>
-          <h2 className="text-[clamp(34px,5vw,58px)] font-bold leading-tight tracking-tight">
-            Need a deeper technical discussion?
-          </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[#CBD5E1]">
-            Bring a legacy system, compliance challenge, or digital-service workflow.
-            CODICE can help turn the problem into a practical modernization plan.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-10 inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-sm font-bold uppercase tracking-widest text-[#0A1628]"
+      {/* CTA Section */}
+      <section className="py-32 px-6">
+        <div className="max-w-5xl mx-auto rounded-[4rem] glass-card border-brand-primary/20 p-16 md:p-24 text-center relative overflow-hidden">
+          <div className="absolute inset-0 mesh-gradient opacity-40 pointer-events-none" />
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative z-10"
           >
-            Talk to CODICE
-            <ArrowRight size={18} />
-          </Link>
+            <p className="text-[10px] font-bold tracking-[0.4em] uppercase text-brand-accent mb-8">Architect the Future</p>
+            <h2 className="text-[clamp(36px,6vw,68px)] font-bold mb-8 leading-none tracking-tighter">
+              Transform your mission <br /> with CODICE.
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12">
+              Bring your most complex legacy challenges. Let&apos;s build a high-fidelity roadmap for modernization together.
+            </p>
+            <Link
+              href="/contact"
+              className="bg-brand-primary text-white font-bold px-12 py-6 rounded-2xl text-lg shadow-[0_20px_50px_rgba(37,99,235,0.3)] hover:shadow-[0_20px_70px_rgba(37,99,235,0.5)] transition-all duration-300 hover:-translate-y-1 inline-block"
+            >
+              Request a Briefing
+            </Link>
+          </motion.div>
         </div>
       </section>
 

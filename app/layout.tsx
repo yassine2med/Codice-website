@@ -1,18 +1,24 @@
 import type { Metadata } from "next";
-import { Inter, DM_Mono } from "next/font/google";
+import { Inter, DM_Mono, Outfit } from "next/font/google";
 import "./globals.css";
 import { PageTransition } from "@/components/ui/PageTransition";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
 });
 
 const dmMono = DM_Mono({
   variable: "--font-dm-mono",
   subsets: ["latin"],
   weight: ["400", "500"],
+});
+
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -50,9 +56,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${dmMono.variable} h-full`}
+      className={`${inter.variable} ${dmMono.variable} ${outfit.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col bg-white text-[#0A1628] antialiased font-[family-name:var(--font-inter)]">
+      <body className="min-h-full flex flex-col bg-[#0A1628] text-[#F8FAFC] antialiased font-[family-name:var(--font-inter)] selection:bg-[#2563EB]/30 selection:text-white">
         <PageTransition>
           {children}
         </PageTransition>

@@ -29,15 +29,17 @@ export default function ProductsShowcase() {
   }, [images]);
 
   return (
-    <section id="products" className="py-24 px-6 max-w-7xl mx-auto">
+    <section id="products" className="py-24 px-6 max-w-7xl mx-auto relative">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-primary/5 blur-[100px] rounded-full pointer-events-none" />
+      
       <SectionHeader
         label="Proprietary Platforms"
-        title="Built for the Public Sector"
-        subtitle="8 purpose-built platforms that government agencies rely on daily — not off-the-shelf software."
+        title="Modernizing Government Operations"
+        subtitle="8 purpose-built platforms that power DC government agencies daily with absolute reliability and high-fidelity performance."
       />
 
-      {/* Tab row */}
-      <div className="flex flex-wrap gap-2 justify-center mb-12">
+      {/* Futuristic Tabs */}
+      <div className="flex flex-wrap gap-3 justify-center mb-16 relative z-10">
         {products.map((p) => (
           <button
             key={p.id}
@@ -45,154 +47,157 @@ export default function ProductsShowcase() {
               setActive(p.id);
               setImageIndex(0);
             }}
-            className={`relative text-[11px] font-bold tracking-widest uppercase px-5 py-2.5 rounded-full border transition-all duration-300 ${
+            className={`group relative px-6 py-3 rounded-2xl border transition-all duration-500 ${
               active === p.id
-                ? "bg-[#2563EB] border-[#2563EB] text-white shadow-[0_0_20px_rgba(37,99,235,0.3)]"
-                : "border-[#1E293B] text-[#64748B] hover:border-[#2563EB]/40 hover:text-[#94A3B8]"
+                ? "bg-brand-primary border-brand-primary text-white shadow-[0_0_30px_rgba(37,99,235,0.4)] scale-105"
+                : "bg-white/5 border-white/10 text-gray-500 hover:border-brand-primary/40 hover:text-white"
             }`}
           >
-            {p.name}
+            <span className="text-[11px] font-bold tracking-widest uppercase relative z-10">{p.name}</span>
             {p.isNew && (
-              <span className="absolute -top-1.5 -right-1 bg-[#FF6B00] text-white text-[8px] font-black px-1.5 py-0.5 rounded-full tracking-wider">
+              <span className="absolute -top-2 -right-2 bg-linear-to-r from-orange-500 to-red-600 text-white text-[8px] font-black px-2 py-0.5 rounded-full shadow-lg">
                 NEW
               </span>
+            )}
+            {active === p.id && (
+              <motion.div
+                layoutId="activeTab"
+                className="absolute inset-0 bg-brand-primary rounded-2xl -z-0"
+                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+              />
             )}
           </button>
         ))}
       </div>
 
-      {/* Active product panel */}
+      {/* Stage Area */}
       <AnimatePresence mode="wait">
         <motion.div
           key={active}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -16 }}
-          transition={{ duration: 0.35, ease: "easeOut" }}
-          className="relative bg-[#0D1F3C] border border-[#1E293B] rounded-3xl overflow-hidden"
+          initial={{ opacity: 0, scale: 0.98, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.98, y: -20 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="relative glass-card rounded-[3rem] overflow-hidden border-white/10"
         >
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#2563EB]/6 blur-[120px] rounded-full -mr-64 -mt-32 pointer-events-none" />
+          <div className="absolute inset-0 mesh-gradient opacity-30 pointer-events-none" />
 
-          <div className="relative z-10 flex flex-col lg:flex-row">
-            {/* Left: content */}
-            <div className="flex-1 p-10 md:p-14 flex flex-col justify-center">
-              <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] bg-[#2563EB]/10 border border-[#2563EB]/20 px-3 py-1.5 rounded-full w-fit mb-6">
-                {product.isNew && <Sparkles size={10} />}
+          <div className="relative z-10 flex flex-col lg:flex-row min-h-[600px]">
+            {/* Content Stage */}
+            <div className="flex-1 p-12 lg:p-20 flex flex-col justify-center">
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2 }}
+                className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.3em] uppercase text-brand-accent mb-8"
+              >
+                <div className="w-1.5 h-1.5 rounded-full bg-brand-primary animate-pulse" />
                 {product.category}
-              </span>
+              </motion.div>
 
-              <h3 className="text-[clamp(28px,4vw,44px)] font-bold text-[#F8FAFC] mb-5 leading-tight tracking-tight">
+              <motion.h3 
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-[clamp(32px,5vw,52px)] font-bold text-white mb-6 leading-none"
+              >
                 {product.name}
-              </h3>
+              </motion.h3>
 
-              <p className="text-[#64748B] text-base md:text-lg leading-relaxed mb-8 max-w-xl">
+              <motion.p 
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4 }}
+                className="text-gray-400 text-lg md:text-xl leading-relaxed mb-10 max-w-xl"
+              >
                 {product.description}
-              </p>
+              </motion.p>
 
               {product.highlights && (
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-10">
+                <motion.div 
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5 }}
+                  className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12"
+                >
                   {product.highlights.map((h) => (
-                    <li key={h} className="flex items-center gap-2.5 text-sm text-[#94A3B8]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] shrink-0" />
-                      {h}
-                    </li>
+                    <div key={h} className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-brand-primary/10 flex items-center justify-center">
+                        <Sparkles size={10} className="text-brand-primary" />
+                      </div>
+                      <span className="text-sm font-medium text-gray-300">{h}</span>
+                    </div>
                   ))}
-                </ul>
+                </motion.div>
               )}
 
-              <Link
-                href={"/products/" + product.slug}
-                className="inline-flex items-center gap-3 bg-[#2563EB] hover:bg-[#3B82F6] text-white font-bold px-7 py-3.5 rounded-xl text-sm transition-all duration-300 hover:shadow-[0_0_24px_rgba(37,99,235,0.35)] hover:-translate-y-0.5 w-fit"
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
               >
-                Explore {product.name} <ArrowRight size={16} />
-              </Link>
+                <Link
+                  href={"/products/" + product.slug}
+                  className="group relative inline-flex items-center gap-3 bg-white text-brand-navy font-bold px-10 py-5 rounded-2xl text-base transition-all duration-300 hover:shadow-[0_20px_50px_rgba(255,255,255,0.2)] hover:-translate-y-1"
+                >
+                  Deep Dive Platform <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </motion.div>
             </div>
 
-            {/* Right: Showcase Image Panel */}
+            {/* Visual Stage */}
             <div 
-              className="lg:w-[500px] bg-[#0A1628] border-t lg:border-t-0 lg:border-l border-[#1E293B] relative overflow-hidden group/showcase cursor-pointer"
-              onClick={() => {
-                setImageIndex(imageIndex);
-                setLightboxOpen(true);
-              }}
+              className="lg:w-[600px] bg-black/40 border-t lg:border-t-0 lg:border-l border-white/5 relative overflow-hidden group/stage cursor-pointer"
+              onClick={() => setLightboxOpen(true)}
             >
               {images.length > 0 ? (
-                <div className="relative w-full h-full min-h-[300px] lg:min-h-full">
+                <div className="relative w-full h-full min-h-[400px]">
                   <AnimatePresence mode="popLayout">
                     <motion.div
                       key={imageIndex}
-                      initial={{ opacity: 0, scale: 1.05 }}
+                      initial={{ opacity: 0, scale: 1.1 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.8, ease: "easeInOut" }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                       className="absolute inset-0"
                     >
                       <Image
                         src={images[imageIndex]}
-                        alt={`${product.name} interface`}
+                        alt={product.name}
                         fill
-                        className="object-cover opacity-80 transition-transform duration-700 group-hover/showcase:scale-105"
-                        sizes="(max-width: 1024px) 100vw, 500px"
+                        className="object-cover opacity-60 mix-blend-luminosity group-hover/stage:opacity-90 group-hover/stage:mix-blend-normal transition-all duration-700"
                       />
                     </motion.div>
                   </AnimatePresence>
                   
-                  {/* Subtle Gradient Overlay */}
-                  <div className="absolute inset-0 bg-linear-to-t from-[#0A1628] via-transparent to-[#0A1628]/40 pointer-events-none z-10" />
+                  {/* Glass Interface Overlays */}
+                  <div className="absolute inset-0 bg-linear-to-b from-brand-navy/60 via-transparent to-brand-navy/60 z-10" />
                   
-                  {/* Progress Indicators */}
-                  {images.length > 1 && (
-                    <div className="absolute top-6 right-6 flex gap-2 z-20">
-                      {images.map((_, idx) => (
-                        <div 
-                          key={idx} 
-                          className={`h-1 rounded-full transition-all duration-500 ${idx === imageIndex ? "w-6 bg-[#2563EB]" : "w-2 bg-white/20"}`}
-                        />
-                      ))}
-                    </div>
-                  )}
-                  
-                  {/* Expand Icon Hover Hint */}
-                  <div className="absolute inset-0 z-30 flex items-center justify-center opacity-0 group-hover/showcase:opacity-100 transition-opacity duration-300 pointer-events-none">
-                    <div className="bg-[#111827]/80 backdrop-blur-md px-6 py-3 rounded-full border border-white/10 text-white text-sm font-bold tracking-widest uppercase shadow-2xl">
-                      Click to Expand
-                    </div>
+                  <div className="absolute top-10 right-10 flex gap-2 z-20">
+                    {images.map((_, idx) => (
+                      <div 
+                        key={idx} 
+                        className={`h-1.5 rounded-full transition-all duration-500 ${idx === imageIndex ? "w-8 bg-brand-primary" : "w-2 bg-white/20"}`}
+                      />
+                    ))}
                   </div>
 
-                  {/* Brand Badge Overlay */}
-                  <div className="absolute bottom-8 left-8 flex items-center gap-4 bg-[#111827]/90 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl z-20 transition-transform duration-300 group-hover/showcase:-translate-y-2">
-                    {product.logo ? (
-                      <div className="relative w-24 h-8 transition-transform duration-500 group-hover/showcase:scale-110">
-                        <Image
-                          src={product.logo}
-                          alt={product.name}
-                          fill
-                          className="object-contain"
-                        />
-                      </div>
-                    ) : (
-                      <span className="text-xs font-bold text-[#F8FAFC] tracking-widest uppercase">{product.name}</span>
-                    )}
-                  </div>
-                </div>
-              ) : product.logo ? (
-                <div className="flex items-center justify-center h-full p-12 bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.08),transparent_70%)]">
-                  <div className="relative w-48 h-48 transition-transform duration-700 group-hover/showcase:scale-110 group-hover/showcase:rotate-3">
-                    <Image
-                      src={product.logo}
-                      alt={product.name}
-                      fill
-                      className="object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
-                      sizes="192px"
-                    />
+                  <div className="absolute bottom-12 left-12 z-20">
+                    <div className="glass-card p-6 rounded-[2rem] border-white/10 shadow-3xl group-hover/stage:-translate-y-2 transition-transform duration-500">
+                      {product.logo && (
+                        <div className="relative w-32 h-10 mb-4">
+                          <Image src={product.logo} alt={product.name} fill className="object-contain" />
+                        </div>
+                      )}
+                      <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-brand-accent">Mission Critical Status: Operational</p>
+                    </div>
                   </div>
                 </div>
               ) : (
-                <div className="flex flex-col items-center justify-center h-full gap-4">
-                  <div className="w-20 h-20 rounded-2xl bg-[#111827] border border-[#1E293B] flex items-center justify-center">
-                    <Sparkles size={36} className="text-[#2563EB]" />
-                  </div>
-                  <span className="text-sm font-bold text-[#64748B] tracking-widest uppercase">{product.name}</span>
+                <div className="flex items-center justify-center h-full bg-brand-navy/40">
+                   <div className="relative w-64 h-64 animate-float">
+                      <Image src={product.logo!} alt={product.name} fill className="object-contain drop-shadow-[0_0_50px_rgba(37,99,235,0.4)]" />
+                   </div>
                 </div>
               )}
             </div>

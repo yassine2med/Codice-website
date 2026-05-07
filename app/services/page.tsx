@@ -21,39 +21,40 @@ const stagger = {
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-[#0A1628] text-[#F8FAFC] overflow-x-hidden">
+    <main className="min-h-screen bg-brand-navy text-white selection:bg-brand-primary/30">
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative pt-48 pb-24 overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0 opacity-[0.12]" style={{
-          backgroundImage: `linear-gradient(to right,#1E293B 1px,transparent 1px),linear-gradient(to bottom,#1E293B 1px,transparent 1px)`,
-          backgroundSize: "4rem 4rem",
-          maskImage: "radial-gradient(ellipse 80% 60% at 50% 0%,#000 40%,transparent 100%)",
-          WebkitMaskImage: "radial-gradient(ellipse 80% 60% at 50% 0%,#000 40%,transparent 100%)",
-        }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-[#2563EB]/10 blur-[160px] rounded-full pointer-events-none" />
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#2563EB]/5 blur-[120px] rounded-full pointer-events-none" />
-
+      {/* Hero Section */}
+      <section className="relative pt-48 pb-32 overflow-hidden mesh-gradient">
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-primary/10 blur-[150px] rounded-full animate-pulse-slow" />
+        
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <motion.div variants={stagger} initial="hidden" animate="show" className="max-w-4xl">
-            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-[#2563EB] bg-[#2563EB]/10 border border-[#2563EB]/20 px-4 py-2 rounded-full mb-8">
-              Expertise & Delivery
+            <motion.div variants={fadeUp}>
+              <div className="inline-flex items-center gap-3 glass-card px-4 py-2 rounded-full mb-8 border-white/20">
+                <CheckCircle2 size={14} className="text-brand-accent" />
+                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-brand-accent">Mission Critical Expertise</span>
+              </div>
             </motion.div>
-            <motion.h1 variants={fadeUp} className="text-[clamp(48px,8vw,92px)] font-bold leading-[0.95] tracking-tight mb-8">
-              Eight Services.<br />
-              <span className="text-[#2563EB]">One Mission.</span>
+            
+            <motion.h1 variants={fadeUp} className="text-[clamp(48px,8vw,92px)] font-extrabold tracking-tighter leading-[0.9] mb-8">
+              Eight Services. <br />
+              <span className="text-gradient text-glow">One Mission.</span>
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-lg md:text-xl text-[#64748B] max-w-2xl leading-relaxed mb-12">
-              End-to-end technology solutions purpose-built for government — from custom software and AI compliance tools to cloud migration and workforce management.
+            
+            <motion.p variants={fadeUp} className="text-xl text-gray-400 leading-relaxed max-w-2xl mb-12">
+              End-to-end technology solutions purpose-built for the public sector — from custom software and AI compliance to high-fidelity cloud infrastructure.
             </motion.p>
-            <motion.div variants={fadeUp} className="flex flex-wrap gap-x-12 gap-y-6">
+            
+            <motion.div variants={fadeUp} className="flex flex-wrap gap-x-16 gap-y-8 border-t border-white/5 pt-12">
               {stats.map((s) => (
-                <div key={s.label} className="group relative">
-                  <div className="absolute -left-4 top-0 bottom-0 w-[2px] bg-[#2563EB]/30 group-hover:bg-[#2563EB] transition-colors" />
-                  <p className="font-mono text-3xl font-bold text-white tracking-tighter tabular-nums">{s.value}{s.suffix}</p>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#475569] mt-1 group-hover:text-[#2563EB] transition-colors">{s.label}</p>
+                <div key={s.label} className="group">
+                  <p className="text-4xl font-black text-white group-hover:text-brand-primary transition-colors tracking-tighter mb-1">
+                    {s.value}{s.suffix}
+                  </p>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500 group-hover:text-brand-accent transition-colors">
+                    {s.label}
+                  </p>
                 </div>
               ))}
             </motion.div>
@@ -61,65 +62,64 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services full grid */}
-      <section className="py-24 px-6 border-t border-[#1E293B]">
+      {/* Services Showcase */}
+      <section className="py-32 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           <motion.div
             variants={stagger}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
           >
             {services.map((service) => (
               <motion.div
                 key={service.id}
                 variants={fadeUp}
-                className="group bg-[#111827] border border-[#1E293B] rounded-3xl p-8 hover:border-[#2563EB]/40 hover:shadow-[0_0_40px_rgba(37,99,235,0.08)] transition-all duration-300 flex flex-col"
+                className="group relative glass-card rounded-[3rem] p-10 border-white/10 hover:border-brand-primary/40 hover:shadow-[0_40px_80px_rgba(0,0,0,0.4)] transition-all duration-500 flex flex-col"
               >
-                <div className="flex items-start gap-5 mb-6">
-                  <div className="w-14 h-14 rounded-2xl bg-[#0A1628] border border-[#1E293B] flex items-center justify-center p-3.5 shrink-0 group-hover:border-[#2563EB]/40 transition-colors">
+                <div className="flex items-start gap-8 mb-10">
+                  <div className="w-20 h-20 rounded-[2rem] bg-brand-navy border border-white/10 flex items-center justify-center p-5 shrink-0 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-500 shadow-2xl">
                     <div className="relative w-full h-full">
                       <Image
                         src={service.icon}
                         alt={service.title}
                         fill
-                        className="object-contain brightness-0 invert opacity-60 group-hover:opacity-100 transition-opacity duration-300"
-                        sizes="36px"
+                        className="object-contain brightness-0 invert group-hover:scale-110 transition-transform"
+                        sizes="40px"
                       />
                     </div>
                   </div>
                   <div>
-                    <h2 className="text-xl font-bold text-[#F8FAFC] mb-2 leading-snug group-hover:text-[#2563EB] transition-colors duration-300">
+                    <h2 className="text-3xl font-bold text-white mb-3 group-hover:text-brand-primary transition-colors leading-tight">
                       {service.title}
                     </h2>
-                    <p className="text-[#64748B] text-sm leading-relaxed">{service.description}</p>
+                    <p className="text-gray-400 text-base leading-relaxed">{service.description}</p>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 gap-2 mb-8 flex-1">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 flex-1">
                   {service.features?.slice(0, 4).map((feature, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <CheckCircle2 size={14} className="text-[#2563EB] mt-0.5 shrink-0" />
-                      <p className="text-sm text-[#94A3B8] leading-snug">{feature}</p>
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-brand-primary" />
+                      <p className="text-sm font-medium text-gray-300">{feature}</p>
                     </div>
                   ))}
                 </div>
 
-                <div className="flex items-center justify-between pt-6 border-t border-[#1E293B]">
-                  <div className="flex flex-wrap gap-2">
+                <div className="flex items-center justify-between pt-8 border-t border-white/5 mt-auto">
+                  <div className="flex gap-2">
                     {service.techStack?.slice(0, 2).map((tech) => (
-                      <span key={tech} className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-lg bg-[#0A1628] border border-[#1E293B] text-[#475569]">
+                      <span key={tech} className="px-3 py-1 rounded-lg bg-black/40 border border-white/5 text-[10px] font-bold tracking-widest uppercase text-gray-500">
                         {tech}
                       </span>
                     ))}
                   </div>
                   <Link
                     href={`/services/${service.slug}`}
-                    className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-[#2563EB] hover:text-[#3B82F6] transition-colors group/link"
+                    className="inline-flex items-center gap-3 text-brand-primary font-bold text-xs tracking-[0.2em] uppercase group/link"
                   >
-                    Details
-                    <ArrowRight size={13} className="group-hover/link:translate-x-1 transition-transform" />
+                    View Details <ArrowRight size={16} className="group-hover/link:translate-x-2 transition-transform" />
                   </Link>
                 </div>
               </motion.div>
@@ -128,32 +128,31 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Why CODICE for services */}
-      <section className="py-24 px-6 bg-[#111827] border-y border-[#1E293B]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#2563EB] mb-4">Why CODICE</p>
-            <h2 className="text-[clamp(28px,4vw,48px)] font-bold tracking-tight mb-4">Built Different for Government</h2>
-            <p className="text-[#64748B] max-w-2xl mx-auto leading-relaxed">
-              16 years of DC government experience means we know the compliance requirements, procurement realities, and operational constraints that commercial vendors overlook.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Why CODICE Section */}
+      <section className="py-32 bg-black/30 border-y border-white/5 relative overflow-hidden">
+        <div className="absolute inset-0 mesh-gradient opacity-30 pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <SectionHeader 
+            label="The CODICE Difference"
+            title="Engineered for Public Service"
+            subtitle="16 years of delivery means we know the compliance, security, and operational realities of government that generic vendors overlook."
+          />
+          <div className="grid md:grid-cols-3 gap-8 mt-20">
             {[
-              { label: "100% Client Retention", desc: "Every agency we've served has stayed. Our track record speaks louder than any proposal." },
-              { label: "GSA Schedule Holder", desc: "Simplified procurement for federal and local agencies — no lengthy contracting hurdles." },
-              { label: "8 Proprietary Platforms", desc: "We don't just consult — we build and operate production software that agencies depend on daily." },
+              { label: "100% Agency Retention", desc: "Every agency partner has stayed with CODICE. Our track record is our strongest proposal." },
+              { label: "GSA Schedule Authorized", desc: "Rapid procurement through simplified contracting vehicles for federal and local agencies." },
+              { label: "Platform-First Delivery", desc: "We deploy proprietary high-fidelity platforms that give agencies total control and reliability." },
             ].map((item) => (
-              <div key={item.label} className="p-8 rounded-2xl bg-[#0A1628] border border-[#1E293B] hover:border-[#2563EB]/40 transition-colors">
-                <p className="text-lg font-bold text-[#2563EB] mb-3">{item.label}</p>
-                <p className="text-sm text-[#64748B] leading-relaxed">{item.desc}</p>
+              <div key={item.label} className="p-12 rounded-[3rem] glass-card border-white/10 hover:border-brand-primary/30 transition-all group">
+                <div className="w-2 h-12 bg-brand-primary mb-8 rounded-full group-hover:scale-y-125 transition-transform origin-top" />
+                <h3 className="text-2xl font-bold text-white mb-4 leading-tight">{item.label}</h3>
+                <p className="text-gray-400 text-base leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <CTABanner />
       <Footer />
     </main>
   );

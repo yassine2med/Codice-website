@@ -37,204 +37,199 @@ export default function ContactPage() {
     }, 800);
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } }
-  };
-
   return (
-    <main className="min-h-screen bg-[#0A1628] overflow-hidden">
+    <main className="min-h-screen bg-brand-navy text-white selection:bg-brand-primary/30">
       <Navbar />
-      <PageHero 
-        label="Get in Touch"
-        title="Let's Modernize Together"
-        subtitle="Ready to discuss your agency's next mission? Our team of experts is standing by."
-      />
       
-      <section className="py-24 px-6 max-w-7xl mx-auto relative z-10">
+      {/* Hero Section */}
+      <section className="relative pt-48 pb-24 overflow-hidden mesh-gradient">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-primary/10 blur-[150px] rounded-full animate-pulse-slow" />
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-flex items-center gap-3 glass-card px-4 py-2 rounded-full mb-8 border-white/20">
+              <Mail size={14} className="text-brand-accent" />
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-brand-accent">Mission Coordination</span>
+            </div>
+            <h1 className="text-[clamp(48px,8vw,92px)] font-extrabold tracking-tighter leading-[0.9] mb-8">
+              Let&apos;s Modernize <br />
+              <span className="text-gradient text-glow">Together.</span>
+            </h1>
+            <p className="text-xl text-gray-400 leading-relaxed max-w-2xl mb-12">
+              Ready to architect your agency&apos;s next success? Our team of high-fidelity technical experts is standing by for your briefing.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+      
+      <section className="py-24 px-6 max-w-7xl mx-auto relative z-10 -mt-20">
         <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24"
         >
-          
-          {/* Left Column: Info & Context */}
+          {/* Left Column: Mission Control Info */}
           <div className="flex flex-col gap-12">
-            <motion.div variants={itemVariants}>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-6 leading-tight">
-                Secure. Scalable. <span className="text-[#2563EB]">Mission-Critical.</span>
+            <div className="space-y-8">
+              <h2 className="text-4xl font-bold tracking-tight text-white">
+                Secure. Scalable. <br />
+                <span className="text-brand-primary">Mission-Critical.</span>
               </h2>
-              <p className="text-[#64748B] text-lg leading-relaxed">
-                Whether you are looking to modernize legacy government systems, implement AI governance, or scale your enterprise IT infrastructure, CODICE Technology has the expertise to deliver. Reach out today to schedule a technical consultation.
+              <p className="text-gray-400 text-lg leading-relaxed">
+                Whether you are looking to modernize legacy government systems or implement AI governance, CODICE Technology has the technical depth to deliver with precision.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {/* Email Card */}
-              <div className="bg-[#111827] border border-[#1E293B] rounded-2xl p-8 hover:border-[#2563EB]/50 hover:bg-[#1E293B]/30 transition-all duration-300 group">
-                <div className="w-12 h-12 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                  <Mail className="text-[#2563EB]" size={24} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {/* Contact Tiles */}
+              <div className="glass-card p-10 rounded-[2.5rem] border-white/10 group hover:border-brand-primary/40 transition-all duration-500">
+                <div className="w-14 h-14 rounded-2xl bg-brand-primary/10 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+                  <Mail className="text-brand-primary" size={28} />
                 </div>
-                <h3 className="text-sm font-bold text-[#64748B] tracking-widest uppercase mb-2">Email</h3>
-                <a href={`mailto:${company.email}`} className="text-[#F8FAFC] font-semibold hover:text-[#2563EB] transition-colors text-lg break-all">
+                <h3 className="text-[10px] font-bold text-gray-500 tracking-[0.4em] uppercase mb-3">Direct Email</h3>
+                <a href={`mailto:${company.email}`} className="text-white font-bold hover:text-brand-primary transition-colors text-lg break-all leading-tight">
                   {company.email}
                 </a>
               </div>
 
-              {/* Phone Card */}
-              <div className="bg-[#111827] border border-[#1E293B] rounded-2xl p-8 hover:border-[#2563EB]/50 hover:bg-[#1E293B]/30 transition-all duration-300 group">
-                <div className="w-12 h-12 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                  <Phone className="text-[#2563EB]" size={24} />
+              <div className="glass-card p-10 rounded-[2.5rem] border-white/10 group hover:border-brand-primary/40 transition-all duration-500">
+                <div className="w-14 h-14 rounded-2xl bg-brand-primary/10 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+                  <Phone className="text-brand-primary" size={28} />
                 </div>
-                <h3 className="text-sm font-bold text-[#64748B] tracking-widest uppercase mb-2">Phone</h3>
-                <a href={`tel:${company.phone}`} className="text-[#F8FAFC] font-semibold hover:text-[#2563EB] transition-colors text-lg">
+                <h3 className="text-[10px] font-bold text-gray-500 tracking-[0.4em] uppercase mb-3">Priority Line</h3>
+                <a href={`tel:${company.phone}`} className="text-white font-bold hover:text-brand-primary transition-colors text-lg leading-tight">
                   {company.phone}
                 </a>
               </div>
 
-              {/* Location Cards (Full Width Grid) */}
+              {/* Office Locations */}
               <div className="sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {company.offices.map((office, idx) => (
-                  <div key={idx} className="bg-[#111827] border border-[#1E293B] rounded-2xl p-8 hover:border-[#2563EB]/50 hover:bg-[#1E293B]/30 transition-all duration-300 group">
-                    <div className="flex flex-col gap-4">
-                      <div className="w-12 h-12 shrink-0 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                        <MapPin className="text-[#2563EB]" size={24} />
-                      </div>
-                      <div>
-                        <h3 className="text-sm font-bold text-[#64748B] tracking-widest uppercase mb-2">
-                          {office.headquarters ? 'Headquarters' : 'Global Office'}
-                        </h3>
-                        <p className="text-[#F8FAFC] font-bold text-xl mb-1">
-                          {office.city}
-                        </p>
-                        <p className="text-[#64748B] font-medium">
-                          {office.country}
-                        </p>
-                        {office.headquarters && (
-                          <p className="text-[#F8FAFC] font-semibold leading-relaxed mt-4 text-sm pt-4 border-t border-[#1E293B]">
-                            {company.address}
-                          </p>
-                        )}
-                      </div>
+                  <div key={idx} className="glass-card p-10 rounded-[2.5rem] border-white/10 group hover:border-brand-primary/40 transition-all duration-500">
+                    <div className="w-14 h-14 rounded-2xl bg-brand-primary/10 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+                      <MapPin className="text-brand-primary" size={28} />
                     </div>
+                    <h3 className="text-[10px] font-bold text-gray-500 tracking-[0.4em] uppercase mb-3">
+                      {office.headquarters ? 'The Hub — HQ' : 'Regional Intelligence'}
+                    </h3>
+                    <p className="text-white font-black text-2xl mb-2 tracking-tight">
+                      {office.city}
+                    </p>
+                    <p className="text-gray-500 font-medium text-sm">
+                      {office.country}
+                    </p>
+                    {office.headquarters && (
+                      <div className="mt-8 pt-8 border-t border-white/5">
+                        <p className="text-gray-400 font-medium text-sm leading-relaxed">
+                          {company.address}
+                        </p>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="pt-6 border-t border-[#1E293B]">
-              <p className="text-sm font-bold text-[#64748B] tracking-widest uppercase mb-6">Connect Across Platforms</p>
-              <SocialIcons />
-            </motion.div>
+            </div>
           </div>
 
-          {/* Right Column: Contact Form */}
-          <motion.div variants={itemVariants} className="relative">
-            {/* Background Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[#2563EB]/5 blur-[100px] rounded-full pointer-events-none" />
+          {/* Right Column: Deployment Form */}
+          <div className="relative">
+            <div className="absolute -inset-1 bg-gradient-to-r from-brand-primary/20 to-brand-accent/20 blur-2xl rounded-[3rem] opacity-50" />
             
-            <div className="bg-[#111827] border border-[#1E293B] rounded-3xl p-8 md:p-12 relative z-10 shadow-2xl">
-              <div className="mb-10">
-                <h3 className="text-2xl font-bold text-[#F8FAFC] mb-3">Send a Message</h3>
-                <p className="text-[#64748B]">Fill out the form below and our strategy team will get back to you within 24 hours.</p>
+            <div className="glass-card p-12 md:p-16 rounded-[3rem] border-white/10 relative z-10">
+              <div className="mb-12">
+                <h3 className="text-3xl font-bold text-white mb-4 tracking-tight">Initiate Briefing</h3>
+                <p className="text-gray-400 text-lg leading-relaxed">Submit your mission details and our strategy team will coordinate a technical briefing.</p>
               </div>
 
-              <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="relative">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  <div className="relative group">
                     <input 
                       type="text" 
-                      id="name"
                       required
                       value={formState.name}
                       onChange={(e) => setFormState({...formState, name: e.target.value})}
-                      className="peer w-full bg-[#0A1628] border border-[#1E293B] rounded-xl px-4 pt-6 pb-2 text-[#F8FAFC] focus:outline-none focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB] transition-all placeholder-transparent"
-                      placeholder="Full Name"
+                      className="peer w-full bg-black/40 border border-white/10 rounded-2xl px-6 pt-8 pb-3 text-white focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary/40 transition-all placeholder-transparent"
+                      placeholder="Name"
                     />
-                    <label htmlFor="name" className="absolute left-4 top-4 text-xs font-bold tracking-widest uppercase text-[#64748B] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-placeholder-shown:normal-case peer-focus:top-2 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-[#2563EB]">
+                    <label className="absolute left-6 top-6 text-xs font-bold tracking-[0.2em] uppercase text-gray-600 transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-sm peer-placeholder-shown:normal-case peer-focus:top-3 peer-focus:text-[10px] peer-focus:uppercase peer-focus:text-brand-primary">
                       Full Name
                     </label>
                   </div>
-                  <div className="relative">
+                  <div className="relative group">
                     <input 
                       type="email" 
-                      id="email"
                       required
                       value={formState.email}
                       onChange={(e) => setFormState({...formState, email: e.target.value})}
-                      className="peer w-full bg-[#0A1628] border border-[#1E293B] rounded-xl px-4 pt-6 pb-2 text-[#F8FAFC] focus:outline-none focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB] transition-all placeholder-transparent"
-                      placeholder="Work Email"
+                      className="peer w-full bg-black/40 border border-white/10 rounded-2xl px-6 pt-8 pb-3 text-white focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary/40 transition-all placeholder-transparent"
+                      placeholder="Email"
                     />
-                    <label htmlFor="email" className="absolute left-4 top-4 text-xs font-bold tracking-widest uppercase text-[#64748B] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-placeholder-shown:normal-case peer-focus:top-2 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-[#2563EB]">
+                    <label className="absolute left-6 top-6 text-xs font-bold tracking-[0.2em] uppercase text-gray-600 transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-sm peer-placeholder-shown:normal-case peer-focus:top-3 peer-focus:text-[10px] peer-focus:uppercase peer-focus:text-brand-primary">
                       Work Email
                     </label>
                   </div>
                 </div>
 
-                <div className="relative">
+                <div className="relative group">
                   <input 
                     type="text" 
-                    id="agency"
                     value={formState.agency}
                     onChange={(e) => setFormState({...formState, agency: e.target.value})}
-                    className="peer w-full bg-[#0A1628] border border-[#1E293B] rounded-xl px-4 pt-6 pb-2 text-[#F8FAFC] focus:outline-none focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB] transition-all placeholder-transparent"
-                    placeholder="Agency or Company"
+                    className="peer w-full bg-black/40 border border-white/10 rounded-2xl px-6 pt-8 pb-3 text-white focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary/40 transition-all placeholder-transparent"
+                    placeholder="Agency"
                   />
-                  <label htmlFor="agency" className="absolute left-4 top-4 text-xs font-bold tracking-widest uppercase text-[#64748B] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-placeholder-shown:normal-case peer-focus:top-2 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-[#2563EB]">
-                    Agency or Company
+                  <label className="absolute left-6 top-6 text-xs font-bold tracking-[0.2em] uppercase text-gray-600 transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-sm peer-placeholder-shown:normal-case peer-focus:top-3 peer-focus:text-[10px] peer-focus:uppercase peer-focus:text-brand-primary">
+                    Agency or Organization
                   </label>
                 </div>
 
-                <div className="relative">
+                <div className="relative group">
                   <textarea 
-                    id="message"
                     required
-                    rows={5}
+                    rows={6}
                     value={formState.message}
                     onChange={(e) => setFormState({...formState, message: e.target.value})}
-                    className="peer w-full bg-[#0A1628] border border-[#1E293B] rounded-xl px-4 pt-8 pb-4 text-[#F8FAFC] focus:outline-none focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB] transition-all resize-none placeholder-transparent"
-                    placeholder="Project Details"
+                    className="peer w-full bg-black/40 border border-white/10 rounded-2xl px-6 pt-10 pb-4 text-white focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary/40 transition-all resize-none placeholder-transparent"
+                    placeholder="Message"
                   />
-                  <label htmlFor="message" className="absolute left-4 top-4 text-xs font-bold tracking-widest uppercase text-[#64748B] transition-all peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-placeholder-shown:normal-case peer-focus:top-3 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-[#2563EB]">
-                    Project Details
+                  <label className="absolute left-6 top-6 text-xs font-bold tracking-[0.2em] uppercase text-gray-600 transition-all peer-placeholder-shown:top-7 peer-placeholder-shown:text-sm peer-placeholder-shown:normal-case peer-focus:top-3 peer-focus:text-[10px] peer-focus:uppercase peer-focus:text-brand-primary">
+                    Mission Requirements
                   </label>
                 </div>
 
                 <button 
                   type="submit" 
                   disabled={isSubmitting || isSubmitted}
-                  className={`mt-4 w-full flex items-center justify-center gap-3 font-bold px-8 py-4 rounded-xl text-base transition-all ${
+                  className={`relative overflow-hidden group w-full flex items-center justify-center gap-4 font-black px-10 py-6 rounded-2xl text-lg transition-all duration-500 ${
                     isSubmitted 
-                      ? "bg-green-500/10 text-green-500 border border-green-500/20" 
-                      : "bg-[#2563EB] hover:bg-[#3B82F6] text-white hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:-translate-y-1 disabled:opacity-70 disabled:hover:translate-y-0 disabled:hover:shadow-none"
+                      ? "bg-green-500/10 text-green-500 border border-green-500/30" 
+                      : "bg-brand-primary text-white hover:shadow-[0_20px_50px_rgba(37,99,235,0.4)] hover:-translate-y-1 disabled:opacity-70"
                   }`}
                 >
-                  {isSubmitting ? (
-                    <span className="flex items-center gap-2">
-                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      Sending...
-                    </span>
-                  ) : isSubmitted ? (
-                    "Message Sent Successfully"
-                  ) : (
-                    <>
-                      Send Message <Send size={18} />
-                    </>
-                  )}
+                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                  <span className="relative z-10 flex items-center gap-4">
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        Transmitting...
+                      </>
+                    ) : isSubmitted ? (
+                      "Mission Logged Successfully"
+                    ) : (
+                      <>
+                        Coordinate Briefing <Send size={20} className="group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />
+                      </>
+                    )}
+                  </span>
                 </button>
               </form>
             </div>
-          </motion.div>
-
+          </div>
         </motion.div>
       </section>
 
