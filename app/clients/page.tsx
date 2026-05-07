@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   ArrowRight,
   BadgeCheck,
@@ -192,7 +195,8 @@ export default function ClientsPage() {
                     return (
                       <div
                         key={logo}
-                        className={`absolute ${positions[index]} flex h-16 w-24 items-center justify-center rounded-xl border border-white/10 bg-white p-3 shadow-[0_16px_35px_rgba(2,6,23,0.3)]`}
+                        className={`absolute ${positions[index]} flex h-16 w-24 items-center justify-center rounded-xl border border-white/10 bg-white p-3 shadow-[0_16px_35px_rgba(2,6,23,0.3)] animate-float`}
+                        style={{ animationDelay: `${index * 0.4}s` }}
                       >
                         <Image
                           src={logo}
@@ -242,10 +246,23 @@ export default function ClientsPage() {
                   <div className="h-px flex-1 bg-[#1E293B]" />
                 </div>
                 
-                <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+                <motion.div 
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  variants={{
+                    hidden: {},
+                    show: { transition: { staggerChildren: 0.08 } }
+                  }}
+                  className="grid grid-cols-2 gap-4 md:grid-cols-4"
+                >
                   {category.items.map((client) => (
-                    <div
+                    <motion.div
                       key={client.name}
+                      variants={{
+                        hidden: { opacity: 0, scale: 0.95, y: 20 },
+                        show: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
+                      }}
                       className="group flex flex-col items-center justify-center rounded-3xl border border-[#1E293B] bg-white/5 p-8 transition-all duration-300 hover:border-[#2563EB]/40 hover:bg-white/10"
                     >
                       <div className="relative w-full aspect-2/1 mb-4 bg-white rounded-xl p-4 flex items-center justify-center">
@@ -260,9 +277,9 @@ export default function ClientsPage() {
                       <p className="text-[11px] font-bold text-[#94A3B8] text-center group-hover:text-[#F8FAFC] transition-colors leading-tight">
                         {client.name}
                       </p>
-                    </div>
+                    </motion.div>
                   ))}
-                </div>
+                </motion.div>
               </div>
             ))}
           </div>

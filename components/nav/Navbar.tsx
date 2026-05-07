@@ -105,9 +105,26 @@ export default function Navbar() {
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="fixed inset-0 bg-[#0A1628] z-40 flex flex-col p-12 overflow-y-auto"
           >
-            <div className="mt-20 flex flex-col gap-12">
+            <motion.div 
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              variants={{
+                hidden: {},
+                show: { transition: { staggerChildren: 0.05 } }
+              }}
+              className="mt-20 flex flex-col gap-12"
+            >
+              <div className="flex flex-col gap-12">
               {navigation.map((group) => (
-                <div key={group.title} className="space-y-6">
+                <motion.div 
+                  key={group.title} 
+                  variants={{
+                    hidden: { opacity: 0, x: 20 },
+                    show: { opacity: 1, x: 0, transition: { duration: 0.3, ease: "easeOut" } }
+                  }}
+                  className="space-y-6"
+                >
                   <p className="text-[10px] font-bold tracking-[0.3em] text-[#2563EB] uppercase border-b border-[#1E293B] pb-2">
                     {group.title}
                   </p>
@@ -142,9 +159,10 @@ export default function Navbar() {
                       </Link>
                     ))}
                   </div>
-                </div>
+                </motion.div>
               ))}
-              
+              </div>
+
               <Link
                 href="/contact"
                 className="bg-[#2563EB] text-white text-lg font-bold px-8 py-5 rounded-2xl text-center mt-4 shadow-[0_0_32px_rgba(37,99,235,0.2)]"
@@ -152,7 +170,7 @@ export default function Navbar() {
               >
                 Schedule Consultation
               </Link>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

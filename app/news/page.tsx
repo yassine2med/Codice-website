@@ -59,15 +59,17 @@ const sourceItems = [
 ];
 
 export default function NewsPage() {
-  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+  const [lightbox, setLightbox] = useState<{ images: string[]; index: number; alt: string } | null>(null);
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#0A1628] text-[#F8FAFC]">
-      <AnimatePresence>
-        {lightbox && (
-          <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />
-        )}
-      </AnimatePresence>
+      <Lightbox
+        images={lightbox?.images ?? []}
+        initialIndex={lightbox?.index ?? 0}
+        isOpen={!!lightbox}
+        onClose={() => setLightbox(null)}
+        altText={lightbox?.alt}
+      />
       <Navbar />
 
       <section className="relative overflow-hidden pt-40 pb-24">
@@ -139,7 +141,7 @@ export default function NewsPage() {
                     <button
                       type="button"
                       className="relative w-full h-48 overflow-hidden cursor-zoom-in shrink-0"
-                      onClick={() => setLightbox({ src: item.image!, alt: item.title })}
+                      onClick={() => setLightbox({ images: [item.image!], index: 0, alt: item.title })}
                       aria-label={`View image for ${item.title}`}
                     >
                       <Image

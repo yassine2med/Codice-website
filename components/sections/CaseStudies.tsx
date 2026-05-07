@@ -40,7 +40,7 @@ export default function CaseStudies() {
           <motion.div 
             key={i} 
             variants={item}
-            className="group bg-[#111827] border border-[#1E293B] border-l-4 border-l-[#2563EB] rounded-2xl p-10 hover:shadow-[0_0_32px_rgba(37,99,235,0.1)] transition-all duration-300"
+            className="group bg-[#111827] border border-[#1E293B] border-l-4 border-l-[#2563EB] rounded-2xl p-10 hover:border-[#2563EB] hover:shadow-[0_0_50px_rgba(37,99,235,0.25)] transition-all duration-300 hover:-translate-y-1"
           >
             <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-4">
               {study.product}

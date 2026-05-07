@@ -185,9 +185,13 @@ export default function CareersPage() {
                   href="https://www.ziprecruiter.com/c/Codice/Jobs"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#2563EB] px-6 py-3 text-sm font-bold text-white hover:bg-[#3B82F6] transition-colors"
+                  className="group/btn inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#2563EB] px-6 py-3 text-sm font-bold text-white hover:bg-[#3B82F6] transition-colors overflow-hidden"
                 >
-                  Apply <ArrowRight size={15} />
+                  Apply 
+                  <div className="relative flex items-center justify-center w-4 h-4 overflow-hidden">
+                    <ArrowRight size={15} className="absolute transition-transform duration-300 group-hover/btn:translate-x-6" />
+                    <ArrowRight size={15} className="absolute -translate-x-6 transition-transform duration-300 group-hover/btn:translate-x-0" />
+                  </div>
                 </Link>
               </div>
             ))}

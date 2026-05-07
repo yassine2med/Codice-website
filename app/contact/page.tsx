@@ -150,55 +150,63 @@ export default function ContactPage() {
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="name" className="text-xs font-bold tracking-widest uppercase text-[#64748B]">Full Name</label>
+                  <div className="relative">
                     <input 
                       type="text" 
                       id="name"
                       required
                       value={formState.name}
                       onChange={(e) => setFormState({...formState, name: e.target.value})}
-                      className="bg-[#0A1628] border border-[#1E293B] rounded-xl px-4 py-3.5 text-[#F8FAFC] focus:outline-none focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB] transition-all placeholder:text-[#64748B]/50"
-                      placeholder="Jane Doe"
+                      className="peer w-full bg-[#0A1628] border border-[#1E293B] rounded-xl px-4 pt-6 pb-2 text-[#F8FAFC] focus:outline-none focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB] transition-all placeholder-transparent"
+                      placeholder="Full Name"
                     />
+                    <label htmlFor="name" className="absolute left-4 top-4 text-xs font-bold tracking-widest uppercase text-[#64748B] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-placeholder-shown:normal-case peer-focus:top-2 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-[#2563EB]">
+                      Full Name
+                    </label>
                   </div>
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="email" className="text-xs font-bold tracking-widest uppercase text-[#64748B]">Work Email</label>
+                  <div className="relative">
                     <input 
                       type="email" 
                       id="email"
                       required
                       value={formState.email}
                       onChange={(e) => setFormState({...formState, email: e.target.value})}
-                      className="bg-[#0A1628] border border-[#1E293B] rounded-xl px-4 py-3.5 text-[#F8FAFC] focus:outline-none focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB] transition-all placeholder:text-[#64748B]/50"
-                      placeholder="jane@agency.gov"
+                      className="peer w-full bg-[#0A1628] border border-[#1E293B] rounded-xl px-4 pt-6 pb-2 text-[#F8FAFC] focus:outline-none focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB] transition-all placeholder-transparent"
+                      placeholder="Work Email"
                     />
+                    <label htmlFor="email" className="absolute left-4 top-4 text-xs font-bold tracking-widest uppercase text-[#64748B] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-placeholder-shown:normal-case peer-focus:top-2 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-[#2563EB]">
+                      Work Email
+                    </label>
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="agency" className="text-xs font-bold tracking-widest uppercase text-[#64748B]">Agency or Company</label>
+                <div className="relative">
                   <input 
                     type="text" 
                     id="agency"
                     value={formState.agency}
                     onChange={(e) => setFormState({...formState, agency: e.target.value})}
-                    className="bg-[#0A1628] border border-[#1E293B] rounded-xl px-4 py-3.5 text-[#F8FAFC] focus:outline-none focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB] transition-all placeholder:text-[#64748B]/50"
-                    placeholder="Department of Transportation"
+                    className="peer w-full bg-[#0A1628] border border-[#1E293B] rounded-xl px-4 pt-6 pb-2 text-[#F8FAFC] focus:outline-none focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB] transition-all placeholder-transparent"
+                    placeholder="Agency or Company"
                   />
+                  <label htmlFor="agency" className="absolute left-4 top-4 text-xs font-bold tracking-widest uppercase text-[#64748B] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-placeholder-shown:normal-case peer-focus:top-2 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-[#2563EB]">
+                    Agency or Company
+                  </label>
                 </div>
 
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="message" className="text-xs font-bold tracking-widest uppercase text-[#64748B]">Project Details</label>
+                <div className="relative">
                   <textarea 
                     id="message"
                     required
                     rows={5}
                     value={formState.message}
                     onChange={(e) => setFormState({...formState, message: e.target.value})}
-                    className="bg-[#0A1628] border border-[#1E293B] rounded-xl px-4 py-3.5 text-[#F8FAFC] focus:outline-none focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB] transition-all resize-none placeholder:text-[#64748B]/50"
-                    placeholder="How can we help you modernize?"
+                    className="peer w-full bg-[#0A1628] border border-[#1E293B] rounded-xl px-4 pt-8 pb-4 text-[#F8FAFC] focus:outline-none focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB] transition-all resize-none placeholder-transparent"
+                    placeholder="Project Details"
                   />
+                  <label htmlFor="message" className="absolute left-4 top-4 text-xs font-bold tracking-widest uppercase text-[#64748B] transition-all peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-placeholder-shown:normal-case peer-focus:top-3 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-[#2563EB]">
+                    Project Details
+                  </label>
                 </div>
 
                 <button 

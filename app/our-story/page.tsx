@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Lightbox from "@/components/ui/Lightbox";
+import { TeamModal } from "@/components/ui/TeamModal";
 import { useState } from "react";
 import {
   Award,
@@ -88,15 +89,24 @@ const offices = company.offices.map((o) => ({
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function OurStoryPage() {
-  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+  const [lightbox, setLightbox] = useState<{ images: string[]; index: number; alt: string } | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedMember, setSelectedMember] = useState<any>(null);
 
   return (
     <main className="min-h-screen bg-[#0A1628] overflow-x-hidden">
-      <AnimatePresence>
-        {lightbox && (
-          <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />
-        )}
-      </AnimatePresence>
+      <TeamModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        member={selectedMember}
+      />
+      <Lightbox
+        images={lightbox?.images ?? []}
+        initialIndex={lightbox?.index ?? 0}
+        isOpen={!!lightbox}
+        onClose={() => setLightbox(null)}
+        altText={lightbox?.alt}
+      />
       <Navbar />
 
       {/* ── 1. HERO ─────────────────────────────────────────────────────────── */}
@@ -348,11 +358,13 @@ export default function OurStoryPage() {
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
                 className="group bg-[#111827] border border-[#1E293B] rounded-2xl overflow-hidden hover:border-[#2563EB]/40 hover:shadow-[0_0_32px_rgba(37,99,235,0.1)] transition-colors duration-300"
               >
-                <button
-                  type="button"
-                  className="relative w-full h-72 bg-[#0A1628] overflow-hidden cursor-zoom-in"
-                  onClick={() => setLightbox({ src: member.photo, alt: member.name })}
-                  aria-label={`View photo of ${member.name}`}
+                <div
+                  className="relative w-full h-72 bg-[#0A1628] overflow-hidden cursor-pointer"
+                  onClick={() => {
+                    setSelectedMember(member);
+                    setModalOpen(true);
+                  }}
+                  aria-label={`View full bio of ${member.name}`}
                 >
                   <Image
                     src={member.photo}
@@ -362,7 +374,14 @@ export default function OurStoryPage() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-[#111827] via-transparent to-transparent opacity-60" />
-                </button>
+                  
+                  {/* Hover Hint */}
+                  <div className="absolute inset-0 z-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <div className="bg-[#111827]/80 backdrop-blur-md px-6 py-3 rounded-full border border-white/10 text-white text-sm font-bold tracking-widest uppercase shadow-2xl">
+                      Read Bio
+                    </div>
+                  </div>
+                </div>
                 <div className="p-6">
                   <h3 className="text-base font-bold text-[#F8FAFC] mb-1 group-hover:text-[#2563EB] transition-colors duration-300">
                     {member.name}

@@ -7,10 +7,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Lightbox from "@/components/ui/Lightbox";
 
 export default function ProductsShowcase() {
   const [active, setActive] = useState(products[0].id);
   const [imageIndex, setImageIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
   
   const product = products.find((p) => p.id === active)!;
   const images = useMemo(() => product.showcaseImages ?? [], [product]);
@@ -109,7 +111,10 @@ export default function ProductsShowcase() {
             </div>
 
             {/* Right: Showcase Image Panel */}
-            <div className="lg:w-[500px] bg-[#0A1628] border-t lg:border-t-0 lg:border-l border-[#1E293B] relative overflow-hidden group/showcase">
+            <div 
+              className="lg:w-[500px] bg-[#0A1628] border-t lg:border-t-0 lg:border-l border-[#1E293B] relative overflow-hidden group/showcase cursor-pointer"
+              onClick={() => setLightboxOpen(true)}
+            >
               {images.length > 0 ? (
                 <div className="relative w-full h-full min-h-[300px] lg:min-h-full">
                   <AnimatePresence mode="popLayout">
@@ -125,7 +130,7 @@ export default function ProductsShowcase() {
                         src={images[imageIndex]}
                         alt={`${product.name} interface`}
                         fill
-                        className="object-cover opacity-80"
+                        className="object-cover opacity-80 transition-transform duration-700 group-hover/showcase:scale-105"
                         sizes="(max-width: 1024px) 100vw, 500px"
                       />
                     </motion.div>
@@ -146,8 +151,15 @@ export default function ProductsShowcase() {
                     </div>
                   )}
                   
+                  {/* Expand Icon Hover Hint */}
+                  <div className="absolute inset-0 z-30 flex items-center justify-center opacity-0 group-hover/showcase:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <div className="bg-[#111827]/80 backdrop-blur-md px-6 py-3 rounded-full border border-white/10 text-white text-sm font-bold tracking-widest uppercase shadow-2xl">
+                      Click to Expand
+                    </div>
+                  </div>
+
                   {/* Brand Badge Overlay */}
-                  <div className="absolute bottom-8 left-8 flex items-center gap-4 bg-[#111827]/80 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl z-20">
+                  <div className="absolute bottom-8 left-8 flex items-center gap-4 bg-[#111827]/90 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl z-20 transition-transform duration-300 group-hover/showcase:-translate-y-2">
                     {product.logo ? (
                       <div className="relative w-24 h-8">
                         <Image
@@ -186,6 +198,14 @@ export default function ProductsShowcase() {
           </div>
         </motion.div>
       </AnimatePresence>
+
+      <Lightbox
+        images={images}
+        initialIndex={imageIndex}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        altText={product.name}
+      />
     </section>
   );
 }

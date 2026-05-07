@@ -13524,3 +13524,4133 @@ https://react.dev/link/hydration-mismatch
 [browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
     at Set.forEach (<anonymous>) (<anonymous>)
 [browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+    at Set.forEach (<anonymous>) (<anonymous>)
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Uncaught ReferenceError: SpotlightCard is not defined
+    at eval (components/sections/ServicesGrid.tsx:43:14)
+    at Array.map (<anonymous>)
+    at ServicesGrid (components/sections/ServicesGrid.tsx:36:19)
+  41 |             className="group"
+  42 |           >
+> 43 |             <SpotlightCard className="h-full p-7 flex flex-col hover:border-[#2563EB]/50 h...
+     |              ^
+  44 |               {/* Icon container */}
+  45 |               <div className="w-11 h-11 mb-6 rounded-xl bg-[#0A1628] border border-[#1E293...
+  46 |                 <div className="relative w-full h-full">
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+    at Set.forEach (<anonymous>) (<anonymous>)
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="inter_ce929fb-module__qqrwVG__variable dm_mono_ed3df95c-module__D4oVwa__variable ..."
+-                         suppresshydrationwarning="true"
+-                         data-lt-installed="true"
+                        >
+                  ...
+ 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+    at Set.forEach (<anonymous>) (<anonymous>)
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+⨯ ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  [90m169 |[0m                 [33mSchedule[0m [33mConsultation[0m
+  [90m170 |[0m               </[33mLink[0m>
+[31m[1m>[0m [90m171 |[0m             </div>
+  [90m    |[0m                   [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m172 |[0m           </motion.div>
+  [90m    |[0m [31m[1m^^^^^^^^^^[0m
+  [90m173 |[0m         )}
+  [90m174 |[0m       </[33mAnimatePresence[0m>
+  [90m175 |[0m     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+⨯ ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  [90m169 |[0m                 [33mSchedule[0m [33mConsultation[0m
+  [90m170 |[0m               </[33mLink[0m>
+[31m[1m>[0m [90m171 |[0m             </div>
+  [90m    |[0m                   [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m172 |[0m           </motion.div>
+  [90m    |[0m [31m[1m^^^^^^^^^^[0m
+  [90m173 |[0m         )}
+  [90m174 |[0m       </[33mAnimatePresence[0m>
+  [90m175 |[0m     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+⨯ ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  [90m169 |[0m                 [33mSchedule[0m [33mConsultation[0m
+  [90m170 |[0m               </[33mLink[0m>
+[31m[1m>[0m [90m171 |[0m             </div>
+  [90m    |[0m                   [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m172 |[0m           </motion.div>
+  [90m    |[0m [31m[1m^^^^^^^^^^[0m
+  [90m173 |[0m         )}
+  [90m174 |[0m       </[33mAnimatePresence[0m>
+  [90m175 |[0m     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+⨯ ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  [90m169 |[0m                 [33mSchedule[0m [33mConsultation[0m
+  [90m170 |[0m               </[33mLink[0m>
+[31m[1m>[0m [90m171 |[0m             </div>
+  [90m    |[0m                   [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m172 |[0m           </motion.div>
+  [90m    |[0m [31m[1m^^^^^^^^^^[0m
+  [90m173 |[0m         )}
+  [90m174 |[0m       </[33mAnimatePresence[0m>
+  [90m175 |[0m     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+⨯ ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  [90m169 |[0m                 [33mSchedule[0m [33mConsultation[0m
+  [90m170 |[0m               </[33mLink[0m>
+[31m[1m>[0m [90m171 |[0m             </div>
+  [90m    |[0m                   [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m172 |[0m           </motion.div>
+  [90m    |[0m [31m[1m^^^^^^^^^^[0m
+  [90m173 |[0m         )}
+  [90m174 |[0m       </[33mAnimatePresence[0m>
+  [90m175 |[0m     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+⨯ ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  [90m169 |[0m                 [33mSchedule[0m [33mConsultation[0m
+  [90m170 |[0m               </[33mLink[0m>
+[31m[1m>[0m [90m171 |[0m             </div>
+  [90m    |[0m                   [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m172 |[0m           </motion.div>
+  [90m    |[0m [31m[1m^^^^^^^^^^[0m
+  [90m173 |[0m         )}
+  [90m174 |[0m       </[33mAnimatePresence[0m>
+  [90m175 |[0m     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+⨯ ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  [90m169 |[0m                 [33mSchedule[0m [33mConsultation[0m
+  [90m170 |[0m               </[33mLink[0m>
+[31m[1m>[0m [90m171 |[0m             </div>
+  [90m    |[0m                   [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m172 |[0m           </motion.div>
+  [90m    |[0m [31m[1m^^^^^^^^^^[0m
+  [90m173 |[0m         )}
+  [90m174 |[0m       </[33mAnimatePresence[0m>
+  [90m175 |[0m     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+⨯ ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  [90m169 |[0m                 [33mSchedule[0m [33mConsultation[0m
+  [90m170 |[0m               </[33mLink[0m>
+[31m[1m>[0m [90m171 |[0m             </div>
+  [90m    |[0m                   [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m172 |[0m           </motion.div>
+  [90m    |[0m [31m[1m^^^^^^^^^^[0m
+  [90m173 |[0m         )}
+  [90m174 |[0m       </[33mAnimatePresence[0m>
+  [90m175 |[0m     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+⨯ ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  [90m169 |[0m                 [33mSchedule[0m [33mConsultation[0m
+  [90m170 |[0m               </[33mLink[0m>
+[31m[1m>[0m [90m171 |[0m             </div>
+  [90m    |[0m                   [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m172 |[0m           </motion.div>
+  [90m    |[0m [31m[1m^^^^^^^^^^[0m
+  [90m173 |[0m         )}
+  [90m174 |[0m       </[33mAnimatePresence[0m>
+  [90m175 |[0m     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+⨯ ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  [90m169 |[0m                 [33mSchedule[0m [33mConsultation[0m
+  [90m170 |[0m               </[33mLink[0m>
+[31m[1m>[0m [90m171 |[0m             </div>
+  [90m    |[0m                   [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m172 |[0m           </motion.div>
+  [90m    |[0m [31m[1m^^^^^^^^^^[0m
+  [90m173 |[0m         )}
+  [90m174 |[0m       </[33mAnimatePresence[0m>
+  [90m175 |[0m     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+⨯ ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  [90m169 |[0m                 [33mSchedule[0m [33mConsultation[0m
+  [90m170 |[0m               </[33mLink[0m>
+[31m[1m>[0m [90m171 |[0m             </div>
+  [90m    |[0m                   [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m172 |[0m           </motion.div>
+  [90m    |[0m [31m[1m^^^^^^^^^^[0m
+  [90m173 |[0m         )}
+  [90m174 |[0m       </[33mAnimatePresence[0m>
+  [90m175 |[0m     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+⨯ ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  [90m169 |[0m                 [33mSchedule[0m [33mConsultation[0m
+  [90m170 |[0m               </[33mLink[0m>
+[31m[1m>[0m [90m171 |[0m             </div>
+  [90m    |[0m                   [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m172 |[0m           </motion.div>
+  [90m    |[0m [31m[1m^^^^^^^^^^[0m
+  [90m173 |[0m         )}
+  [90m174 |[0m       </[33mAnimatePresence[0m>
+  [90m175 |[0m     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+⨯ ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  [90m169 |[0m                 [33mSchedule[0m [33mConsultation[0m
+  [90m170 |[0m               </[33mLink[0m>
+[31m[1m>[0m [90m171 |[0m             </div>
+  [90m    |[0m                   [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m172 |[0m           </motion.div>
+  [90m    |[0m [31m[1m^^^^^^^^^^[0m
+  [90m173 |[0m         )}
+  [90m174 |[0m       </[33mAnimatePresence[0m>
+  [90m175 |[0m     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+⨯ ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  [90m169 |[0m                 [33mSchedule[0m [33mConsultation[0m
+  [90m170 |[0m               </[33mLink[0m>
+[31m[1m>[0m [90m171 |[0m             </div>
+  [90m    |[0m                   [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m172 |[0m           </motion.div>
+  [90m    |[0m [31m[1m^^^^^^^^^^[0m
+  [90m173 |[0m         )}
+  [90m174 |[0m       </[33mAnimatePresence[0m>
+  [90m175 |[0m     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+⨯ ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  [90m169 |[0m                 [33mSchedule[0m [33mConsultation[0m
+  [90m170 |[0m               </[33mLink[0m>
+[31m[1m>[0m [90m171 |[0m             </div>
+  [90m    |[0m                   [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m172 |[0m           </motion.div>
+  [90m    |[0m [31m[1m^^^^^^^^^^[0m
+  [90m173 |[0m         )}
+  [90m174 |[0m       </[33mAnimatePresence[0m>
+  [90m175 |[0m     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+[browser] Uncaught Error: ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./components/nav/Navbar.tsx:171:19)
+    at <unknown> (Error: (./components/nav/Navbar.tsx:171:19)
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/clients/page.tsx 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/contact/page.tsx [Client Component Browser]
+    ./app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/contact/page.tsx [Client Component SSR]
+    ./app/contact/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/news/page.tsx [Client Component Browser]
+    ./app/news/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/news/page.tsx [Client Component SSR]
+    ./app/news/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/articles/page.tsx 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/careers/page.tsx 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/services/page.tsx [Client Component Browser]
+    ./app/services/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/services/page.tsx [Client Component SSR]
+    ./app/services/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/products/[slug]/page.tsx [Client Component Browser]
+    ./app/products/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/products/[slug]/page.tsx [Client Component SSR]
+    ./app/products/[slug]/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/our-story/page.tsx [Client Component Browser]
+    ./app/our-story/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/our-story/page.tsx [Client Component SSR]
+    ./app/our-story/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/products/page.tsx [Client Component Browser]
+    ./app/products/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/products/page.tsx [Client Component SSR]
+    ./app/products/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/markets/page.tsx [Client Component Browser]
+    ./app/markets/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/markets/page.tsx [Client Component SSR]
+    ./app/markets/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/case-studies/page.tsx [Client Component Browser]
+    ./app/case-studies/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/case-studies/page.tsx [Client Component SSR]
+    ./app/case-studies/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/services/[slug]/page.tsx [Client Component Browser]
+    ./app/services/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/services/[slug]/page.tsx [Client Component SSR]
+    ./app/services/[slug]/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+⨯ ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  [90m169 |[0m                 [33mSchedule[0m [33mConsultation[0m
+  [90m170 |[0m               </[33mLink[0m>
+[31m[1m>[0m [90m171 |[0m             </div>
+  [90m    |[0m                   [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m172 |[0m           </motion.div>
+  [90m    |[0m [31m[1m^^^^^^^^^^[0m
+  [90m173 |[0m         )}
+  [90m174 |[0m       </[33mAnimatePresence[0m>
+  [90m175 |[0m     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+[browser] Uncaught Error: ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./components/nav/Navbar.tsx:171:19)
+    at <unknown> (Error: (./components/nav/Navbar.tsx:171:19)
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/clients/page.tsx 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/contact/page.tsx [Client Component Browser]
+    ./app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/contact/page.tsx [Client Component SSR]
+    ./app/contact/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/news/page.tsx [Client Component Browser]
+    ./app/news/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/news/page.tsx [Client Component SSR]
+    ./app/news/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/articles/page.tsx 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/careers/page.tsx 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/services/page.tsx [Client Component Browser]
+    ./app/services/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/services/page.tsx [Client Component SSR]
+    ./app/services/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/products/[slug]/page.tsx [Client Component Browser]
+    ./app/products/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/products/[slug]/page.tsx [Client Component SSR]
+    ./app/products/[slug]/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/our-story/page.tsx [Client Component Browser]
+    ./app/our-story/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/our-story/page.tsx [Client Component SSR]
+    ./app/our-story/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/products/page.tsx [Client Component Browser]
+    ./app/products/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/products/page.tsx [Client Component SSR]
+    ./app/products/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/markets/page.tsx [Client Component Browser]
+    ./app/markets/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/markets/page.tsx [Client Component SSR]
+    ./app/markets/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/case-studies/page.tsx [Client Component Browser]
+    ./app/case-studies/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/case-studies/page.tsx [Client Component SSR]
+    ./app/case-studies/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/services/[slug]/page.tsx [Client Component Browser]
+    ./app/services/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/services/[slug]/page.tsx [Client Component SSR]
+    ./app/services/[slug]/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:171:19
+Expected '</', got 'jsx text'
+  169 |                 Schedule Consultation
+  170 |               </Link>
+> 171 |             </div>
+      |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |           </motion.div>
+      | ^^^^^^^^^^
+  173 |         )}
+  174 |       </AnimatePresence>
+  175 |     </nav>
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+⨯ ./components/nav/Navbar.tsx:176:5
+Expression expected
+  [90m174 |[0m         )}
+  [90m175 |[0m       </[33mAnimatePresence[0m>
+[31m[1m>[0m [90m176 |[0m     </nav>
+  [90m    |[0m     [31m[1m^[0m
+  [90m177 |[0m   );
+  [90m178 |[0m }
+  [90m179 |[0m
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+
+./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  [90m172 |[0m             </div>
+  [90m173 |[0m           </motion.div>
+[31m[1m>[0m [90m174 |[0m         )}
+  [90m    |[0m          [31m[1m^[0m
+  [90m175 |[0m       </[33mAnimatePresence[0m>
+  [90m176 |[0m     </nav>
+  [90m177 |[0m   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+
+./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  [90m174 |[0m         )}
+  [90m175 |[0m       </[33mAnimatePresence[0m>
+[31m[1m>[0m [90m176 |[0m     </nav>
+  [90m    |[0m      [31m[1m^^^^^[0m
+  [90m177 |[0m   );
+  [90m178 |[0m }
+  [90m179 |[0m
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+[browser] Uncaught Error: ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./components/nav/Navbar.tsx:176:5)
+    at <unknown> (Error: (./components/nav/Navbar.tsx:176:5)
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/clients/page.tsx 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/clients/page.tsx 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/clients/page.tsx 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/contact/page.tsx [Client Component Browser]
+    ./app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/contact/page.tsx [Client Component SSR]
+    ./app/contact/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/contact/page.tsx [Client Component Browser]
+    ./app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/contact/page.tsx [Client Component SSR]
+    ./app/contact/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/contact/page.tsx [Client Component Browser]
+    ./app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/contact/page.tsx [Client Component SSR]
+    ./app/contact/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/news/page.tsx [Client Component Browser]
+    ./app/news/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/news/page.tsx [Client Component SSR]
+    ./app/news/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/news/page.tsx [Client Component Browser]
+    ./app/news/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/news/page.tsx [Client Component SSR]
+    ./app/news/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/news/page.tsx [Client Component Browser]
+    ./app/news/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/news/page.tsx [Client Component SSR]
+    ./app/news/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/articles/page.tsx 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/articles/page.tsx 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/articles/page.tsx 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/careers/page.tsx 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/careers/page.tsx 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/careers/page.tsx 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/services/page.tsx [Client Component Browser]
+    ./app/services/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/services/page.tsx [Client Component SSR]
+    ./app/services/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/services/page.tsx [Client Component Browser]
+    ./app/services/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/services/page.tsx [Client Component SSR]
+    ./app/services/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/services/page.tsx [Client Component Browser]
+    ./app/services/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/services/page.tsx [Client Component SSR]
+    ./app/services/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/products/[slug]/page.tsx [Client Component Browser]
+    ./app/products/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/products/[slug]/page.tsx [Client Component SSR]
+    ./app/products/[slug]/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/products/[slug]/page.tsx [Client Component Browser]
+    ./app/products/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/products/[slug]/page.tsx [Client Component SSR]
+    ./app/products/[slug]/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/products/[slug]/page.tsx [Client Component Browser]
+    ./app/products/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/products/[slug]/page.tsx [Client Component SSR]
+    ./app/products/[slug]/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/our-story/page.tsx [Client Component Browser]
+    ./app/our-story/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/our-story/page.tsx [Client Component SSR]
+    ./app/our-story/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/our-story/page.tsx [Client Component Browser]
+    ./app/our-story/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/our-story/page.tsx [Client Component SSR]
+    ./app/our-story/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/our-story/page.tsx [Client Component Browser]
+    ./app/our-story/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/our-story/page.tsx [Client Component SSR]
+    ./app/our-story/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/products/page.tsx [Client Component Browser]
+    ./app/products/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/products/page.tsx [Client Component SSR]
+    ./app/products/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/products/page.tsx [Client Component Browser]
+    ./app/products/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/products/page.tsx [Client Component SSR]
+    ./app/products/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/products/page.tsx [Client Component Browser]
+    ./app/products/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/products/page.tsx [Client Component SSR]
+    ./app/products/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/markets/page.tsx [Client Component Browser]
+    ./app/markets/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/markets/page.tsx [Client Component SSR]
+    ./app/markets/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/markets/page.tsx [Client Component Browser]
+    ./app/markets/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/markets/page.tsx [Client Component SSR]
+    ./app/markets/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/markets/page.tsx [Client Component Browser]
+    ./app/markets/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/markets/page.tsx [Client Component SSR]
+    ./app/markets/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/case-studies/page.tsx [Client Component Browser]
+    ./app/case-studies/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/case-studies/page.tsx [Client Component SSR]
+    ./app/case-studies/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/case-studies/page.tsx [Client Component Browser]
+    ./app/case-studies/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/case-studies/page.tsx [Client Component SSR]
+    ./app/case-studies/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/case-studies/page.tsx [Client Component Browser]
+    ./app/case-studies/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/case-studies/page.tsx [Client Component SSR]
+    ./app/case-studies/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/services/[slug]/page.tsx [Client Component Browser]
+    ./app/services/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/services/[slug]/page.tsx [Client Component SSR]
+    ./app/services/[slug]/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/services/[slug]/page.tsx [Client Component Browser]
+    ./app/services/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/services/[slug]/page.tsx [Client Component SSR]
+    ./app/services/[slug]/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/services/[slug]/page.tsx [Client Component Browser]
+    ./app/services/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/services/[slug]/page.tsx [Client Component SSR]
+    ./app/services/[slug]/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./app/clients/page.tsx:67:1
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  65 |   stats,
+  66 |   testimonials,
+> 67 | } from "@/data/codice";
+     | ^
+  68 |
+  69 | const trustedLogos = clientLogos;
+  70 |
+
+Parsing ecmascript source code failed 
+⨯ ./components/nav/Navbar.tsx:176:5
+Expression expected
+  [90m174 |[0m         )}
+  [90m175 |[0m       </[33mAnimatePresence[0m>
+[31m[1m>[0m [90m176 |[0m     </nav>
+  [90m    |[0m     [31m[1m^[0m
+  [90m177 |[0m   );
+  [90m178 |[0m }
+  [90m179 |[0m
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+
+./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  [90m172 |[0m             </div>
+  [90m173 |[0m           </motion.div>
+[31m[1m>[0m [90m174 |[0m         )}
+  [90m    |[0m          [31m[1m^[0m
+  [90m175 |[0m       </[33mAnimatePresence[0m>
+  [90m176 |[0m     </nav>
+  [90m177 |[0m   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+
+./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  [90m174 |[0m         )}
+  [90m175 |[0m       </[33mAnimatePresence[0m>
+[31m[1m>[0m [90m176 |[0m     </nav>
+  [90m    |[0m      [31m[1m^^^^^[0m
+  [90m177 |[0m   );
+  [90m178 |[0m }
+  [90m179 |[0m
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+⨯ ./components/nav/Navbar.tsx:176:5
+Expression expected
+  [90m174 |[0m         )}
+  [90m175 |[0m       </[33mAnimatePresence[0m>
+[31m[1m>[0m [90m176 |[0m     </nav>
+  [90m    |[0m     [31m[1m^[0m
+  [90m177 |[0m   );
+  [90m178 |[0m }
+  [90m179 |[0m
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+
+./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  [90m172 |[0m             </div>
+  [90m173 |[0m           </motion.div>
+[31m[1m>[0m [90m174 |[0m         )}
+  [90m    |[0m          [31m[1m^[0m
+  [90m175 |[0m       </[33mAnimatePresence[0m>
+  [90m176 |[0m     </nav>
+  [90m177 |[0m   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+
+./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  [90m174 |[0m         )}
+  [90m175 |[0m       </[33mAnimatePresence[0m>
+[31m[1m>[0m [90m176 |[0m     </nav>
+  [90m    |[0m      [31m[1m^^^^^[0m
+  [90m177 |[0m   );
+  [90m178 |[0m }
+  [90m179 |[0m
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+[browser] Uncaught Error: ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./components/nav/Navbar.tsx:176:5)
+    at <unknown> (Error: (./components/nav/Navbar.tsx:176:5)
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/clients/page.tsx 
+[browser] ./app/clients/page.tsx:67:1
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  65 |   stats,
+  66 |   testimonials,
+> 67 | } from "@/data/codice";
+     | ^
+  68 |
+  69 | const trustedLogos = clientLogos;
+  70 |
+
+Parsing ecmascript source code failed 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/clients/page.tsx 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/clients/page.tsx 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/contact/page.tsx [Client Component Browser]
+    ./app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/contact/page.tsx [Client Component SSR]
+    ./app/contact/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/contact/page.tsx [Client Component Browser]
+    ./app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/contact/page.tsx [Client Component SSR]
+    ./app/contact/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/contact/page.tsx [Client Component Browser]
+    ./app/contact/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/contact/page.tsx [Client Component SSR]
+    ./app/contact/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/news/page.tsx [Client Component Browser]
+    ./app/news/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/news/page.tsx [Client Component SSR]
+    ./app/news/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/news/page.tsx [Client Component Browser]
+    ./app/news/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/news/page.tsx [Client Component SSR]
+    ./app/news/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/news/page.tsx [Client Component Browser]
+    ./app/news/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/news/page.tsx [Client Component SSR]
+    ./app/news/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/articles/page.tsx 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/articles/page.tsx 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/articles/page.tsx 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/careers/page.tsx 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/careers/page.tsx 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/nav/Navbar.tsx
+    ./app/careers/page.tsx 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/services/page.tsx [Client Component Browser]
+    ./app/services/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/services/page.tsx [Client Component SSR]
+    ./app/services/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/services/page.tsx [Client Component Browser]
+    ./app/services/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/services/page.tsx [Client Component SSR]
+    ./app/services/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/services/page.tsx [Client Component Browser]
+    ./app/services/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/services/page.tsx [Client Component SSR]
+    ./app/services/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/products/[slug]/page.tsx [Client Component Browser]
+    ./app/products/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/products/[slug]/page.tsx [Client Component SSR]
+    ./app/products/[slug]/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/products/[slug]/page.tsx [Client Component Browser]
+    ./app/products/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/products/[slug]/page.tsx [Client Component SSR]
+    ./app/products/[slug]/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/products/[slug]/page.tsx [Client Component Browser]
+    ./app/products/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/products/[slug]/page.tsx [Client Component SSR]
+    ./app/products/[slug]/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/our-story/page.tsx [Client Component Browser]
+    ./app/our-story/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/our-story/page.tsx [Client Component SSR]
+    ./app/our-story/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/our-story/page.tsx [Client Component Browser]
+    ./app/our-story/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/our-story/page.tsx [Client Component SSR]
+    ./app/our-story/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/our-story/page.tsx [Client Component Browser]
+    ./app/our-story/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/our-story/page.tsx [Client Component SSR]
+    ./app/our-story/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/products/page.tsx [Client Component Browser]
+    ./app/products/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/products/page.tsx [Client Component SSR]
+    ./app/products/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/products/page.tsx [Client Component Browser]
+    ./app/products/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/products/page.tsx [Client Component SSR]
+    ./app/products/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/products/page.tsx [Client Component Browser]
+    ./app/products/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/products/page.tsx [Client Component SSR]
+    ./app/products/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/markets/page.tsx [Client Component Browser]
+    ./app/markets/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/markets/page.tsx [Client Component SSR]
+    ./app/markets/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/markets/page.tsx [Client Component Browser]
+    ./app/markets/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/markets/page.tsx [Client Component SSR]
+    ./app/markets/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/markets/page.tsx [Client Component Browser]
+    ./app/markets/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/markets/page.tsx [Client Component SSR]
+    ./app/markets/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/case-studies/page.tsx [Client Component Browser]
+    ./app/case-studies/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/case-studies/page.tsx [Client Component SSR]
+    ./app/case-studies/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/case-studies/page.tsx [Client Component Browser]
+    ./app/case-studies/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/case-studies/page.tsx [Client Component SSR]
+    ./app/case-studies/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/case-studies/page.tsx [Client Component Browser]
+    ./app/case-studies/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/case-studies/page.tsx [Client Component SSR]
+    ./app/case-studies/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/services/[slug]/page.tsx [Client Component Browser]
+    ./app/services/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/services/[slug]/page.tsx [Client Component SSR]
+    ./app/services/[slug]/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/services/[slug]/page.tsx [Client Component Browser]
+    ./app/services/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/services/[slug]/page.tsx [Client Component SSR]
+    ./app/services/[slug]/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/services/[slug]/page.tsx [Client Component Browser]
+    ./app/services/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/services/[slug]/page.tsx [Client Component SSR]
+    ./app/services/[slug]/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:5
+Expression expected
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |     ^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:174:10
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  172 |             </div>
+  173 |           </motion.div>
+> 174 |         )}
+      |          ^
+  175 |       </AnimatePresence>
+  176 |     </nav>
+  177 |   );
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./components/nav/Navbar.tsx:176:6
+Unterminated regexp literal
+  174 |         )}
+  175 |       </AnimatePresence>
+> 176 |     </nav>
+      |      ^^^^^
+  177 |   );
+  178 | }
+  179 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/nav/Navbar.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/nav/Navbar.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component] 
+[browser] ./app/clients/page.tsx:67:1
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  65 |   stats,
+  66 |   testimonials,
+> 67 | } from "@/data/codice";
+     | ^
+  68 |
+  69 | const trustedLogos = clientLogos;
+  70 |
+
+Parsing ecmascript source code failed 
+[browser] ./app/clients/page.tsx:67:1
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  65 |   stats,
+  66 |   testimonials,
+> 67 | } from "@/data/codice";
+     | ^
+  68 |
+  69 | const trustedLogos = clientLogos;
+  70 |
+
+Parsing ecmascript source code failed 
+[browser] Uncaught Error: ./app/clients/page.tsx:67:1
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  65 |   stats,
+  66 |   testimonials,
+> 67 | } from "@/data/codice";
+     | ^
+  68 |
+  69 | const trustedLogos = clientLogos;
+  70 |
+
+Parsing ecmascript source code failed
+
+
+    at <unknown> (Error: ./app/clients/page.tsx:67:1)
+    at <unknown> (Error: (./app/clients/page.tsx:67:1)
+[browser] ./app/clients/page.tsx:67:1
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  65 |   stats,
+  66 |   testimonials,
+> 67 | } from "@/data/codice";
+     | ^
+  68 |
+  69 | const trustedLogos = clientLogos;
+  70 |
+
+Parsing ecmascript source code failed 
+[browser] ./app/clients/page.tsx:67:1
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  65 |   stats,
+  66 |   testimonials,
+> 67 | } from "@/data/codice";
+     | ^
+  68 |
+  69 | const trustedLogos = clientLogos;
+  70 |
+
+Parsing ecmascript source code failed 
+[browser] ./app/clients/page.tsx:67:1
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  65 |   stats,
+  66 |   testimonials,
+> 67 | } from "@/data/codice";
+     | ^
+  68 |
+  69 | const trustedLogos = clientLogos;
+  70 |
+
+Parsing ecmascript source code failed 
+[browser] ./app/clients/page.tsx:67:1
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  65 |   stats,
+  66 |   testimonials,
+> 67 | } from "@/data/codice";
+     | ^
+  68 |
+  69 | const trustedLogos = clientLogos;
+  70 |
+
+Parsing ecmascript source code failed 
+[browser] ./app/clients/page.tsx:67:1
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  65 |   stats,
+  66 |   testimonials,
+> 67 | } from "@/data/codice";
+     | ^
+  68 |
+  69 | const trustedLogos = clientLogos;
+  70 |
+
+Parsing ecmascript source code failed 
+[browser] ./app/clients/page.tsx:67:1
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  65 |   stats,
+  66 |   testimonials,
+> 67 | } from "@/data/codice";
+     | ^
+  68 |
+  69 | const trustedLogos = clientLogos;
+  70 |
+
+Parsing ecmascript source code failed 
+[browser] ./app/clients/page.tsx:67:1
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  65 |   stats,
+  66 |   testimonials,
+> 67 | } from "@/data/codice";
+     | ^
+  68 |
+  69 | const trustedLogos = clientLogos;
+  70 |
+
+Parsing ecmascript source code failed 
+[browser] ./app/clients/page.tsx:67:1
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  65 |   stats,
+  66 |   testimonials,
+> 67 | } from "@/data/codice";
+     | ^
+  68 |
+  69 | const trustedLogos = clientLogos;
+  70 |
+
+Parsing ecmascript source code failed 
+[browser] ./app/clients/page.tsx:67:1
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  65 |   stats,
+  66 |   testimonials,
+> 67 | } from "@/data/codice";
+     | ^
+  68 |
+  69 | const trustedLogos = clientLogos;
+  70 |
+
+Parsing ecmascript source code failed 
+[browser] ./app/clients/page.tsx:67:1
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  65 |   stats,
+  66 |   testimonials,
+> 67 | } from "@/data/codice";
+     | ^
+  68 |
+  69 | const trustedLogos = clientLogos;
+  70 |
+
+Parsing ecmascript source code failed 
+[browser] ./app/clients/page.tsx:53:7
+the name `featuredClientNames` is defined multiple times
+  51 | ];
+  52 |
+> 53 | const featuredClientNames = [
+     |       ^^^^^^^^^^^^^^^^^^^
+  54 |   "DC Department of Health Care Finance",
+  55 |   "DC Department of Transportation",
+  56 |   "Office of the Chief Technology Officer",
+
+Ecmascript file had an error
+
+Import traces:
+  Client Component Browser:
+    ./app/clients/page.tsx [Client Component Browser]
+    ./app/clients/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/clients/page.tsx [Client Component SSR]
+    ./app/clients/page.tsx [Server Component] 
+[browser] ./app/clients/page.tsx:60:7
+the name `logoConstellation` is defined multiple times
+  58 | ];
+  59 |
+> 60 | const logoConstellation = trustedLogos.slice(0, 9);
+     |       ^^^^^^^^^^^^^^^^^
+  61 |
+  62 | const deliverySignals = [
+  63 |   {
+
+Ecmascript file had an error
+
+Import traces:
+  Client Component Browser:
+    ./app/clients/page.tsx [Client Component Browser]
+    ./app/clients/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/clients/page.tsx [Client Component SSR]
+    ./app/clients/page.tsx [Server Component] 
+[browser] Uncaught Error: ./app/clients/page.tsx:53:7
+the name `featuredClientNames` is defined multiple times
+  51 | ];
+  52 |
+> 53 | const featuredClientNames = [
+     |       ^^^^^^^^^^^^^^^^^^^
+  54 |   "DC Department of Health Care Finance",
+  55 |   "DC Department of Transportation",
+  56 |   "Office of the Chief Technology Officer",
+
+Ecmascript file had an error
+
+Import traces:
+  Client Component Browser:
+    ./app/clients/page.tsx [Client Component Browser]
+    ./app/clients/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/clients/page.tsx [Client Component SSR]
+    ./app/clients/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./app/clients/page.tsx:53:7)
+    at <unknown> (Error: (./app/clients/page.tsx:53:7)
+[browser] ./app/clients/page.tsx:53:7
+the name `featuredClientNames` is defined multiple times
+  51 | ];
+  52 |
+> 53 | const featuredClientNames = [
+     |       ^^^^^^^^^^^^^^^^^^^
+  54 |   "DC Department of Health Care Finance",
+  55 |   "DC Department of Transportation",
+  56 |   "Office of the Chief Technology Officer",
+
+Ecmascript file had an error
+
+Import traces:
+  Client Component Browser:
+    ./app/clients/page.tsx [Client Component Browser]
+    ./app/clients/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/clients/page.tsx [Client Component SSR]
+    ./app/clients/page.tsx [Server Component] 
+[browser] ./app/clients/page.tsx:60:7
+the name `logoConstellation` is defined multiple times
+  58 | ];
+  59 |
+> 60 | const logoConstellation = trustedLogos.slice(0, 9);
+     |       ^^^^^^^^^^^^^^^^^
+  61 |
+  62 | const deliverySignals = [
+  63 |   {
+
+Ecmascript file had an error
+
+Import traces:
+  Client Component Browser:
+    ./app/clients/page.tsx [Client Component Browser]
+    ./app/clients/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/clients/page.tsx [Client Component SSR]
+    ./app/clients/page.tsx [Server Component] 
+[browser] ./app/clients/page.tsx:53:7
+the name `featuredClientNames` is defined multiple times
+  51 | ];
+  52 |
+> 53 | const featuredClientNames = [
+     |       ^^^^^^^^^^^^^^^^^^^
+  54 |   "DC Department of Health Care Finance",
+  55 |   "DC Department of Transportation",
+  56 |   "Office of the Chief Technology Officer",
+
+Ecmascript file had an error
+
+Import traces:
+  Client Component Browser:
+    ./app/clients/page.tsx [Client Component Browser]
+    ./app/clients/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/clients/page.tsx [Client Component SSR]
+    ./app/clients/page.tsx [Server Component] 
+[browser] ./app/clients/page.tsx:60:7
+the name `logoConstellation` is defined multiple times
+  58 | ];
+  59 |
+> 60 | const logoConstellation = trustedLogos.slice(0, 9);
+     |       ^^^^^^^^^^^^^^^^^
+  61 |
+  62 | const deliverySignals = [
+  63 |   {
+
+Ecmascript file had an error
+
+Import traces:
+  Client Component Browser:
+    ./app/clients/page.tsx [Client Component Browser]
+    ./app/clients/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/clients/page.tsx [Client Component SSR]
+    ./app/clients/page.tsx [Server Component] 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `education`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 

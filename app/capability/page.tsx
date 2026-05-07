@@ -4,6 +4,7 @@ import CTABanner from "@/components/sections/CTABanner";
 import { company, services, products } from "@/data/codice";
 import { ArrowRight, Award, CheckCircle2, ExternalLink, FileText, ShieldCheck } from "lucide-react";
 import Link from "next/link";
+import { SpotlightCard } from "@/components/ui/SpotlightCard";
 
 const naicsCodes = [
   { code: "541511", label: "Custom Computer Programming Services" },
@@ -99,11 +100,11 @@ export default function CapabilityPage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {differentiators.map((d) => (
-              <div key={d.label} className="rounded-2xl border border-[#1E293B] bg-[#0A1628] p-7 hover:border-[#2563EB]/40 transition-colors">
+              <SpotlightCard key={d.label} className="p-7 hover:border-[#2563EB]/40 transition-colors h-full">
                 <p className="font-mono text-4xl font-bold text-[#2563EB] mb-2">{d.stat}</p>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#60A5FA] mb-3">{d.label}</p>
                 <p className="text-xs text-[#475569] leading-relaxed">{d.desc}</p>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>
@@ -123,11 +124,11 @@ export default function CapabilityPage() {
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {certifications.map((cert) => (
-              <div key={cert.label} className="rounded-2xl border border-[#1E293B] bg-[#111827] p-6 hover:border-[#2563EB]/40 transition-colors">
+              <SpotlightCard key={cert.label} className="p-6 hover:border-[#2563EB]/40 transition-colors h-full">
                 <ShieldCheck className="mb-4 h-6 w-6 text-[#2563EB]" />
                 <p className="text-sm font-bold text-[#F8FAFC] mb-2 leading-snug">{cert.label}</p>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#475569]">{cert.body}</p>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>
@@ -144,10 +145,10 @@ export default function CapabilityPage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {naicsCodes.map((n) => (
-              <div key={n.code} className="rounded-xl border border-[#1E293B] bg-[#0A1628] p-5">
+              <SpotlightCard key={n.code} className="p-5 hover:border-[#2563EB]/40 transition-colors h-full">
                 <p className="font-mono text-xl font-bold text-[#2563EB] mb-2">{n.code}</p>
                 <p className="text-sm text-[#94A3B8] leading-snug">{n.label}</p>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
           <div className="mt-12 grid gap-4 md:grid-cols-3">
@@ -156,11 +157,11 @@ export default function CapabilityPage() {
               { label: "DUNS Number", value: "Available on request", detail: "For verification in SAM.gov and federal procurement systems." },
               { label: "CAGE Code", value: "Available on request", detail: "For DoD and federal contracting office verification." },
             ].map((item) => (
-              <div key={item.label} className="rounded-2xl border border-[#1E293B] bg-[#111827] p-7">
+              <SpotlightCard key={item.label} className="p-7 hover:border-[#2563EB]/40 transition-colors h-full">
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#2563EB] mb-2">{item.label}</p>
                 <p className="text-base font-bold text-[#F8FAFC] mb-2">{item.value}</p>
                 <p className="text-xs text-[#475569] leading-relaxed">{item.detail}</p>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>
@@ -177,16 +178,14 @@ export default function CapabilityPage() {
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {services.map((s) => (
-              <Link
-                key={s.id}
-                href={`/services/${s.slug}`}
-                className="group rounded-2xl border border-[#1E293B] bg-[#111827] p-6 hover:border-[#2563EB]/40 transition-all duration-300 flex flex-col gap-3"
-              >
-                <p className="text-base font-bold text-[#F8FAFC] group-hover:text-[#2563EB] transition-colors leading-snug">{s.title}</p>
-                <p className="text-xs text-[#475569] leading-relaxed flex-1">{s.description}</p>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-[#2563EB] inline-flex items-center gap-1">
-                  Learn More <ArrowRight size={10} />
-                </span>
+              <Link key={s.id} href={`/services/${s.slug}`} className="group h-full">
+                <SpotlightCard className="p-6 hover:border-[#2563EB]/40 transition-all duration-300 flex flex-col gap-3 h-full">
+                  <p className="text-base font-bold text-[#F8FAFC] group-hover:text-[#2563EB] transition-colors leading-snug">{s.title}</p>
+                  <p className="text-xs text-[#475569] leading-relaxed flex-1">{s.description}</p>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#2563EB] inline-flex items-center gap-1 mt-auto">
+                    Learn More <ArrowRight size={10} />
+                  </span>
+                </SpotlightCard>
               </Link>
             ))}
           </div>
