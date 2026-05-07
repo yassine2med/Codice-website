@@ -18,7 +18,7 @@ const item = {
 
 export default function NewsEvents() {
   return (
-    <section id="news" className="py-32 px-6 max-w-7xl mx-auto">
+    <section id="news" className="py-24 px-6 max-w-7xl mx-auto">
       <SectionHeader label="News & Insights" title="Latest from CODICE" />
       <motion.div
         variants={container}
@@ -32,10 +32,10 @@ export default function NewsEvents() {
             key={i}
             variants={item}
             href={article.slug}
-            className="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-[#2563EB]/50 hover:shadow-lg transition-all duration-300 block"
+            className="group bg-[#111827] border border-[#1E293B] rounded-2xl overflow-hidden hover:border-[#2563EB]/50 hover:shadow-[0_0_32px_rgba(37,99,235,0.1)] transition-all duration-300 block"
           >
             {article.image && (
-              <div className="relative w-full h-48 overflow-hidden">
+              <div className="relative w-full h-48 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
                 <Image
                   src={article.image}
                   alt={article.title}
@@ -49,7 +49,7 @@ export default function NewsEvents() {
               <p className="text-[10px] font-bold tracking-widest uppercase text-[#64748B] mb-4">
                 {new Date(article.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
               </p>
-              <h3 className="text-xl font-bold text-[#0A1628] mb-4 group-hover:text-[#2563EB] transition-colors leading-tight">
+              <h3 className="text-xl font-bold text-[#F8FAFC] mb-4 group-hover:text-[#2563EB] transition-colors leading-tight">
                 {article.title}
               </h3>
               <p className="text-[#64748B] text-sm leading-relaxed mb-6">

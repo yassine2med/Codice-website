@@ -24,6 +24,15 @@
 
 ## DONE
 
+### [antigravity] TASK-005: Visual polish - Full Site Overhaul (Palantir meets Vercel) - COMPLETE (2026-05-07)
+- Hero: Animated grid bg, blue glow, staggered H1 reveal, scroll indicator
+- Stats: Dark navy bg, giant DM Mono stats (16, 12, 8, 100%), blue glow, countup
+- Trust Marquee: Infinite scroll, fade masks, pause on hover, navy bg
+- Services: Dark surface cards, hover lift + blue glow, high contrast text
+- Products: Normalized tabs and content to dark theme, improved animations
+- Normalize Pass: Enforced py-24, navy/surface bg, white/gray text across all 13 sections
+- Verified mobile (375px), tablet (768px), and desktop (1440px) responsiveness
+
 ### [antigravity] TASK-005: Visual polish - Trust Marquee + Stats + Testimonials - COMPLETE (2026-05-07)
 - TrustMarquee: Framer infinite scroll, fade mask edges, pause on hover (slow down)
 - StatsSection: dark section bg, large DM Mono numbers, blue glow behind each

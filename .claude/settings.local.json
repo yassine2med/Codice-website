@@ -27,7 +27,9 @@
       "Bash(curl -s -o public/images/products/celerkost.png \"https://codicetech.com/wp-content/uploads/2024/10/celer.png\")",
       "Bash(curl -s -o public/images/news/news-1.jpg \"https://codicetech.com/wp-content/uploads/2025/05/488361574_1300257728777134_3440881090467514119_n-1-1024x682.jpg\")",
       "Bash(curl -s -o public/images/news/news-2.jpg \"https://codicetech.com/wp-content/uploads/2025/05/491293576_1299095625560011_9199002874210182525_n-1-1024x683.jpg\")",
-      "Bash(curl -s -o public/images/news/news-3.jpg \"https://codicetech.com/wp-content/uploads/2025/05/492042952_1295045702631670_7265861767373642027_n-1-1024x680.jpg\")"
+      "Bash(curl -s -o public/images/news/news-3.jpg \"https://codicetech.com/wp-content/uploads/2025/05/492042952_1295045702631670_7265861767373642027_n-1-1024x680.jpg\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }

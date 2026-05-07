@@ -21,7 +21,7 @@ const item = {
 
 export default function MarketsGrid() {
   return (
-    <section id="markets" className="py-32 px-6 max-w-7xl mx-auto">
+    <section id="markets" className="py-24 px-6 max-w-7xl mx-auto">
       <SectionHeader
         label="Sectors"
         title="Built for Every Corner of Government"
@@ -38,12 +38,12 @@ export default function MarketsGrid() {
           <motion.div
             key={market.id}
             variants={item}
-            className="group bg-gray-50 border border-[#1E293B] rounded-2xl p-6 flex items-center gap-6 hover:border-[#2563EB] hover:bg-white transition-all duration-300 cursor-default"
+            className="group bg-[#111827] border border-[#1E293B] rounded-2xl p-6 flex items-center gap-6 hover:border-[#2563EB] hover:shadow-[0_0_24px_rgba(37,99,235,0.15)] transition-all duration-300 cursor-default"
           >
-            <div className="w-12 h-12 rounded-xl bg-white border border-[#1E293B] flex items-center justify-center text-2xl group-hover:scale-110 group-hover:border-[#2563EB]/50 transition-all">
+            <div className="w-12 h-12 rounded-xl bg-[#0A1628] border border-[#1E293B] flex items-center justify-center text-2xl group-hover:scale-110 group-hover:border-[#2563EB]/50 transition-all">
               {market.icon}
             </div>
-            <span className="text-base font-bold text-[#0A1628] group-hover:text-[#2563EB] transition-colors">
+            <span className="text-base font-bold text-[#F8FAFC] group-hover:text-[#2563EB] transition-colors">
               {market.name}
             </span>
           </motion.div>

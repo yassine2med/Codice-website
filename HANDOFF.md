@@ -1,38 +1,36 @@
 # Handoff — Codice Website
 
 ## Goal
-Build the full Codice Technology website (DC Gov-Tech firm) using Next.js 16 + Tailwind v4 + Framer Motion + shadcn/ui.
+Build a high-fidelity, multi-page platform for Codice Technology (DC Gov-Tech firm) using Next.js 16 + Tailwind v4 + Framer Motion. 
 
-## Completed This Session
-- Switched entire site to white theme (globals.css, layout.tsx, all 14 components)
-- Created `components/ui/animated-hero.tsx` — cycling-words hero adapted for Codice
-- Scraped codice.com (home, services, products, about, markets, clients) — rewrote `data/codice.ts` with real data
-- Downloaded 54 images into `public/images/` (brand, team, services, products, clients, testimonials, news)
-- Wired all images into components:
-  - `TrustMarquee` → real client logo images (grayscale → color on hover)
-  - `ServicesGrid` → real service icons
-  - `ProductsShowcase` → real product logos + highlights list
-  - `Testimonials` → real headshots (Marco, Maria, Jimmy)
-  - `NewsEvents` → real news photos with zoom-on-hover
-- Fixed logo `mix-blend-screen` in Navbar + Footer (was invisible on white bg)
-- All builds passing clean throughout
+**Design North Star**: "Palantir meets Vercel, built for DC government."
 
-## Files Changed
-`data/codice.ts`, `app/globals.css`, `app/layout.tsx`, `components/ui/animated-hero.tsx`, `components/sections/Hero.tsx`, `components/sections/TrustMarquee.tsx`, `components/sections/ServicesGrid.tsx`, `components/sections/ProductsShowcase.tsx`, `components/sections/Testimonials.tsx`, `components/sections/NewsEvents.tsx`, `components/nav/Navbar.tsx`, `components/sections/Footer.tsx`
+## Completed This Session (Visual & Agentic Phase)
+- **Visual Overhaul**: Switched entire site to a permanent premium Dark Theme (#0A1628 / #111827).
+- **Hero & Motion**: Implemented animated grid backgrounds, staggered H1 reveals, and radial glows.
+- **Data Fidelity**: Normalized all 13 sections for design parity:
+  - `StatsSection`: Large DM Mono counters (16, 12, 8, 100%) with blue glow effects.
+  - `TrustMarquee`: Infinite scroll with pause-on-hover and left/right fade masks.
+  - `ServiceCards` & `Products`: Dark surface cards (#111827) with interactive hover-lift.
+  - `CTABanner`: High-impact navy-to-blue gradient with grid overlay.
+- **Agent Skill Injection**: 
+  - Established specialized roles: Codex (Performance) and Claude (Accessibility).
+  - Created `create_agent.mjs` for Managed BrowserUse Agent integration.
+  - Added technical guides: `GUIDE_PERFORMANCE.md` and `GUIDE_ACCESSIBILITY.md`.
+- **Synchronization**: All changes pushed to GitHub (`github.com/yassine2med/Codice-website`).
+
+## Files Changed (Major)
+`components/sections/*.tsx`, `components/ui/*.tsx`, `app/globals.css`, `HANDOFF.md`, `assets/TASKS.md`, `assets/CONTENT.md`.
 
 ## Still In Progress
-- No Team/About section yet (photos ready at `/images/team/`, data in `team` export in codice.ts)
-- TechStack still uses text pills (no icon images downloaded yet)
-- CTABanner, MarketsGrid, CaseStudies sections not reviewed
+- **Team/About**: Photos ready at `/images/team/`, section needs to be built with new dark-theme standards.
+- **Agent Execution**: `node create_agent.mjs` needs to be run once `ANTHROPIC_API_KEY` is provided.
+- **Audit Pass**: Need to run the first official Performance/Accessibility audit using the new guides.
 
 ## Next Steps
-1. Build Team/About section using `team` export + `/images/team/` photos
-2. Polish CTABanner, MarketsGrid, CaseStudies
-3. Full mobile test pass
-
-## Watch Out For
-- `FortiMind.ai` and `CYPMS` have `logo: null` — show emoji fallback in ProductsShowcase
-- `clientLogos` has 23 entries — some may be tiny/generic, review visually in browser
+1. Build **Team/About** section using the new `GlowCard` standards.
+2. Execute **Skill Audit** on all normalized sections.
+3. Integrate **BrowserUse Agent** for automated data extraction workflows.
 
 ## Resume
 ```bash

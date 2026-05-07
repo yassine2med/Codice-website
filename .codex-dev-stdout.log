@@ -27,3 +27,18 @@ Creating turbopack project { dir: 'D:\\Codex\\Codice-website', testMode: true }
 ✓ Compiled in 81ms
  GET / 200 in 93ms (next.js: 70ms, application-code: 23ms)
 ✓ Compiled in 80ms
+ GET / 200 in 373ms (next.js: 5ms, application-code: 368ms)
+✓ Compiled in 370ms
+ GET / 200 in 219ms (next.js: 103ms, application-code: 116ms)
+ GET / 200 in 85ms (next.js: 6ms, application-code: 79ms)
+ GET / 200 in 37ms (next.js: 4ms, application-code: 33ms)
+✓ Compiled in 73ms
+ GET / 200 in 134ms (next.js: 101ms, application-code: 33ms)
+✓ Compiled in 104ms
+✓ Compiled in 109ms
+ GET / 200 in 216ms (next.js: 104ms, application-code: 112ms)
+ GET / 200 in 76ms (next.js: 5ms, application-code: 71ms)
+ GET / 200 in 40ms (next.js: 5ms, application-code: 36ms)
+✓ Compiled in 65ms
+ GET / 200 in 128ms (next.js: 94ms, application-code: 33ms)
+ GET / 200 in 425ms (next.js: 7ms, application-code: 418ms)

@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function ServicesGrid() {
   return (
-    <section id="services" className="py-32 px-6 max-w-7xl mx-auto">
+    <section id="services" className="py-24 px-6 max-w-7xl mx-auto">
       <SectionHeader
         label="Our Expertise"
         title="Government Technology Services"
@@ -16,17 +16,17 @@ export default function ServicesGrid() {
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {services.map((service) => (
-          <GlowCard key={service.id} className="flex flex-col">
+          <GlowCard key={service.id} className="flex flex-col group">
             <div className="w-12 h-12 mb-5 relative">
               <Image
                 src={service.icon}
                 alt={service.title}
                 fill
-                className="object-contain"
+                className="object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
                 sizes="48px"
               />
             </div>
-            <h3 className="text-xl font-bold text-[#0A1628] mb-3 leading-snug">
+            <h3 className="text-xl font-bold text-[#F8FAFC] mb-3 leading-snug group-hover:text-[#2563EB] transition-colors">
               {service.title}
             </h3>
             <p className="text-[#64748B] text-sm md:text-base leading-relaxed mb-6 grow">
