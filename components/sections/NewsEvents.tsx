@@ -19,7 +19,7 @@ const card = {
 
 export default function NewsEvents() {
   return (
-    <section id="news" className="py-16 px-6 max-w-7xl mx-auto">
+    <section id="news" className="py-20 px-6 max-w-7xl mx-auto">
       <SectionHeader
         label="News & Insights"
         title="Latest from CODICE"
@@ -37,10 +37,9 @@ export default function NewsEvents() {
           <motion.div
             key={i}
             variants={card}
-            whileHover={{ y: -6, transition: { duration: 0.25 } }}
-            className="group bg-[#111827] border border-[#1E293B] rounded-2xl overflow-hidden hover:border-[#2563EB]/50 hover:shadow-[0_0_32px_rgba(37,99,235,0.1)] transition-colors duration-300"
+            whileHover={{ y: -5, transition: { duration: 0.2 } }}
+            className="group bg-white border border-[#E2E8F0] rounded-2xl overflow-hidden hover:border-[#2563EB]/40 hover:shadow-[0_8px_32px_rgba(37,99,235,0.10)] transition-all duration-300 shadow-[0_2px_8px_rgba(15,23,42,0.05)]"
           >
-            {/* Image */}
             {article.image && (
               <div className="relative w-full h-48 overflow-hidden">
                 <Image
@@ -50,13 +49,13 @@ export default function NewsEvents() {
                   className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-[#111827] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-white/20 via-transparent to-transparent" />
               </div>
             )}
 
-            <div className="p-5">
-              <div className="flex items-center gap-2 text-[#475569] mb-4">
-                <CalendarDays size={12} />
+            <div className="p-6">
+              <div className="flex items-center gap-2 text-[#94A3B8] mb-4">
+                <CalendarDays size={11} />
                 <span className="text-[10px] font-bold tracking-widest uppercase">
                   {new Date(article.date).toLocaleDateString("en-US", {
                     year: "numeric",
@@ -66,7 +65,7 @@ export default function NewsEvents() {
                 </span>
               </div>
 
-              <h3 className="text-base font-bold text-[#F8FAFC] mb-3 group-hover:text-[#2563EB] transition-colors duration-300 leading-snug">
+              <h3 className="text-base font-bold text-[#0F172A] mb-3 group-hover:text-[#2563EB] transition-colors duration-300 leading-snug">
                 {article.title}
               </h3>
 
@@ -76,12 +75,12 @@ export default function NewsEvents() {
 
               <Link
                 href={article.slug}
-                target={article.slug.startsWith('http') ? '_blank' : undefined}
-                rel={article.slug.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="inline-flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-[#2563EB] hover:text-[#3B82F6] transition-colors group/link"
+                target={article.slug.startsWith("http") ? "_blank" : undefined}
+                rel={article.slug.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="inline-flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-[#2563EB] hover:text-[#1D4ED8] transition-colors group/link"
               >
                 Read more
-                <ArrowRight size={13} className="group-hover/link:translate-x-1 transition-transform duration-200" />
+                <ArrowRight size={12} className="group-hover/link:translate-x-1 transition-transform duration-200" />
               </Link>
             </div>
           </motion.div>
@@ -90,4 +89,3 @@ export default function NewsEvents() {
     </section>
   );
 }
-

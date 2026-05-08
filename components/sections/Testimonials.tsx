@@ -12,7 +12,7 @@ export default function Testimonials() {
   const t = testimonials[active];
 
   return (
-    <section id="testimonials" className="py-24 px-6 bg-[#060E1A] border-y border-[#1E293B] overflow-hidden">
+    <section id="testimonials" className="py-24 px-6 bg-[#F8FAFC] border-y border-[#E2E8F0] overflow-hidden">
       <div className="max-w-4xl mx-auto">
         <SectionHeader
           label="Client Testimonials"
@@ -21,39 +21,39 @@ export default function Testimonials() {
         />
 
         <div className="relative">
-          {/* Quote background */}
+          {/* Decorative quote mark */}
           <Quote
-            size={180}
-            className="absolute -top-6 -left-6 text-[#1E293B] pointer-events-none"
+            size={160}
+            className="absolute -top-4 -left-4 text-[#2563EB]/6 pointer-events-none"
             fill="currentColor"
             strokeWidth={0}
           />
 
           <motion.div
             key={active}
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative z-10 bg-[#111827] border border-[#1E293B] rounded-2xl p-10 md:p-14 hover:border-[#2563EB]/30 transition-colors duration-300"
+            transition={{ duration: 0.45, ease: "easeOut" }}
+            className="relative z-10 bg-white border border-[#E2E8F0] rounded-2xl p-10 md:p-14 hover:border-[#2563EB]/30 hover:shadow-[0_8px_32px_rgba(37,99,235,0.08)] transition-all duration-300 shadow-[0_2px_12px_rgba(15,23,42,0.06)]"
           >
-            <p className="text-xl md:text-2xl text-[#CBD5E1] leading-relaxed italic font-medium mb-10">
+            <p className="text-xl md:text-2xl text-[#334155] leading-relaxed italic font-medium mb-10">
               &ldquo;{t.quote}&rdquo;
             </p>
 
             <div className="flex items-center gap-5">
               {t.photo && (
-                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#2563EB]/40 shrink-0 shadow-[0_0_20px_rgba(37,99,235,0.2)]">
+                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#2563EB]/25 shrink-0 shadow-[0_0_16px_rgba(37,99,235,0.12)]">
                   <Image
                     src={t.photo}
                     alt={t.name}
-                    width={64}
-                    height={64}
+                    width={56}
+                    height={56}
                     className="object-cover w-full h-full"
                   />
                 </div>
               )}
               <div>
-                <p className="text-base font-bold text-[#F8FAFC]">{t.name}</p>
+                <p className="text-base font-bold text-[#0F172A]">{t.name}</p>
                 <p className="text-sm text-[#64748B] mt-0.5">
                   {t.title}
                   <span className="text-[#2563EB] mx-2">·</span>
@@ -69,10 +69,10 @@ export default function Testimonials() {
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                className={`h-2 rounded-full transition-all duration-300 ${
                   i === active
                     ? "bg-[#2563EB] w-6"
-                    : "bg-[#1E293B] hover:bg-[#334155]"
+                    : "bg-[#CBD5E1] w-2 hover:bg-[#94A3B8]"
                 }`}
                 aria-label={`Testimonial ${i + 1}`}
               />

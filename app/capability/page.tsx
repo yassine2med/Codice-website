@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
+import { motion } from "framer-motion";
 import Navbar from "@/components/nav/Navbar";
+import Footer from "@/components/sections/Footer";
+import CTABanner from "@/components/sections/CTABanner";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { company } from "@/data/codice";
+import { ArrowRight, Award, CheckCircle2, FileText, ShieldCheck } from "lucide-react";
+import Link from "next/link";
+import { SpotlightCard } from "@/components/ui/SpotlightCard";
 
 export const metadata: Metadata = {
   title: "Capability Statement",
@@ -9,12 +17,6 @@ export const metadata: Metadata = {
     description: "Government-ready. Mission-proven. Everything procurement officers need to evaluate CODICE Technology as a trusted partner.",
   },
 };
-import Footer from "@/components/sections/Footer";
-import CTABanner from "@/components/sections/CTABanner";
-import { company, services } from "@/data/codice";
-import { ArrowRight, Award, CheckCircle2, ExternalLink, FileText, ShieldCheck } from "lucide-react";
-import Link from "next/link";
-import { SpotlightCard } from "@/components/ui/SpotlightCard";
 
 const naicsCodes = [
   { code: "541511", label: "Custom Computer Programming Services" },
@@ -39,68 +41,53 @@ const certifications = [
 ];
 
 const differentiators = [
-  {
-    stat: "100%",
-    label: "Client Retention",
-    desc: "Every agency we've served has stayed with CODICE across 16 years.",
-  },
-  {
-    stat: "16+",
-    label: "Years in Government IT",
-    desc: "Deep institutional knowledge of DC procurement, compliance, and agency missions.",
-  },
-  {
-    stat: "12+",
-    label: "Government Agencies",
-    desc: "Across DC — DOB, DDOT, DOES, DHCF, DCPS, CJCC, CFSA, OAG, and more.",
-  },
-  {
-    stat: "8",
-    label: "Proprietary Platforms",
-    desc: "We own every line of code — no third-party dependency, full control.",
-  },
+  { stat: "100%", label: "Client Retention", desc: "Every agency we've served has stayed with CODICE across 16 years." },
+  { stat: "16+", label: "Years in Government IT", desc: "Deep institutional knowledge of DC procurement, compliance, and agency missions." },
+  { stat: "12+", label: "Government Agencies", desc: "Across DC — DOB, DDOT, DOES, DHCF, DCPS, CJCC, CFSA, OAG, and more." },
+  { stat: "8", label: "Proprietary Platforms", desc: "We own every line of code — no third-party dependency, full control." },
 ];
 
 export default function CapabilityPage() {
   return (
-    <main className="min-h-screen bg-brand-navy text-white selection:bg-brand-primary/30">
+    <main className="min-h-screen bg-white text-[#0F172A]">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-48 pb-32 overflow-hidden mesh-gradient">
-        <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-brand-primary/10 blur-[150px] rounded-full animate-pulse-slow" />
-        
+      <section className="relative pt-48 pb-32 overflow-hidden bg-white">
+        <div className="absolute inset-0 dot-grid opacity-50" />
+        <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-[#2563EB]/4 blur-[140px] rounded-full animate-pulse-slow" />
+
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-4xl"
           >
-            <div className="inline-flex items-center gap-3 glass-card px-4 py-2 rounded-full mb-8 border-white/20">
-              <ShieldCheck size={14} className="text-brand-accent" />
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-brand-accent">Procurement Ready</span>
+            <div className="inline-flex items-center gap-3 bg-[#F0F6FF] border border-[#2563EB]/20 px-4 py-2 rounded-full mb-8">
+              <ShieldCheck size={14} className="text-[#2563EB]" />
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#2563EB]">Procurement Ready</span>
             </div>
-            <h1 className="text-[clamp(48px,8vw,92px)] font-extrabold tracking-tighter leading-[0.9] mb-8">
+            <h1 className="text-[clamp(44px,8vw,88px)] font-extrabold tracking-tighter leading-[0.9] mb-8 text-[#0F172A]">
               Government-Ready. <br />
-              <span className="text-gradient text-glow">Mission-Proven.</span>
+              <span className="text-gradient">Mission-Proven.</span>
             </h1>
-            <p className="text-xl text-gray-400 leading-relaxed max-w-2xl mb-12">
+            <p className="text-xl text-[#64748B] leading-relaxed max-w-2xl mb-12">
               Everything procurement officers and agency program managers need to evaluate CODICE Technology as a premier technology partner.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
               <Link
                 href="https://codicetech.com/capability/"
                 target="_blank"
-                className="group relative inline-flex items-center justify-center gap-3 bg-white text-brand-navy font-bold px-10 py-5 rounded-2xl text-base transition-all duration-300 hover:shadow-[0_20px_50px_rgba(255,255,255,0.2)] hover:-translate-y-1"
+                className="group relative inline-flex items-center justify-center gap-3 bg-[#2563EB] text-white font-bold px-10 py-5 rounded-2xl text-base transition-all duration-300 shadow-[0_8px_32px_rgba(37,99,235,0.25)] hover:shadow-[0_12px_40px_rgba(37,99,235,0.40)] hover:-translate-y-0.5"
               >
-                <FileText size={20} /> Download Statement
+                <FileText size={18} /> Download Statement
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-3 glass-card hover:bg-white/10 text-white font-bold px-10 py-5 rounded-2xl text-base transition-all duration-300 hover:-translate-y-1"
+                className="inline-flex items-center justify-center gap-3 bg-white border-2 border-[#E2E8F0] hover:border-[#2563EB]/40 text-[#0F172A] font-bold px-10 py-5 rounded-2xl text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(37,99,235,0.10)]"
               >
-                Procurement Briefing <ArrowRight size={20} />
+                Procurement Briefing <ArrowRight size={18} />
               </Link>
             </div>
           </motion.div>
@@ -108,9 +95,9 @@ export default function CapabilityPage() {
       </section>
 
       {/* Key Metrics */}
-      <section className="py-24 px-6 relative z-10 -mt-16">
+      <section className="py-20 px-6 bg-[#F8FAFC] border-t border-[#E2E8F0]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {differentiators.map((d, idx) => (
               <motion.div
                 key={d.label}
@@ -119,10 +106,10 @@ export default function CapabilityPage() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
               >
-                <SpotlightCard className="p-10 rounded-[2.5rem] glass-card border-white/10 h-full flex flex-col justify-center text-center group hover:border-brand-primary/40 transition-all">
-                  <span className="text-5xl font-black text-white group-hover:text-brand-primary transition-colors mb-3 tracking-tighter">{d.stat}</span>
-                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-accent mb-4">{d.label}</span>
-                  <p className="text-sm text-gray-500 leading-relaxed">{d.desc}</p>
+                <SpotlightCard className="p-8 rounded-2xl h-full flex flex-col justify-center text-center group hover:border-[#2563EB]/40 hover:shadow-[0_8px_32px_rgba(37,99,235,0.10)] transition-all shadow-[0_2px_8px_rgba(15,23,42,0.04)]">
+                  <span className="text-5xl font-black text-[#0F172A] group-hover:text-[#2563EB] transition-colors mb-3 tracking-tighter font-[family-name:var(--font-dm-mono)]">{d.stat}</span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#2563EB] mb-3">{d.label}</span>
+                  <p className="text-sm text-[#94A3B8] leading-relaxed">{d.desc}</p>
                 </SpotlightCard>
               </motion.div>
             ))}
@@ -131,21 +118,21 @@ export default function CapabilityPage() {
       </section>
 
       {/* Certifications Grid */}
-      <section className="py-32 px-6">
+      <section className="py-28 px-6 bg-white border-t border-[#E2E8F0]">
         <div className="max-w-7xl mx-auto">
-          <SectionHeader 
+          <SectionHeader
             label="Compliance"
             title="Certifications & Standards"
             subtitle="CODICE maintains the rigorous compliance posture required for mission-critical government operations."
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {certifications.map((cert) => (
-              <SpotlightCard key={cert.label} className="p-8 rounded-3xl glass-card border-white/5 h-full group hover:border-brand-primary/30 transition-all">
-                <div className="w-12 h-12 rounded-2xl bg-brand-primary/10 flex items-center justify-center mb-6 text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all">
-                  <ShieldCheck size={24} />
+              <SpotlightCard key={cert.label} className="p-7 h-full group hover:border-[#2563EB]/40 hover:shadow-[0_8px_32px_rgba(37,99,235,0.08)] transition-all shadow-[0_2px_8px_rgba(15,23,42,0.04)]">
+                <div className="w-11 h-11 rounded-2xl bg-[#F0F6FF] border border-[#2563EB]/15 flex items-center justify-center mb-6 text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-all">
+                  <ShieldCheck size={20} />
                 </div>
-                <h4 className="text-lg font-bold text-white mb-2 leading-tight">{cert.label}</h4>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-500">{cert.body}</p>
+                <h4 className="text-base font-bold text-[#0F172A] mb-2 leading-tight">{cert.label}</h4>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-[#94A3B8]">{cert.body}</p>
               </SpotlightCard>
             ))}
           </div>
@@ -153,33 +140,32 @@ export default function CapabilityPage() {
       </section>
 
       {/* NAICS Section */}
-      <section className="py-32 bg-black/20 border-y border-white/5 relative overflow-hidden">
-        <div className="absolute inset-0 mesh-gradient opacity-20 pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <SectionHeader 
+      <section className="py-28 px-6 bg-[#F8FAFC] border-t border-[#E2E8F0]">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeader
             label="Procurement Data"
             title="NAICS Codes & Vehicles"
             subtitle="Simplifying procurement through established contract vehicles and standardized classification."
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
             {naicsCodes.map((n) => (
-              <div key={n.code} className="p-6 rounded-2xl glass-card border-white/5 group hover:border-brand-primary/20 transition-all">
-                <span className="block text-2xl font-bold text-brand-primary mb-2 tracking-tighter">{n.code}</span>
-                <span className="text-sm text-gray-400 group-hover:text-white transition-colors">{n.label}</span>
+              <div key={n.code} className="p-6 rounded-2xl bg-white border border-[#E2E8F0] group hover:border-[#2563EB]/30 hover:shadow-[0_4px_16px_rgba(37,99,235,0.08)] transition-all">
+                <span className="block text-2xl font-bold text-[#2563EB] mb-2 tracking-tighter font-[family-name:var(--font-dm-mono)]">{n.code}</span>
+                <span className="text-sm text-[#64748B] group-hover:text-[#0F172A] transition-colors">{n.label}</span>
               </div>
             ))}
           </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
+
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               { label: "GSA MAS Contract", value: "Schedule 70", detail: "IT Products & Services vehicle for rapid agency procurement." },
               { label: "DUNS Number", value: "Verified in SAM", detail: "Active and registered for federal procurement systems." },
               { label: "CAGE Code", value: "Active Status", detail: "Ready for DoD and federal contracting office verification." },
             ].map((item) => (
-              <div key={item.label} className="p-10 rounded-[2.5rem] glass-card border-brand-primary/10 hover:border-brand-primary/30 transition-all">
-                <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-brand-accent mb-4">{item.label}</p>
-                <p className="text-2xl font-bold text-white mb-4">{item.value}</p>
-                <p className="text-sm text-gray-500 leading-relaxed">{item.detail}</p>
+              <div key={item.label} className="p-8 rounded-2xl bg-white border border-[#E2E8F0] hover:border-[#2563EB]/30 hover:shadow-[0_4px_16px_rgba(37,99,235,0.08)] transition-all">
+                <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#2563EB] mb-4">{item.label}</p>
+                <p className="text-2xl font-bold text-[#0F172A] mb-3">{item.value}</p>
+                <p className="text-sm text-[#64748B] leading-relaxed">{item.detail}</p>
               </div>
             ))}
           </div>
@@ -187,9 +173,9 @@ export default function CapabilityPage() {
       </section>
 
       {/* Past Performance */}
-      <section className="py-32 px-6">
+      <section className="py-28 px-6 bg-white border-t border-[#E2E8F0]">
         <div className="max-w-7xl mx-auto">
-          <SectionHeader 
+          <SectionHeader
             label="Evidence of Delivery"
             title="Government Agencies Served"
             subtitle="Deep institutional experience across 12+ DC agencies with a 100% successful delivery record."
@@ -209,38 +195,39 @@ export default function CapabilityPage() {
               "Office of the Chief Technology Officer (OCTO)",
               "DC Department of Human Services (DHS)",
             ].map((agency) => (
-              <div key={agency} className="flex items-center gap-4 p-6 rounded-2xl glass-card border-white/5 hover:border-brand-primary/20 transition-all group">
-                <div className="w-8 h-8 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all">
-                  <CheckCircle2 size={16} />
+              <div key={agency} className="flex items-center gap-4 p-5 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#2563EB]/30 hover:bg-white hover:shadow-[0_4px_16px_rgba(37,99,235,0.07)] transition-all group">
+                <div className="w-8 h-8 rounded-full bg-[#F0F6FF] border border-[#2563EB]/15 flex items-center justify-center text-[#2563EB] group-hover:bg-[#2563EB] group-hover:text-white transition-all shrink-0">
+                  <CheckCircle2 size={14} />
                 </div>
-                <span className="text-sm font-semibold text-gray-300 group-hover:text-white transition-colors">{agency}</span>
+                <span className="text-sm font-semibold text-[#334155] group-hover:text-[#0F172A] transition-colors">{agency}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final Briefing CTA */}
-      <section className="py-32 px-6">
-        <div className="max-w-5xl mx-auto rounded-[4rem] glass-card border-brand-primary/20 p-16 md:p-24 text-center relative overflow-hidden">
-          <div className="absolute inset-0 mesh-gradient opacity-40 pointer-events-none" />
-          <Award className="mx-auto mb-8 h-16 w-16 text-brand-primary animate-float" />
-          <h2 className="text-[clamp(36px,6vw,68px)] font-bold mb-8 leading-none tracking-tighter">
+      {/* Final CTA */}
+      <section className="py-28 px-6 bg-[#F8FAFC] border-t border-[#E2E8F0]">
+        <div className="max-w-5xl mx-auto rounded-3xl bg-white border border-[#E2E8F0] p-14 md:p-20 text-center relative overflow-hidden shadow-[0_4px_32px_rgba(15,23,42,0.06)]">
+          <div className="absolute inset-0 dot-grid opacity-30 pointer-events-none" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-1 bg-linear-to-r from-transparent via-[#2563EB]/40 to-transparent rounded-full" />
+          <Award className="mx-auto mb-8 h-14 w-14 text-[#2563EB] animate-float" />
+          <h2 className="text-[clamp(32px,5.5vw,60px)] font-bold text-[#0F172A] mb-6 leading-tight tracking-tight">
             Architect your next <br /> mission success.
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12">
+          <p className="text-lg text-[#64748B] max-w-2xl mx-auto mb-12 leading-relaxed">
             CODICE is ready to respond to RFPs, capability inquiries, and teaming opportunities with high-fidelity technical depth.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-6">
+          <div className="flex flex-col sm:flex-row justify-center gap-5">
             <Link
               href="/contact"
-              className="bg-white text-brand-navy font-bold px-12 py-6 rounded-2xl text-lg shadow-2xl hover:-translate-y-1 transition-all"
+              className="bg-[#2563EB] text-white font-bold px-10 py-5 rounded-2xl text-lg shadow-[0_8px_32px_rgba(37,99,235,0.25)] hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(37,99,235,0.35)] transition-all"
             >
               Request a Briefing
             </Link>
             <a
               href={`mailto:${company.email}`}
-              className="glass-card hover:bg-white/10 text-white font-bold px-12 py-6 rounded-2xl text-lg transition-all"
+              className="bg-white border-2 border-[#E2E8F0] hover:border-[#2563EB]/40 text-[#0F172A] font-bold px-10 py-5 rounded-2xl text-lg transition-all hover:-translate-y-0.5"
             >
               Email Procurement
             </a>
@@ -248,6 +235,7 @@ export default function CapabilityPage() {
         </div>
       </section>
 
+      <CTABanner />
       <Footer />
     </main>
   );

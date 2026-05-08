@@ -19,24 +19,22 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-        scrolled 
-          ? "py-4" 
-          : "py-8"
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? "py-3" : "py-6"
       }`}
     >
-      <div className={`max-w-7xl mx-auto px-6 transition-all duration-700 ${
-        scrolled ? "scale-95" : "scale-100"
-      }`}>
-        <div className={`flex items-center justify-between px-8 py-4 rounded-[2rem] transition-all duration-700 ${
-          scrolled 
-            ? "glass-morphism shadow-[0_20px_50px_rgba(0,0,0,0.3)] border-white/10" 
-            : "bg-transparent border-transparent"
-        }`}>
+      <div className={`max-w-7xl mx-auto px-6 transition-all duration-500 ${scrolled ? "scale-[0.97]" : "scale-100"}`}>
+        <div
+          className={`flex items-center justify-between px-8 py-3.5 rounded-2xl transition-all duration-500 ${
+            scrolled
+              ? "bg-white/92 backdrop-blur-2xl border border-[#E2E8F0] shadow-[0_4px_24px_rgba(15,23,42,0.08)]"
+              : "bg-transparent border-transparent"
+          }`}
+        >
           {/* Logo */}
           <Link href="/" className="flex items-center relative z-50 group">
-            <div className="relative h-10 w-44 md:h-12 md:w-52 transition-transform duration-500 group-hover:scale-105">
+            <div className="relative h-10 w-44 md:h-11 md:w-52 transition-transform duration-500 group-hover:scale-105">
               <Image
                 src="/images/brand/codice-logo-full.png"
                 alt="CODICE Technology"
@@ -53,7 +51,7 @@ export default function Navbar() {
             <DropdownNavigation navItems={navigation.map((group, idx) => ({
               id: idx,
               label: group.title,
-              subMenus: group.sections 
+              subMenus: group.sections
                 ? group.sections.map(section => ({
                     title: section.title,
                     items: section.items.map(item => ({
@@ -63,7 +61,7 @@ export default function Navbar() {
                       href: item.href
                     }))
                   }))
-                : group.items && group.items.length > 1 
+                : group.items && group.items.length > 1
                   ? [{
                       title: group.title,
                       items: group.items.map(item => ({
@@ -72,18 +70,18 @@ export default function Navbar() {
                         icon: group.title === "Services" ? Cpu : Globe,
                         href: item.href
                       }))
-                    }] 
+                    }]
                   : undefined,
               link: group.items && group.items.length === 1 ? group.items[0].href : undefined
             }))} />
           </div>
 
           {/* CTA Group */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             <SocialIcons compact={true} />
-            <Link 
+            <Link
               href="/contact"
-              className="bg-brand-primary text-white text-xs font-bold tracking-widest uppercase px-6 py-3 rounded-xl hover:bg-brand-secondary transition-all duration-300 shadow-lg shadow-brand-primary/20"
+              className="bg-[#2563EB] text-white text-xs font-bold tracking-widest uppercase px-5 py-2.5 rounded-xl hover:bg-[#1D4ED8] transition-all duration-300 shadow-[0_4px_16px_rgba(37,99,235,0.25)] hover:shadow-[0_6px_24px_rgba(37,99,235,0.35)]"
             >
               Consultation
             </Link>
@@ -91,58 +89,61 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="lg:hidden relative z-50 text-white p-2 glass-card rounded-full w-12 h-12 flex items-center justify-center border-white/20"
+            className={`lg:hidden relative z-50 p-2 rounded-xl w-11 h-11 flex items-center justify-center border transition-all duration-300 ${
+              mobileOpen
+                ? "bg-white border-[#E2E8F0] text-[#0F172A]"
+                : scrolled
+                  ? "bg-white border-[#E2E8F0] text-[#0F172A]"
+                  : "bg-white/10 border-white/20 text-[#0F172A]"
+            }`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+            {mobileOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
       </div>
 
-      {/* High-Fidelity Mobile Menu */}
+      {/* Mobile Menu — Precision White */}
       <AnimatePresence>
         {mobileOpen && (
-          <motion.div 
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.1 }}
-            transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed inset-0 bg-brand-navy z-40 flex flex-col p-8 overflow-y-auto mesh-gradient"
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ type: "spring", damping: 30, stiffness: 400 }}
+            className="fixed inset-0 bg-white z-40 flex flex-col p-8 overflow-y-auto"
           >
-            <motion.div 
+            {/* Subtle dot grid background */}
+            <div className="absolute inset-0 dot-grid opacity-50 pointer-events-none" />
+
+            <motion.div
               initial="hidden"
               animate="show"
               exit="hidden"
-              variants={{
-                hidden: {},
-                show: { transition: { staggerChildren: 0.1 } }
-              }}
-              className="mt-24 flex flex-col gap-10"
+              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
+              className="relative z-10 mt-24 flex flex-col gap-10"
             >
               {navigation.map((group) => (
-                <motion.div 
-                  key={group.title} 
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    show: { opacity: 1, y: 0 }
-                  }}
-                  className="space-y-6"
+                <motion.div
+                  key={group.title}
+                  variants={{ hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } }}
+                  className="space-y-5"
                 >
-                  <p className="text-[10px] font-bold tracking-[0.4em] text-brand-primary uppercase border-b border-white/5 pb-3">
+                  <p className="text-[10px] font-bold tracking-[0.4em] text-[#2563EB] uppercase border-b border-[#E2E8F0] pb-3">
                     {group.title}
                   </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5">
                     {group.sections ? (
                       group.sections.map(section => (
-                        <div key={section.title} className="space-y-4">
-                          <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">{section.title}</p>
-                          <div className="flex flex-col gap-4">
+                        <div key={section.title} className="space-y-3">
+                          <p className="text-[10px] font-bold text-[#94A3B8] uppercase tracking-widest">{section.title}</p>
+                          <div className="flex flex-col gap-3">
                             {section.items.map(item => (
                               <Link
                                 key={item.href}
                                 href={item.href}
-                                className="text-xl font-bold text-white hover:text-brand-primary transition-colors"
+                                className="text-xl font-bold text-[#0F172A] hover:text-[#2563EB] transition-colors"
                                 onClick={() => setMobileOpen(false)}
                               >
                                 {item.label}
@@ -155,7 +156,7 @@ export default function Navbar() {
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="text-2xl font-bold text-white hover:text-brand-primary transition-colors"
+                        className="text-2xl font-bold text-[#0F172A] hover:text-[#2563EB] transition-colors"
                         onClick={() => setMobileOpen(false)}
                       >
                         {item.label}
@@ -167,10 +168,10 @@ export default function Navbar() {
 
               <Link
                 href="/contact"
-                className="bg-brand-primary text-white text-center font-bold py-5 rounded-2xl text-lg shadow-2xl shadow-brand-primary/40 mt-6"
+                className="bg-[#2563EB] text-white text-center font-bold py-5 rounded-2xl text-lg shadow-[0_8px_32px_rgba(37,99,235,0.25)] mt-6 hover:bg-[#1D4ED8] transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
-                Launch Briefing
+                Schedule a Briefing
               </Link>
             </motion.div>
           </motion.div>

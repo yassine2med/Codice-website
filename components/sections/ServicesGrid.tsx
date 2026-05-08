@@ -38,24 +38,25 @@ export default function ServicesGrid() {
           <motion.div
             key={service.id}
             variants={card}
-            whileHover={{ y: -6, transition: { duration: 0.25 } }}
+            whileHover={{ y: -5, transition: { duration: 0.2 } }}
             className="group"
           >
-            <SpotlightCard className="h-full p-7 flex flex-col hover:border-[#2563EB]/50 hover:shadow-[0_0_32px_rgba(37,99,235,0.12)] transition-colors duration-300">
+            <SpotlightCard className="h-full p-7 flex flex-col hover:border-[#2563EB]/40 hover:shadow-[0_8px_32px_rgba(37,99,235,0.10)] transition-all duration-300 shadow-[0_2px_8px_rgba(15,23,42,0.05)]">
               {/* Icon container */}
-              <div className="w-11 h-11 mb-6 rounded-xl bg-[#0A1628] border border-[#1E293B] flex items-center justify-center p-2.5 group-hover:border-[#2563EB]/40 transition-colors">
+              <div className="w-11 h-11 mb-6 rounded-xl bg-[#F0F6FF] border border-[#2563EB]/15 flex items-center justify-center p-2.5 group-hover:bg-[#2563EB] group-hover:border-[#2563EB] transition-all duration-300">
                 <div className="relative w-full h-full">
                   <Image
                     src={service.icon}
                     alt={service.title}
                     fill
-                    className="object-contain brightness-0 invert opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                    className="object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                    style={{ filter: "saturate(0) opacity(0.5)" }}
                     sizes="28px"
                   />
                 </div>
               </div>
 
-              <h3 className="text-base font-bold text-[#F8FAFC] mb-3 leading-snug group-hover:text-[#2563EB] transition-colors duration-300">
+              <h3 className="text-base font-bold text-[#0F172A] mb-3 leading-snug group-hover:text-[#2563EB] transition-colors duration-300">
                 {service.title}
               </h3>
 
@@ -65,7 +66,7 @@ export default function ServicesGrid() {
 
               <Link
                 href={"/services/" + service.slug}
-                className="inline-flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-[#2563EB] hover:text-[#3B82F6] transition-colors mt-auto group/link"
+                className="inline-flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-[#2563EB] hover:text-[#1D4ED8] transition-colors mt-auto group/link"
               >
                 Learn more
                 <ArrowRight size={13} className="group-hover/link:translate-x-1 transition-transform duration-200" />

@@ -356,7 +356,7 @@ export const markets = [
     name: 'Health IT & Administration',
     description: 'Specialized solutions for healthcare agencies, including Medicaid cost reporting, patient tracking, and transition planning.',
     details: 'Our CelerMed and CelerKost platforms are built to handle the rigorous compliance and financial transparency needs of health departments.',
-    icon: 'Stethoscope',
+    icon: 'HeartPulse',
   },
   {
     id: 'education',

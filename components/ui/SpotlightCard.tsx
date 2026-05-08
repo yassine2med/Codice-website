@@ -12,7 +12,7 @@ interface SpotlightCardProps {
 export function SpotlightCard({
   children,
   className = "",
-  spotlightColor = "rgba(37, 99, 235, 0.15)", // Default CODICE brand blue with opacity
+  spotlightColor = "rgba(37, 99, 235, 0.08)",
 }: SpotlightCardProps) {
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState(false);
@@ -21,30 +21,15 @@ export function SpotlightCard({
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!divRef.current || isFocused) return;
-
     const div = divRef.current;
     const rect = div.getBoundingClientRect();
-
     setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
 
-  const handleFocus = () => {
-    setIsFocused(true);
-    setOpacity(1);
-  };
-
-  const handleBlur = () => {
-    setIsFocused(false);
-    setOpacity(0);
-  };
-
-  const handleMouseEnter = () => {
-    setOpacity(1);
-  };
-
-  const handleMouseLeave = () => {
-    setOpacity(0);
-  };
+  const handleFocus = () => { setIsFocused(true); setOpacity(1); };
+  const handleBlur = () => { setIsFocused(false); setOpacity(0); };
+  const handleMouseEnter = () => setOpacity(1);
+  const handleMouseLeave = () => setOpacity(0);
 
   return (
     <motion.div
@@ -54,7 +39,7 @@ export function SpotlightCard({
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative overflow-hidden rounded-2xl border border-[#1E293B] bg-[#111827] transition-colors duration-300 ${className}`}
+      className={`relative overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white transition-all duration-300 ${className}`}
     >
       <div
         className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"

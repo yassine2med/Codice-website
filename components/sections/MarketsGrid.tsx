@@ -4,6 +4,7 @@ import { markets } from "@/data/codice";
 import { motion } from "framer-motion";
 import { Building2, HeartPulse, Bus, Shield, Users, Hammer, GraduationCap, Scale, DollarSign, Leaf, Users2, type LucideIcon } from "lucide-react";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const iconMap: Record<string, LucideIcon> = {
   Building2, HeartPulse, Bus, Shield, Users, Hammer, GraduationCap, Scale, DollarSign, Leaf, Users2,
@@ -19,14 +20,10 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
 };
 
-import { SectionHeader } from "@/components/ui/SectionHeader";
-
 export default function MarketsGrid() {
   return (
     <section id="markets" className="py-24 px-6 max-w-7xl mx-auto relative">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-primary/5 blur-[120px] rounded-full pointer-events-none" />
-      
-      <SectionHeader 
+      <SectionHeader
         label="Sectors We Serve"
         title="Built for Every Corner of Government"
         subtitle="From local DC agencies to federal health departments, our solutions scale to meet the mission with absolute precision."
@@ -37,39 +34,31 @@ export default function MarketsGrid() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10"
       >
         {markets.map((market) => {
           const Icon = iconMap[market.icon] || Building2;
           return (
-            <motion.div
-              key={market.id}
-              variants={item}
-              className="group"
-            >
-              <SpotlightCard className="p-8 rounded-[2.5rem] glass-card hover:border-brand-primary/40 transition-all duration-500 overflow-hidden h-full flex flex-col">
-                {/* Background Decor */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/10 blur-3xl -mr-16 -mt-16 group-hover:w-48 group-hover:h-48 transition-all duration-500" />
-                
+            <motion.div key={market.id} variants={item} className="group">
+              <SpotlightCard className="p-8 h-full flex flex-col hover:border-[#2563EB]/40 hover:shadow-[0_8px_32px_rgba(37,99,235,0.10)] transition-all duration-500 shadow-[0_2px_8px_rgba(15,23,42,0.04)]">
                 <div className="relative z-10 flex-1">
-                  <div className="w-12 h-12 rounded-2xl bg-brand-primary/10 flex items-center justify-center mb-6 group-hover:bg-brand-primary/20 transition-colors">
-                    <Icon size={24} className="text-brand-primary" />
+                  <div className="w-12 h-12 rounded-2xl bg-[#F0F6FF] border border-[#2563EB]/15 flex items-center justify-center mb-6 group-hover:bg-[#2563EB] group-hover:border-[#2563EB] transition-all duration-300">
+                    <Icon size={22} className="text-[#2563EB] group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-brand-primary transition-colors">
+                  <h3 className="text-xl font-bold text-[#0F172A] mb-3 group-hover:text-[#2563EB] transition-colors">
                     {market.name}
                   </h3>
-                  
-                  <p className="text-gray-400 text-base leading-relaxed mb-8">
+                  <p className="text-[#64748B] text-sm leading-relaxed mb-6">
                     {market.description}
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-white/5 group-hover:border-brand-primary/20 transition-colors mt-auto">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-primary" />
-                    <p className="text-[10px] font-bold tracking-widest uppercase text-gray-500">Mission Impact</p>
+                <div className="pt-5 border-t border-[#F1F5F9] group-hover:border-[#2563EB]/15 transition-colors mt-auto">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+                    <p className="text-[9px] font-bold tracking-widest uppercase text-[#94A3B8]">Mission Impact</p>
                   </div>
-                  <p className="text-sm text-gray-400 leading-relaxed italic">
+                  <p className="text-xs text-[#94A3B8] leading-relaxed italic">
                     &ldquo;{market.details}&rdquo;
                   </p>
                 </div>
