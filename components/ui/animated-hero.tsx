@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Shield, Award, CheckCircle, TrendingUp, Zap, Clock, ChevronRight } from "lucide-react";
+import { ArrowRight, Shield, Award, CheckCircle, TrendingUp, Zap, Clock, ChevronRight, Activity } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import MagneticButton from "@/components/ui/MagneticButton";
@@ -61,39 +61,20 @@ const activityFeed = [
   { id: 5, agency: "DHS",  action: "Case CASE-4401 escalated", time: "11m ago", color: "#F59E0B" },
 ];
 
-/* ─── Animated Counter ─── */
-function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
-  const [val, setVal] = useState(to); // start at final value — no "0 flash"
-  useEffect(() => {
-    setVal(0);
-    let current = 0;
-    const step = Math.ceil(to / 36);
-    const id = setInterval(() => {
-      current += step;
-      if (current >= to) { setVal(to); clearInterval(id); }
-      else setVal(current);
-    }, 45);
-    return () => clearInterval(id);
-  }, [to]);
-  return <>{val.toLocaleString()}{suffix}</>;
-}
-
 /* ─── Mission Dashboard Panel ─── */
 function MissionDashboard() {
   const [activeIdx, setActiveIdx] = useState(0);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const id = setInterval(() => setActiveIdx((i) => (i + 1) % activityFeed.length), 3000);
     return () => clearInterval(id);
   }, []);
 
   const metrics = [
-    { label: "Open Permits",    value: 2847, suffix: "",    delta: "+12%",     color: "#2563EB", bg: "#EFF6FF" },
-    { label: "Cases Active",    value: 1429, suffix: "",    delta: "−8% MoM",  color: "#0F766E", bg: "#F0FDFA" },
-    { label: "Compliance Rate", value: 99,   suffix: ".4%", delta: "↑ 0.2",    color: "#7C3AED", bg: "#F5F3FF" },
-    { label: "Uptime",          value: 99,   suffix: ".9%", delta: "30-day",   color: "#16A34A", bg: "#F0FDF4" },
+    { label: "Open Permits",    display: "2,847", delta: "+12% MoM",  color: "#2563EB" },
+    { label: "Cases Active",    display: "1,429", delta: "−8% MoM",   color: "#0F766E" },
+    { label: "Compliance Rate", display: "99.4%", delta: "↑ 0.2 pts", color: "#7C3AED" },
+    { label: "Uptime SLA",      display: "99.9%", delta: "30-day avg", color: "#16A34A" },
   ];
 
   return (
@@ -127,23 +108,24 @@ function MissionDashboard() {
           </div>
         </div>
 
-        {/* Metrics 2×2 */}
+        {/* Metrics 2×2 — static, no JS animation */}
         <div className="grid grid-cols-2 border-b border-[#E2E8F0]">
           {metrics.map((m, i) => (
             <div
               key={m.label}
-              className={`px-5 py-5 group transition-colors cursor-default ${
+              className={`px-5 py-5 cursor-default ${
                 i % 2 === 0 ? "border-r border-[#E2E8F0]" : ""} ${i < 2 ? "border-b border-[#E2E8F0]" : ""}`}
             >
-              <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#64748B] mb-2">{m.label}</p>
-              <span className="text-2xl font-black leading-none tabular-nums tracking-tighter block" style={{ color: m.color }}>
-                {mounted ? <Counter to={m.value} suffix={m.suffix} /> : `${m.value}${m.suffix}`}
-              </span>
-              <div className="flex items-center gap-1 mt-1.5">
-                <TrendingUp size={8} style={{ color: m.color }} />
-                <span className="text-[9px] font-semibold" style={{ color: m.color }}>{m.delta}</span>
-              </div>
-              <div className="h-[2px] w-full mt-3 rounded-full" style={{ backgroundColor: m.color + "30" }} />
+              <p style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#64748B", marginBottom: 6 }}>
+                {m.label}
+              </p>
+              <p style={{ fontSize: 26, fontWeight: 900, lineHeight: 1, color: m.color, marginBottom: 6, fontVariantNumeric: "tabular-nums" }}>
+                {m.display}
+              </p>
+              <p style={{ fontSize: 9, fontWeight: 600, color: m.color, display: "flex", alignItems: "center", gap: 3 }}>
+                <TrendingUp size={8} /> {m.delta}
+              </p>
+              <div style={{ height: 2, width: "100%", marginTop: 10, borderRadius: 9999, backgroundColor: m.color, opacity: 0.2 }} />
             </div>
           ))}
         </div>
