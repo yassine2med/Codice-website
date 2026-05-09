@@ -9,7 +9,7 @@ import { PageHero } from "@/components/ui/PageHero";
 
 export default function CaseStudiesPage() {
   return (
-    <main className="min-h-screen bg-[#0A1628]">
+    <main className="min-h-screen bg-white text-[#0F172A]">
       <Navbar />
       <PageHero 
         label="Success Stories"

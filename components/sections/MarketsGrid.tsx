@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Building2, HeartPulse, Bus, Shield, Users, Hammer, GraduationCap, Scale, DollarSign, Leaf, Users2, type LucideIcon } from "lucide-react";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import TiltCard from "@/components/ui/TiltCard";
 
 const iconMap: Record<string, LucideIcon> = {
   Building2, HeartPulse, Bus, Shield, Users, Hammer, GraduationCap, Scale, DollarSign, Leaf, Users2,
@@ -40,6 +41,7 @@ export default function MarketsGrid() {
           const Icon = iconMap[market.icon] || Building2;
           return (
             <motion.div key={market.id} variants={item} className="group">
+              <TiltCard intensity={4} className="h-full">
               <SpotlightCard className="p-8 h-full flex flex-col hover:border-[#2563EB]/40 hover:shadow-[0_8px_32px_rgba(37,99,235,0.10)] transition-all duration-500 shadow-[0_2px_8px_rgba(15,23,42,0.04)]">
                 <div className="relative z-10 flex-1">
                   <div className="w-12 h-12 rounded-2xl bg-[#F0F6FF] border border-[#2563EB]/15 flex items-center justify-center mb-6 group-hover:bg-[#2563EB] group-hover:border-[#2563EB] transition-all duration-300">
@@ -63,6 +65,7 @@ export default function MarketsGrid() {
                   </p>
                 </div>
               </SpotlightCard>
+              </TiltCard>
             </motion.div>
           );
         })}

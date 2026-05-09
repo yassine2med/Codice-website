@@ -7,6 +7,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
+import TiltCard from "@/components/ui/TiltCard";
 
 const container = {
   hidden: {},
@@ -38,9 +39,9 @@ export default function ServicesGrid() {
           <motion.div
             key={service.id}
             variants={card}
-            whileHover={{ y: -5, transition: { duration: 0.2 } }}
             className="group"
           >
+            <TiltCard intensity={5} className="h-full">
             <SpotlightCard className="h-full p-7 flex flex-col hover:border-[#2563EB]/40 hover:shadow-[0_8px_32px_rgba(37,99,235,0.10)] transition-all duration-300 shadow-[0_2px_8px_rgba(15,23,42,0.05)]">
               {/* Icon container */}
               <div className="w-11 h-11 mb-6 rounded-xl bg-[#F0F6FF] border border-[#2563EB]/15 flex items-center justify-center p-2.5 group-hover:bg-[#2563EB] group-hover:border-[#2563EB] transition-all duration-300">
@@ -72,6 +73,7 @@ export default function ServicesGrid() {
                 <ArrowRight size={13} className="group-hover/link:translate-x-1 transition-transform duration-200" />
               </Link>
             </SpotlightCard>
+            </TiltCard>
           </motion.div>
         ))}
       </motion.div>

@@ -10,8 +10,8 @@ import { Building2, HeartPulse, Bus, Shield, Users, Hammer, GraduationCap, Scale
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } },
+  hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
+  show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
 const stagger = {
@@ -33,29 +33,22 @@ const sectorHighlights = [
 
 export default function MarketsPage() {
   return (
-    <main className="min-h-screen bg-[#0A1628] text-[#F8FAFC] overflow-x-hidden">
+    <main className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-48 pb-24 overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0 opacity-[0.12]" style={{
-          backgroundImage: `linear-gradient(to right,#1E293B 1px,transparent 1px),linear-gradient(to bottom,#1E293B 1px,transparent 1px)`,
-          backgroundSize: "4rem 4rem",
-          maskImage: "radial-gradient(ellipse 80% 60% at 50% 0%,#000 40%,transparent 100%)",
-          WebkitMaskImage: "radial-gradient(ellipse 80% 60% at 50% 0%,#000 40%,transparent 100%)",
-        }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[600px] bg-[#2563EB]/10 blur-[180px] rounded-full pointer-events-none" />
-        <div className="absolute top-0 right-0 w-80 h-80 bg-[#2563EB]/5 blur-[100px] rounded-full pointer-events-none" />
+      <section className="relative pt-48 pb-24 overflow-hidden bg-white">
+        <div className="absolute inset-0 dot-grid opacity-50" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[900px] h-[500px] bg-[#2563EB]/5 blur-[120px] rounded-full pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <motion.div initial="hidden" animate="show" variants={stagger}>
-            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-[#2563EB] bg-[#2563EB]/10 border border-[#2563EB]/20 px-4 py-2 rounded-full mb-8">
+            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-[#2563EB] bg-[#F0F6FF] border border-[#2563EB]/20 px-4 py-2 rounded-full mb-8 shadow-sm">
               Government Sectors
             </motion.div>
-            <motion.h1 variants={fadeUp} className="text-[clamp(48px,8vw,92px)] font-bold leading-[0.95] tracking-tight mb-8">
+            <motion.h1 variants={fadeUp} className="text-[clamp(48px,8vw,92px)] font-bold leading-[0.95] tracking-tighter mb-8 text-[#0F172A]">
               Impact Across<br />
-              <span className="text-[#2563EB]">Government.</span>
+              <span className="text-gradient">Government.</span>
             </motion.h1>
             <motion.p variants={fadeUp} className="text-lg md:text-xl text-[#64748B] max-w-2xl mx-auto leading-relaxed">
               From local DC agencies to federal health departments — CODICE delivers technology that scales to meet the mission across every corner of government.
@@ -65,7 +58,7 @@ export default function MarketsPage() {
       </section>
 
       {/* Sector highlight stat cards */}
-      <section className="py-16 px-6 border-t border-[#1E293B]">
+      <section className="py-16 px-6 bg-[#F8FAFC] border-y border-[#E2E8F0]">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial="hidden"
@@ -76,15 +69,12 @@ export default function MarketsPage() {
           >
             {sectorHighlights.map(({ Icon, label, stat }) => (
               <motion.div key={label} variants={fadeUp}>
-                <SpotlightCard
-                  className="group p-5 rounded-2xl bg-[#111827] border border-[#1E293B] hover:border-[#2563EB]/40 transition-all duration-300 flex flex-col gap-3 h-full"
-                  spotlightColor="rgba(37, 99, 235, 0.05)"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 flex items-center justify-center group-hover:bg-[#2563EB]/20 transition-colors">
-                    <Icon size={18} className="text-[#2563EB]" />
+                <SpotlightCard className="group p-5 rounded-2xl hover:border-[#2563EB]/40 transition-all duration-300 flex flex-col gap-3 h-full">
+                  <div className="w-10 h-10 rounded-xl bg-[#F0F6FF] border border-[#2563EB]/15 flex items-center justify-center group-hover:bg-[#2563EB] group-hover:border-[#2563EB] transition-all duration-300">
+                    <Icon size={18} className="text-[#2563EB] group-hover:text-white transition-colors duration-300" />
                   </div>
                   <div>
-                    <p className="font-mono text-xl font-bold text-white mb-1">{stat}</p>
+                    <p className="font-[family-name:var(--font-dm-mono)] text-xl font-bold text-[#0F172A] mb-1">{stat}</p>
                     <p className="text-[9px] font-bold uppercase tracking-widest text-[#2563EB]">{label}</p>
                   </div>
                 </SpotlightCard>
@@ -97,8 +87,8 @@ export default function MarketsPage() {
       {/* Full markets grid */}
       <MarketsGrid />
 
-      {/* Case studies in context */}
-      <div className="bg-[#111827] border-t border-[#1E293B]">
+      {/* Case studies */}
+      <div className="bg-[#F8FAFC] border-t border-[#E2E8F0]">
         <CaseStudies />
       </div>
 
