@@ -42,7 +42,19 @@
       "Bash(New-Item -Path \"D:\\\\Codex\\\\Codice-website\\\\HANDOFF.md\" -ItemType File -Force)",
       "Bash(Out-Null)",
       "Bash(Write-Output \"created\")",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "mcp__Claude_Preview__preview_start",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__Claude_in_Chrome__browser_batch",
+      "Bash(npx next *)",
+      "Bash(node \"D:\\\\Codex\\\\Codice-website\\\\node_modules\\\\next\\\\dist\\\\bin\\\\next\" lint)",
+      "Bash(NODE_PATH=\"D:\\\\Codex\\\\Codice-website\\\\node_modules\" node \"D:\\\\Codex\\\\Codice-website\\\\node_modules\\\\next\\\\dist\\\\bin\\\\next\" build)",
+      "Bash(cmd /c mklink /J \"D:\\\\Claude\\\\Worktree Location\\\\Codice-website\\\\fervent-lamarr-659ae6\\\\node_modules\" \"D:\\\\Codex\\\\Codice-website\\\\node_modules\")",
+      "Bash(node node_modules/.bin/tsc --noEmit)",
+      "PowerShell(cmd /c rmdir \"D:\\\\Claude\\\\Worktree Location\\\\Codice-website\\\\fervent-lamarr-659ae6\\\\node_modules\")",
+      "mcp__Claude_in_Chrome__navigate",
+      "mcp__Claude_in_Chrome__get_page_text",
+      "WebFetch(domain:21st.dev)"
     ]
   }
 }

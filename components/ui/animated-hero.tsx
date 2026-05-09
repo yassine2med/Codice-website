@@ -4,7 +4,10 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { ArrowRight, Shield, Award, CheckCircle, TrendingUp, Zap, Clock } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import MagneticButton from "@/components/ui/MagneticButton";
+import { TextScramble } from "@/components/ui/TextScramble";
+import { BorderBeam } from "@/components/ui/BorderBeam";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -103,6 +106,7 @@ function MissionDashboard() {
       <div className="absolute -inset-6 bg-[#2563EB]/6 blur-[60px] rounded-[60px] pointer-events-none" />
 
       <div className="relative rounded-[32px] border border-[#E2E8F0] bg-white shadow-[0_24px_80px_rgba(15,23,42,0.12),0_4px_16px_rgba(37,99,235,0.08)] overflow-hidden">
+        <BorderBeam duration={12} colorFrom="#2563EB" colorTo="#93C5FD" />
 
         {/* Dashboard header bar */}
         <div className="flex items-center gap-3 px-5 py-4 bg-[#0F172A] border-b border-[#1E293B]">
@@ -234,6 +238,18 @@ function Hero() {
 
   return (
     <section className="relative w-full min-h-screen flex flex-col justify-center bg-white overflow-hidden">
+      {/* DC aerial photography — subtle background layer */}
+      <div className="absolute inset-0">
+        <Image
+          src="https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=1800&q=50"
+          alt="Washington DC"
+          fill
+          className="object-cover object-center opacity-[0.04]"
+          sizes="100vw"
+          priority
+        />
+      </div>
+
       {/* Dot grid texture */}
       <div className="absolute inset-0 dot-grid opacity-60" />
 
@@ -303,7 +319,12 @@ function Hero() {
               variants={itemVariants}
               className="text-[clamp(40px,5.5vw,76px)] font-extrabold tracking-tighter leading-[0.92] text-[#0F172A]"
             >
-              Modernizing{" "}
+              <TextScramble
+                text="Modernizing"
+                delay={400}
+                duration={35}
+                className="font-[family-name:var(--font-dm-mono)]"
+              />{" "}
               <span className="text-gradient text-glow">Public Service</span>{" "}
               at the Speed of Mission.
             </motion.h1>
