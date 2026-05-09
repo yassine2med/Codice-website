@@ -621,7 +621,6 @@ export const navigation = [
       { label: 'Clients & Partners', href: '/clients', description: '17 DC agencies and industry partners we serve.' },
       { label: 'Case Studies', href: '/case-studies', description: 'Real outcomes for real government agencies.' },
       { label: 'Careers', href: '/careers', description: 'Join a team building technology for public service.' },
-      { label: 'News & Events', href: '/news', description: 'Latest updates, launches, and milestones.' },
     ]
   },
   {
@@ -648,6 +647,12 @@ export const navigation = [
           ...markets.map(m => ({ label: m.name, href: '/markets/#' + m.id, description: m.description })),
         ]
       }
+    ]
+  },
+  {
+    title: 'EVENTS',
+    items: [
+      { label: 'News & Events', href: '/news', description: 'Latest updates, launches, and milestones.' },
     ]
   },
   {

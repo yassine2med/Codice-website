@@ -44,7 +44,7 @@ export function DropdownNavigation({ navItems }: Props) {
               onMouseLeave={() => handleHover(null)}
             >
               <button
-                className="text-sm py-1.5 px-4 flex cursor-pointer group transition-colors duration-300 items-center justify-center gap-1 text-[#64748B] hover:text-[#F8FAFC] relative"
+                className="text-sm py-1.5 px-4 flex cursor-pointer group transition-colors duration-300 items-center justify-center gap-1 text-[#475569] hover:text-[#2563EB] relative"
                 onMouseEnter={() => setIsHover(navItem.id)}
                 onMouseLeave={() => setIsHover(null)}
               >
@@ -58,7 +58,7 @@ export function DropdownNavigation({ navItems }: Props) {
                 {(isHover === navItem.id || openMenu === navItem.label) && (
                   <motion.div
                     layoutId="hover-bg"
-                    className="absolute inset-0 size-full bg-white/5"
+                    className="absolute inset-0 size-full bg-[#2563EB]/8"
                     style={{ borderRadius: 99 }}
                   />
                 )}
