@@ -63,15 +63,16 @@ const activityFeed = [
 
 /* ─── Animated Counter ─── */
 function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
-  const [val, setVal] = useState(0);
+  const [val, setVal] = useState(to); // start at final value — no "0 flash"
   useEffect(() => {
-    let start = 0;
-    const step = Math.ceil(to / 40);
+    setVal(0);
+    let current = 0;
+    const step = Math.ceil(to / 36);
     const id = setInterval(() => {
-      start += step;
-      if (start >= to) { setVal(to); clearInterval(id); }
-      else setVal(start);
-    }, 40);
+      current += step;
+      if (current >= to) { setVal(to); clearInterval(id); }
+      else setVal(current);
+    }, 45);
     return () => clearInterval(id);
   }, [to]);
   return <>{val.toLocaleString()}{suffix}</>;
@@ -129,28 +130,21 @@ function MissionDashboard() {
         {/* Metrics 2×2 */}
         <div className="grid grid-cols-2 border-b border-[#E2E8F0]">
           {metrics.map((m, i) => (
-            <motion.div
+            <div
               key={m.label}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6 + i * 0.1, duration: 0.4 }}
-              style={{ borderColor: "#E2E8F0" }}
               className={`px-5 py-5 group transition-colors cursor-default ${
                 i % 2 === 0 ? "border-r border-[#E2E8F0]" : ""} ${i < 2 ? "border-b border-[#E2E8F0]" : ""}`}
             >
               <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#64748B] mb-2">{m.label}</p>
-              <div className="flex items-end gap-2">
-                <span className="text-2xl font-black leading-none tabular-nums tracking-tighter" style={{ color: m.color }}>
-                  {mounted ? <Counter to={m.value} suffix={m.suffix} /> : `${m.value}${m.suffix}`}
-                </span>
-              </div>
+              <span className="text-2xl font-black leading-none tabular-nums tracking-tighter block" style={{ color: m.color }}>
+                {mounted ? <Counter to={m.value} suffix={m.suffix} /> : `${m.value}${m.suffix}`}
+              </span>
               <div className="flex items-center gap-1 mt-1.5">
                 <TrendingUp size={8} style={{ color: m.color }} />
-                <span className="text-[9px] font-semibold" style={{ color: m.color + "cc" }}>{m.delta}</span>
+                <span className="text-[9px] font-semibold" style={{ color: m.color }}>{m.delta}</span>
               </div>
-              {/* Colored bottom accent */}
-              <div className="h-[3px] w-full mt-3 rounded-full opacity-20" style={{ backgroundColor: m.color }} />
-            </motion.div>
+              <div className="h-[2px] w-full mt-3 rounded-full" style={{ backgroundColor: m.color + "30" }} />
+            </div>
           ))}
         </div>
 
