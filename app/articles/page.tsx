@@ -84,25 +84,31 @@ const editorialThemes = [
 
 export default function ArticlesPage() {
   return (
-    <main className="min-h-screen bg-white text-[#0F172A]">
+    <main className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-28 sm:pt-40 pb-16 sm:pb-24 overflow-hidden bg-white">
-        <div className="absolute inset-0 dot-grid opacity-50" />
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#2563EB]/5 blur-[150px] rounded-full pointer-events-none" />
+      <section className="relative pt-28 sm:pt-40 pb-16 sm:pb-24 overflow-hidden bg-[#0A0F1E]">
+        {/* Background photo */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1600&q=60" alt="" className="w-full h-full object-cover object-center" style={{ opacity: 0.07 }} />
+          <div className="absolute inset-0 bg-linear-to-b from-[#0A0F1E]/30 via-transparent to-[#0A0F1E]/60" />
+        </div>
+        <div className="absolute inset-0 dot-grid opacity-[0.15] pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#2563EB]/40 to-transparent" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] pointer-events-none" style={{ background: "radial-gradient(circle, rgba(37,99,235,0.10) 0%, transparent 65%)" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full mb-8 border border-[#2563EB]/20 bg-[#F0F6FF]">
-              <BookOpen size={14} className="text-[#2563EB]" />
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#2563EB]">Knowledge Hub</span>
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full mb-8 border border-[#2563EB]/25 bg-[#2563EB]/10">
+              <BookOpen size={14} className="text-[#60A5FA]" />
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#60A5FA]">Knowledge Hub</span>
             </div>
-            <h1 className="text-[clamp(36px,8vw,88px)] font-extrabold tracking-tighter leading-[0.92] mb-8 text-[#0F172A]">
+            <h1 className="text-[clamp(36px,8vw,88px)] font-extrabold tracking-tighter leading-[0.92] mb-8 text-white">
               Field Notes from{" "}
-              <span className="text-gradient text-glow">The Mission.</span>
+              <span style={{ color: "#60A5FA" }}>The Mission.</span>
             </h1>
-            <p className="text-xl text-[#64748B] leading-relaxed max-w-xl">
+            <p className="text-xl text-[#94A3B8] leading-relaxed max-w-xl">
               Curated thinking on legacy transformation, AI compliance, and the high-fidelity future of public sector operations.
             </p>
           </motion.div>
@@ -111,15 +117,15 @@ export default function ArticlesPage() {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="p-8 rounded-3xl border border-[#E2E8F0] bg-white shadow-[0_4px_32px_rgba(15,23,42,0.06)] relative overflow-hidden"
+            className="p-8 rounded-3xl border border-[#1E293B] bg-[#0F172A] shadow-[0_8px_48px_rgba(0,0,0,0.3)] relative overflow-hidden"
           >
-            <div className="absolute inset-0 bg-[#2563EB]/2 pointer-events-none" />
-            <h3 className="text-xs font-bold tracking-[0.4em] uppercase text-[#2563EB] mb-6 border-b border-[#E2E8F0] pb-4">Editorial Strategy</h3>
+            <div className="absolute inset-0 bg-[#2563EB]/3 pointer-events-none" />
+            <h3 className="text-xs font-bold tracking-[0.4em] uppercase text-[#60A5FA] mb-6 border-b border-white/[0.06] pb-4">Editorial Strategy</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {editorialThemes.map((theme) => (
-                <div key={theme} className="flex items-center gap-3 p-3.5 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#2563EB]/30 transition-colors">
+                <div key={theme} className="flex items-center gap-3 p-3.5 rounded-xl bg-white/[0.04] border border-white/[0.06] hover:border-[#2563EB]/30 hover:bg-[#2563EB]/5 transition-colors">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB] shrink-0" />
-                  <span className="text-sm font-semibold text-[#334155]">{theme}</span>
+                  <span className="text-sm font-semibold text-[#64748B] hover:text-white transition-colors">{theme}</span>
                 </div>
               ))}
             </div>

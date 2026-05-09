@@ -159,14 +159,20 @@ export default function OurStoryPage() {
       <Navbar />
 
       {/* ── 1. HERO ─────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-white">
-        <div className="absolute inset-0 dot-grid opacity-50" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[900px] h-[500px] bg-[#2563EB]/5 blur-[120px] rounded-full pointer-events-none" />
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-[#0A0F1E]">
+        {/* Background photo */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img src="https://images.unsplash.com/photo-1617581629397-a72507c3de9e?w=1600&q=60" alt="" className="w-full h-full object-cover object-center" style={{ opacity: 0.08 }} />
+          <div className="absolute inset-0 bg-linear-to-b from-[#0A0F1E]/40 via-transparent to-[#0A0F1E]/70" />
+        </div>
+        <div className="absolute inset-0 dot-grid opacity-[0.15] pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#2563EB]/40 to-transparent" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[900px] h-[500px] pointer-events-none" style={{ background: "radial-gradient(ellipse, rgba(37,99,235,0.12) 0%, transparent 65%)" }} />
 
         {/* Geometric accents */}
         <div className="absolute top-0 right-0 w-[420px] h-[420px] pointer-events-none overflow-hidden">
-          <div className="absolute top-[-80px] right-[-80px] w-[360px] h-[360px] border border-[#2563EB]/10 rounded-full" />
-          <div className="absolute top-[-40px] right-[-40px] w-[240px] h-[240px] border border-[#2563EB]/7 rounded-full" />
+          <div className="absolute top-[-80px] right-[-80px] w-[360px] h-[360px] border border-[#2563EB]/15 rounded-full" />
+          <div className="absolute top-[-40px] right-[-40px] w-[240px] h-[240px] border border-[#2563EB]/10 rounded-full" />
         </div>
 
         <motion.div
@@ -176,18 +182,18 @@ export default function OurStoryPage() {
           className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-28 sm:pt-40 pb-16 sm:pb-24"
         >
           <motion.div variants={fadeUp}>
-            <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.3em] uppercase text-[#2563EB] bg-[#F0F6FF] border border-[#2563EB]/20 px-4 py-2 rounded-full mb-8 shadow-sm">
+            <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.3em] uppercase text-[#60A5FA] bg-[#2563EB]/10 border border-[#2563EB]/25 px-4 py-2 rounded-full mb-8">
               <Award size={11} /> Est. 2009 · Washington, DC
             </span>
           </motion.div>
 
-          <motion.h1 variants={fadeUp} className="text-[clamp(36px,8vw,88px)] font-extrabold text-[#0F172A] leading-[0.95] tracking-tighter mb-8">
+          <motion.h1 variants={fadeUp} className="text-[clamp(36px,8vw,88px)] font-extrabold text-white leading-[0.95] tracking-tighter mb-8">
             More Than Technology.
             <br />
-            <span className="text-gradient text-glow">A Mission.</span>
+            <span style={{ color: "#60A5FA" }}>A Mission.</span>
           </motion.h1>
 
-          <motion.p variants={fadeUp} className="text-lg md:text-xl text-[#64748B] max-w-2xl mx-auto leading-relaxed mb-12">
+          <motion.p variants={fadeUp} className="text-lg md:text-xl text-[#94A3B8] max-w-2xl mx-auto leading-relaxed mb-12">
             For 16 years, CODICE Technology has been the trusted partner that Washington DC&apos;s
             government agencies call when the mission is too important to get wrong.
           </motion.p>
@@ -200,8 +206,8 @@ export default function OurStoryPage() {
               { icon: Award, text: "Minority-Owned Business" },
               { icon: CheckCircle2, text: "GSA Schedule Holder" },
             ].map(({ icon: Icon, text }) => (
-              <span key={text} className="inline-flex items-center gap-2 text-sm text-[#64748B] font-medium bg-[#F8FAFC] border border-[#E2E8F0] px-4 py-2 rounded-full">
-                <Icon size={13} className="text-[#2563EB]" /> {text}
+              <span key={text} className="inline-flex items-center gap-2 text-sm text-[#94A3B8] font-medium bg-white/[0.05] border border-white/[0.10] px-4 py-2 rounded-full hover:border-[#2563EB]/30 hover:text-white transition-colors duration-200">
+                <Icon size={13} className="text-[#60A5FA]" /> {text}
               </span>
             ))}
           </motion.div>
@@ -209,8 +215,12 @@ export default function OurStoryPage() {
       </section>
 
       {/* ── 2. FOUNDING STORY ────────────────────────────────────────────────── */}
-      <section className="py-28 px-6 border-t border-[#E2E8F0]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="py-28 px-6 border-t border-[#E2E8F0] relative overflow-hidden">
+        {/* Subtle DC aerial tint behind content */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img src="https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=1600&q=50" alt="" className="w-full h-full object-cover object-center" style={{ opacity: 0.03 }} />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div variants={stagger(0.12)} initial="hidden" whileInView="show" viewport={{ once: true }}>
             <motion.p variants={fadeUp} className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#2563EB] mb-4">The Origin</motion.p>
             <motion.h2 variants={fadeUp} className="text-[clamp(28px,4vw,48px)] font-bold text-[#0F172A] mb-6 leading-tight tracking-tight">

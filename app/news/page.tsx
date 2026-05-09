@@ -61,17 +61,23 @@ export default function NewsPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden pt-28 sm:pt-40 pb-16 sm:pb-24 bg-white">
-        <div className="absolute inset-0 dot-grid opacity-50" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[800px] h-[400px] bg-[#2563EB]/5 blur-[100px] rounded-full pointer-events-none" />
+      <section className="relative overflow-hidden pt-28 sm:pt-40 pb-16 sm:pb-24 bg-[#0A0F1E]">
+        {/* Background photo */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img src="https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=1600&q=60" alt="" className="w-full h-full object-cover object-center" style={{ opacity: 0.07 }} />
+          <div className="absolute inset-0 bg-linear-to-b from-[#0A0F1E]/30 via-transparent to-[#0A0F1E]/60" />
+        </div>
+        <div className="absolute inset-0 dot-grid opacity-[0.15] pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#2563EB]/40 to-transparent" />
+        <div className="absolute top-0 left-0 h-[500px] w-[500px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(37,99,235,0.10) 0%, transparent 70%)" }} />
 
         <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <motion.div initial="hidden" animate="show" variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1 } } }}>
-            <motion.p variants={fadeUp} className="mb-5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#2563EB]">News & Events</motion.p>
-            <motion.h1 variants={fadeUp} className="text-[clamp(40px,6vw,80px)] font-bold leading-[1.01] tracking-tighter text-[#0F172A]">
+            <motion.p variants={fadeUp} className="mb-5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#60A5FA]">News & Events</motion.p>
+            <motion.h1 variants={fadeUp} className="text-[clamp(40px,6vw,80px)] font-bold leading-[1.01] tracking-tighter text-white">
               Updates from the front lines of public-sector technology.
             </motion.h1>
-            <motion.p variants={fadeUp} className="mt-7 max-w-2xl text-lg leading-relaxed text-[#64748B]">
+            <motion.p variants={fadeUp} className="mt-7 max-w-2xl text-lg leading-relaxed text-[#94A3B8]">
               Product launches, agency modernization work, capability updates, and CODICE community news.
             </motion.p>
           </motion.div>
@@ -80,31 +86,34 @@ export default function NewsPage() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="rounded-3xl border border-[#E2E8F0] bg-white p-6 shadow-[0_4px_32px_rgba(15,23,42,0.06)]"
+            className="rounded-3xl border border-[#1E293B] bg-[#0F172A] p-6 shadow-[0_8px_48px_rgba(0,0,0,0.3)] relative overflow-hidden"
           >
-            <div className="mb-6 flex items-center gap-3">
-              <div className="w-8 h-8 rounded-xl bg-[#F0F6FF] border border-[#2563EB]/20 flex items-center justify-center">
-                <Newspaper className="h-4 w-4 text-[#2563EB]" />
+            <div className="absolute inset-0 bg-[#2563EB]/3 pointer-events-none" />
+            <div className="relative z-10">
+              <div className="mb-6 flex items-center gap-3">
+                <div className="w-8 h-8 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center">
+                  <Newspaper className="h-4 w-4 text-[#60A5FA]" />
+                </div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#60A5FA]">Featured Updates</p>
               </div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#2563EB]">Featured Updates</p>
-            </div>
-            <div className="space-y-4">
-              {featuredUpdates.map(({ icon: Icon, ...item }) => (
-                <Link key={item.title} href={item.href} target="_blank" rel="noopener noreferrer"
-                  className="group block rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] p-5 transition-all duration-300 hover:border-[#2563EB]/35 hover:shadow-[0_4px_16px_rgba(37,99,235,0.08)]"
-                >
-                  <div className="mb-3 flex items-start justify-between gap-4">
-                    <div className="w-8 h-8 rounded-lg bg-[#F0F6FF] border border-[#2563EB]/20 flex items-center justify-center">
-                      <Icon className="h-4 w-4 text-[#2563EB]" />
+              <div className="space-y-4">
+                {featuredUpdates.map(({ icon: Icon, ...item }) => (
+                  <Link key={item.title} href={item.href} target="_blank" rel="noopener noreferrer"
+                    className="group block rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5 transition-all duration-300 hover:border-[#2563EB]/30 hover:bg-[#2563EB]/5"
+                  >
+                    <div className="mb-3 flex items-start justify-between gap-4">
+                      <div className="w-8 h-8 rounded-lg bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center">
+                        <Icon className="h-4 w-4 text-[#60A5FA]" />
+                      </div>
+                      <ExternalLink className="h-4 w-4 text-[#475569] group-hover:text-[#60A5FA] transition-colors" />
                     </div>
-                    <ExternalLink className="h-4 w-4 text-[#CBD5E1] group-hover:text-[#2563EB] transition-colors" />
-                  </div>
-                  <p className="text-[9px] font-bold uppercase tracking-widest text-[#2563EB] mb-1">{item.type}</p>
-                  <h2 className="text-base font-bold leading-tight text-[#0F172A]">{item.title}</h2>
-                  <p className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-[#94A3B8]">{item.date}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-[#64748B]">{item.summary}</p>
-                </Link>
-              ))}
+                    <p className="text-[9px] font-bold uppercase tracking-widest text-[#60A5FA] mb-1">{item.type}</p>
+                    <h2 className="text-base font-bold leading-tight text-white">{item.title}</h2>
+                    <p className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-[#475569]">{item.date}</p>
+                    <p className="mt-3 text-sm leading-relaxed text-[#64748B]">{item.summary}</p>
+                  </Link>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>

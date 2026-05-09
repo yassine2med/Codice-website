@@ -9,13 +9,13 @@ import { PageHero } from "@/components/ui/PageHero";
 
 export default function CaseStudiesPage() {
   return (
-    <main className="min-h-screen bg-white text-[#0F172A]">
+    <main className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
       <Navbar />
-      <PageHero 
+      <PageHero
         label="Success Stories"
         title="Mission-Critical Outcomes"
         subtitle="Real results for real agencies. See how we deliver on the most demanding government requirements."
-        gradient="from-amber-500/20 to-transparent"
+        bgImage="https://images.unsplash.com/photo-1617581629397-a72507c3de9e?w=1600&q=70"
       />
       <CaseStudies />
       <StatsSection />

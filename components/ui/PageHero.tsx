@@ -1,39 +1,70 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface PageHeroProps {
   title: string;
   subtitle?: string;
   label?: string;
   gradient?: string;
+  bgImage?: string;
 }
 
-export function PageHero({ title, subtitle, label, gradient = "from-[#2563EB]/20 to-transparent" }: PageHeroProps) {
+export function PageHero({
+  title,
+  subtitle,
+  label,
+  gradient = "from-[#2563EB]/20 to-transparent",
+  bgImage,
+}: PageHeroProps) {
   return (
-    <section className="relative pt-28 sm:pt-40 pb-16 sm:pb-24 overflow-hidden">
-      {/* Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1E293B_1px,transparent_1px),linear-gradient(to_bottom,#1E293B_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" />
-      
-      {/* Radial Gradient */}
-      <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-radial ${gradient} blur-[120px] rounded-full opacity-30 pointer-events-none`} />
+    <section className="relative pt-28 sm:pt-40 pb-16 sm:pb-24 overflow-hidden bg-[#0A0F1E]">
+
+      {/* Optional background photo */}
+      {bgImage && (
+        <div className="absolute inset-0 pointer-events-none">
+          <Image
+            src={bgImage}
+            alt=""
+            fill
+            className="object-cover object-center"
+            style={{ opacity: 0.08 }}
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-linear-to-b from-[#0A0F1E]/30 via-transparent to-[#0A0F1E]/60" />
+        </div>
+      )}
+
+      {/* Dot grid */}
+      <div className="absolute inset-0 dot-grid opacity-20 pointer-events-none" />
+
+      {/* Top glow */}
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] pointer-events-none"
+        style={{ background: `radial-gradient(ellipse at 50% 0%, rgba(37,99,235,0.18) 0%, transparent 65%)` }}
+      />
+
+      {/* Top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#2563EB]/40 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           {label && (
-            <p className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-6">
+            <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#60A5FA] mb-6">
               {label}
             </p>
           )}
-          <h1 className="text-[clamp(40px,7vw,80px)] font-bold text-[#F8FAFC] mb-8 leading-[1.1] tracking-tight">
+          <h1 className="text-[clamp(36px,7vw,80px)] font-extrabold text-white mb-6 leading-[0.95] tracking-tighter">
             {title}
           </h1>
           {subtitle && (
-            <p className="text-[#64748B] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            <p className="text-[#94A3B8] text-lg max-w-2xl mx-auto leading-relaxed">
               {subtitle}
             </p>
           )}

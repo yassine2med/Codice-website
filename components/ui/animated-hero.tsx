@@ -160,7 +160,7 @@ function MissionDashboard() {
         initial={{ opacity: 0, scale: 0.7, y: 12 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
-        className="absolute -top-5 -right-5 bg-white border border-[#E2E8F0] shadow-[0_8px_32px_rgba(15,23,42,0.14),0_2px_8px_rgba(37,99,235,0.08)] rounded-2xl px-4 py-2.5 flex items-center gap-2.5 z-20"
+        className="hidden sm:flex absolute -top-5 -right-5 bg-white border border-[#E2E8F0] shadow-[0_8px_32px_rgba(15,23,42,0.14),0_2px_8px_rgba(37,99,235,0.08)] rounded-2xl px-4 py-2.5 items-center gap-2.5 z-20"
       >
         <div className="w-7 h-7 rounded-full bg-[#F0FDF4] border border-emerald-100 flex items-center justify-center">
           <CheckCircle size={14} className="text-emerald-500" />
@@ -176,7 +176,7 @@ function MissionDashboard() {
         initial={{ opacity: 0, scale: 0.7, y: -12 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ delay: 1.4, duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
-        className="absolute -bottom-5 -left-5 bg-[#0F172A] border border-[#1E293B] shadow-[0_8px_32px_rgba(0,0,0,0.25)] rounded-2xl px-4 py-2.5 flex items-center gap-2.5 z-20"
+        className="hidden sm:flex absolute -bottom-5 -left-5 bg-[#0F172A] border border-[#1E293B] shadow-[0_8px_32px_rgba(0,0,0,0.25)] rounded-2xl px-4 py-2.5 items-center gap-2.5 z-20"
       >
         <div className="w-7 h-7 rounded-full bg-[#2563EB]/15 border border-[#2563EB]/25 flex items-center justify-center">
           <Award size={13} className="text-[#60A5FA]" />

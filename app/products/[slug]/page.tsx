@@ -28,7 +28,7 @@ export default function ProductDetailPage() {
   }, [product]);
 
   return (
-    <main className="min-h-screen bg-white text-[#0F172A]">
+    <main className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
       <Navbar />
 
       {/* Product Hero */}

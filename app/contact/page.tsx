@@ -36,11 +36,11 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-white text-[#0F172A]">
+    <main className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-28 sm:pt-40 pb-16 sm:pb-20 overflow-hidden bg-white">
+      <section className="relative pt-28 sm:pt-40 pb-16 sm:pb-20 overflow-hidden bg-white overflow-x-hidden">
         <div className="absolute inset-0 dot-grid opacity-50" />
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#2563EB]/5 blur-[150px] rounded-full pointer-events-none" />
 

@@ -41,7 +41,7 @@ const differentiators = [
 
 export default function CapabilityClient() {
   return (
-    <main className="min-h-screen bg-white text-[#0F172A]">
+    <main className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
       <Navbar />
 
       {/* Hero Section */}

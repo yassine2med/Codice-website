@@ -9,6 +9,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import ProductMockup from "@/components/ui/ProductMockup";
+import TiltCard from "@/components/ui/TiltCard";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24, filter: "blur(4px)" },
@@ -56,14 +57,14 @@ export default function ProductsPage() {
       {/* Products grid */}
       <section className="py-24 px-6 bg-[#F8FAFC] border-y border-[#E2E8F0]">
         <div className="max-w-7xl mx-auto">
-          <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" style={{ perspective: "1200px" }}>
             {products.map((product) => {
               const grad = categoryGradient[product.category] ?? "from-[#2563EB]/6 to-transparent";
               return (
+                <TiltCard key={product.id} intensity={6} className="flex flex-col h-full">
                 <motion.div
-                  key={product.id}
                   variants={fadeUp}
-                  className="group relative bg-white border border-[#E2E8F0] rounded-3xl overflow-hidden hover:border-[#2563EB]/40 hover:shadow-[0_8px_40px_rgba(37,99,235,0.10)] transition-all duration-300 flex flex-col"
+                  className="group relative bg-white border border-[#E2E8F0] rounded-3xl overflow-hidden hover:border-[#2563EB]/40 hover:shadow-[0_8px_40px_rgba(37,99,235,0.10)] transition-all duration-300 flex flex-col h-full"
                 >
                   {/* Visual header */}
                   <div className={`relative h-52 border-b border-[#E2E8F0] overflow-hidden rounded-t-3xl`}>
@@ -92,6 +93,7 @@ export default function ProductsPage() {
                     </Link>
                   </div>
                 </motion.div>
+                </TiltCard>
               );
             })}
           </motion.div>

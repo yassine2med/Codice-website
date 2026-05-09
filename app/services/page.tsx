@@ -22,39 +22,49 @@ const stagger = {
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-white text-[#0F172A]">
+    <main className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-28 sm:pt-48 pb-20 sm:pb-32 overflow-hidden bg-white">
-        <div className="absolute inset-0 dot-grid opacity-50" />
-        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-[#2563EB]/4 blur-[140px] rounded-full animate-pulse-slow" />
+      <section className="relative pt-28 sm:pt-48 pb-20 sm:pb-32 overflow-hidden bg-[#0A0F1E]">
+        {/* Background photo */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=60"
+            alt=""
+            className="w-full h-full object-cover object-center"
+            style={{ opacity: 0.07 }}
+          />
+          <div className="absolute inset-0 bg-linear-to-b from-[#0A0F1E]/20 via-transparent to-[#0A0F1E]/50" />
+        </div>
+        <div className="absolute inset-0 dot-grid opacity-20 pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#2563EB]/40 to-transparent" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <motion.div variants={stagger} initial="hidden" animate="show" className="max-w-4xl">
             <motion.div variants={fadeUp}>
-              <div className="inline-flex items-center gap-3 bg-[#F0F6FF] border border-[#2563EB]/20 px-4 py-2 rounded-full mb-8">
+              <div className="inline-flex items-center gap-3 bg-[#2563EB]/10 border border-[#2563EB]/25 px-4 py-2 rounded-full mb-8">
                 <CheckCircle2 size={14} className="text-[#2563EB]" />
                 <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#2563EB]">Mission Critical Expertise</span>
               </div>
             </motion.div>
 
-            <motion.h1 variants={fadeUp} className="text-[clamp(36px,8vw,88px)] font-extrabold tracking-tighter leading-[0.9] mb-8 text-[#0F172A]">
+            <motion.h1 variants={fadeUp} className="text-[clamp(36px,8vw,88px)] font-extrabold tracking-tighter leading-[0.9] mb-8 text-white">
               Eight Services. <br />
-              <span className="text-gradient">One Mission.</span>
+              <span style={{ color: "#60A5FA" }}>One Mission.</span>
             </motion.h1>
 
-            <motion.p variants={fadeUp} className="text-xl text-[#64748B] leading-relaxed max-w-2xl mb-12">
+            <motion.p variants={fadeUp} className="text-xl text-[#94A3B8] leading-relaxed max-w-2xl mb-12">
               End-to-end technology solutions purpose-built for the public sector — from custom software and AI compliance to high-fidelity cloud infrastructure.
             </motion.p>
 
-            <motion.div variants={fadeUp} className="flex flex-wrap gap-x-14 gap-y-8 border-t border-[#E2E8F0] pt-12">
+            <motion.div variants={fadeUp} className="flex flex-wrap gap-x-14 gap-y-8 border-t border-white/10 pt-12">
               {stats.map((s) => (
                 <div key={s.label} className="group">
-                  <p className="text-4xl font-black text-[#0F172A] group-hover:text-[#2563EB] transition-colors tracking-tighter mb-1 font-[family-name:var(--font-dm-mono)]">
+                  <p className="text-4xl font-black text-white group-hover:text-[#60A5FA] transition-colors tracking-tighter mb-1 font-[family-name:var(--font-dm-mono)]">
                     {s.value}{s.suffix}
                   </p>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#94A3B8] group-hover:text-[#2563EB]/60 transition-colors">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#475569] group-hover:text-[#60A5FA]/60 transition-colors">
                     {s.label}
                   </p>
                 </div>

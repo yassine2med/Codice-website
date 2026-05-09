@@ -11,35 +11,34 @@ A premium marketing website for **CODICE Technology LLC** — a DC-based gov-tec
 ---
 
 ## Current Status — May 2026
-**Precision White redesign is COMPLETE across all 14 pages.** The site has been fully converted from dark navy (#0A1628) to a white design system. All pages are live.
+**All creative enhancements are COMPLETE. Mobile audit is COMPLETE. Site is production-ready.**
 
-### ✅ Completed
-- Full site dark→white redesign (all 14 pages)
-- Homepage hero: asymmetric 2-col with live Mission Dashboard panel (animated metrics, activity feed, floating badges)
+### ✅ Completed (full history)
+- Full site dark→white redesign (all 14 pages) — Precision White design system
+- Homepage hero: asymmetric 2-col, live Mission Dashboard panel (metrics + activity feed); dashboard is `hidden lg:flex` (desktop-only)
 - `ProductMockup.tsx` — animated app-screenshot placeholders for all 8 products (wired into `/products` and `/products/[slug]`)
 - `MagneticButton.tsx` — cursor magnetic pull effect (on hero CTAs)
 - `app/template.tsx` — page transitions (blur+slide enter/exit via AnimatePresence)
 - Our Story timeline: scroll-draw line, pop-in nodes, hover accent borders
-- Navbar: EVENTS now its own top-level item (split from COMPANY); hover text fixed (was invisible white, now blue)
+- Navbar: EVENTS top-level item (split from COMPANY); logo updated to `/images/brand/codice-logo-full.png`; inner padding `px-4 sm:px-8`
 - `TechStack.tsx`, `Testimonials.tsx`, `SectionHeader.tsx`, `MarketsGrid.tsx` — all white tokens
-- New utility components: `CursorGlow.tsx`, `ScrollProgress.tsx`, `TiltCard.tsx`
+- Utility components: `CursorGlow.tsx`, `ScrollProgress.tsx`, `TiltCard.tsx`
+- **Globe component** (`components/sections/GlobeSection.tsx`) — spinning cobe globe, DC as hub, arcs to London/Paris/Tokyo/Singapore, stats chips, agency chips; placed on homepage between StatsSection and BeamSection
+- **BeamSection** (`components/sections/BeamSection.tsx`) — AnimatedBeam connecting DC agencies (DCRA/DOH/DDOT/DOES) ↔ CODICE hub ↔ products (PermiOne/FortiMind/CelerKost/Travo AI); `md:hidden` mobile fallback grid
+- **ServicesBento** (`components/sections/ServicesBento.tsx`) — asymmetric 4-col bento grid replacing uniform services grid; FeaturedCard (2×2), WideCard (2×1), NormalCard; TiltCard on all cards; BorderBeam on FeaturedCard (dark bg, safe)
+- **BorderBeam** — used in ServicesBento FeaturedCard only. **NOT on hero dashboard** (caused white mask stacking bug — removed)
+- **TiltCard** wired into `/products` page (`intensity={6}`, `perspective: "1200px"` on grid)
+- **PageHero** — accepts `bgImage?: string` prop; used on case-studies (DC aerial) and services (data center)
+- Footer redesigned: dark navy `bg-[#0A0F1E]`, 12-col grid, logo in original colors (no filter), inline SVG socials
+- `app/capability/page.tsx` split into server shell + `CapabilityClient.tsx` (needed for `export const metadata` + framer-motion coexistence)
+- Real photography added: hero bg (DC at night), CTABanner (DC aerial), services page (data center), case-studies (DC aerial)
+- Removed heavy animations: no scan-line, no 28 floating particles, drift orbs softened
+- **Mobile audit COMPLETE** — all 14 pages have `overflow-x-hidden`; globe canvas uses `aspectRatio: "1/1"` + `height: auto`; hero badges `hidden sm:flex`; navbar `px-4 sm:px-8`
 
-### 🔜 Next Up — Creative Enhancement Phase
-**Priority order:**
-1. **Globe component** — spinning interactive globe with DC as hub, agency connection lines. Use Magic UI globe or build with `cobe` library. Place in homepage stats section or Contact page.
-2. **Real photography** — Unsplash/Pexels free CDN images (no API key needed, direct URL embed):
-   - Hero background: DC aerial / Capitol (subtle tint behind dot grid)
-   - Case Studies section headers: government building facades
-   - Services page: data center / server room
-   - Our Story: DC streetscape for founding section
-3. **Animated Beam** (Magic UI) — light beams connecting CODICE to agencies in homepage
-4. **Bento Grid** — replace uniform 3-col services grid with asymmetric magazine layout
-5. **Border Beam** (Magic UI) — traveling light beam orbiting CTA cards
-6. **Video loop** — silent Pexels DC footage in hero at 5% opacity
-7. **Text scramble/decode** effect on main headline
-8. **Mobile layout audit** — spacing, font sizes, grid breakpoints on all pages
-9. **TiltCard.tsx** — wire into products page (component exists, not yet used)
-10. **Custom domain** — when CODICE is ready
+### 🔜 Remaining (low priority)
+1. **Custom domain** — when CODICE is ready
+2. **Real product showcase images** — `ProductMockup.tsx` renders animated placeholders until `/public/images/products/showcase/*.png` are provided
+3. **Our Story photography** — DC streetscape behind founding section (optional enhancement)
 
 ---
 
@@ -48,6 +47,7 @@ A premium marketing website for **CODICE Technology LLC** — a DC-based gov-tec
 - **Tailwind CSS v4** — use `bg-linear-to-br` not `bg-gradient-to-br`, `aspect-4/3` not `aspect-[4/3]`
 - **Framer Motion** — `AnimatePresence`, `motion.div`, `whileInView`, `viewport={{ once: true }}`
 - **`react-countup`** — via `<AnimatedCounter>` component with `enableScrollSpy`
+- **`cobe` v2.0.1** — WebGL globe; API: `createGlobe(canvas, opts)` → `{ update(partialOpts), destroy() }`; NO `onRender` callback; uses `requestAnimationFrame` loop with `globe.update({ phi })`
 - **TypeScript** — strict mode
 
 ---
@@ -57,29 +57,31 @@ A premium marketing website for **CODICE Technology LLC** — a DC-based gov-tec
 Background:  #FFFFFF (page)        #F8FAFC (section alt / card bg)   #F0F6FF (blue tint bg)
 Border:      #E2E8F0 (default)     border-[#2563EB]/40 (hover)
 Text:        #0F172A (primary)     #334155 (body)    #64748B (secondary)   #94A3B8 (muted)
-Accent:      #2563EB (blue)        #1D4ED8 (hover)   #3B82F6 (light)
+Accent:      #2563EB (blue)        #1D4ED8 (hover)   #3B82F6 (light)       #60A5FA (on dark bg)
 Badge:       orange-50/orange-200/orange-600 for "NEW" badges
 Hover cards: hover:border-[#2563EB]/40 hover:shadow-[0_8px_32px_rgba(37,99,235,0.10)]
 CTA shadow:  shadow-[0_8px_32px_rgba(37,99,235,0.25)]
 Dot grid:    className="dot-grid opacity-50" (CSS class in globals.css)
+Dark section bg: #0A0F1E (Globe section, Footer)  #080D1A (Globe section)  #0A0F1E (CTABanner)
 ```
 
 ---
 
 ## Site Map (14 pages, all complete)
 ```
-/                       Homepage — Hero (2-col+Dashboard), TrustMarquee, Stats, Services, Products, Markets, Testimonials, News, CTA
-/services               Services listing — all 8 services with features
-/services/[slug]        Service detail — features, tech stack, related sidebar
-/products               Products listing — all 8 products with ProductMockup animated headers
-/products/[slug]        Product detail — ProductMockup + overlay carousel, features, tech section
-/our-story              About — timeline (scroll-draw), team, values, certs, offices
+/                       Homepage — Hero (2-col+Dashboard hidden on mobile), TrustMarquee, Stats, ServicesBento, ProductsShowcase, MarketsGrid, BeamSection, GlobeSection, Testimonials, NewsEvents, CTABanner
+/services               Services listing — dark hero + stats + 8 service cards + Why CODICE
+/services/[slug]        Service detail — features grid, approach, tech stack, related sidebar
+/products               Products listing — hero, 8 product cards with TiltCard + ProductMockup
+/products/[slug]        Product detail — ProductMockup header, features, tech section
+/our-story              About — hero, timeline (scroll-draw), team modals, values, certs, offices
 /clients                Clients — 17 agencies + partners, case highlights, testimonials
-/case-studies           Case studies — 4 real DC agency outcomes
-/markets                Markets — 9 government sectors
+/case-studies           Case studies — PageHero + 4-card grid + StatsSection
+/markets                Markets — 9 government sectors grid
 /news                   News — featured updates + article grid
 /articles               Articles — 4 linked CODICE pieces
 /careers                Careers — culture, open roles, location
+/capability             Capability statement — GSA schedules, NAICS codes, past performance
 /contact                Contact — form (mailto), offices, social
 /_not-found             404
 ```
@@ -91,7 +93,7 @@ Dot grid:    className="dot-grid opacity-50" (CSS class in globals.css)
 HOME       → direct link to /
 COMPANY    → dropdown: Our Story, Clients & Partners, Case Studies, Careers
 SOLUTIONS  → mega menu (sections[]): Services | Products | Markets
-EVENTS     → direct link to /news  ← NEW (split from COMPANY)
+EVENTS     → direct link to /news
 CONNECT    → dropdown: Articles, Capability Statement, Contact
 ```
 **Rule**: `SOLUTIONS` group uses `sections[]` (nested). All other groups use `items[]`.  
@@ -102,22 +104,27 @@ CONNECT    → dropdown: Articles, Capability Statement, Contact
 ## Key Components
 | Component | Purpose |
 |-----------|---------|
-| `components/ui/animated-hero.tsx` | Homepage hero — 2-col layout, Mission Dashboard panel, MagneticButton CTAs |
+| `components/ui/animated-hero.tsx` | Homepage hero — 2-col, Mission Dashboard panel (`hidden lg:flex`), MagneticButton CTAs |
+| `components/sections/GlobeSection.tsx` | Spinning cobe globe — DC hub, arcs to 4 capitals, stats chips, agency chips |
+| `components/sections/BeamSection.tsx` | AnimatedBeam diagram — agencies ↔ CODICE ↔ products; `md:hidden` mobile fallback |
+| `components/sections/ServicesBento.tsx` | Asymmetric bento grid — FeaturedCard, WideCard, NormalCard with TiltCard |
 | `components/ui/ProductMockup.tsx` | Animated app-screenshot placeholder for 8 product categories |
 | `components/ui/MagneticButton.tsx` | Cursor magnetic pull wrapper — use on any primary CTA |
 | `components/ui/AnimatedCounter.tsx` | Scroll-triggered count-up numbers (react-countup) |
-| `components/ui/TiltCard.tsx` | 3D tilt on hover — built, NOT YET wired into products page |
+| `components/ui/TiltCard.tsx` | 3D tilt on hover — wired into products page + ServicesBento |
 | `components/ui/CursorGlow.tsx` | Cursor glow trail effect |
 | `components/ui/ScrollProgress.tsx` | Reading progress bar |
 | `components/ui/GlowCard.tsx` | Reusable card with blue glow hover |
-| `components/ui/PageHero.tsx` | Reusable page hero (case-studies, markets, services) |
-| `components/sections/Footer.tsx` | Footer — inline SVG socials (DO NOT use lucide icons — linter strips them) |
+| `components/ui/PageHero.tsx` | Reusable dark hero — accepts `label`, `title`, `subtitle`, `bgImage?` |
+| `components/ui/BorderBeam.tsx` | Rotating light beam orbit — safe only on dark bg cards (bg prop must match card bg) |
+| `components/sections/Footer.tsx` | Footer — dark navy, inline SVG socials (DO NOT use lucide icons — linter strips them) |
 | `components/sections/MarketsGrid.tsx` | 9-sector market grid with iconMap |
 | `components/sections/TrustMarquee.tsx` | Infinite scroll client logo ticker |
 | `components/sections/CaseStudies.tsx` | 4-card case study grid |
 | `components/sections/Testimonials.tsx` | 3-quote carousel with dot nav |
 | `components/ui/dorpdown-navigation.tsx` | Desktop mega menu (note: filename has typo, keep as-is) |
-| `app/template.tsx` | Page transition wrapper — re-mounts on every navigation (unlike layout.tsx) |
+| `app/template.tsx` | Page transition wrapper — re-mounts on every navigation |
+| `app/capability/CapabilityClient.tsx` | "use client" half of capability page (split from page.tsx for metadata) |
 
 ---
 
@@ -152,7 +159,29 @@ Never hardcode content in components. Always derive from these exports.
 - **MarketsGrid iconMap**: Keys must exactly match market IDs. Icons: `Building2, HeartPulse, GraduationCap, Bus, Shield, Scale, Users, Hammer, DollarSign`
 - **Tailwind v4 syntax**: `bg-linear-to-br` NOT `bg-gradient-to-br`, `aspect-4/3` NOT `aspect-[4/3]`
 
-### 2. Images — what exists vs what doesn't
+### 2. BorderBeam — white mask stacking bug
+`BorderBeam` renders an `absolute inset-[1.5px]` div with the card's background color as a mask. On **white/light background cards**, this mask covers all card content. **Only use BorderBeam on dark background cards** (pass `bg="#0F172A"` or the matching dark color). It's currently only on `ServicesBento FeaturedCard` (`bg="#0F172A"`).
+
+### 3. cobe v2 API (no onRender)
+```tsx
+const globe = createGlobe(canvas, { ...options });
+// Animation loop — NOT onRender:
+const animate = () => {
+  phi.current += 0.0022;
+  globe.update({ phi: phi.current });
+  rafId = requestAnimationFrame(animate);
+};
+// Canvas dimensions MUST be JSX props, not imperative (React 19 removeChild crash):
+<canvas ref={canvasRef} width={GLOBE_SIZE * 2} height={GLOBE_SIZE * 2}
+  style={{ width: "100%", maxWidth: GLOBE_SIZE, height: "auto", aspectRatio: "1 / 1" }} />
+```
+
+### 4. Capability page — server/client split
+`app/capability/page.tsx` is a server component (exports `metadata`).  
+`app/capability/CapabilityClient.tsx` is `"use client"` with all the motion.div JSX.  
+**Do not add `"use client"` to `page.tsx`** or metadata export breaks.
+
+### 5. Images — what exists vs what doesn't
 | Path | Status |
 |------|--------|
 | `/public/images/clients/client-220.png` → `client-235.png` | ✅ Exist |
@@ -161,34 +190,36 @@ Never hardcode content in components. Always derive from these exports.
 | `/public/images/services/*.png` | ✅ All 8 exist |
 | `/public/images/testimonials/marco.jpg`, `maria.jpg`, `jimmy.jpg` | ✅ Exist |
 | `/public/images/team/dash.png`, `emmash.png`, `ashanthi.png`, `sully.png` | ✅ Exist |
-| `/public/images/products/showcase/*.png` | ❌ Missing — `ProductMockup.tsx` renders animated placeholder instead |
-| `/public/images/brand/codice-logo-full.png` | ✅ Exists |
+| `/public/images/products/showcase/*.png` | ❌ Missing — `ProductMockup.tsx` renders animated placeholder |
+| `/public/images/brand/codice-logo-full.png` | ✅ Exists (use as-is, no color filter) |
 
-### 3. Contact form
+### 6. Contact form
 Submits via `mailto:info@codicetech.com` — no backend, no API needed.
 
-### 4. Linwood Jolly has no photo
+### 7. Linwood Jolly has no photo
 In `team[]` with `photo: ''` — renders as initial-avatar chip. Intentional until photo provided.
 
-### 5. next.config.ts image domains
-External images (Unsplash, Pexels) must be added to `images.remotePatterns` in `next.config.ts`:
+### 8. next.config.ts image domains
+External images (Unsplash, Pexels) must be in `images.remotePatterns` in `next.config.ts`:
 ```ts
 { protocol: 'https', hostname: 'images.unsplash.com' },
 { protocol: 'https', hostname: 'images.pexels.com' },
 ```
 
-### 6. Page transitions use `app/template.tsx`
+### 9. Page transitions use `app/template.tsx`
 `layout.tsx` doesn't re-render between navigations — AnimatePresence inside it won't fire exit animations.
 `template.tsx` re-instantiates on every navigation. Enter: opacity+y+blur. Exit: opacity+y+blur. 450ms.
 
-### 7. ProductMockup categories (must match exactly)
+### 10. ProductMockup categories (must match exactly)
 `"Permitting & Licensing"`, `"AI & Compliance"`, `"Logistics & Transportation"`, `"Healthcare Finance"`,
 `"Payment Processing"`, `"Healthcare Administration"`, `"Case Management"`, `"Program Management"`
+
+### 11. Mobile — all pages have overflow-x-hidden
+Every `<main>` tag has `overflow-x-hidden`. Sections with large decorative elements also have `overflow-hidden`. Do not remove these — decorative rings, orbs, and canvas elements can cause horizontal scroll on narrow viewports.
 
 ---
 
 ## Useful Free Image URLs (no attribution needed)
-These Unsplash CDN URLs can be used directly in `<Image>` with `unoptimized` or after adding domain to next.config.ts:
 ```
 DC Capitol aerial:     https://images.unsplash.com/photo-1617581629397-a72507c3de9e?w=1600&q=80
 DC Government bldg:    https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80

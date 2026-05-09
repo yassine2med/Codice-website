@@ -11,6 +11,7 @@ import Testimonials from "@/components/sections/Testimonials";
 import NewsEvents from "@/components/sections/NewsEvents";
 import CTABanner from "@/components/sections/CTABanner";
 import BeamSection from "@/components/sections/BeamSection";
+import GlobeSection from "@/components/sections/GlobeSection";
 import Footer from "@/components/sections/Footer";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -27,7 +28,10 @@ export default function Home() {
       <TrustMarquee />
       <StatsSection />
 
-      {/* ─── 2.5. HOW DO YOU WORK? ───────────────────────────────────────── */}
+      {/* ─── 2.5. DC HUB GLOBE ───────────────────────────────────────────── */}
+      <GlobeSection />
+
+      {/* ─── 3. HOW DO YOU WORK? ─────────────────────────────────────────── */}
       <BeamSection />
 
       {/* ─── 3. WHAT CAN YOU DO FOR ME? ─────────────────────────────────── */}

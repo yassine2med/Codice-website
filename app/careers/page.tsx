@@ -39,27 +39,33 @@ export default function CareersPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden pt-28 sm:pt-40 pb-16 sm:pb-24 bg-white">
-        <div className="absolute inset-0 dot-grid opacity-50" />
-        <div className="absolute left-0 top-28 h-[500px] w-[500px] rounded-full bg-[#2563EB]/5 blur-[120px] pointer-events-none" />
+      <section className="relative overflow-hidden pt-28 sm:pt-40 pb-16 sm:pb-24 bg-[#0A0F1E]">
+        {/* Background photo */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=60" alt="" className="w-full h-full object-cover object-center" style={{ opacity: 0.07 }} />
+          <div className="absolute inset-0 bg-linear-to-b from-[#0A0F1E]/20 via-transparent to-[#0A0F1E]/60" />
+        </div>
+        <div className="absolute inset-0 dot-grid opacity-[0.15] pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#2563EB]/40 to-transparent" />
+        <div className="absolute left-0 top-28 h-[500px] w-[500px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 70%)" }} />
 
         <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <motion.div initial="hidden" animate="show" variants={stagger}>
-            <motion.p variants={fadeUp} className="mb-5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#2563EB]">Careers</motion.p>
-            <motion.h1 variants={fadeUp} className="text-[clamp(40px,6vw,80px)] font-bold leading-[1.01] tracking-tighter text-[#0F172A]">
+            <motion.p variants={fadeUp} className="mb-5 text-[10px] font-bold uppercase tracking-[0.3em] text-[#60A5FA]">Careers at CODICE</motion.p>
+            <motion.h1 variants={fadeUp} className="text-[clamp(40px,6vw,80px)] font-bold leading-[1.01] tracking-tighter text-white">
               Build technology that keeps public services moving.
             </motion.h1>
-            <motion.p variants={fadeUp} className="mt-7 max-w-2xl text-lg leading-relaxed text-[#64748B]">
+            <motion.p variants={fadeUp} className="mt-7 max-w-2xl text-lg leading-relaxed text-[#94A3B8]">
               CODICE is shaping technology with innovation and expertise, serving government agencies and mission-driven organizations from Washington, DC.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link href="https://www.ziprecruiter.com/c/Codice/Jobs" target="_blank" rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#2563EB] px-7 py-4 text-sm font-bold uppercase tracking-widest text-white hover:bg-[#1D4ED8] shadow-[0_4px_20px_rgba(37,99,235,0.25)] hover:-translate-y-0.5 transition-all"
+                className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#2563EB] px-7 py-4 text-sm font-bold uppercase tracking-widest text-white hover:bg-[#3B82F6] shadow-[0_4px_24px_rgba(37,99,235,0.35)] hover:-translate-y-0.5 transition-all"
               >
                 View Openings <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </Link>
               <Link href={`mailto:${company.email}`}
-                className="inline-flex items-center justify-center rounded-full border border-[#E2E8F0] hover:border-[#2563EB]/40 px-7 py-4 text-sm font-bold uppercase tracking-widest text-[#64748B] hover:text-[#0F172A] transition-all"
+                className="inline-flex items-center justify-center rounded-full border border-white/10 hover:border-white/25 px-7 py-4 text-sm font-bold uppercase tracking-widest text-[#94A3B8] hover:text-white transition-all"
               >
                 Send Resume
               </Link>
@@ -67,25 +73,25 @@ export default function CareersPage() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}>
-            <SpotlightCard className="rounded-3xl p-8 shadow-[0_4px_40px_rgba(15,23,42,0.07)]">
+            <div className="rounded-3xl p-8 bg-[#0F172A] border border-[#1E293B] shadow-[0_8px_48px_rgba(0,0,0,0.3)]">
               <div className="mb-8 flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#2563EB]">CODICE team</p>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#60A5FA]">CODICE team</p>
                   <p className="mt-2 text-sm text-[#64748B]">Washington, DC headquarters with international engineering reach.</p>
                 </div>
-                <div className="w-10 h-10 rounded-xl bg-[#F0F6FF] border border-[#2563EB]/20 flex items-center justify-center">
-                  <Users className="h-5 w-5 text-[#2563EB]" />
+                <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center">
+                  <Users className="h-5 w-5 text-[#60A5FA]" />
                 </div>
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
                 {hiringAreas.map((area) => (
-                  <div key={area} className="group/item rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-4 hover:border-[#2563EB]/35 hover:bg-white transition-all duration-200">
-                    <BriefcaseBusiness className="mb-3 h-4 w-4 text-[#94A3B8] group-hover/item:text-[#2563EB] transition-colors" />
-                    <p className="text-sm font-semibold text-[#64748B] group-hover/item:text-[#0F172A] transition-colors">{area}</p>
+                  <div key={area} className="group/item rounded-xl border border-white/[0.06] bg-white/[0.03] p-4 hover:border-[#2563EB]/30 hover:bg-[#2563EB]/5 transition-all duration-200">
+                    <BriefcaseBusiness className="mb-3 h-4 w-4 text-[#475569] group-hover/item:text-[#60A5FA] transition-colors" />
+                    <p className="text-sm font-semibold text-[#64748B] group-hover/item:text-white transition-colors">{area}</p>
                   </div>
                 ))}
               </div>
-            </SpotlightCard>
+            </div>
           </motion.div>
         </div>
       </section>

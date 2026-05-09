@@ -25,7 +25,7 @@ export default function Navbar() {
     >
       <div className={`max-w-7xl mx-auto px-6 transition-all duration-500 ${scrolled ? "scale-[0.97]" : "scale-100"}`}>
         <div
-          className={`flex items-center justify-between px-8 py-3.5 rounded-2xl transition-all duration-500 ${
+          className={`flex items-center justify-between px-4 sm:px-8 py-3.5 rounded-2xl transition-all duration-500 ${
             scrolled
               ? "bg-white/92 backdrop-blur-2xl border border-[#E2E8F0] shadow-[0_4px_24px_rgba(15,23,42,0.08)]"
               : "bg-transparent border-transparent"

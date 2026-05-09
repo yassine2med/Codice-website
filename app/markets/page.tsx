@@ -5,6 +5,7 @@ import Footer from "@/components/sections/Footer";
 import MarketsGrid from "@/components/sections/MarketsGrid";
 import CaseStudies from "@/components/sections/CaseStudies";
 import CTABanner from "@/components/sections/CTABanner";
+import { PageHero } from "@/components/ui/PageHero";
 import { motion } from "framer-motion";
 import { Building2, HeartPulse, Bus, Shield, Users, Hammer, GraduationCap, Scale, DollarSign } from "lucide-react";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
@@ -36,26 +37,12 @@ export default function MarketsPage() {
     <main className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative pt-28 sm:pt-48 pb-16 sm:pb-24 overflow-hidden bg-white">
-        <div className="absolute inset-0 dot-grid opacity-50" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[900px] h-[500px] bg-[#2563EB]/5 blur-[120px] rounded-full pointer-events-none" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <motion.div initial="hidden" animate="show" variants={stagger}>
-            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-[#2563EB] bg-[#F0F6FF] border border-[#2563EB]/20 px-4 py-2 rounded-full mb-8 shadow-sm">
-              Government Sectors
-            </motion.div>
-            <motion.h1 variants={fadeUp} className="text-[clamp(36px,8vw,92px)] font-bold leading-[0.95] tracking-tighter mb-8 text-[#0F172A]">
-              Impact Across<br />
-              <span className="text-gradient">Government.</span>
-            </motion.h1>
-            <motion.p variants={fadeUp} className="text-lg md:text-xl text-[#64748B] max-w-2xl mx-auto leading-relaxed">
-              From local DC agencies to federal health departments — CODICE delivers technology that scales to meet the mission across every corner of government.
-            </motion.p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        label="Government Sectors"
+        title="Impact Across Every Sector."
+        subtitle="From local DC agencies to federal departments — CODICE delivers technology across nine critical areas of government."
+        bgImage="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&q=70"
+      />
 
       {/* Sector highlight stat cards */}
       <section className="py-16 px-6 bg-[#F8FAFC] border-y border-[#E2E8F0]">

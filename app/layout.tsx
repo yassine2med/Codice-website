@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     description: "16 years. 12+ agencies. 100% client retention. Custom software, AI compliance tools, cloud migration, and 8 proprietary platforms built for DC government.",
     url: "https://codice-website.vercel.app",
     siteName: "CODICE Technology",
-    images: [{ url: "/images/brand/codice-logo-full.png", width: 1200, height: 630, alt: "CODICE Technology" }],
+    images: [{ url: "https://images.unsplash.com/photo-1617581629397-a72507c3de9e?w=1200&h=630&fit=crop&q=80", width: 1200, height: 630, alt: "CODICE Technology — Washington DC Government Technology" }],
     type: "website",
     locale: "en_US",
   },
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CODICE Technology — Washington DC Government Technology",
     description: "16 years. 12+ agencies. 100% client retention.",
-    images: ["/images/brand/codice-logo-full.png"],
+    images: ["https://images.unsplash.com/photo-1617581629397-a72507c3de9e?w=1200&h=630&fit=crop&q=80"],
   },
   robots: { index: true, follow: true },
 };
