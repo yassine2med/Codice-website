@@ -2,11 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Shield, Award, CheckCircle, TrendingUp, Zap, Clock, ChevronRight, Activity } from "lucide-react";
+import { ArrowRight, Shield, Award, CheckCircle, TrendingUp, Zap, Clock, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import MagneticButton from "@/components/ui/MagneticButton";
-import { BorderBeam } from "@/components/ui/BorderBeam";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -27,30 +26,6 @@ const itemVariants = {
 };
 
 const words = ["innovative", "compliant", "scalable", "mission-driven", "proven"];
-
-const PARTICLE_COUNT = 28;
-
-function useClientParticles() {
-  const [particles, setParticles] = useState<Array<{
-    id: number; x: number; y: number; size: number; opacity: number; delay: number; duration: number;
-  }>>([]);
-
-  useEffect(() => {
-    setParticles(
-      Array.from({ length: PARTICLE_COUNT }, (_, i) => ({
-        id: i,
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        size: Math.random() * 3 + 1,
-        opacity: Math.random() * 0.45 + 0.08,
-        delay: Math.random() * 10,
-        duration: Math.random() * 7 + 9,
-      }))
-    );
-  }, []);
-
-  return particles;
-}
 
 /* ─── Live Activity Feed ─── */
 const activityFeed = [
@@ -88,8 +63,7 @@ function MissionDashboard() {
       <div className="absolute -inset-10 bg-[#2563EB]/8 blur-[80px] rounded-[80px] pointer-events-none animate-drift-slow" />
       <div className="absolute -inset-6 bg-[#60A5FA]/4 blur-[40px] rounded-[60px] pointer-events-none" />
 
-      <div className="relative rounded-[28px] border border-[#E2E8F0] bg-white shadow-[0_32px_100px_rgba(15,23,42,0.14),0_4px_24px_rgba(37,99,235,0.10)] overflow-hidden">
-        <BorderBeam duration={10} colorFrom="#2563EB" colorTo="#93C5FD" />
+      <div className="relative rounded-[28px] bg-white overflow-hidden" style={{ border: "1px solid #E2E8F0", boxShadow: "0 32px 80px rgba(15,23,42,0.12), 0 4px 24px rgba(37,99,235,0.08), inset 0 0 0 1px rgba(37,99,235,0.06)" }}>
 
         {/* Dashboard chrome bar */}
         <div className="flex items-center gap-3 px-5 py-3.5 bg-[#0F172A] border-b border-[#1E293B]">
@@ -219,13 +193,10 @@ function MissionDashboard() {
 /* ─── Hero ─── */
 function Hero() {
   const [wordIndex, setWordIndex] = useState(0);
-  const particles = useClientParticles();
-  const [scanKey, setScanKey] = useState(0);
 
   useEffect(() => {
     const wordId = setInterval(() => setWordIndex((i) => (i + 1) % words.length), 2600);
-    const scanId = setInterval(() => setScanKey((k) => k + 1), 10000);
-    return () => { clearInterval(wordId); clearInterval(scanId); };
+    return () => clearInterval(wordId);
   }, []);
 
   return (
@@ -246,59 +217,26 @@ function Hero() {
         <div className="absolute inset-0 bg-linear-to-b from-white/20 via-transparent to-white/40" />
       </div>
 
-      {/* ── Layer 2: Animated gradient orbs ── */}
+      {/* ── Layer 2: Very soft gradient orbs — barely visible, just atmosphere ── */}
       <div
         className="absolute top-[-10%] left-[-5%] w-[700px] h-[600px] rounded-full pointer-events-none animate-drift"
-        style={{ background: "radial-gradient(circle, rgba(37,99,235,0.10) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, rgba(37,99,235,0.055) 0%, transparent 70%)" }}
       />
       <div
         className="absolute bottom-[-15%] right-[-5%] w-[600px] h-[500px] rounded-full pointer-events-none animate-drift-slow"
-        style={{ background: "radial-gradient(circle, rgba(96,165,250,0.07) 0%, transparent 70%)" }}
-      />
-      <div
-        className="absolute top-[30%] right-[10%] w-[400px] h-[400px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(37,99,235,0.05) 0%, transparent 65%)", animation: "drift 18s ease-in-out infinite 8s" }}
+        style={{ background: "radial-gradient(circle, rgba(96,165,250,0.04) 0%, transparent 70%)" }}
       />
 
       {/* ── Layer 3: Dot grid ── */}
-      <div className="absolute inset-0 dot-grid opacity-50 pointer-events-none" />
+      <div className="absolute inset-0 dot-grid opacity-40 pointer-events-none" />
 
-      {/* ── Layer 4: Geometric corner accents ── */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] pointer-events-none overflow-hidden opacity-40">
-        <div className="absolute top-[-100px] right-[-100px] w-[400px] h-[400px] border border-[#2563EB]/12 rounded-full" />
-        <div className="absolute top-[-50px] right-[-50px] w-[260px] h-[260px] border border-[#2563EB]/8 rounded-full" />
-        <div className="absolute top-0 right-0 w-[140px] h-[140px] border border-[#2563EB]/6 rounded-full" />
-      </div>
-      <div className="absolute bottom-0 left-0 w-[320px] h-[320px] pointer-events-none overflow-hidden opacity-30">
-        <div className="absolute bottom-[-70px] left-[-70px] w-[240px] h-[240px] border border-[#2563EB]/10 rounded-full" />
+      {/* ── Layer 4: Subtle corner rings ── */}
+      <div className="absolute top-0 right-0 w-[420px] h-[420px] pointer-events-none overflow-hidden opacity-30">
+        <div className="absolute top-[-80px] right-[-80px] w-[340px] h-[340px] border border-[#2563EB]/10 rounded-full" />
+        <div className="absolute top-[-30px] right-[-30px] w-[200px] h-[200px] border border-[#2563EB]/6 rounded-full" />
       </div>
 
-      {/* ── Layer 5: Floating particles ── */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {particles.map((p) => (
-          <div
-            key={p.id}
-            className="absolute rounded-full bg-[#2563EB] animate-float"
-            style={{
-              left: `${p.x}%`,
-              top: `${p.y}%`,
-              width: p.size,
-              height: p.size,
-              opacity: p.opacity,
-              animationDelay: `${p.delay}s`,
-              animationDuration: `${p.duration}s`,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* ── Layer 6: Scan line — tech feel ── */}
-      <div key={scanKey} className="absolute left-0 right-0 h-px pointer-events-none overflow-hidden animate-scan-line z-0">
-        <div className="w-full h-full bg-linear-to-r from-transparent via-[#2563EB]/30 to-transparent" />
-      </div>
-
-      {/* ── Top + bottom rules ── */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#2563EB]/30 to-transparent" />
+      {/* ── Bottom rule ── */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#E2E8F0] to-transparent" />
 
       {/* ── Content ── */}

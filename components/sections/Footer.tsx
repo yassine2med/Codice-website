@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { company, services, products } from "@/data/codice";
-import { Award } from "lucide-react";
 
 const socials = [
   {
@@ -28,28 +27,39 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-brand-dark border-t border-white/5 py-24 px-6 relative overflow-hidden mesh-gradient">
-      {/* Immersive Glows */}
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-primary/5 blur-[120px] rounded-full pointer-events-none" />
+    <footer className="relative bg-[#0A0F1E] overflow-hidden">
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
-          {/* Brand Identity */}
-          <div className="col-span-1">
-            <Link href="/" className="inline-block mb-8 transition-transform hover:scale-105">
+      {/* Top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#2563EB]/50 to-transparent" />
+
+      {/* Subtle background glow — very soft */}
+      <div className="absolute bottom-0 left-[-10%] w-[600px] h-[400px] rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%)" }} />
+      <div className="absolute top-0 right-0 w-[400px] h-[300px] rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(96,165,250,0.04) 0%, transparent 70%)" }} />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-20 pb-10">
+
+        {/* Main grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/[0.06]">
+
+          {/* Brand — wider column */}
+          <div className="md:col-span-4">
+            <Link href="/" className="inline-block mb-6">
               <Image
-                src="/images/brand/codice-logo-full.png"
+                src="/images/brand/codice-logo-wtitle.png"
                 alt="CODICE Technology"
-                width={1536}
-                height={1024}
-                className="h-12 w-56 object-contain"
+                width={400}
+                height={120}
+                className="h-9 w-auto object-contain brightness-0 invert"
               />
             </Link>
-            <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-xs">
-              {company.tagline}. <br />
-              <span className="text-gray-500 text-sm">{company.subtagline.split('.')[0]}.</span>
+            <p className="text-[#94A3B8] text-sm leading-relaxed mb-8 max-w-xs">
+              Washington DC&apos;s premier government technology partner. 16 years of delivery. 100% client retention.
             </p>
-            <div className="flex gap-4">
+
+            {/* Social icons */}
+            <div className="flex gap-3">
               {socials.map(({ name, href, svg }) => (
                 <a
                   key={name}
@@ -57,7 +67,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={name}
-                  className="w-10 h-10 rounded-xl glass-card flex items-center justify-center text-gray-500 hover:text-brand-primary hover:border-brand-primary/40 transition-all duration-300"
+                  className="w-9 h-9 rounded-xl border border-white/[0.08] bg-white/[0.04] flex items-center justify-center text-[#64748B] hover:text-white hover:border-[#2563EB]/50 hover:bg-[#2563EB]/10 transition-all duration-200"
                 >
                   {svg}
                 </a>
@@ -65,13 +75,13 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links: Services */}
-          <div>
-            <h4 className="text-[10px] font-bold tracking-[0.3em] uppercase text-white mb-8">Expertise</h4>
-            <ul className="flex flex-col gap-4">
+          {/* Services */}
+          <div className="md:col-span-2">
+            <p className="text-[9px] font-bold tracking-[0.3em] uppercase text-[#2563EB] mb-6">Services</p>
+            <ul className="flex flex-col gap-3">
               {services.map((s) => (
                 <li key={s.id}>
-                  <Link href={`/services/${s.slug}`} className="text-sm text-gray-400 hover:text-brand-primary transition-colors">
+                  <Link href={`/services/${s.slug}`} className="text-sm text-[#64748B] hover:text-white transition-colors duration-150">
                     {s.title}
                   </Link>
                 </li>
@@ -79,13 +89,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Quick Links: Products */}
-          <div>
-            <h4 className="text-[10px] font-bold tracking-[0.3em] uppercase text-white mb-8">Platforms</h4>
-            <ul className="flex flex-col gap-4">
+          {/* Platforms */}
+          <div className="md:col-span-3">
+            <p className="text-[9px] font-bold tracking-[0.3em] uppercase text-[#2563EB] mb-6">Platforms</p>
+            <ul className="flex flex-col gap-3">
               {products.map((p) => (
                 <li key={p.id}>
-                  <Link href={`/products/${p.slug}`} className="text-sm text-gray-400 hover:text-brand-primary transition-colors">
+                  <Link href={`/products/${p.slug}`} className="text-sm text-[#64748B] hover:text-white transition-colors duration-150">
                     {p.name}
                   </Link>
                 </li>
@@ -93,51 +103,44 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Connection Hub */}
-          <div>
-            <h4 className="text-[10px] font-bold tracking-[0.3em] uppercase text-white mb-8">Contact</h4>
-            <div className="flex flex-col gap-8">
-               <div className="space-y-4">
-                 {company.offices.map((office) => (
-                   <div key={office.city + office.address} className="space-y-1 group">
-                     <p className="text-[9px] font-bold uppercase text-brand-primary tracking-[0.2em] group-hover:tracking-[0.3em] transition-all">
-                       {office.city} {office.headquarters && "— HQ"}
-                     </p>
-                     <p className="text-sm text-gray-400 leading-relaxed">{office.address}</p>
-                   </div>
-                 ))}
-               </div>
-               <div className="space-y-2">
-                 <a href={`mailto:${company.email}`} className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2">
-                   <div className="w-1.5 h-1.5 rounded-full bg-brand-primary" />
-                   {company.email}
-                 </a>
-                 <a href={`tel:${company.phone}`} className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-brand-accent" />
-                   {company.phone}
-                 </a>
-               </div>
+          {/* Contact */}
+          <div className="md:col-span-3">
+            <p className="text-[9px] font-bold tracking-[0.3em] uppercase text-[#2563EB] mb-6">Contact</p>
+            <div className="flex flex-col gap-6">
+              {company.offices.map((office) => (
+                <div key={office.city + office.address}>
+                  <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#475569] mb-1">
+                    {office.city}{office.headquarters ? " — HQ" : ""}
+                  </p>
+                  <p className="text-sm text-[#64748B] leading-relaxed">{office.address}</p>
+                </div>
+              ))}
+              <div className="flex flex-col gap-2 pt-2 border-t border-white/[0.06]">
+                <a href={`mailto:${company.email}`} className="text-sm text-[#64748B] hover:text-white transition-colors">
+                  {company.email}
+                </a>
+                <a href={`tel:${company.phone}`} className="text-sm text-[#64748B] hover:text-white transition-colors">
+                  {company.phone}
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex flex-col md:flex-row items-center gap-6">
-            <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-600">
-              © {year} {company.fullName}
-            </p>
-            <div className="flex items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-gray-600">
-              <a href="#" className="hover:text-white transition-colors">Privacy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms</a>
-              <Link href="/contact" className="hover:text-white transition-colors">Accessibility</Link>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-2 text-[9px] font-bold tracking-[0.3em] uppercase text-brand-accent bg-brand-primary/10 border border-brand-primary/20 px-5 py-2.5 rounded-full shadow-[0_0_20px_rgba(37,99,235,0.1)]">
-              <Award size={12} className="text-brand-primary" /> DC Small Business of the Year 2025
-            </span>
+        {/* Bottom bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-[10px] font-medium text-[#334155] tracking-widest uppercase">
+            © {year} {company.fullName}. All rights reserved.
+          </p>
+          <div className="flex items-center gap-6 text-[10px] font-medium uppercase tracking-widest text-[#334155]">
+            <a href="#" className="hover:text-[#64748B] transition-colors">Privacy</a>
+            <a href="#" className="hover:text-[#64748B] transition-colors">Terms</a>
+            <Link href="/contact" className="hover:text-[#64748B] transition-colors">Accessibility</Link>
+            <span className="text-[#2563EB]/60">·</span>
+            <span className="text-[#2563EB] font-bold">DC Small Business of the Year 2025</span>
           </div>
         </div>
+
       </div>
     </footer>
   );

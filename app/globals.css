@@ -38,7 +38,12 @@
   }
 
   body {
-    @apply bg-white text-[#0F172A] font-sans selection:bg-[#2563EB]/15 selection:text-[#1D4ED8];
+    @apply text-[#0F172A] font-sans selection:bg-[#2563EB]/15 selection:text-[#1D4ED8];
+    background-color: #FFFFFF;
+    /* Very subtle warm-cool gradient — barely perceptible, gives depth without heaviness */
+    background-image:
+      radial-gradient(ellipse 80% 50% at 10% 0%, rgba(37,99,235,0.028) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 90% 100%, rgba(96,165,250,0.018) 0%, transparent 60%);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -102,8 +107,8 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-16px) scale(1.01); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 @keyframes pulse-soft {
@@ -135,11 +140,11 @@
 }
 
 .animate-drift {
-  animation: drift 24s ease-in-out infinite;
+  animation: drift 32s ease-in-out infinite;
 }
 
 .animate-drift-slow {
-  animation: drift-slow 30s ease-in-out infinite;
+  animation: drift-slow 42s ease-in-out infinite;
 }
 
 .animate-scan-line {
