@@ -6,7 +6,6 @@ import { Menu, X, Cpu, Globe, Layers } from "lucide-react";
 import { navigation } from "@/data/codice";
 import { motion, AnimatePresence } from "framer-motion";
 import { DropdownNavigation } from "@/components/ui/dorpdown-navigation";
-import { SocialIcons } from "@/components/ui/social-icons";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -78,7 +77,6 @@ export default function Navbar() {
 
           {/* CTA Group */}
           <div className="hidden lg:flex items-center gap-6">
-            <SocialIcons compact={true} />
             <Link
               href="/contact"
               className="bg-[#2563EB] text-white text-xs font-bold tracking-widest uppercase px-5 py-2.5 rounded-xl hover:bg-[#1D4ED8] transition-all duration-300 shadow-[0_4px_16px_rgba(37,99,235,0.25)] hover:shadow-[0_6px_24px_rgba(37,99,235,0.35)]"

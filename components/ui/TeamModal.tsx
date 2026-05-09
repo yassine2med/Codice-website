@@ -9,6 +9,7 @@ interface TeamMember {
   name: string;
   title: string;
   bio: string;
+  fullBio?: string;
   education?: string;
   photo?: string;
 }
@@ -69,7 +70,7 @@ export function TeamModal({ member, isOpen, onClose }: TeamModalProps) {
                     src={member.photo}
                     alt={member.name}
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                     sizes="(max-width: 768px) 100vw, 40vw"
                     priority
                   />
@@ -100,9 +101,13 @@ export function TeamModal({ member, isOpen, onClose }: TeamModalProps) {
                     <h3 className="text-sm font-bold text-[#64748B] uppercase tracking-widest flex items-center gap-2 mb-3">
                       <Briefcase size={16} className="text-[#2563EB]" /> Biography
                     </h3>
-                    <p className="text-[#CBD5E1] leading-relaxed text-base md:text-lg">
-                      {member.bio}
-                    </p>
+                    <div className="space-y-4">
+                      {(member.fullBio || member.bio).split('\n\n').map((paragraph, i) => (
+                        <p key={i} className="text-[#CBD5E1] leading-relaxed text-base md:text-lg">
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
                   </div>
 
                   {member.education && (

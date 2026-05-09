@@ -57,11 +57,7 @@ export default function NewsEvents() {
               <div className="flex items-center gap-2 text-[#94A3B8] mb-4">
                 <CalendarDays size={11} />
                 <span className="text-[10px] font-bold tracking-widest uppercase">
-                  {new Date(article.date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
+                  {article.date}
                 </span>
               </div>
 

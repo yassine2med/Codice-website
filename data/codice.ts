@@ -516,6 +516,7 @@ export const team = [
     name: 'Dash Kiridena',
     title: 'Founder & President',
     bio: '20+ years in healthcare and government technology. Founded CODICE in 2009 with a vision to modernize government IT from the ground up.',
+    fullBio: 'Dash Kiridena is the Founder and President of CODICE Technology LLC, a Washington DC-based government technology firm he established in 2009 with a singular vision: to modernize public-sector IT with the same rigor and innovation applied to the private sector.\n\nWith more than 20 years of experience spanning healthcare IT, enterprise software, and government operations, Dash has led CODICE through 16 consecutive years of growth — building an organization trusted by over 12 Washington DC agencies including DDOT, DOH, DOES, DCRA, OAG, and DHCF. Under his leadership, CODICE has achieved a 100% client retention rate and expanded from a services firm into a proprietary product company with 8 purpose-built government platforms.\n\nDash is known for his hands-on approach to delivery — working directly with agency stakeholders to understand mission requirements, compliance constraints, and operational realities. His philosophy centers on building systems that outlast political cycles and deliver continuous value to the communities they serve.\n\nIn 2025, CODICE was named Washington DC\'s Small Business of the Year, a recognition Dash attributes entirely to his team\'s commitment to "high-fidelity government technology — on time, on budget, with zero compromise."',
     education: 'MBA, Johns Hopkins University · BA Economics, Clarion University',
     photo: '/images/team/dash.jpg',
   },
@@ -523,6 +524,7 @@ export const team = [
     name: 'Emmash Sudusinghe',
     title: 'Chief Financial Officer',
     bio: 'CPA and CMA with deep expertise in government financial operations and compliance auditing.',
+    fullBio: 'Emmash Sudusinghe serves as Chief Financial Officer of CODICE Technology, where he oversees all financial operations, strategic planning, government contract compliance, and corporate governance for the firm.\n\nA Certified Public Accountant (CPA) and Certified Management Accountant (CMA), Emmash brings deep expertise in government financial management, GAAP/GASB compliance, and the specific reporting requirements of DC and federal contracting environments. His background spans cost accounting, indirect rate structures, DCAA audit readiness, and financial systems implementation for government-facing organizations.\n\nAt CODICE, Emmash has been instrumental in scaling the company\'s financial infrastructure to support multi-year government contracts, GSA Schedule administration, and the financial rigor required by agency clients. He has led CODICE through multiple audit cycles and contract renewals, maintaining the organization\'s strong compliance posture.\n\nBefore joining CODICE, Emmash held senior finance roles in both the public and private sectors, developing a reputation for translating complex financial data into strategic insight for executive leadership.',
     education: "Master's Finance, American University · BS Accounting, University of Maryland Eastern Shore",
     photo: '/images/team/emmash.jpg',
   },
@@ -530,6 +532,7 @@ export const team = [
     name: 'Ashanthi Kiridena',
     title: 'VP Business Development & Human Capital',
     bio: 'Leads business growth strategies and human resources, ensuring Codice attracts top-tier mission-driven talent.',
+    fullBio: 'Ashanthi Kiridena is CODICE\'s Vice President of Business Development and Human Capital, where she drives the firm\'s growth strategy while building the people infrastructure that supports it.\n\nIn her business development role, Ashanthi leads CODICE\'s pursuit of new government partnerships, manages key agency relationships, and oversees proposal development and competitive positioning. She has been central to expanding CODICE\'s footprint across Washington DC\'s government ecosystem — identifying opportunities where CODICE\'s proprietary platforms and services can deliver the most mission impact.\n\nOn the human capital side, Ashanthi oversees all aspects of talent acquisition, employee development, and organizational culture. She has built a team of 137 professionals who share CODICE\'s commitment to excellence in public-sector technology — engineers, analysts, project managers, and delivery specialists who are passionate about the work they do for government.\n\nAshanthi is also a champion of CODICE\'s minority-owned small business identity, working to ensure the company reflects the diversity of the communities it serves. Her dual role bridges strategy and people, making her one of the most cross-functional leaders on the executive team.',
     education: 'BA Business Administration',
     photo: '/images/team/ashanthi.jpg',
   },
@@ -537,6 +540,7 @@ export const team = [
     name: 'Sully Ayubi',
     title: 'Chief Information Officer',
     bio: '20+ years in enterprise IT strategy and delivery. Expert in cloud migration and security modernization.',
+    fullBio: 'Sully Ayubi is CODICE\'s Chief Information Officer, responsible for the firm\'s overall technology strategy, enterprise architecture, cybersecurity posture, and the technical quality of every solution delivered to government clients.\n\nWith more than 20 years of experience in enterprise IT, Sully has led large-scale technology programs across federal and municipal government environments. His expertise spans cloud migration (AWS and Azure), FedRAMP and FISMA-aligned security frameworks, DevSecOps implementation, and the modernization of legacy government infrastructure.\n\nAt CODICE, Sully sets the architectural standards and technical direction for all 8 proprietary platforms and serves as the senior technical authority for complex agency engagements. He has guided CODICE\'s evolution from on-premise delivery to a cloud-native, multi-tenant platform model — enabling the firm to scale across agencies without sacrificing security or compliance.\n\nBefore CODICE, Sully held CTO and enterprise architect roles across the DC technology community, earning a reputation for bridging the gap between visionary technology strategy and the practical realities of government IT procurement and operations.',
     education: 'MS Technology Management · BS IT, George Mason University',
     photo: '/images/team/sully.jpg',
   },
@@ -620,7 +624,6 @@ export const navigation = [
       { label: 'Our Story', href: '/our-story', description: 'Our 16-year journey in government tech.' },
       { label: 'Clients & Partners', href: '/clients', description: '17 DC agencies and industry partners we serve.' },
       { label: 'Case Studies', href: '/case-studies', description: 'Real outcomes for real government agencies.' },
-      { label: 'Careers', href: '/careers', description: 'Join a team building technology for public service.' },
     ]
   },
   {
@@ -650,16 +653,12 @@ export const navigation = [
     ]
   },
   {
-    title: 'EVENTS',
-    items: [
-      { label: 'News & Events', href: '/news', description: 'Latest updates, launches, and milestones.' },
-    ]
-  },
-  {
     title: 'CONNECT',
     items: [
       { label: 'Articles', href: '/articles', description: 'Deep dives into tech trends and solutions.' },
       { label: 'Capability Statement', href: '/capability', description: 'Certifications, NAICS codes, and past performance.' },
+      { label: 'Careers', href: '/careers', description: 'Join a team building technology for public service.' },
+      { label: 'News & Events', href: '/news', description: 'Latest updates, launches, and milestones.' },
       { label: 'Contact', href: '/contact', description: 'Get in touch for your next project.' },
     ]
   }

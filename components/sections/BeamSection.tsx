@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatedBeam } from "@/components/ui/AnimatedBeam";
 import { Shield, Cpu, FileText, Globe2, Building2, HeartPulse, Landmark, Car } from "lucide-react";
@@ -12,9 +12,12 @@ interface NodeProps {
   bg: string;
   nodeRef: React.RefObject<HTMLDivElement | null>;
   delay?: number;
+  tooltip?: string;
 }
 
-function Node({ icon: Icon, label, color, bg, nodeRef, delay = 0 }: NodeProps) {
+function Node({ icon: Icon, label, color, bg, nodeRef, delay = 0, tooltip }: NodeProps) {
+  const [hovered, setHovered] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
@@ -22,17 +25,33 @@ function Node({ icon: Icon, label, color, bg, nodeRef, delay = 0 }: NodeProps) {
       viewport={{ once: true }}
       transition={{ delay, duration: 0.5, ease: "backOut" }}
       ref={nodeRef}
-      className="flex flex-col items-center gap-2 z-10"
+      className="relative flex flex-col items-center gap-2 z-10"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
       <div
-        className="w-14 h-14 rounded-2xl border flex items-center justify-center shadow-[0_4px_20px_rgba(15,23,42,0.08)] transition-transform hover:scale-110 duration-300"
-        style={{ backgroundColor: bg, borderColor: color + "30" }}
+        className="w-14 h-14 rounded-2xl border flex items-center justify-center shadow-[0_4px_20px_rgba(15,23,42,0.08)] transition-all hover:scale-110 duration-300 cursor-default"
+        style={{ backgroundColor: hovered ? color + "18" : bg, borderColor: hovered ? color + "60" : color + "30" }}
       >
         <Icon size={22} style={{ color }} />
       </div>
       <span className="text-[9px] font-bold uppercase tracking-widest text-[#94A3B8] whitespace-nowrap">
         {label}
       </span>
+
+      {/* Tooltip */}
+      {tooltip && (
+        <motion.div
+          initial={false}
+          animate={hovered ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 4, scale: 0.95 }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
+          className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-44 bg-[#0F172A] border border-[#1E293B] rounded-xl px-3 py-2.5 shadow-[0_8px_24px_rgba(0,0,0,0.25)] pointer-events-none z-50"
+        >
+          <p className="text-[11px] text-[#CBD5E1] leading-snug text-center">{tooltip}</p>
+          {/* Arrow */}
+          <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-[5px] border-r-[5px] border-t-[5px] border-l-transparent border-r-transparent border-t-[#1E293B]" />
+        </motion.div>
+      )}
     </motion.div>
   );
 }
@@ -54,17 +73,17 @@ export default function BeamSection() {
   const travoRef = useRef<HTMLDivElement>(null);
 
   const leftNodes: NodeProps[] = [
-    { icon: Building2,  label: "DCRA",  color: "#2563EB", bg: "#EFF6FF", nodeRef: dcraRef,  delay: 0.1 },
-    { icon: HeartPulse, label: "DOH",   color: "#0F766E", bg: "#F0FDFA", nodeRef: dohRef,   delay: 0.2 },
-    { icon: Car,        label: "DDOT",  color: "#0369A1", bg: "#F0F9FF", nodeRef: ddotRef,  delay: 0.3 },
-    { icon: Landmark,   label: "DOES",  color: "#7C3AED", bg: "#F5F3FF", nodeRef: doesRef,  delay: 0.4 },
+    { icon: Building2,  label: "DCRA",  color: "#2563EB", bg: "#EFF6FF", nodeRef: dcraRef,  delay: 0.1, tooltip: "DC Dept. of Consumer & Regulatory Affairs — permit modernization & licensing systems." },
+    { icon: HeartPulse, label: "DOH",   color: "#0F766E", bg: "#F0FDFA", nodeRef: dohRef,   delay: 0.2, tooltip: "DC Dept. of Health — healthcare data platforms and HIPAA-compliant reporting." },
+    { icon: Car,        label: "DDOT",  color: "#0369A1", bg: "#F0F9FF", nodeRef: ddotRef,  delay: 0.3, tooltip: "DC Dept. of Transportation — PermiOne-powered permitting for all DC infrastructure." },
+    { icon: Landmark,   label: "DOES",  color: "#7C3AED", bg: "#F5F3FF", nodeRef: doesRef,  delay: 0.4, tooltip: "DC Dept. of Employment Services — modernized UI Benefits System launched 2024." },
   ];
 
   const rightNodes: NodeProps[] = [
-    { icon: FileText,   label: "PermiOne",  color: "#2563EB", bg: "#EFF6FF", nodeRef: permioRef, delay: 0.1 },
-    { icon: Shield,     label: "FortiMind", color: "#7C3AED", bg: "#F5F3FF", nodeRef: fortiRef,  delay: 0.2 },
-    { icon: HeartPulse, label: "CelerKost", color: "#0F766E", bg: "#F0FDFA", nodeRef: celerRef,  delay: 0.3 },
-    { icon: Globe2,     label: "Travo AI",  color: "#0369A1", bg: "#F0F9FF", nodeRef: travoRef,  delay: 0.4 },
+    { icon: FileText,   label: "PermiOne",  color: "#2563EB", bg: "#EFF6FF", nodeRef: permioRef, delay: 0.1, tooltip: "Cloud-agnostic permitting platform — digital plan review, mobile inspections, citizen portals." },
+    { icon: Shield,     label: "FortiMind", color: "#7C3AED", bg: "#F5F3FF", nodeRef: fortiRef,  delay: 0.2, tooltip: "AI-powered regulatory intelligence — real-time compliance monitoring across all jurisdictions." },
+    { icon: HeartPulse, label: "CelerKost", color: "#0F766E", bg: "#F0FDFA", nodeRef: celerRef,  delay: 0.3, tooltip: "Medicaid cost reporting with fraud detection, anomaly analysis, and audit trail management." },
+    { icon: Globe2,     label: "Travo AI",  color: "#0369A1", bg: "#F0F9FF", nodeRef: travoRef,  delay: 0.4, tooltip: "AI accessibility and transit platform — making government services reachable for everyone." },
   ];
 
   const leftRefs = [dcraRef, dohRef, ddotRef, doesRef];

@@ -305,12 +305,14 @@ export default function OurStoryPage() {
                 className="group bg-white border border-[#E2E8F0] rounded-2xl overflow-hidden hover:border-[#2563EB]/40 hover:shadow-[0_8px_32px_rgba(37,99,235,0.08)] transition-all duration-300"
               >
                 <div
-                  className="relative w-full aspect-square bg-[#F8FAFC] overflow-hidden cursor-pointer"
+                  className="relative w-full aspect-[3/4] bg-[#F8FAFC] overflow-hidden cursor-pointer"
                   onClick={() => { setSelectedMember(member); setModalOpen(true); }}
                 >
-                  <Image src={member.photo} alt={member.name} fill className="object-cover group-hover:scale-105 transition-all duration-500" sizes="(max-width: 640px) 100vw, 50vw" />
-                  <div className="absolute inset-0 z-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                    <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full border border-[#E2E8F0] text-[#0F172A] text-sm font-bold tracking-widest uppercase shadow-lg">
+                  <Image src={member.photo} alt={member.name} fill className="object-cover object-top group-hover:scale-105 transition-all duration-500" sizes="(max-width: 640px) 100vw, 50vw" />
+                  {/* Gradient fade at bottom */}
+                  <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-white/60 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 z-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full border border-[#E2E8F0] text-[#0F172A] text-sm font-bold tracking-widest uppercase shadow-lg cursor-pointer">
                       Read Bio
                     </div>
                   </div>

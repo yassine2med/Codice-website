@@ -1,6 +1,6 @@
 "use client";
 
-import { clientLogos, clients, industryPartnerLogos } from "@/data/codice";
+import { clientLogos, industryPartnerLogos } from "@/data/codice";
 import Image from "next/image";
 import { motion, useAnimationControls } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -100,18 +100,6 @@ export default function TrustMarquee() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto mt-12 max-w-7xl px-6">
-        <div className="flex flex-wrap justify-center gap-3">
-          {clients.flatMap(c => c.items).slice(0, 10).map((client) => (
-            <span
-              key={client.name}
-              className="rounded-full border border-[#E2E8F0] bg-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-[#94A3B8] shadow-sm"
-            >
-              {client.name}
-            </span>
-          ))}
-        </div>
-      </div>
     </section>
   );
 }
