@@ -32,7 +32,7 @@ export default function ProductDetailPage() {
       <Navbar />
 
       {/* Product Hero */}
-      <section className="relative pt-40 pb-24 overflow-hidden bg-white">
+      <section className="relative pt-28 sm:pt-40 pb-16 sm:pb-24 overflow-hidden bg-white">
         <div className="absolute inset-0 dot-grid opacity-50" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#2563EB]/5 blur-[120px] rounded-full pointer-events-none" />
 

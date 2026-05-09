@@ -173,7 +173,7 @@ export default function OurStoryPage() {
           variants={stagger(0.12)}
           initial="hidden"
           animate="show"
-          className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-40 pb-24"
+          className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-28 sm:pt-40 pb-16 sm:pb-24"
         >
           <motion.div variants={fadeUp}>
             <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.3em] uppercase text-[#2563EB] bg-[#F0F6FF] border border-[#2563EB]/20 px-4 py-2 rounded-full mb-8 shadow-sm">
@@ -181,7 +181,7 @@ export default function OurStoryPage() {
             </span>
           </motion.div>
 
-          <motion.h1 variants={fadeUp} className="text-[clamp(44px,8vw,88px)] font-extrabold text-[#0F172A] leading-[0.95] tracking-tighter mb-8">
+          <motion.h1 variants={fadeUp} className="text-[clamp(36px,8vw,88px)] font-extrabold text-[#0F172A] leading-[0.95] tracking-tighter mb-8">
             More Than Technology.
             <br />
             <span className="text-gradient text-glow">A Mission.</span>

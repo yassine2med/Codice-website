@@ -4,7 +4,7 @@ import Navbar from "@/components/nav/Navbar";
 import Hero from "@/components/sections/Hero";
 import TrustMarquee from "@/components/sections/TrustMarquee";
 import StatsSection from "@/components/sections/StatsSection";
-import ServicesGrid from "@/components/sections/ServicesGrid";
+import ServicesBento from "@/components/sections/ServicesBento";
 import ProductsShowcase from "@/components/sections/ProductsShowcase";
 import MarketsGrid from "@/components/sections/MarketsGrid";
 import Testimonials from "@/components/sections/Testimonials";
@@ -34,7 +34,7 @@ export default function Home() {
 
       {/* Services */}
       <section className="relative bg-white">
-        <ServicesGrid />
+        <ServicesBento />
         <div className="flex justify-center pb-24 -mt-4 relative z-10">
           <Link
             href="/services"

@@ -61,7 +61,7 @@ export default function NewsPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden pt-40 pb-24 bg-white">
+      <section className="relative overflow-hidden pt-28 sm:pt-40 pb-16 sm:pb-24 bg-white">
         <div className="absolute inset-0 dot-grid opacity-50" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[800px] h-[400px] bg-[#2563EB]/5 blur-[100px] rounded-full pointer-events-none" />
 

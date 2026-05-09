@@ -8,6 +8,7 @@ import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Lightbox from "@/components/ui/Lightbox";
+import ProductMockup from "@/components/ui/ProductMockup";
 
 export default function ProductsShowcase() {
   const [active, setActive] = useState(products[0].id);
@@ -74,7 +75,7 @@ export default function ProductsShowcase() {
         >
           <div className="relative z-10 flex flex-col lg:flex-row min-h-[560px]">
             {/* Content Stage */}
-            <div className="flex-1 p-10 lg:p-16 flex flex-col justify-center">
+            <div className="flex-1 p-6 sm:p-10 lg:p-16 flex flex-col justify-center">
               <motion.div
                 initial={{ opacity: 0, x: -16 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -179,14 +180,11 @@ export default function ProductsShowcase() {
                   </div>
                 </div>
               ) : (
-                <div className="flex items-center justify-center h-full min-h-[380px]">
-                  <div className="relative w-52 h-52 animate-float">
-                    <Image
-                      src={product.logo!}
-                      alt={product.name}
-                      fill
-                      className="object-contain drop-shadow-[0_0_30px_rgba(37,99,235,0.20)]"
-                    />
+                <div className="relative w-full min-h-[380px] overflow-hidden">
+                  <ProductMockup category={product.category} name={product.name} />
+                  {/* Status badge */}
+                  <div className="absolute bottom-6 left-6 z-20 bg-white/90 backdrop-blur-xl border border-[#E2E8F0] rounded-2xl px-4 py-2.5 shadow-[0_4px_20px_rgba(15,23,42,0.08)]">
+                    <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-[#2563EB]">Status: Operational</p>
                   </div>
                 </div>
               )}

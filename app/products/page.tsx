@@ -34,7 +34,7 @@ export default function ProductsPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-40 pb-24 overflow-hidden bg-white">
+      <section className="relative pt-28 sm:pt-40 pb-16 sm:pb-24 overflow-hidden bg-white">
         <div className="absolute inset-0 dot-grid opacity-50" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#2563EB]/5 blur-[120px] rounded-full pointer-events-none" />
 
@@ -43,7 +43,7 @@ export default function ProductsPage() {
             <motion.p variants={fadeUp} className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#2563EB] mb-6">
               Proprietary Platforms
             </motion.p>
-            <motion.h1 variants={fadeUp} className="text-[clamp(44px,7vw,86px)] font-bold leading-[1.02] tracking-tighter mb-8 text-[#0F172A]">
+            <motion.h1 variants={fadeUp} className="text-[clamp(36px,7vw,86px)] font-bold leading-[1.02] tracking-tighter mb-8 text-[#0F172A]">
               8 Products. Every Mission.
             </motion.h1>
             <motion.p variants={fadeUp} className="text-lg md:text-xl text-[#64748B] max-w-2xl mx-auto leading-relaxed">

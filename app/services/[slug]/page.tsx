@@ -23,7 +23,7 @@ export default function ServiceDetailPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-40 pb-20 overflow-hidden bg-white border-b border-[#E2E8F0]">
+      <section className="relative pt-28 sm:pt-40 pb-14 sm:pb-20 overflow-hidden bg-white border-b border-[#E2E8F0]">
         <div className="absolute inset-0 dot-grid opacity-50" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#2563EB]/5 blur-[100px] rounded-full pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">

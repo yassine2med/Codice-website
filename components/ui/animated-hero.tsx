@@ -238,13 +238,28 @@ function Hero() {
 
   return (
     <section className="relative w-full min-h-screen flex flex-col justify-center bg-white overflow-hidden">
-      {/* DC aerial photography — subtle background layer */}
-      <div className="absolute inset-0">
+      {/* Video background — data center / tech loop at ultra-low opacity */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.035]"
+          style={{ filter: "grayscale(100%)" }}
+        >
+          {/* Free Pexels video — server room / data center */}
+          <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      {/* DC aerial photography — fallback static layer */}
+      <div className="absolute inset-0 pointer-events-none">
         <Image
           src="https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=1800&q=50"
           alt="Washington DC"
           fill
-          className="object-cover object-center opacity-[0.04]"
+          className="object-cover object-center opacity-[0.03]"
           sizes="100vw"
           priority
         />
@@ -394,7 +409,7 @@ function Hero() {
             {/* Stats row */}
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-4 gap-6 border-t border-[#E2E8F0] pt-8 mt-2"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-6 border-t border-[#E2E8F0] pt-8 mt-2"
             >
               {[
                 { label: "Client Retention", val: "100%" },

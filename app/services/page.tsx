@@ -26,7 +26,7 @@ export default function ServicesPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-48 pb-32 overflow-hidden bg-white">
+      <section className="relative pt-28 sm:pt-48 pb-20 sm:pb-32 overflow-hidden bg-white">
         <div className="absolute inset-0 dot-grid opacity-50" />
         <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-[#2563EB]/4 blur-[140px] rounded-full animate-pulse-slow" />
 
@@ -39,7 +39,7 @@ export default function ServicesPage() {
               </div>
             </motion.div>
 
-            <motion.h1 variants={fadeUp} className="text-[clamp(44px,8vw,88px)] font-extrabold tracking-tighter leading-[0.9] mb-8 text-[#0F172A]">
+            <motion.h1 variants={fadeUp} className="text-[clamp(36px,8vw,88px)] font-extrabold tracking-tighter leading-[0.9] mb-8 text-[#0F172A]">
               Eight Services. <br />
               <span className="text-gradient">One Mission.</span>
             </motion.h1>

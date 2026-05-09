@@ -11,7 +11,7 @@ interface PageHeroProps {
 
 export function PageHero({ title, subtitle, label, gradient = "from-[#2563EB]/20 to-transparent" }: PageHeroProps) {
   return (
-    <section className="relative pt-40 pb-24 overflow-hidden">
+    <section className="relative pt-28 sm:pt-40 pb-16 sm:pb-24 overflow-hidden">
       {/* Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1E293B_1px,transparent_1px),linear-gradient(to_bottom,#1E293B_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" />
       

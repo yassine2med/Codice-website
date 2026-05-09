@@ -37,7 +37,7 @@ export default function MarketsPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-48 pb-24 overflow-hidden bg-white">
+      <section className="relative pt-28 sm:pt-48 pb-16 sm:pb-24 overflow-hidden bg-white">
         <div className="absolute inset-0 dot-grid opacity-50" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[900px] h-[500px] bg-[#2563EB]/5 blur-[120px] rounded-full pointer-events-none" />
 
@@ -46,7 +46,7 @@ export default function MarketsPage() {
             <motion.div variants={fadeUp} className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-[#2563EB] bg-[#F0F6FF] border border-[#2563EB]/20 px-4 py-2 rounded-full mb-8 shadow-sm">
               Government Sectors
             </motion.div>
-            <motion.h1 variants={fadeUp} className="text-[clamp(48px,8vw,92px)] font-bold leading-[0.95] tracking-tighter mb-8 text-[#0F172A]">
+            <motion.h1 variants={fadeUp} className="text-[clamp(36px,8vw,92px)] font-bold leading-[0.95] tracking-tighter mb-8 text-[#0F172A]">
               Impact Across<br />
               <span className="text-gradient">Government.</span>
             </motion.h1>

@@ -104,7 +104,7 @@ export default function CTABanner() {
           </div>
 
           {/* Stats row */}
-          <div className="grid grid-cols-4 gap-6 pt-6 border-t border-white/8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-white/8">
             {stats.map((s) => (
               <div key={s.label} className="flex flex-col gap-1">
                 <span className="text-2xl font-bold text-white tracking-tight font-[family-name:var(--font-dm-mono)]">

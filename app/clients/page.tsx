@@ -86,7 +86,7 @@ export default function ClientsPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-40 pb-24 overflow-hidden bg-white">
+      <section className="relative pt-28 sm:pt-40 pb-16 sm:pb-24 overflow-hidden bg-white">
         <div className="absolute inset-0 dot-grid opacity-50" />
         <div className="absolute left-0 top-24 h-[500px] w-[500px] rounded-full bg-[#2563EB]/5 blur-[120px] pointer-events-none" />
         <div className="absolute right-[-10%] top-0 h-[600px] w-[600px] rounded-full bg-[#3B82F6]/4 blur-[140px] pointer-events-none" />
@@ -96,7 +96,7 @@ export default function ClientsPage() {
             <p className="mb-6 text-xs font-bold uppercase tracking-[0.28em] text-[#2563EB]">
               Clients & Partners
             </p>
-            <h1 className="text-[clamp(44px,7vw,88px)] font-bold leading-[0.98] tracking-tight text-[#0F172A]">
+            <h1 className="text-[clamp(36px,7vw,88px)] font-bold leading-[0.98] tracking-tight text-[#0F172A]">
               The client network behind durable public systems.
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[#64748B] md:text-xl">

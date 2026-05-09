@@ -95,10 +95,22 @@ export default function BeamSection() {
           </p>
         </motion.div>
 
-        {/* Beam diagram */}
+        {/* Mobile fallback — simple two-column grid */}
+        <div className="md:hidden grid grid-cols-2 gap-4">
+          {[...leftNodes, ...rightNodes].map((n) => (
+            <div key={n.label} className="flex items-center gap-3 bg-white border border-[#E2E8F0] rounded-2xl p-4">
+              <div className="w-10 h-10 rounded-xl border flex items-center justify-center shrink-0" style={{ backgroundColor: n.bg, borderColor: n.color + "30" }}>
+                <n.icon size={18} style={{ color: n.color }} />
+              </div>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#64748B]">{n.label}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop beam diagram */}
         <div
           ref={containerRef as React.RefObject<HTMLDivElement>}
-          className="relative flex items-center justify-between gap-8 min-h-[340px]"
+          className="relative hidden md:flex items-center justify-between gap-8 min-h-[340px]"
         >
           {/* SVG beams layer */}
           {leftRefs.map((ref, i) => (

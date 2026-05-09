@@ -39,7 +39,7 @@ export default function CareersPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden pt-40 pb-24 bg-white">
+      <section className="relative overflow-hidden pt-28 sm:pt-40 pb-16 sm:pb-24 bg-white">
         <div className="absolute inset-0 dot-grid opacity-50" />
         <div className="absolute left-0 top-28 h-[500px] w-[500px] rounded-full bg-[#2563EB]/5 blur-[120px] pointer-events-none" />
 

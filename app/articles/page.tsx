@@ -88,7 +88,7 @@ export default function ArticlesPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-40 pb-24 overflow-hidden bg-white">
+      <section className="relative pt-28 sm:pt-40 pb-16 sm:pb-24 overflow-hidden bg-white">
         <div className="absolute inset-0 dot-grid opacity-50" />
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#2563EB]/5 blur-[150px] rounded-full pointer-events-none" />
 
@@ -98,7 +98,7 @@ export default function ArticlesPage() {
               <BookOpen size={14} className="text-[#2563EB]" />
               <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#2563EB]">Knowledge Hub</span>
             </div>
-            <h1 className="text-[clamp(48px,8vw,88px)] font-extrabold tracking-tighter leading-[0.92] mb-8 text-[#0F172A]">
+            <h1 className="text-[clamp(36px,8vw,88px)] font-extrabold tracking-tighter leading-[0.92] mb-8 text-[#0F172A]">
               Field Notes from{" "}
               <span className="text-gradient text-glow">The Mission.</span>
             </h1>
