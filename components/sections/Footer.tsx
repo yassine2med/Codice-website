@@ -47,11 +47,11 @@ export default function Footer() {
           <div className="md:col-span-4">
             <Link href="/" className="inline-block mb-6">
               <Image
-                src="/images/brand/codice-logo-wtitle.png"
+                src="/images/brand/codice-logo-full.png"
                 alt="CODICE Technology"
                 width={400}
                 height={120}
-                className="h-9 w-auto object-contain brightness-0 invert"
+                className="h-10 w-auto object-contain"
               />
             </Link>
             <p className="text-[#94A3B8] text-sm leading-relaxed mb-8 max-w-xs">
