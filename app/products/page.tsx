@@ -35,19 +35,24 @@ export default function ProductsPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-28 sm:pt-40 pb-16 sm:pb-24 overflow-hidden bg-white">
-        <div className="absolute inset-0 dot-grid opacity-50" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[#2563EB]/5 blur-[120px] rounded-full pointer-events-none" />
+      <section className="relative pt-28 sm:pt-40 pb-16 sm:pb-24 overflow-hidden bg-[#0A0F1E]">
+        <div className="absolute inset-0 pointer-events-none">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=60" alt="" className="w-full h-full object-cover object-center" style={{ opacity: 0.07 }} />
+          <div className="absolute inset-0 bg-linear-to-b from-[#0A0F1E]/30 via-transparent to-[#0A0F1E]/70" />
+        </div>
+        <div className="absolute inset-0 dot-grid opacity-[0.15] pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#2563EB]/40 to-transparent" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] pointer-events-none" style={{ background: "radial-gradient(ellipse, rgba(37,99,235,0.12) 0%, transparent 65%)" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <motion.div variants={stagger} initial="hidden" animate="show">
-            <motion.p variants={fadeUp} className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#2563EB] mb-6">
+            <motion.p variants={fadeUp} className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#60A5FA] mb-6">
               Proprietary Platforms
             </motion.p>
-            <motion.h1 variants={fadeUp} className="text-[clamp(36px,7vw,86px)] font-bold leading-[1.02] tracking-tighter mb-8 text-[#0F172A]">
+            <motion.h1 variants={fadeUp} className="text-[clamp(36px,7vw,86px)] font-bold leading-[1.02] tracking-tighter mb-8 text-white">
               8 Products. Every Mission.
             </motion.h1>
-            <motion.p variants={fadeUp} className="text-lg md:text-xl text-[#64748B] max-w-2xl mx-auto leading-relaxed">
+            <motion.p variants={fadeUp} className="text-lg md:text-xl text-[#94A3B8] max-w-2xl mx-auto leading-relaxed">
               CODICE builds and operates proprietary software that government agencies across Washington DC rely on every day — from permitting and AI compliance to healthcare finance and case management.
             </motion.p>
           </motion.div>

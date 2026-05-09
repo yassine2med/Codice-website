@@ -45,9 +45,14 @@ export default function CapabilityClient() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-28 sm:pt-48 pb-20 sm:pb-32 overflow-hidden bg-white">
-        <div className="absolute inset-0 dot-grid opacity-50" />
-        <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-[#2563EB]/4 blur-[140px] rounded-full animate-pulse-slow" />
+      <section className="relative pt-28 sm:pt-48 pb-20 sm:pb-32 overflow-hidden bg-[#0A0F1E]">
+        <div className="absolute inset-0 pointer-events-none">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&q=60" alt="" className="w-full h-full object-cover object-center" style={{ opacity: 0.07 }} />
+          <div className="absolute inset-0 bg-linear-to-b from-[#0A0F1E]/30 via-transparent to-[#0A0F1E]/70" />
+        </div>
+        <div className="absolute inset-0 dot-grid opacity-[0.15] pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#2563EB]/40 to-transparent" />
+        <div className="absolute top-0 left-0 w-[700px] h-[700px] pointer-events-none" style={{ background: "radial-gradient(circle, rgba(37,99,235,0.10) 0%, transparent 65%)" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <motion.div
@@ -56,28 +61,28 @@ export default function CapabilityClient() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-4xl"
           >
-            <div className="inline-flex items-center gap-3 bg-[#F0F6FF] border border-[#2563EB]/20 px-4 py-2 rounded-full mb-8">
-              <ShieldCheck size={14} className="text-[#2563EB]" />
-              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#2563EB]">Procurement Ready</span>
+            <div className="inline-flex items-center gap-3 bg-[#2563EB]/10 border border-[#2563EB]/25 px-4 py-2 rounded-full mb-8">
+              <ShieldCheck size={14} className="text-[#60A5FA]" />
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#60A5FA]">Procurement Ready</span>
             </div>
-            <h1 className="text-[clamp(36px,8vw,88px)] font-extrabold tracking-tighter leading-[0.9] mb-8 text-[#0F172A]">
+            <h1 className="text-[clamp(36px,8vw,88px)] font-extrabold tracking-tighter leading-[0.9] mb-8 text-white">
               Government-Ready. <br />
-              <span className="text-gradient">Mission-Proven.</span>
+              <span style={{ color: "#60A5FA" }}>Mission-Proven.</span>
             </h1>
-            <p className="text-xl text-[#64748B] leading-relaxed max-w-2xl mb-12">
+            <p className="text-xl text-[#94A3B8] leading-relaxed max-w-2xl mb-12">
               Everything procurement officers and agency program managers need to evaluate CODICE Technology as a premier technology partner.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
               <Link
                 href="https://codicetech.com/capability/"
                 target="_blank"
-                className="group relative inline-flex items-center justify-center gap-3 bg-[#2563EB] text-white font-bold px-10 py-5 rounded-2xl text-base transition-all duration-300 shadow-[0_8px_32px_rgba(37,99,235,0.25)] hover:shadow-[0_12px_40px_rgba(37,99,235,0.40)] hover:-translate-y-0.5"
+                className="group relative inline-flex items-center justify-center gap-3 bg-[#2563EB] text-white font-bold px-10 py-5 rounded-2xl text-base transition-all duration-300 shadow-[0_8px_32px_rgba(37,99,235,0.30)] hover:shadow-[0_12px_40px_rgba(37,99,235,0.45)] hover:-translate-y-0.5"
               >
                 <FileText size={18} /> Download Statement
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-3 bg-white border-2 border-[#E2E8F0] hover:border-[#2563EB]/40 text-[#0F172A] font-bold px-10 py-5 rounded-2xl text-base transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(37,99,235,0.10)]"
+                className="inline-flex items-center justify-center gap-3 border border-white/10 hover:border-white/25 text-[#94A3B8] hover:text-white font-bold px-10 py-5 rounded-2xl text-base transition-all duration-300 hover:-translate-y-0.5"
               >
                 Procurement Briefing <ArrowRight size={18} />
               </Link>
