@@ -566,7 +566,7 @@ export const caseStudies = [
     product: 'CelerKost™',
     challenge: 'Pervasive Medicaid cost reporting errors resulting in substantial fraud exposure, audit risks, and critical transparency gaps.',
     solution: 'Implementation of CelerKost™ with integrated data validation, advanced statistical anomaly detection, and immutable real-time audit trails.',
-    outcome: 'Eliminated systemic reporting errors, drastically reduced fraud exposure, and ensured 100% regulatory compliance for the District’s Medicaid programs.',
+    outcome: "Eliminated systemic reporting errors, drastically reduced fraud exposure, and ensured 100% regulatory compliance for the District's Medicaid programs.",
     metric: 'Fraud Eliminated',
   },
   {
@@ -582,7 +582,7 @@ export const caseStudies = [
     product: 'Custom Software Development',
     challenge: 'An obsolete Unemployment Insurance Benefits System creating critical processing delays and service errors for thousands of DC residents.',
     solution: 'Development and launch of a modernized, high-performance cloud platform designed specifically for the DC DOES UI Benefits System.',
-    outcome: 'Dramatic improvement in processing velocity and resident experience, providing a stable and scalable foundation for the District’s unemployment services.',
+    outcome: "Dramatic improvement in processing velocity and resident experience, providing a stable and scalable foundation for the District's unemployment services.",
     metric: 'Launched 2024',
   },
 ]

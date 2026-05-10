@@ -54,7 +54,10 @@
       "PowerShell(cmd /c rmdir \"D:\\\\Claude\\\\Worktree Location\\\\Codice-website\\\\fervent-lamarr-659ae6\\\\node_modules\")",
       "mcp__Claude_in_Chrome__navigate",
       "mcp__Claude_in_Chrome__get_page_text",
-      "WebFetch(domain:21st.dev)"
+      "WebFetch(domain:21st.dev)",
+      "Bash(git worktree *)",
+      "Bash(Get-ChildItem *)",
+      "PowerShell(Get-Content *)"
     ]
   }
 }
