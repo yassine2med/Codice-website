@@ -46,6 +46,10 @@ export const metadata: Metadata = {
     description: "16 years. 12+ agencies. 100% client retention.",
     images: ["https://images.unsplash.com/photo-1617581629397-a72507c3de9e?w=1200&h=630&fit=crop&q=80"],
   },
+  icons: {
+    icon: "/images/brand/codice-logo-full.png",
+    apple: "/images/brand/codice-logo-full.png",
+  },
   robots: { index: true, follow: true },
 };
 
