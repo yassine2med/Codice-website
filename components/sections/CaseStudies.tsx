@@ -17,15 +17,17 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
-export default function CaseStudies() {
+export default function CaseStudies({ showHeader = true }: { showHeader?: boolean }) {
   return (
     <section id="case-studies" className="py-24 px-6 bg-[#F8FAFC] relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
-        <SectionHeader
-          label="Case Studies"
-          title="Mission-Critical Outcomes"
-          subtitle="Real results for real agencies. Outcomes that speak louder than promises."
-        />
+        {showHeader && (
+          <SectionHeader
+            label="Case Studies"
+            title="Mission-Critical Outcomes"
+            subtitle="Real results for real agencies. Outcomes that speak louder than promises."
+          />
+        )}
 
         <motion.div
           variants={container}
