@@ -3,7 +3,7 @@
 import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/sections/Footer";
 import { company } from "@/data/codice";
-import { ArrowRight, Clock, ExternalLink, Mail, MapPin, Phone, Send, ShieldCheck } from "lucide-react";
+import { ArrowRight, Clock, ExternalLink, Mail, MapPin, Phone, Send, ShieldCheck, CalendarCheck, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
@@ -11,6 +11,8 @@ import Link from "next/link";
 const trustSignals = [
   { icon: ShieldCheck, text: "100% client retention" },
   { icon: Clock,       text: "Response within 1 business day" },
+  { icon: CalendarCheck, text: "Available for FY2026 projects" },
+  { icon: Users,       text: "137 professionals on staff" },
 ];
 
 export default function ContactPage() {
@@ -139,7 +141,12 @@ export default function ContactPage() {
               <div className="absolute top-0 left-8 right-8 h-px bg-linear-to-r from-transparent via-[#2563EB]/30 to-transparent" />
 
               <div className="mb-8">
-                <h2 className="text-2xl font-bold text-[#0F172A] mb-2 tracking-tight">Request a Briefing</h2>
+                <div className="flex items-center gap-3 mb-4">
+                  <h2 className="text-2xl font-bold text-[#0F172A] tracking-tight">Request a Briefing</h2>
+                  <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[10px] font-bold text-emerald-600">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" /> Available
+                  </span>
+                </div>
                 <p className="text-[#64748B] text-sm leading-relaxed">Share your challenge and our team will schedule a technical briefing within one business day.</p>
               </div>
 

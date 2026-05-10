@@ -6,6 +6,8 @@ import ScrollProgress from "@/components/ui/ScrollProgress";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import FloatingCTA from "@/components/ui/FloatingCTA";
 import ChatWidget from "@/components/ui/ChatWidget";
+import CommandPalette from "@/components/ui/CommandPalette";
+import AnnouncementBanner from "@/components/ui/AnnouncementBanner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -67,11 +69,13 @@ export default function RootLayout({
       className={`${inter.variable} ${dmMono.variable} ${outfit.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-white text-[#0F172A] antialiased font-[family-name:var(--font-inter)] selection:bg-[#2563EB]/15 selection:text-[#1D4ED8]">
+        <AnnouncementBanner />
         <ScrollProgress />
         <CursorGlow />
         <ScrollToTop />
         <FloatingCTA />
         <ChatWidget />
+        <CommandPalette />
         {children}
       </body>
     </html>

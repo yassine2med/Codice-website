@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Menu, X, Cpu, Globe, Layers } from "lucide-react";
+import { Menu, X, Cpu, Globe, Layers, Search } from "lucide-react";
 import { navigation } from "@/data/codice";
 import { motion, AnimatePresence } from "framer-motion";
 import { DropdownNavigation } from "@/components/ui/dorpdown-navigation";
@@ -19,9 +19,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
         scrolled ? "py-3" : "py-6"
       }`}
+      style={{ top: "var(--banner-h, 0px)" }}
     >
       <div className={`max-w-7xl mx-auto px-6 transition-all duration-500 ${scrolled ? "scale-[0.97]" : "scale-100"}`}>
         <div
@@ -76,7 +77,20 @@ export default function Navbar() {
           </div>
 
           {/* CTA Group */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-3">
+            <button
+              onClick={() => window.dispatchEvent(new Event("codice:open-palette"))}
+              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl border transition-all duration-300 ${
+                scrolled
+                  ? "border-[#E2E8F0] text-[#94A3B8] hover:border-[#2563EB]/40 hover:text-[#0F172A] bg-white"
+                  : "border-white/20 text-[#94A3B8] hover:border-white/40 hover:text-[#0F172A] bg-white/80"
+              }`}
+              aria-label="Search"
+            >
+              <Search size={13} />
+              <span className="text-[10px] font-bold tracking-wider hidden xl:block">Search</span>
+              <kbd className="hidden xl:flex items-center px-1.5 py-0.5 rounded-md bg-[#F8FAFC] border border-[#E2E8F0] text-[9px] font-bold text-[#B0BEC5]">⌘K</kbd>
+            </button>
             <Link
               href="/contact"
               className="bg-[#2563EB] text-white text-xs font-bold tracking-widest uppercase px-5 py-2.5 rounded-xl hover:bg-[#1D4ED8] transition-all duration-300 shadow-[0_4px_16px_rgba(37,99,235,0.25)] hover:shadow-[0_6px_24px_rgba(37,99,235,0.35)]"

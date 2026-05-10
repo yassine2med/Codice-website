@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, BriefcaseBusiness, GraduationCap, HeartHandshake, MapPin, Rocket, Users } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, GraduationCap, HeartHandshake, MapPin, Rocket, Users, Send, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/sections/Footer";
 import { company } from "@/data/codice";
 import { motion } from "framer-motion";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
+import { useState } from "react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
@@ -32,6 +33,73 @@ const openRoles = [
   { title: "Cloud & DevOps Engineer", dept: "Cloud Infrastructure", location: "Washington, DC / Remote", type: "Full Time", description: "Lead AWS and Azure migrations for government clients. Design CI/CD pipelines, enforce FedRAMP-aligned security, and manage containerized workloads." },
   { title: "Business Analyst — Government IT", dept: "Project Delivery", location: "Washington, DC", type: "Full Time", description: "Bridge agency stakeholders and engineering teams. Translate mission requirements into technical specifications for modernization programs." },
 ];
+
+const roleOptions = ["Senior Software Engineer", "Cloud & DevOps Engineer", "Business Analyst", "Data Analyst", "Cybersecurity Specialist", "Project Manager", "Other"];
+
+function QuickApplyForm() {
+  const [form, setForm] = useState({ name: "", email: "", role: "", note: "" });
+  const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSending(true);
+    const subject = encodeURIComponent(`Job Application — ${form.role} — ${form.name}`);
+    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\nRole of Interest: ${form.role}\n\n${form.note}`);
+    window.location.href = `mailto:${company.email}?subject=${subject}&body=${body}`;
+    setTimeout(() => { setSending(false); setSubmitted(true); }, 800);
+  };
+
+  if (submitted) {
+    return (
+      <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="flex flex-col items-center gap-4 py-12 text-center">
+        <div className="w-14 h-14 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center">
+          <CheckCircle2 size={26} className="text-emerald-500" />
+        </div>
+        <p className="text-xl font-bold text-white">Application sent!</p>
+        <p className="text-[#64748B] text-sm max-w-xs">We review every application personally. Expect a response within 3–5 business days.</p>
+        <button onClick={() => { setSubmitted(false); setForm({ name: "", email: "", role: "", note: "" }); }}
+          className="text-[11px] font-bold text-[#60A5FA] hover:text-white transition-colors mt-2">Apply for another role →</button>
+      </motion.div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <div className="grid sm:grid-cols-2 gap-4">
+        {[
+          { label: "Full Name", key: "name", type: "text" },
+          { label: "Email Address", key: "email", type: "email" },
+        ].map(({ label, key, type }) => (
+          <div key={key} className="relative">
+            <input
+              type={type} required value={form[key as keyof typeof form]}
+              onChange={(e) => setForm({ ...form, [key]: e.target.value })}
+              placeholder={label}
+              className="peer w-full bg-white/[0.05] border border-white/[0.08] hover:border-white/[0.15] focus:border-[#2563EB]/60 rounded-2xl px-5 pt-7 pb-3 text-white text-sm outline-none transition-all placeholder-transparent"
+            />
+            <label className="absolute left-5 top-2.5 text-[9px] font-bold tracking-[0.2em] uppercase text-[#475569] peer-placeholder-shown:top-[18px] peer-placeholder-shown:text-sm peer-placeholder-shown:normal-case peer-placeholder-shown:tracking-normal peer-focus:top-2.5 peer-focus:text-[9px] peer-focus:uppercase peer-focus:tracking-[0.2em] peer-focus:text-[#60A5FA] transition-all">{label}</label>
+          </div>
+        ))}
+      </div>
+      <div className="relative">
+        <select required value={form.role} onChange={(e) => setForm({ ...form, role: e.target.value })}
+          className="w-full bg-white/[0.05] border border-white/[0.08] hover:border-white/[0.15] focus:border-[#2563EB]/60 rounded-2xl px-5 py-3.5 text-sm text-white outline-none transition-all appearance-none cursor-pointer">
+          <option value="" disabled className="bg-[#0F172A]">Role of Interest</option>
+          {roleOptions.map((r) => <option key={r} value={r} className="bg-[#0F172A]">{r}</option>)}
+        </select>
+        <div className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-[#475569]">▾</div>
+      </div>
+      <textarea rows={3} value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })}
+        placeholder="Brief intro (optional)"
+        className="w-full bg-white/[0.05] border border-white/[0.08] hover:border-white/[0.15] focus:border-[#2563EB]/60 rounded-2xl px-5 py-4 text-white text-sm outline-none transition-all resize-none placeholder:text-[#334155]" />
+      <button type="submit" disabled={sending}
+        className="group flex items-center justify-center gap-3 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold py-3.5 rounded-2xl text-sm transition-all shadow-[0_4px_24px_rgba(37,99,235,0.30)] hover:-translate-y-0.5 disabled:opacity-70">
+        {sending ? <><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Sending…</> : <><Send size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" /> Submit Application</>}
+      </button>
+    </form>
+  );
+}
 
 export default function CareersPage() {
   return (
@@ -180,6 +248,21 @@ export default function CareersPage() {
               <a className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] hover:border-[#2563EB]/35 px-4 py-3 text-sm font-semibold text-[#64748B] hover:text-[#0F172A] transition-all" href={`mailto:${company.email}`}>{company.email}</a>
             </div>
           </SpotlightCard>
+        </div>
+      </section>
+
+      {/* Quick Apply */}
+      <section className="py-24 bg-[#0A0F1E] relative overflow-hidden">
+        <div className="absolute inset-0 dot-grid opacity-[0.12] pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#2563EB]/30 to-transparent" />
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[600px] h-[400px] bg-[#2563EB]/6 blur-[100px] rounded-full pointer-events-none" />
+        <div className="relative z-10 max-w-2xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <span className="inline-block px-4 py-2 rounded-full border border-[#2563EB]/30 bg-[#2563EB]/10 text-[#60A5FA] text-[10px] font-black tracking-[0.3em] uppercase mb-6">Quick Apply</span>
+            <h2 className="text-[clamp(28px,4vw,44px)] font-bold text-white leading-tight tracking-tight mb-4">Don&apos;t see the right role?</h2>
+            <p className="text-[#64748B] text-base leading-relaxed">Send us your background. We hire for talent first — roles are often created around exceptional people.</p>
+          </div>
+          <QuickApplyForm />
         </div>
       </section>
 
