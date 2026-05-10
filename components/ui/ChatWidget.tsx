@@ -112,11 +112,11 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.94 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed bottom-[5.5rem] right-6 z-50 w-[360px] max-w-[calc(100vw-3rem)] rounded-3xl overflow-hidden shadow-[0_24px_80px_rgba(0,0,0,0.45)] border border-white/[0.06]"
+            className="fixed bottom-22 right-6 z-50 w-[360px] max-w-[calc(100vw-3rem)] rounded-3xl overflow-hidden shadow-[0_24px_80px_rgba(0,0,0,0.45)] border border-white/6"
           >
             {/* Header */}
-            <div className="bg-[#080D1A] px-5 py-4 flex items-center gap-3 border-b border-white/[0.06]">
-              <div className="w-9 h-9 rounded-2xl bg-[#2563EB] flex items-center justify-center shrink-0 shadow-[0_4px_16px_rgba(37,99,235,0.40)]">
+            <div className="bg-[#080D1A] px-5 py-4 flex items-center gap-3 border-b border-white/6">
+              <div className="w-9 h-9 rounded-2xl bg-brand-primary flex items-center justify-center shrink-0 shadow-[0_4px_16px_rgba(37,99,235,0.40)]">
                 <Sparkles size={16} className="text-white" />
               </div>
               <div className="flex-1 min-w-0">
@@ -128,7 +128,7 @@ export default function ChatWidget() {
               </div>
               <button
                 onClick={() => setOpen(false)}
-                className="w-7 h-7 rounded-full flex items-center justify-center text-white/30 hover:text-white/70 hover:bg-white/[0.08] transition-all"
+                className="w-7 h-7 rounded-full flex items-center justify-center text-white/30 hover:text-white/70 hover:bg-white/8 transition-all"
                 aria-label="Close chat"
               >
                 <X size={14} />
@@ -148,10 +148,10 @@ export default function ChatWidget() {
                   >
                     {/* Bot intro bubble */}
                     <div className="flex items-end gap-2.5">
-                      <div className="w-7 h-7 rounded-full bg-[#2563EB]/20 border border-[#2563EB]/30 flex items-center justify-center shrink-0">
+                      <div className="w-7 h-7 rounded-full bg-brand-primary/20 border border-brand-primary/30 flex items-center justify-center shrink-0">
                         <Sparkles size={12} className="text-[#60A5FA]" />
                       </div>
-                      <div className="bg-[#131B2E] border border-white/[0.06] rounded-2xl rounded-bl-sm px-4 py-3 max-w-[80%]">
+                      <div className="bg-[#131B2E] border border-white/6 rounded-2xl rounded-bl-sm px-4 py-3 max-w-[80%]">
                         <p className="text-sm text-white/80 leading-relaxed">
                           Hi! I&apos;m your CODICE guide. What would you like to know?
                         </p>
@@ -167,9 +167,9 @@ export default function ChatWidget() {
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: 0.15 + i * 0.045, ease: [0.22, 1, 0.36, 1] }}
                           onClick={() => handleSelect(qa)}
-                          className="w-full flex items-center gap-2.5 text-left px-4 py-2.5 rounded-xl bg-[#131B2E] border border-white/[0.06] hover:border-[#2563EB]/50 hover:bg-[#1a2540] text-white/70 hover:text-white text-xs font-medium transition-all duration-200 group"
+                          className="w-full flex items-center gap-2.5 text-left px-4 py-2.5 rounded-xl bg-[#131B2E] border border-white/6 hover:border-brand-primary/50 hover:bg-[#1a2540] text-white/70 hover:text-white text-xs font-medium transition-all duration-200 group"
                         >
-                          <ChevronRight size={12} className="text-[#2563EB] shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                          <ChevronRight size={12} className="text-brand-primary shrink-0 group-hover:translate-x-0.5 transition-transform" />
                           {qa.question}
                         </motion.button>
                       ))}
@@ -186,15 +186,15 @@ export default function ChatWidget() {
                         className={`flex items-end gap-2.5 ${msg.role === "user" ? "flex-row-reverse" : ""}`}
                       >
                         {msg.role === "bot" && (
-                          <div className="w-7 h-7 rounded-full bg-[#2563EB]/20 border border-[#2563EB]/30 flex items-center justify-center shrink-0 mb-0.5">
+                          <div className="w-7 h-7 rounded-full bg-brand-primary/20 border border-brand-primary/30 flex items-center justify-center shrink-0 mb-0.5">
                             <Sparkles size={12} className="text-[#60A5FA]" />
                           </div>
                         )}
                         <div className={`max-w-[78%] ${msg.role === "user" ? "ml-auto" : ""}`}>
                           <div className={`rounded-2xl px-4 py-3 ${
                             msg.role === "user"
-                              ? "bg-[#2563EB] rounded-br-sm"
-                              : "bg-[#131B2E] border border-white/[0.06] rounded-bl-sm"
+                              ? "bg-brand-primary rounded-br-sm"
+                              : "bg-[#131B2E] border border-white/6 rounded-bl-sm"
                           }`}>
                             <p className="text-sm text-white/90 leading-relaxed">{msg.text}</p>
                           </div>
@@ -208,7 +208,7 @@ export default function ChatWidget() {
                               <Link
                                 href={msg.cta.href}
                                 onClick={() => setOpen(false)}
-                                className="inline-flex items-center gap-2 text-[11px] font-bold text-[#60A5FA] hover:text-white border border-[#2563EB]/30 hover:border-[#2563EB]/60 hover:bg-[#2563EB]/10 px-3 py-1.5 rounded-lg transition-all"
+                                className="inline-flex items-center gap-2 text-[11px] font-bold text-[#60A5FA] hover:text-white border border-brand-primary/30 hover:border-brand-primary/60 hover:bg-brand-primary/10 px-3 py-1.5 rounded-lg transition-all"
                               >
                                 {msg.cta.label} <ArrowRight size={10} />
                               </Link>
@@ -223,7 +223,7 @@ export default function ChatWidget() {
               </div>
 
               {/* Footer */}
-              <div className="px-4 py-3 border-t border-white/[0.05] bg-[#080D1A] flex items-center justify-between gap-3">
+              <div className="px-4 py-3 border-t border-white/5 bg-[#080D1A] flex items-center justify-between gap-3">
                 {answered ? (
                   <button
                     onClick={handleReset}
@@ -237,7 +237,7 @@ export default function ChatWidget() {
                 <Link
                   href="/contact"
                   onClick={() => setOpen(false)}
-                  className="text-[10px] font-bold text-[#2563EB] hover:text-[#60A5FA] transition-colors whitespace-nowrap"
+                  className="text-[10px] font-bold text-brand-primary hover:text-[#60A5FA] transition-colors whitespace-nowrap"
                 >
                   Talk to a real person →
                 </Link>
@@ -253,7 +253,7 @@ export default function ChatWidget() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.5, duration: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
         onClick={open ? () => setOpen(false) : handleOpen}
-        className="fixed bottom-8 right-6 z-50 w-14 h-14 rounded-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white shadow-[0_8px_32px_rgba(37,99,235,0.45)] hover:shadow-[0_12px_40px_rgba(37,99,235,0.60)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center"
+        className="fixed bottom-8 right-6 z-50 w-14 h-14 rounded-full bg-brand-primary hover:bg-brand-accent text-white shadow-[0_8px_32px_rgba(37,99,235,0.45)] hover:shadow-[0_12px_40px_rgba(37,99,235,0.60)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center"
         aria-label="Open chat"
       >
         <AnimatePresence mode="wait">

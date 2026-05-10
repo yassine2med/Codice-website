@@ -1,5 +1,5 @@
 "use client";
-import { DropdownNavigation } from "@/components/ui/dorpdown-navigation"
+import { DropdownNavigation } from "@/components/ui/dropdown-navigation"
 import {
   Cpu,
   Globe,

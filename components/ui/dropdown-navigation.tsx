@@ -111,48 +111,48 @@ export function DropdownNavigation({ navItems }: Props) {
                               <div key={sub.title} className="flex flex-col">
                                 {/* Section header */}
                                 <div className="flex items-center gap-2 mb-3 pb-3 border-b border-[#F1F5F9]">
-                                  <div className="w-1 h-4 bg-[#2563EB] rounded-full" />
-                                  <span className="text-[10px] font-black uppercase tracking-[0.22em] text-[#2563EB]">
+                                  <div className="w-1 h-4 bg-brand-primary rounded-full" />
+                                  <span className="text-[10px] font-black uppercase tracking-[0.22em] text-brand-primary">
                                     {sub.title}
                                   </span>
                                 </div>
 
                                 {/* Overview link */}
                                 {overviewItem && (
-                                  <a
-                                    href={overviewItem.href || "#"}
-                                    className="group flex items-center justify-between bg-[#F0F6FF] hover:bg-[#2563EB] border border-[#2563EB]/15 hover:border-[#2563EB] rounded-xl px-3.5 py-3 mb-3 transition-all duration-200"
-                                  >
-                                    <span className="text-sm font-bold text-[#1D4ED8] group-hover:text-white transition-colors">
-                                      {overviewItem.label}
-                                    </span>
-                                    <ArrowRight size={13} className="text-[#2563EB] group-hover:text-white group-hover:translate-x-0.5 transition-all" />
-                                  </a>
+                                <Link
+                                  href={overviewItem.href || "#"}
+                                  className="group flex items-center justify-between bg-[#F0F6FF] hover:bg-brand-primary border border-brand-primary/15 hover:border-brand-primary rounded-xl px-3.5 py-3 mb-3 transition-all duration-200"
+                                >
+                                  <span className="text-sm font-bold text-brand-accent group-hover:text-white transition-colors">
+                                    {overviewItem.label}
+                                  </span>
+                                  <ArrowRight size={13} className="text-brand-primary group-hover:text-white group-hover:translate-x-0.5 transition-all" />
+                                </Link>
                                 )}
 
                                 {/* Rest of items */}
                                 <ul className="flex flex-col gap-0.5">
                                   {restItems.slice(0, 5).map((item) => (
                                     <li key={item.label}>
-                                      <a
+                                      <Link
                                         href={item.href || "#"}
                                         className="flex items-center gap-2.5 px-2.5 py-2 rounded-lg hover:bg-[#F8FAFC] group transition-colors duration-150"
                                       >
-                                        <div className="w-1.5 h-1.5 rounded-full bg-[#CBD5E1] group-hover:bg-[#2563EB] transition-colors shrink-0" />
+                                        <div className="w-1.5 h-1.5 rounded-full bg-[#CBD5E1] group-hover:bg-brand-primary transition-colors shrink-0" />
                                         <span className="text-sm text-[#475569] group-hover:text-[#0F172A] font-medium transition-colors truncate">
                                           {item.label}
                                         </span>
-                                      </a>
+                                      </Link>
                                     </li>
                                   ))}
                                   {restItems.length > 5 && (
                                     <li>
-                                      <a
+                                      <Link
                                         href={overviewItem?.href || "#"}
-                                        className="flex items-center gap-2 px-2.5 py-1.5 text-[11px] font-bold text-[#2563EB] hover:text-[#1D4ED8] uppercase tracking-widest transition-colors"
+                                        className="flex items-center gap-2 px-2.5 py-1.5 text-[11px] font-bold text-brand-primary hover:text-brand-accent uppercase tracking-widest transition-colors"
                                       >
                                         +{restItems.length - 5} more <ArrowRight size={10} />
-                                      </a>
+                                      </Link>
                                     </li>
                                   )}
                                 </ul>
@@ -169,27 +169,27 @@ export function DropdownNavigation({ navItems }: Props) {
                             </p>
                           </div>
                           {navItem.subMenus[0].items.map((item) => (
-                            <a
-                              key={item.label}
-                              href={item.href || "#"}
-                              className="group flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[#F0F6FF] transition-all duration-150"
-                            >
-                              <div className="w-1.5 h-1.5 rounded-full bg-[#CBD5E1] group-hover:bg-[#2563EB] transition-colors shrink-0" />
-                              <div className="flex-1 min-w-0">
-                                <p className="text-sm font-semibold text-[#334155] group-hover:text-[#0F172A] transition-colors truncate">
-                                  {item.label}
+                          <Link
+                            key={item.label}
+                            href={item.href || "#"}
+                            className="group flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[#F0F6FF] transition-all duration-150"
+                          >
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#CBD5E1] group-hover:bg-brand-primary transition-colors shrink-0" />
+                            <div className="flex-1 min-w-0">
+                              <p className="text-sm font-semibold text-[#334155] group-hover:text-[#0F172A] transition-colors truncate">
+                                {item.label}
+                              </p>
+                              {item.description && (
+                                <p className="text-[11px] text-[#94A3B8] truncate mt-0.5 group-hover:text-[#64748B] transition-colors">
+                                  {item.description}
                                 </p>
-                                {item.description && (
-                                  <p className="text-[11px] text-[#94A3B8] truncate mt-0.5 group-hover:text-[#64748B] transition-colors">
-                                    {item.description}
-                                  </p>
-                                )}
-                              </div>
-                              <ArrowRight
-                                size={12}
-                                className="text-transparent group-hover:text-[#2563EB] group-hover:translate-x-0.5 transition-all shrink-0"
-                              />
-                            </a>
+                              )}
+                            </div>
+                            <ArrowRight
+                              size={12}
+                              className="text-transparent group-hover:text-brand-primary group-hover:translate-x-0.5 transition-all shrink-0"
+                            />
+                          </Link>
                           ))}
                         </>
                       )}

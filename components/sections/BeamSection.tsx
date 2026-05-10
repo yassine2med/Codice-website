@@ -10,7 +10,7 @@ interface NodeProps {
   label: string;
   color: string;
   bg: string;
-  nodeRef: React.RefObject<HTMLDivElement | null>;
+  nodeRef: React.RefObject<HTMLButtonElement | null>;
   delay?: number;
   tooltip?: string;
 }
@@ -25,7 +25,7 @@ function Node({ icon: Icon, label, color, bg, nodeRef, delay = 0, tooltip }: Nod
       viewport={{ once: true }}
       transition={{ delay, duration: 0.5, ease: "backOut" }}
       ref={nodeRef}
-      className="relative flex flex-col items-center gap-2 z-10 bg-transparent border-none p-0 outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB] focus-visible:ring-offset-4 rounded-2xl"
+      className="relative flex flex-col items-center gap-2 z-10 bg-transparent border-none p-0 outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-4 rounded-2xl"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onFocus={() => setHovered(true)}
@@ -64,16 +64,16 @@ export default function BeamSection() {
   const codiceRef = useRef<HTMLDivElement>(null);
 
   // Left column — agencies
-  const dcraRef = useRef<HTMLDivElement>(null);
-  const dohRef = useRef<HTMLDivElement>(null);
-  const ddotRef = useRef<HTMLDivElement>(null);
-  const doesRef = useRef<HTMLDivElement>(null);
+  const dcraRef = useRef<HTMLButtonElement>(null);
+  const dohRef = useRef<HTMLButtonElement>(null);
+  const ddotRef = useRef<HTMLButtonElement>(null);
+  const doesRef = useRef<HTMLButtonElement>(null);
 
   // Right column — products
-  const permioRef = useRef<HTMLDivElement>(null);
-  const fortiRef = useRef<HTMLDivElement>(null);
-  const celerRef = useRef<HTMLDivElement>(null);
-  const travoRef = useRef<HTMLDivElement>(null);
+  const permioRef = useRef<HTMLButtonElement>(null);
+  const fortiRef = useRef<HTMLButtonElement>(null);
+  const celerRef = useRef<HTMLButtonElement>(null);
+  const travoRef = useRef<HTMLButtonElement>(null);
 
   const leftNodes: NodeProps[] = [
     { icon: Building2,  label: "DCRA",  color: "#2563EB", bg: "#EFF6FF", nodeRef: dcraRef,  delay: 0.1, tooltip: "DC Dept. of Consumer & Regulatory Affairs — permit modernization & licensing systems." },
@@ -103,7 +103,7 @@ export default function BeamSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#2563EB] bg-[#F0F6FF] border border-[#2563EB]/20 px-4 py-2 rounded-full inline-block mb-6">
+          <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-brand-primary bg-[#F0F6FF] border border-brand-primary/20 px-4 py-2 rounded-full inline-block mb-6">
             How It Works
           </span>
           <h2 className="text-[clamp(28px,4vw,52px)] font-bold text-[#0F172A] tracking-tight">
@@ -276,7 +276,7 @@ export default function BeamSection() {
 
           {/* Center — CODICE hub */}
           <motion.div
-            ref={codiceRef as React.RefObject<HTMLDivElement>}
+            ref={codiceRef}
             initial={{ opacity: 0, scale: 0.7 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -284,14 +284,14 @@ export default function BeamSection() {
             className="relative flex flex-col items-center gap-3 z-10 shrink-0"
           >
             {/* Pulsing ring */}
-            <div className="absolute inset-0 rounded-full border-2 border-[#2563EB]/20 animate-ping scale-150 pointer-events-none" />
-            <div className="absolute inset-0 rounded-full border border-[#2563EB]/10 scale-[2] pointer-events-none" />
+            <div className="absolute inset-0 rounded-full border-2 border-brand-primary/20 animate-ping scale-150 pointer-events-none" />
+            <div className="absolute inset-0 rounded-full border border-brand-primary/10 scale-[2] pointer-events-none" />
 
-            <div className="w-20 h-20 rounded-full bg-[#2563EB] border-4 border-white flex items-center justify-center shadow-[0_8px_40px_rgba(37,99,235,0.35)] relative z-10">
+            <div className="w-20 h-20 rounded-full bg-brand-primary border-4 border-white flex items-center justify-center shadow-[0_8px_40px_rgba(37,99,235,0.35)] relative z-10">
               <Cpu size={30} className="text-white" />
             </div>
             <div className="bg-white border border-[#E2E8F0] rounded-xl px-4 py-2 shadow-[0_4px_16px_rgba(15,23,42,0.06)] text-center">
-              <p className="text-[10px] font-black tracking-[0.25em] uppercase text-[#2563EB]">CODICE</p>
+              <p className="text-[10px] font-black tracking-[0.25em] uppercase text-brand-primary">CODICE</p>
               <p className="text-[8px] text-[#94A3B8] tracking-widest uppercase mt-0.5">Technology Hub</p>
             </div>
           </motion.div>

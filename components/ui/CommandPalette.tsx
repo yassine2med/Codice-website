@@ -62,13 +62,15 @@ export default function CommandPalette() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(0);
-  const [recent, setRecent] = useState<Result[]>(() =>
-    typeof window === "undefined" ? [] : getRecent()
-  );
+  const [recent, setRecent] = useState<Result[]>([]);
   const router = useRouter();
   const pathname = usePathname();
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setRecent(getRecent());
+  }, []);
 
   const resetPalette = useCallback(() => {
     setRecent(getRecent());
@@ -196,7 +198,7 @@ export default function CommandPalette() {
     if (type === "recent") return { Icon: Clock, color: "text-[#94A3B8]", bg: "bg-[#F8FAFC] border-[#E2E8F0]" };
     if (type === "product") return { Icon: Box, color: "text-violet-500", bg: "bg-violet-50 border-violet-200/60" };
     if (type === "service") return { Icon: Cpu, color: "text-emerald-500", bg: "bg-emerald-50 border-emerald-200/60" };
-    return { Icon: FileText, color: "text-[#2563EB]", bg: "bg-[#F0F6FF] border-[#2563EB]/20" };
+    return { Icon: FileText, color: "text-brand-primary", bg: "bg-brand-primary/10 border-brand-primary/20" };
   };
 
   return (
@@ -209,7 +211,7 @@ export default function CommandPalette() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.18 }}
-            className="fixed inset-0 bg-[#0A0F1E]/65 backdrop-blur-sm z-[100]"
+            className="fixed inset-0 bg-[#0A0F1E]/65 backdrop-blur-sm z-100"
             onClick={() => setOpen(false)}
           />
 
@@ -219,7 +221,7 @@ export default function CommandPalette() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.97, y: -20 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed top-[14vh] left-1/2 -translate-x-1/2 z-[101] w-full max-w-2xl px-4"
+            className="fixed top-[14vh] left-1/2 -translate-x-1/2 z-101 w-full max-w-2xl px-4"
           >
             <div className="bg-white rounded-3xl shadow-[0_32px_80px_rgba(15,23,42,0.22),0_0_0_1px_rgba(15,23,42,0.05)] overflow-hidden">
               {/* Search bar */}
@@ -277,7 +279,7 @@ export default function CommandPalette() {
                                     <Icon size={14} className={color} />
                                   </div>
                                   <div className="flex-1 min-w-0">
-                                    <p className={`text-sm font-semibold leading-none mb-0.5 transition-colors ${isSelected ? "text-[#2563EB]" : "text-[#0F172A]"}`}>
+                                    <p className={`text-sm font-semibold leading-none mb-0.5 transition-colors ${isSelected ? "text-brand-primary" : "text-[#0F172A]"}`}>
                                       {item.label}
                                     </p>
                                     <p className="text-xs text-[#94A3B8] truncate">{item.description}</p>
@@ -288,9 +290,9 @@ export default function CommandPalette() {
                                         initial={{ opacity: 0, scale: 0.8 }}
                                         animate={{ opacity: 1, scale: 1 }}
                                         exit={{ opacity: 0, scale: 0.8 }}
-                                        className="shrink-0 w-6 h-6 rounded-lg bg-[#2563EB]/10 flex items-center justify-center"
+                                        className="shrink-0 w-6 h-6 rounded-lg bg-brand-primary/10 flex items-center justify-center"
                                       >
-                                        <CornerDownLeft size={11} className="text-[#2563EB]" />
+                                        <CornerDownLeft size={11} className="text-brand-primary" />
                                       </motion.div>
                                     )}
                                   </AnimatePresence>

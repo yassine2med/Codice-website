@@ -43,12 +43,12 @@ export default function TrustMarquee() {
     <section className="relative overflow-hidden border-y border-[#E2E8F0] bg-[#F8FAFC] py-20">
       {/* Subtle dot grid */}
       <div className="absolute inset-0 dot-grid opacity-40 pointer-events-none" />
-      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#2563EB]/20 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-brand-primary/20 to-transparent" />
 
       <div className="relative z-10 mx-auto mb-12 max-w-7xl px-6">
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
           <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-[#2563EB]">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-brand-primary">
               Trusted by Washington DC&apos;s Leading Agencies
             </p>
             <h2 className="max-w-3xl text-[clamp(28px,4vw,48px)] font-bold leading-tight tracking-tight text-[#0F172A]">
@@ -59,12 +59,12 @@ export default function TrustMarquee() {
             {featuredSignals.map(({ icon: Icon, label, value }) => (
               <div
                 key={label}
-                className="rounded-2xl border border-[#E2E8F0] bg-white p-5 shadow-[0_2px_8px_rgba(15,23,42,0.05)] hover:border-[#2563EB]/30 hover:shadow-[0_4px_16px_rgba(37,99,235,0.08)] transition-all duration-300"
+                className="rounded-2xl border border-[#E2E8F0] bg-white p-5 shadow-[0_2px_8px_rgba(15,23,42,0.05)] hover:border-brand-primary/30 hover:shadow-[0_4px_16px_rgba(37,99,235,0.08)] transition-all duration-300"
               >
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[#F0F6FF] border border-[#2563EB]/15 text-[#2563EB]">
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[#F0F6FF] border border-brand-primary/15 text-brand-primary">
                   <Icon size={18} />
                 </div>
-                <p className="font-[family-name:var(--font-dm-mono)] text-2xl font-semibold text-[#0F172A]">{value}</p>
+                <p className="font-(family-name:--font-dm-mono) text-2xl font-semibold text-[#0F172A]">{value}</p>
                 <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-[#94A3B8]">
                   {label}
                 </p>
@@ -82,6 +82,8 @@ export default function TrustMarquee() {
           className="space-y-4"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
+          onFocus={() => setHovered(true)}
+          onBlur={() => setHovered(false)}
         >
           <motion.div className="flex w-max items-center gap-4 px-6" animate={firstControls}>
             {firstLoop.map((logo, i) => (
@@ -107,7 +109,7 @@ export default function TrustMarquee() {
 function LogoCard({ logo, index, compact = false }: { logo: string; index: number; compact?: boolean }) {
   return (
     <div
-      className={`group relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white p-5 shadow-[0_2px_8px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-[#2563EB]/30 hover:shadow-[0_8px_24px_rgba(37,99,235,0.10)] ${
+      className={`group relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white p-5 shadow-[0_2px_8px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-brand-primary/30 hover:shadow-[0_8px_24px_rgba(37,99,235,0.10)] ${
         compact ? "h-24 w-44" : "h-28 w-52"
       }`}
     >

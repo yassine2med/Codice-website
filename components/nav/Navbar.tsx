@@ -2,14 +2,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X, Cpu, Globe, Layers, Search } from "lucide-react";
 import { navigation } from "@/data/codice";
 import { motion, AnimatePresence } from "framer-motion";
-import { DropdownNavigation } from "@/components/ui/dorpdown-navigation";
+import { DropdownNavigation } from "@/components/ui/dropdown-navigation";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -42,6 +44,7 @@ export default function Navbar() {
                 className="object-contain"
                 loading="eager"
                 priority
+                sizes="160px"
               />
             </div>
           </Link>
@@ -82,7 +85,7 @@ export default function Navbar() {
               onClick={() => window.dispatchEvent(new Event("codice:open-palette"))}
               className={`flex items-center gap-2 px-3.5 py-2 rounded-xl border transition-all duration-300 ${
                 scrolled
-                  ? "border-[#E2E8F0] text-[#94A3B8] hover:border-[#2563EB]/40 hover:text-[#0F172A] bg-white"
+                  ? "border-[#E2E8F0] text-[#94A3B8] hover:border-brand-primary/40 hover:text-[#0F172A] bg-white"
                   : "border-white/20 text-[#94A3B8] hover:border-white/40 hover:text-[#0F172A] bg-white/80"
               }`}
               aria-label="Search"
@@ -93,7 +96,7 @@ export default function Navbar() {
             </button>
             <Link
               href="/contact"
-              className="bg-[#2563EB] text-white text-xs font-bold tracking-widest uppercase px-5 py-2.5 rounded-xl hover:bg-[#1D4ED8] transition-all duration-300 shadow-[0_4px_16px_rgba(37,99,235,0.25)] hover:shadow-[0_6px_24px_rgba(37,99,235,0.35)]"
+              className="bg-brand-primary text-white text-xs font-bold tracking-widest uppercase px-5 py-2.5 rounded-xl hover:bg-brand-accent transition-all duration-300 shadow-[0_4px_16px_rgba(37,99,235,0.25)] hover:shadow-[0_6px_24px_rgba(37,99,235,0.35)]"
             >
               Consultation
             </Link>
@@ -147,7 +150,7 @@ export default function Navbar() {
                   variants={{ hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } }}
                   className="space-y-5"
                 >
-                  <p className="text-[10px] font-bold tracking-[0.4em] text-[#2563EB] uppercase border-b border-[#E2E8F0] pb-3">
+                  <p className="text-[10px] font-bold tracking-[0.4em] text-brand-primary uppercase border-b border-[#E2E8F0] pb-3">
                     {group.title}
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5">
@@ -160,8 +163,9 @@ export default function Navbar() {
                               <Link
                                 key={item.href}
                                 href={item.href}
-                                className="text-xl font-bold text-[#0F172A] hover:text-[#2563EB] transition-colors"
+                                className={`text-xl font-bold transition-colors ${pathname === item.href ? "text-brand-primary" : "text-[#0F172A] hover:text-brand-primary"}`}
                                 onClick={() => setMobileOpen(false)}
+                                aria-current={pathname === item.href ? "page" : undefined}
                               >
                                 {item.label}
                               </Link>
@@ -173,8 +177,9 @@ export default function Navbar() {
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="text-2xl font-bold text-[#0F172A] hover:text-[#2563EB] transition-colors"
+                        className={`text-2xl font-bold transition-colors ${pathname === item.href ? "text-brand-primary" : "text-[#0F172A] hover:text-brand-primary"}`}
                         onClick={() => setMobileOpen(false)}
+                        aria-current={pathname === item.href ? "page" : undefined}
                       >
                         {item.label}
                       </Link>
@@ -185,7 +190,7 @@ export default function Navbar() {
 
               <Link
                 href="/contact"
-                className="bg-[#2563EB] text-white text-center font-bold py-5 rounded-2xl text-lg shadow-[0_8px_32px_rgba(37,99,235,0.25)] mt-6 hover:bg-[#1D4ED8] transition-colors"
+                className="bg-brand-primary text-white text-center font-bold py-5 rounded-2xl text-lg shadow-[0_8px_32px_rgba(37,99,235,0.25)] mt-6 hover:bg-brand-accent transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 Schedule a Briefing

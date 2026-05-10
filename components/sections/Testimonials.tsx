@@ -74,10 +74,11 @@ export default function Testimonials() {
                       alt={item.name}
                       fill
                       className="object-cover"
+                      sizes="220px"
                     />
                   ) : (
                     <div className="w-full h-full bg-[#F0F6FF] flex items-center justify-center">
-                      <span className="text-5xl font-bold text-[#2563EB]">
+                      <span className="text-5xl font-bold text-brand-primary">
                         {item.name[0]}
                       </span>
                     </div>
@@ -87,7 +88,7 @@ export default function Testimonials() {
                   {isActive && (
                     <motion.div
                       layoutId="photoRing"
-                      className="absolute inset-0 rounded-2xl border-2 border-[#2563EB]/50 pointer-events-none shadow-[0_0_32px_rgba(37,99,235,0.18)]"
+                      className="absolute inset-0 rounded-2xl border-2 border-brand-primary/50 pointer-events-none shadow-[0_0_32px_rgba(37,99,235,0.18)]"
                     />
                   )}
                 </motion.div>
@@ -108,7 +109,7 @@ export default function Testimonials() {
               >
                 {/* Word-by-word reveal */}
                 <div className="mb-8">
-                  <span className="text-4xl text-[#2563EB]/20 font-serif leading-none select-none">&ldquo;</span>
+                  <span className="text-4xl text-brand-primary/20 font-serif leading-none select-none">&ldquo;</span>
                   <p className="text-xl md:text-2xl text-[#334155] leading-relaxed font-medium mt-1">
                     {t.quote.split(" ").map((word, i) => (
                       <motion.span
@@ -125,12 +126,12 @@ export default function Testimonials() {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="h-px flex-1 bg-linear-to-r from-[#2563EB]/20 to-transparent" />
+                  <div className="h-px flex-1 bg-linear-to-r from-brand-primary/20 to-transparent" />
                   <div className="text-right">
                     <p className="font-bold text-[#0F172A] text-sm">{t.name}</p>
                     <p className="text-xs text-[#64748B] mt-0.5">
                       {t.title}
-                      <span className="text-[#2563EB] mx-1.5">·</span>
+                      <span className="text-brand-primary mx-1.5">·</span>
                       {t.company}
                     </p>
                   </div>
@@ -142,7 +143,7 @@ export default function Testimonials() {
             <div className="flex items-center gap-4 mt-8">
               <button
                 onClick={() => go(-1)}
-                className="w-10 h-10 rounded-full border border-[#E2E8F0] bg-white hover:border-[#2563EB]/40 hover:shadow-[0_4px_16px_rgba(37,99,235,0.1)] flex items-center justify-center text-[#64748B] hover:text-[#2563EB] transition-all"
+                className="w-10 h-10 rounded-full border border-[#E2E8F0] bg-white hover:border-brand-primary/40 hover:shadow-[0_4px_16px_rgba(37,99,235,0.1)] flex items-center justify-center text-[#64748B] hover:text-brand-primary transition-all"
                 aria-label="Previous"
               >
                 <ChevronLeft size={18} />
@@ -153,7 +154,7 @@ export default function Testimonials() {
                     key={i}
                     onClick={() => { setDirection(i > active ? 1 : -1); setActive(i); }}
                     className={`h-1.5 rounded-full transition-all duration-300 ${
-                      i === active ? "bg-[#2563EB] w-6" : "bg-[#CBD5E1] w-1.5 hover:bg-[#94A3B8]"
+                      i === active ? "bg-brand-primary w-6" : "bg-[#CBD5E1] w-1.5 hover:bg-[#94A3B8]"
                     }`}
                     aria-label={`Testimonial ${i + 1}`}
                   />
@@ -161,7 +162,7 @@ export default function Testimonials() {
               </div>
               <button
                 onClick={() => go(1)}
-                className="w-10 h-10 rounded-full border border-[#E2E8F0] bg-white hover:border-[#2563EB]/40 hover:shadow-[0_4px_16px_rgba(37,99,235,0.1)] flex items-center justify-center text-[#64748B] hover:text-[#2563EB] transition-all"
+                className="w-10 h-10 rounded-full border border-[#E2E8F0] bg-white hover:border-brand-primary/40 hover:shadow-[0_4px_16px_rgba(37,99,235,0.1)] flex items-center justify-center text-[#64748B] hover:text-brand-primary transition-all"
                 aria-label="Next"
               >
                 <ChevronRight size={18} />

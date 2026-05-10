@@ -77,6 +77,8 @@ function GlobeCanvas() {
       ref={canvasRef}
       width={GLOBE_SIZE * 2}
       height={GLOBE_SIZE * 2}
+      role="img"
+      aria-label="Interactive 3D globe showing CODICE's global reach and Washington DC hub"
       style={{ width: "100%", maxWidth: GLOBE_SIZE, height: "auto", aspectRatio: "1 / 1" }}
     />
   );
@@ -92,7 +94,7 @@ const stats = [
 export default function GlobeSection() {
   return (
     <section className="relative bg-[#080D1A] overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#2563EB]/40 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-brand-primary/40 to-transparent" />
 
       {/* Soft ambient glow */}
       <div
@@ -111,7 +113,7 @@ export default function GlobeSection() {
           className="flex flex-col gap-8"
         >
           <div>
-            <div className="inline-flex items-center gap-2 bg-[#2563EB]/10 border border-[#2563EB]/20 px-4 py-2 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 bg-brand-primary/10 border border-brand-primary/20 px-4 py-2 rounded-full mb-6">
               <MapPin size={12} className="text-[#60A5FA]" />
               <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#60A5FA]">Washington DC · The Hub</span>
             </div>
@@ -135,9 +137,9 @@ export default function GlobeSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.15 + i * 0.07, duration: 0.5 }}
-                className="flex items-center gap-3 bg-white/[0.03] border border-white/[0.07] rounded-2xl px-4 py-3.5 hover:border-[#2563EB]/25 transition-colors duration-200"
+                className="flex items-center gap-3 bg-white/3 border border-white/[0.07] rounded-2xl px-4 py-3.5 hover:border-brand-primary/25 transition-colors duration-200"
               >
-                <div className="w-8 h-8 rounded-xl bg-[#2563EB]/15 border border-[#2563EB]/20 flex items-center justify-center shrink-0">
+                <div className="w-8 h-8 rounded-xl bg-brand-primary/15 border border-brand-primary/20 flex items-center justify-center shrink-0">
                   <Icon size={14} className="text-[#60A5FA]" />
                 </div>
                 <div>
@@ -162,7 +164,7 @@ export default function GlobeSection() {
                   key={a}
                   variants={{ hidden: { opacity: 0, scale: 0.85 }, show: { opacity: 1, scale: 1 } }}
                   transition={{ duration: 0.3, ease: "backOut" }}
-                  className="text-[10px] font-bold px-3 py-1.5 rounded-lg border border-white/[0.07] bg-white/[0.03] text-[#475569] hover:text-[#60A5FA] hover:border-[#2563EB]/25 transition-colors duration-150 cursor-default"
+                  className="text-[10px] font-bold px-3 py-1.5 rounded-lg border border-white/[0.07] bg-white/3 text-[#475569] hover:text-[#60A5FA] hover:border-brand-primary/25 transition-colors duration-150 cursor-default"
                 >
                   {a}
                 </motion.span>
@@ -189,7 +191,7 @@ export default function GlobeSection() {
             {/* DC label */}
             <div className="absolute pointer-events-none select-none" style={{ top: "38%", left: "41%" }}>
               <div className="flex items-center gap-1.5">
-                <div className="w-2 h-2 rounded-full bg-[#3B82F6] animate-ping opacity-80" />
+                <div className="w-2 h-2 rounded-full bg-brand-secondary animate-ping opacity-80" />
                 <span className="text-[9px] font-black text-white/90 tracking-widest uppercase px-2 py-0.5 rounded" style={{ backgroundColor: "rgba(10,15,30,0.65)" }}>DC</span>
               </div>
             </div>
@@ -197,7 +199,7 @@ export default function GlobeSection() {
         </motion.div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/[0.05] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/5 to-transparent" />
     </section>
   );
 }

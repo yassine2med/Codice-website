@@ -33,11 +33,11 @@ export default function AnnouncementBanner() {
           animate={{ height: BANNER_H, opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed top-0 left-0 right-0 z-[60] overflow-hidden"
+          className="fixed top-0 left-0 right-0 z-60 overflow-hidden"
         >
           <div className="h-full bg-[#0F172A] flex items-center justify-center gap-2 px-4 sm:px-10 relative">
             {/* Subtle shimmer line */}
-            <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-[#2563EB]/40 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-brand-primary/40 to-transparent" />
 
             <Trophy size={12} className="text-[#F59E0B] shrink-0" />
             <p className="text-[11px] font-semibold text-white/80 leading-none">
@@ -48,7 +48,7 @@ export default function AnnouncementBanner() {
             <Link
               href="/contact"
               onClick={dismiss}
-              className="hidden sm:flex items-center gap-1.5 text-[10px] font-black text-[#60A5FA] hover:text-white border border-[#2563EB]/40 hover:border-[#2563EB]/80 hover:bg-[#2563EB]/10 px-3 py-1.5 rounded-full transition-all whitespace-nowrap"
+              className="hidden sm:flex items-center gap-1.5 text-[10px] font-black text-[#60A5FA] hover:text-white border border-brand-primary/40 hover:border-brand-primary/80 hover:bg-brand-primary/10 px-3 py-1.5 rounded-full transition-all whitespace-nowrap"
             >
               Get Started <ArrowRight size={9} />
             </Link>

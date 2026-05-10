@@ -15,7 +15,7 @@ export default function StatsSection() {
   return (
     <section id="stats" className="py-20 px-6 bg-[#F8FAFC] border-y border-[#E2E8F0]">
       <div className="max-w-6xl mx-auto">
-        <p className="text-center text-[10px] font-bold tracking-[0.3em] uppercase text-[#2563EB] mb-14">
+        <p className="text-center text-[10px] font-bold tracking-[0.3em] uppercase text-brand-primary mb-14">
           By the Numbers
         </p>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-0">
@@ -28,11 +28,14 @@ export default function StatsSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="relative flex flex-col items-center gap-2 text-center px-6"
             >
-              <div className="text-[clamp(44px,7vw,80px)] font-bold text-[#0F172A] font-[family-name:var(--font-dm-mono)] tracking-tighter leading-none relative z-10 tabular-nums">
+              <div
+                className="text-[clamp(44px,7vw,80px)] font-bold text-[#0F172A] font-(family-name:--font-dm-mono) tracking-tighter leading-none relative z-10 tabular-nums"
+                aria-label={`${stat.value}${stat.suffix} ${stat.label}`}
+              >
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </div>
 
-              <span className="text-[11px] font-bold text-[#2563EB] tracking-[0.2em] uppercase relative z-10">
+              <span className="text-[11px] font-bold text-brand-primary tracking-[0.2em] uppercase relative z-10">
                 {stat.label}
               </span>
 
