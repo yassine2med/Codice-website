@@ -84,7 +84,7 @@ const editorialThemes = [
 
 export default function ArticlesPage() {
   return (
-    <main className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
+    <main id="main-content" className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
       <Navbar />
 
       {/* Hero */}

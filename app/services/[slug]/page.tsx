@@ -14,7 +14,7 @@ const SERVICE_PRODUCTS: Record<string, string[]> = {
   "software-development":  ["permione", "fortimind", "cypms", "celercase"],
   "permit-modernization":  ["permione"],
   "data-analytics":        ["celerkost", "celercase", "codicepay"],
-  "cloud-migration":       ["fortimind", "permione"],
+  "cloud-migration":       ["fortimind", "permione", "travo"],
   "it-security":           ["fortimind"],
   "payment-systems":       ["codicepay", "celerkost"],
   "it-consulting":         ["fortimind", "cypms"],
@@ -34,7 +34,7 @@ export default function ServiceDetailPage() {
   const relatedProducts = products.filter((p) => relatedProductSlugs.includes(p.slug));
 
   return (
-    <main className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
+    <main id="main-content" className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
       <Navbar />
 
       {/* Hero */}

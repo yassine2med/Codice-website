@@ -87,7 +87,7 @@ const deliverySignals = [
 
 export default function ClientsPage() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-white text-[#0F172A]">
+    <main id="main-content" className="min-h-screen overflow-x-hidden bg-white text-[#0F172A]">
       <Navbar />
 
       <PageHero

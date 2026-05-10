@@ -56,7 +56,7 @@ export default function NewsPage() {
   const [lightbox, setLightbox] = useState<{ images: string[]; index: number; alt: string } | null>(null);
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-white text-[#0F172A]">
+    <main id="main-content" className="min-h-screen overflow-x-hidden bg-white text-[#0F172A]">
       <Lightbox images={lightbox?.images ?? []} initialIndex={lightbox?.index ?? 0} isOpen={!!lightbox} onClose={() => setLightbox(null)} altText={lightbox?.alt} />
       <Navbar />
 
@@ -164,11 +164,12 @@ export default function NewsPage() {
           <div className="grid gap-6 lg:grid-cols-3">
             {sourceItems.slice(1).map((item) => {
               const external = item.slug.startsWith("http");
-              const tagMap: Record<string, { label: string; color: string }> = {
-                "Product launch": { label: "Product Launch", color: "bg-violet-50 border-violet-200 text-violet-600" },
-                "CODICE article": { label: "Article", color: "bg-[#F0F6FF] border-[#2563EB]/20 text-[#2563EB]" },
-                "Capability overview": { label: "Capability", color: "bg-emerald-50 border-emerald-200 text-emerald-600" },
+              const tagConfig: Record<string, { label: string; color: string }> = {
+                "Product launch":     { label: "Product Launch", color: "bg-violet-50 border-violet-200 text-violet-600" },
+                "CODICE article":     { label: "Article",        color: "bg-[#F0F6FF] border-[#2563EB]/20 text-[#2563EB]" },
+                "Capability overview":{ label: "Capability",     color: "bg-emerald-50 border-emerald-200 text-emerald-600" },
               };
+              const tag = tagConfig[item.date];
               return (
                 <article key={item.title} className="group flex flex-col rounded-2xl border border-[#E2E8F0] bg-white overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-[#2563EB]/35 hover:shadow-[0_8px_32px_rgba(37,99,235,0.08)]">
                   {item.image && (
@@ -180,6 +181,9 @@ export default function NewsPage() {
                   <div className="flex flex-1 flex-col justify-between p-7">
                     <div>
                       <div className="mb-4 flex items-center gap-2 flex-wrap">
+                        {tag && (
+                          <span className={`px-2.5 py-1 rounded-full border text-[9px] font-black uppercase tracking-widest ${tag.color}`}>{tag.label}</span>
+                        )}
                         <span className="flex items-center gap-1.5 text-[#94A3B8]"><CalendarDays size={11} /><span className="font-[family-name:var(--font-dm-mono)] text-[10px] uppercase tracking-widest">{item.date}</span></span>
                       </div>
                       <h3 className="text-lg font-bold leading-tight text-[#0F172A] group-hover:text-[#2563EB] transition-colors duration-300">{item.title}</h3>

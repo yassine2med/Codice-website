@@ -22,7 +22,7 @@ const stagger = {
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
+    <main id="main-content" className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
       <Navbar />
 
       {/* Hero Section */}

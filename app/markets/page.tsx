@@ -34,7 +34,7 @@ const sectorHighlights = [
 
 export default function MarketsPage() {
   return (
-    <main className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
+    <main id="main-content" className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
       <Navbar />
 
       <PageHero

@@ -34,7 +34,7 @@ export default function AnnouncementBanner() {
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
           className="fixed top-0 left-0 right-0 z-[60] overflow-hidden"
         >
-          <div className="h-full bg-[#0F172A] flex items-center justify-center gap-2.5 px-10 relative">
+          <div className="h-full bg-[#0F172A] flex items-center justify-center gap-2 px-4 sm:px-10 relative">
             {/* Subtle shimmer line */}
             <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-[#2563EB]/40 to-transparent" />
 

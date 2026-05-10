@@ -154,7 +154,7 @@ export default function OurStoryPage() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
 
   return (
-    <main className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
+    <main id="main-content" className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
       <TeamModal isOpen={modalOpen} onClose={() => setModalOpen(false)} member={selectedMember} />
       <Navbar />
 
