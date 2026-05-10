@@ -17,7 +17,7 @@ export default function CaseStudiesPage() {
         subtitle="Real results for real agencies. See how we deliver on the most demanding government requirements."
         bgImage="https://images.unsplash.com/photo-1617581629397-a72507c3de9e?w=1600&q=70"
       />
-      <CaseStudies />
+      <CaseStudies showHeader={false} />
       <StatsSection />
       <CTABanner />
       <Footer />

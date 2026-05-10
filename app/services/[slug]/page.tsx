@@ -23,20 +23,26 @@ export default function ServiceDetailPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-28 sm:pt-40 pb-14 sm:pb-20 overflow-hidden bg-white border-b border-[#E2E8F0]">
-        <div className="absolute inset-0 dot-grid opacity-50" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#2563EB]/5 blur-[100px] rounded-full pointer-events-none" />
+      <section className="relative pt-28 sm:pt-48 pb-20 sm:pb-32 overflow-hidden bg-[#0A0F1E]">
+        <div className="absolute inset-0 pointer-events-none">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=60" alt="" className="w-full h-full object-cover object-center" style={{ opacity: 0.07 }} />
+          <div className="absolute inset-0 bg-linear-to-b from-[#0A0F1E]/30 via-transparent to-[#0A0F1E]/70" />
+        </div>
+        <div className="absolute inset-0 dot-grid opacity-[0.15] pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#2563EB]/40 to-transparent" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] pointer-events-none" style={{ background: "radial-gradient(ellipse, rgba(37,99,235,0.12) 0%, transparent 65%)" }} />
+
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
             className="flex flex-col items-center text-center max-w-4xl mx-auto"
           >
-            <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] bg-[#F0F6FF] border border-[#2563EB]/20 px-3 py-1.5 rounded-full mb-8">
+            <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.3em] uppercase text-[#60A5FA] bg-[#2563EB]/10 border border-[#2563EB]/25 px-4 py-2 rounded-full mb-8">
               Service Detail
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight tracking-tight text-[#0F172A]">
+            <h1 className="text-[clamp(36px,7vw,80px)] font-extrabold tracking-tighter leading-[0.95] mb-8 text-white">
               {service!.title}
             </h1>
-            <p className="text-[#64748B] text-lg md:text-xl leading-relaxed max-w-2xl">
+            <p className="text-xl text-[#94A3B8] leading-relaxed max-w-2xl">
               {service!.description}
             </p>
           </motion.div>
