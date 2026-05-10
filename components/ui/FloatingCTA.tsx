@@ -13,14 +13,18 @@ export default function FloatingCTA() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleMenu = (e: any) => setMenuOpen(e.detail);
+    const handleMenu = (event: Event) => {
+      if (event instanceof CustomEvent && typeof event.detail === "boolean") {
+        setMenuOpen(event.detail);
+      }
+    };
     window.addEventListener("codice:mobile-menu", handleMenu);
     return () => window.removeEventListener("codice:mobile-menu", handleMenu);
   }, []);
 
   useEffect(() => {
     if (pathname === "/contact") return;
-    const onScroll = () => setVisible(window.scrollY > window.innerHeight * 0.85);
+    const onScroll = () => setVisible(window.scrollY > 200);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [pathname]);

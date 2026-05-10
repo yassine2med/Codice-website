@@ -78,10 +78,10 @@ export default function RootLayout({
         <ScrollProgress />
         <CursorGlow />
         <ScrollToTop />
+        {children}
         <FloatingCTA />
         <ChatWidget />
         <CommandPalette />
-        {children}
       </body>
     </html>
   );

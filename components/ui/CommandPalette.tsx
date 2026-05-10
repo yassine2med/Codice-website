@@ -62,15 +62,13 @@ export default function CommandPalette() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(0);
-  const [recent, setRecent] = useState<Result[]>([]);
+  const [recent, setRecent] = useState<Result[]>(() =>
+    typeof window === "undefined" ? [] : getRecent()
+  );
   const router = useRouter();
   const pathname = usePathname();
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setRecent(getRecent());
-  }, []);
 
   const resetPalette = useCallback(() => {
     setRecent(getRecent());

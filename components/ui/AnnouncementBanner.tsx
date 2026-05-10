@@ -8,16 +8,17 @@ import Link from "next/link";
 const DISMISS_KEY = "codice-banner-v2";
 const BANNER_H = "44px";
 
+function getInitialVisibility() {
+  if (typeof window === "undefined") return false;
+  return !localStorage.getItem(DISMISS_KEY);
+}
+
 export default function AnnouncementBanner() {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(getInitialVisibility);
 
   useEffect(() => {
-    const isDismissed = localStorage.getItem(DISMISS_KEY);
-    if (!isDismissed) {
-      setVisible(true);
-      document.documentElement.style.setProperty("--banner-h", BANNER_H);
-    }
-  }, []);
+    document.documentElement.style.setProperty("--banner-h", visible ? BANNER_H : "0px");
+  }, [visible]);
 
   const dismiss = () => {
     setVisible(false);

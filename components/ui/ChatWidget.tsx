@@ -71,7 +71,11 @@ export default function ChatWidget() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleMenu = (e: any) => setMenuOpen(e.detail);
+    const handleMenu = (event: Event) => {
+      if (event instanceof CustomEvent && typeof event.detail === "boolean") {
+        setMenuOpen(event.detail);
+      }
+    };
     window.addEventListener("codice:mobile-menu", handleMenu);
     return () => window.removeEventListener("codice:mobile-menu", handleMenu);
   }, []);
@@ -280,6 +284,24 @@ export default function ChatWidget() {
           </motion.span>
         )}
       </motion.button>
+
+      {/* Initial Greeting Bubble */}
+      <AnimatePresence>
+        {!hasOpened && !open && !menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: 20, scale: 0.8 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: 20, scale: 0.8 }}
+            transition={{ delay: 3, duration: 0.5, ease: "easeOut" }}
+            className="fixed bottom-24 right-6 z-50 bg-white border border-[#E2E8F0] shadow-[0_8px_32px_rgba(15,23,42,0.12)] rounded-2xl p-4 w-[200px] pointer-events-none"
+          >
+            <div className="absolute bottom-[-6px] right-6 w-3 h-3 bg-white border-r border-b border-[#E2E8F0] rotate-45" />
+            <p className="text-xs font-semibold text-[#0F172A] leading-relaxed">
+              Hi! I&apos;m your CODICE guide. Have a question about our platforms?
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
