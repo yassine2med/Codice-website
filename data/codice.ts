@@ -332,11 +332,9 @@ export const products = [
       'Secure data handling for sensitive minor information'
     ],
     techStack: ['Program Mgmt', 'Reporting Engine', 'Secure Forms', 'Next.js'],
-    logo: '/images/products/cypms.png',
+    logo: '',
     showcaseImages: [
       '/images/products/showcase/cypms.png',
-      '/images/products/showcase/cypms_2.png',
-      '/images/products/showcase/cypms_3.png'
     ],
     isNew: false,
     slug: 'cypms',

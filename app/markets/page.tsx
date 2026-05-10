@@ -40,7 +40,7 @@ export default function MarketsPage() {
       <PageHero
         label="Government Sectors"
         title="Impact Across Every Sector."
-        subtitle="From local DC agencies to federal departments — CODICE delivers technology across nine critical areas of government."
+        subtitle="From local DC agencies to federal departments — CODICE delivers technology across every critical area of government."
         bgImage="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&q=70"
       />
 

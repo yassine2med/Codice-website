@@ -63,12 +63,12 @@ const articles = [
     points: ["Government partnerships", "DC economic ecosystem", "Community engagement"],
   },
   {
-    title: "CFO Emmash Sudusignhe Welcomed by Sri Lanka Engineering Team",
+    title: "CFO Emmash Sudusinghe Welcomed by Sri Lanka Engineering Team",
     source: "CODICE news",
     href: "https://codicetech.com/a-quick-throwback-to-our-cfo/",
     icon: Users,
     summary:
-      "A look at the international reach of CODICE's operations as CFO Emmash Sudusignhe visits the Colombo engineering and finance center — strengthening the global team behind DC's government technology.",
+      "A look at the international reach of CODICE's operations as CFO Emmash Sudusinghe visits the Colombo engineering and finance center — strengthening the global team behind DC's government technology.",
     points: ["International engineering hub", "Sri Lanka operations", "Global talent strategy"],
   },
 ];
