@@ -12,13 +12,14 @@ import NewsEvents from "@/components/sections/NewsEvents";
 import CTABanner from "@/components/sections/CTABanner";
 import BeamSection from "@/components/sections/BeamSection";
 import GlobeSection from "@/components/sections/GlobeSection";
+import TrustStrip from "@/components/sections/TrustStrip";
 import Footer from "@/components/sections/Footer";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white overflow-x-hidden">
+    <main id="main-content" className="min-h-screen bg-white overflow-x-hidden">
       <Navbar />
 
       {/* ─── 1. WHO ARE YOU? ─────────────────────────────────────────────── */}
@@ -27,6 +28,7 @@ export default function Home() {
       {/* ─── 2. WHY TRUST YOU? ──────────────────────────────────────────── */}
       <TrustMarquee />
       <StatsSection />
+      <TrustStrip />
 
       {/* ─── 2.5. DC HUB GLOBE ───────────────────────────────────────────── */}
       <GlobeSection />

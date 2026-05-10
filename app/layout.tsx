@@ -69,6 +69,10 @@ export default function RootLayout({
       className={`${inter.variable} ${dmMono.variable} ${outfit.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-white text-[#0F172A] antialiased font-[family-name:var(--font-inter)] selection:bg-[#2563EB]/15 selection:text-[#1D4ED8]">
+        {/* Skip to main content — accessibility */}
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-[#2563EB] focus:text-white focus:font-bold focus:px-6 focus:py-3 focus:rounded-xl focus:shadow-lg focus:outline-none">
+          Skip to main content
+        </a>
         <AnnouncementBanner />
         <ScrollProgress />
         <CursorGlow />

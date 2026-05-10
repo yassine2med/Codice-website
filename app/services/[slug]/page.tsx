@@ -1,13 +1,25 @@
 "use client";
 
 import { useParams, notFound } from "next/navigation";
-import { services } from "@/data/codice";
+import { services, products } from "@/data/codice";
 import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/sections/Footer";
 import CTABanner from "@/components/sections/CTABanner";
 import { motion } from "framer-motion";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight, Box } from "lucide-react";
 import Link from "next/link";
+
+// Map service slug → related product slugs
+const SERVICE_PRODUCTS: Record<string, string[]> = {
+  "software-development":  ["permione", "fortimind", "cypms", "celercase"],
+  "permit-modernization":  ["permione"],
+  "data-analytics":        ["celerkost", "celercase", "codicepay"],
+  "cloud-migration":       ["fortimind", "permione"],
+  "it-security":           ["fortimind"],
+  "payment-systems":       ["codicepay", "celerkost"],
+  "it-consulting":         ["fortimind", "cypms"],
+  "workforce-management":  ["cypms", "celercase", "celermed"],
+};
 
 export default function ServiceDetailPage() {
   const params = useParams();
@@ -17,6 +29,9 @@ export default function ServiceDetailPage() {
 
   const containerVariants = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1 } } };
   const itemVariants = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } } };
+
+  const relatedProductSlugs = SERVICE_PRODUCTS[service!.slug] ?? [];
+  const relatedProducts = products.filter((p) => relatedProductSlugs.includes(p.slug));
 
   return (
     <main className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
@@ -87,6 +102,34 @@ export default function ServiceDetailPage() {
                 ))}
               </div>
             </motion.div>
+
+            {/* Related Products — cross-link */}
+            {relatedProducts.length > 0 && (
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                <h3 className="text-2xl font-bold mb-2 text-[#0F172A] flex items-center gap-3">
+                  <span className="w-8 h-1 bg-[#2563EB] rounded-full" /> Powered by These Platforms
+                </h3>
+                <p className="text-[#64748B] text-sm mb-6">CODICE proprietary products built specifically for this service area.</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {relatedProducts.map((p) => (
+                    <Link
+                      key={p.id}
+                      href={`/products/${p.slug}`}
+                      className="group flex items-center gap-4 p-5 rounded-2xl border border-[#E2E8F0] bg-white hover:border-[#2563EB]/40 hover:shadow-[0_4px_20px_rgba(37,99,235,0.08)] transition-all duration-300"
+                    >
+                      <div className="w-10 h-10 rounded-xl bg-[#F0F6FF] border border-[#2563EB]/15 flex items-center justify-center shrink-0 group-hover:bg-[#2563EB] group-hover:border-[#2563EB] transition-all duration-300">
+                        <Box size={16} className="text-[#2563EB] group-hover:text-white transition-colors duration-300" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-xs font-bold uppercase tracking-widest text-[#2563EB] mb-0.5">{p.category}</p>
+                        <p className="text-sm font-bold text-[#0F172A] group-hover:text-[#2563EB] transition-colors truncate">{p.name}</p>
+                      </div>
+                      <ArrowRight size={15} className="text-[#CBD5E1] group-hover:text-[#2563EB] group-hover:translate-x-0.5 transition-all shrink-0" />
+                    </Link>
+                  ))}
+                </div>
+              </motion.div>
+            )}
           </div>
 
           <div className="lg:col-span-5">
@@ -104,7 +147,7 @@ export default function ServiceDetailPage() {
               <div className="p-8 rounded-3xl bg-white border border-[#E2E8F0] shadow-[0_2px_12px_rgba(15,23,42,0.05)]">
                 <h4 className="text-[10px] font-bold text-[#94A3B8] uppercase tracking-widest mb-6">Related Services</h4>
                 <div className="space-y-2">
-                  {services.filter(s => s.id !== service!.id).slice(0, 3).map((s) => (
+                  {services.filter(s => s.id !== service!.id).slice(0, 4).map((s) => (
                     <Link key={s.id} href={`/services/${s.slug}`}
                       className="flex items-center justify-between group p-3 rounded-xl hover:bg-[#F8FAFC] transition-colors"
                     >

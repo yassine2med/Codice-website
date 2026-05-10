@@ -129,9 +129,46 @@ export default function NewsPage() {
             </h2>
           </div>
 
+          {/* Featured first article */}
+          {sourceItems[0] && (() => {
+            const item = sourceItems[0];
+            const external = item.slug.startsWith("http");
+            return (
+              <Link href={item.slug} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined}
+                className="group relative flex flex-col md:flex-row rounded-3xl border border-[#E2E8F0] bg-white overflow-hidden mb-6 transition-all duration-300 hover:border-[#2563EB]/35 hover:shadow-[0_12px_48px_rgba(37,99,235,0.10)] hover:-translate-y-0.5"
+              >
+                {item.image && (
+                  <div className="relative md:w-2/5 h-56 md:h-auto shrink-0 overflow-hidden">
+                    <Image src={item.image} alt={item.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105 grayscale-[15%] group-hover:grayscale-0" sizes="(max-width: 768px) 100vw, 40vw" />
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent to-white/10" />
+                  </div>
+                )}
+                <div className="flex flex-col justify-between p-8 md:p-10 flex-1">
+                  <div>
+                    <div className="flex items-center gap-3 mb-5">
+                      <span className="px-3 py-1 rounded-full bg-[#2563EB] text-white text-[9px] font-black tracking-widest uppercase">Featured</span>
+                      <span className="flex items-center gap-1.5 text-[#94A3B8] text-xs font-medium"><CalendarDays size={11} />{item.date}</span>
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] leading-tight mb-4 group-hover:text-[#2563EB] transition-colors duration-300">{item.title}</h3>
+                    <p className="text-[#64748B] leading-relaxed">{item.excerpt}</p>
+                  </div>
+                  <div className="mt-6 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-[#2563EB] group-hover:text-[#1D4ED8]">
+                    Read Full Story <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            );
+          })()}
+
+          {/* Remaining articles */}
           <div className="grid gap-6 lg:grid-cols-3">
-            {sourceItems.map((item) => {
+            {sourceItems.slice(1).map((item) => {
               const external = item.slug.startsWith("http");
+              const tagMap: Record<string, { label: string; color: string }> = {
+                "Product launch": { label: "Product Launch", color: "bg-violet-50 border-violet-200 text-violet-600" },
+                "CODICE article": { label: "Article", color: "bg-[#F0F6FF] border-[#2563EB]/20 text-[#2563EB]" },
+                "Capability overview": { label: "Capability", color: "bg-emerald-50 border-emerald-200 text-emerald-600" },
+              };
               return (
                 <article key={item.title} className="group flex flex-col rounded-2xl border border-[#E2E8F0] bg-white overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-[#2563EB]/35 hover:shadow-[0_8px_32px_rgba(37,99,235,0.08)]">
                   {item.image && (
@@ -142,9 +179,8 @@ export default function NewsPage() {
                   )}
                   <div className="flex flex-1 flex-col justify-between p-7">
                     <div>
-                      <div className="mb-4 flex items-center gap-2 text-[#94A3B8]">
-                        <CalendarDays size={13} />
-                        <p className="font-[family-name:var(--font-dm-mono)] text-xs uppercase tracking-widest">{item.date}</p>
+                      <div className="mb-4 flex items-center gap-2 flex-wrap">
+                        <span className="flex items-center gap-1.5 text-[#94A3B8]"><CalendarDays size={11} /><span className="font-[family-name:var(--font-dm-mono)] text-[10px] uppercase tracking-widest">{item.date}</span></span>
                       </div>
                       <h3 className="text-lg font-bold leading-tight text-[#0F172A] group-hover:text-[#2563EB] transition-colors duration-300">{item.title}</h3>
                       <p className="mt-3 text-sm leading-relaxed text-[#64748B]">{item.excerpt}</p>

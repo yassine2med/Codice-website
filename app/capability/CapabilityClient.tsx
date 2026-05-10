@@ -6,7 +6,7 @@ import Footer from "@/components/sections/Footer";
 import CTABanner from "@/components/sections/CTABanner";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { company } from "@/data/codice";
-import { ArrowRight, Award, CheckCircle2, FileText, ShieldCheck } from "lucide-react";
+import { ArrowRight, Award, CheckCircle2, FileText, ShieldCheck, Printer } from "lucide-react";
 import Link from "next/link";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
 
@@ -86,6 +86,12 @@ export default function CapabilityClient() {
               >
                 Procurement Briefing <ArrowRight size={18} />
               </Link>
+              <button
+                onClick={() => window.print()}
+                className="inline-flex items-center justify-center gap-3 border border-white/10 hover:border-white/25 text-[#94A3B8] hover:text-white font-bold px-10 py-5 rounded-2xl text-base transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <Printer size={18} /> Print / Save PDF
+              </button>
             </div>
           </motion.div>
         </div>

@@ -216,9 +216,10 @@ export default function OurStoryPage() {
 
       {/* ── 2. FOUNDING STORY ────────────────────────────────────────────────── */}
       <section className="py-28 px-6 border-t border-[#E2E8F0] relative overflow-hidden">
-        {/* Subtle DC aerial tint behind content */}
+        {/* DC streetscape background */}
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=1600&q=50" alt="" className="w-full h-full object-cover object-center" style={{ opacity: 0.03 }} />
+          <img src="https://images.unsplash.com/photo-1617581629397-a72507c3de9e?w=1600&q=60" alt="" className="w-full h-full object-cover object-center" style={{ opacity: 0.055 }} />
+          <div className="absolute inset-0 bg-linear-to-r from-white/95 via-white/80 to-white/95" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div variants={stagger(0.12)} initial="hidden" whileInView="show" viewport={{ once: true }}>
