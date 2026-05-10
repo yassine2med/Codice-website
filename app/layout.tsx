@@ -5,6 +5,7 @@ import CursorGlow from "@/components/ui/CursorGlow";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import FloatingCTA from "@/components/ui/FloatingCTA";
+import ChatWidget from "@/components/ui/ChatWidget";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -70,6 +71,7 @@ export default function RootLayout({
         <CursorGlow />
         <ScrollToTop />
         <FloatingCTA />
+        <ChatWidget />
         {children}
       </body>
     </html>

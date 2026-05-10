@@ -11,16 +11,14 @@ export default function FloatingCTA() {
   const [dismissed, setDismissed] = useState(false);
   const pathname = usePathname();
 
-  // Don't show on contact page — redundant
-  if (pathname === "/contact") return null;
-
   useEffect(() => {
+    if (pathname === "/contact") return;
     const onScroll = () => setVisible(window.scrollY > window.innerHeight * 0.85);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [pathname]);
 
-  if (dismissed) return null;
+  if (pathname === "/contact" || dismissed) return null;
 
   return (
     <AnimatePresence>
