@@ -10,6 +10,7 @@ import Link from "next/link";
 import ProductMockup from "@/components/ui/ProductMockup";
 import TiltCard from "@/components/ui/TiltCard";
 import { useState } from "react";
+import Image from "next/image";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24, filter: "blur(4px)" },
@@ -45,7 +46,14 @@ export default function ProductsPage() {
       {/* Hero */}
       <section className="relative pt-28 sm:pt-40 pb-16 sm:pb-24 overflow-hidden bg-[#0A0F1E]">
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=60" alt="" className="w-full h-full object-cover object-center" style={{ opacity: 0.07 }} />
+          <Image
+            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=60"
+            alt=""
+            fill
+            className="object-cover object-center"
+            style={{ opacity: 0.07 }}
+            sizes="100vw"
+          />
           <div className="absolute inset-0 bg-linear-to-b from-[#0A0F1E]/30 via-transparent to-[#0A0F1E]/70" />
         </div>
         <div className="absolute inset-0 dot-grid opacity-[0.15] pointer-events-none" />

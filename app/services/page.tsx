@@ -29,11 +29,13 @@ export default function ServicesPage() {
       <section className="relative pt-28 sm:pt-48 pb-20 sm:pb-32 overflow-hidden bg-[#0A0F1E]">
         {/* Background photo */}
         <div className="absolute inset-0 pointer-events-none">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=60"
             alt=""
-            className="w-full h-full object-cover object-center"
+            fill
+            className="object-cover object-center"
             style={{ opacity: 0.07 }}
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-linear-to-b from-[#0A0F1E]/20 via-transparent to-[#0A0F1E]/50" />
         </div>

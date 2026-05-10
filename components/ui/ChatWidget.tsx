@@ -67,7 +67,14 @@ export default function ChatWidget() {
   const [hasOpened, setHasOpened] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [answered, setAnswered] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMenu = (e: any) => setMenuOpen(e.detail);
+    window.addEventListener("codice:mobile-menu", handleMenu);
+    return () => window.removeEventListener("codice:mobile-menu", handleMenu);
+  }, []);
 
   const handleOpen = () => {
     setOpen(true);
@@ -92,6 +99,8 @@ export default function ChatWidget() {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages]);
+
+  if (menuOpen) return null;
 
   return (
     <>

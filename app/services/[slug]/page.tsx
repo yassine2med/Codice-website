@@ -8,6 +8,7 @@ import CTABanner from "@/components/sections/CTABanner";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight, Box } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 // Map service slug → related product slugs
 const SERVICE_PRODUCTS: Record<string, string[]> = {
@@ -40,7 +41,14 @@ export default function ServiceDetailPage() {
       {/* Hero */}
       <section className="relative pt-28 sm:pt-48 pb-20 sm:pb-32 overflow-hidden bg-[#0A0F1E]">
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=60" alt="" className="w-full h-full object-cover object-center" style={{ opacity: 0.07 }} />
+          <Image
+            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=60"
+            alt=""
+            fill
+            className="object-cover object-center"
+            style={{ opacity: 0.07 }}
+            sizes="100vw"
+          />
           <div className="absolute inset-0 bg-linear-to-b from-[#0A0F1E]/30 via-transparent to-[#0A0F1E]/70" />
         </div>
         <div className="absolute inset-0 dot-grid opacity-[0.15] pointer-events-none" />

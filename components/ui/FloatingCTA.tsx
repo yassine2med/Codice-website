@@ -8,8 +8,14 @@ import { usePathname } from "next/navigation";
 
 export default function FloatingCTA() {
   const [visible, setVisible] = useState(false);
-  const [dismissed, setDismissed] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleMenu = (e: any) => setMenuOpen(e.detail);
+    window.addEventListener("codice:mobile-menu", handleMenu);
+    return () => window.removeEventListener("codice:mobile-menu", handleMenu);
+  }, []);
 
   useEffect(() => {
     if (pathname === "/contact") return;
@@ -18,7 +24,7 @@ export default function FloatingCTA() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [pathname]);
 
-  if (pathname === "/contact" || dismissed) return null;
+  if (pathname === "/contact" || dismissed || menuOpen) return null;
 
   return (
     <AnimatePresence>

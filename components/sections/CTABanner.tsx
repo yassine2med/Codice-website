@@ -70,7 +70,7 @@ export default function CTABanner() {
           <div>
             <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.3em] uppercase text-[#60A5FA] bg-[#2563EB]/12 border border-[#2563EB]/25 px-4 py-2 rounded-full">
               <span className="w-1.5 h-1.5 rounded-full bg-[#60A5FA] animate-pulse" />
-              Washington DC's Premier Gov-Tech Partner
+              Washington DC&apos;s Premier Gov-Tech Partner
             </span>
           </div>
 

@@ -8,6 +8,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { company } from "@/data/codice";
 import { ArrowRight, Award, CheckCircle2, FileText, ShieldCheck, Printer } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
 
 const naicsCodes = [
@@ -41,13 +42,20 @@ const differentiators = [
 
 export default function CapabilityClient() {
   return (
-    <main className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
+    <main id="main-content" className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
       <Navbar />
 
       {/* Hero Section */}
       <section className="relative pt-28 sm:pt-48 pb-20 sm:pb-32 overflow-hidden bg-[#0A0F1E]">
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&q=60" alt="" className="w-full h-full object-cover object-center" style={{ opacity: 0.07 }} />
+          <Image
+            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&q=60"
+            alt=""
+            fill
+            className="object-cover object-center"
+            style={{ opacity: 0.07 }}
+            sizes="100vw"
+          />
           <div className="absolute inset-0 bg-linear-to-b from-[#0A0F1E]/30 via-transparent to-[#0A0F1E]/70" />
         </div>
         <div className="absolute inset-0 dot-grid opacity-[0.15] pointer-events-none" />

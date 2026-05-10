@@ -32,7 +32,9 @@ const DEFAULT_CONFIG: COBEOptions = {
   ],
 };
 
-export default function Globe({ className = "", config = {} }: GlobeProps) {
+const EMPTY_CONFIG: Partial<COBEOptions> = {};
+
+export default function Globe({ className = "", config = EMPTY_CONFIG }: GlobeProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointerRef = useRef<{ down: boolean; x: number }>({ down: false, x: 0 });
   const phiRef = useRef(config.phi ?? DEFAULT_CONFIG.phi);
@@ -107,7 +109,7 @@ export default function Globe({ className = "", config = {} }: GlobeProps) {
       window.removeEventListener("pointermove", onPointerMove);
       window.removeEventListener("pointerup", onPointerUp);
     };
-  }, []);
+  }, [config]);
 
   return (
     <div className={`absolute inset-0 w-full h-full ${className}`}>

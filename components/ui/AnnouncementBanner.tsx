@@ -12,10 +12,11 @@ export default function AnnouncementBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const dismissed = localStorage.getItem(DISMISS_KEY);
-    const show = !dismissed;
-    setVisible(show);
-    document.documentElement.style.setProperty("--banner-h", show ? BANNER_H : "0px");
+    const isDismissed = localStorage.getItem(DISMISS_KEY);
+    if (!isDismissed) {
+      setVisible(true);
+      document.documentElement.style.setProperty("--banner-h", BANNER_H);
+    }
   }, []);
 
   const dismiss = () => {

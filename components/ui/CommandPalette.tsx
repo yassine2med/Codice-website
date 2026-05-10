@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, CornerDownLeft, FileText, Box, Cpu, Clock } from "lucide-react";
 import { useRouter, usePathname } from "next/navigation";
@@ -62,11 +62,24 @@ export default function CommandPalette() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(0);
-  const [recent, setRecent] = useState<Result[]>([]);
+  const [recent, setRecent] = useState<Result[]>(() =>
+    typeof window === "undefined" ? [] : getRecent()
+  );
   const router = useRouter();
   const pathname = usePathname();
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
+
+  const resetPalette = useCallback(() => {
+    setRecent(getRecent());
+    setQuery("");
+    setSelected(0);
+  }, []);
+
+  const openPalette = useCallback(() => {
+    resetPalette();
+    setOpen(true);
+  }, [resetPalette]);
 
   // Track current page in recent
   useEffect(() => {
@@ -78,56 +91,65 @@ export default function CommandPalette() {
     const down = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
-        setOpen((o) => !o);
+        setOpen((currentOpen) => {
+          if (!currentOpen) resetPalette();
+          return !currentOpen;
+        });
       }
       if (e.key === "Escape") setOpen(false);
     };
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
-  }, []);
+  }, [resetPalette]);
 
   // Navbar button fires this event
   useEffect(() => {
-    const handler = () => { setOpen(true); };
+    const handler = () => {
+      openPalette();
+    };
     window.addEventListener("codice:open-palette", handler);
     return () => window.removeEventListener("codice:open-palette", handler);
-  }, []);
+  }, [openPalette]);
 
-  // Focus + load recents on open
+  // Focus on open
   useEffect(() => {
     if (open) {
-      setRecent(getRecent());
-      setQuery("");
-      setSelected(0);
       setTimeout(() => inputRef.current?.focus(), 40);
     }
   }, [open]);
 
   // Build results
-  const filtered: Result[] = query.trim()
-    ? allItems.filter(
-        (r) =>
-          r.label.toLowerCase().includes(query.toLowerCase()) ||
-          r.description.toLowerCase().includes(query.toLowerCase())
-      )
-    : [];
+  const { flat, grouped, showDefault } = useMemo(() => {
+    const trimmedQuery = query.trim().toLowerCase();
+    const filtered: Result[] = trimmedQuery
+      ? allItems.filter(
+          (r) =>
+            r.label.toLowerCase().includes(trimmedQuery) ||
+            r.description.toLowerCase().includes(trimmedQuery)
+        )
+      : [];
 
-  const showDefault = !query.trim();
-  const grouped = showDefault
-    ? {
-        recent: recent.slice(0, 4),
-        page: pages.map((p) => ({ ...p, type: "page" as const })).slice(0, 8),
-        product: [] as Result[],
-        service: [] as Result[],
-      }
-    : {
-        recent: [] as Result[],
-        page: filtered.filter((r) => r.type === "page"),
-        product: filtered.filter((r) => r.type === "product"),
-        service: filtered.filter((r) => r.type === "service"),
-      };
+    const isDefault = !trimmedQuery;
+    const groups = isDefault
+      ? {
+          recent: recent.slice(0, 4),
+          page: pages.map((p) => ({ ...p, type: "page" as const })).slice(0, 8),
+          product: [] as Result[],
+          service: [] as Result[],
+        }
+      : {
+          recent: [] as Result[],
+          page: filtered.filter((r) => r.type === "page"),
+          product: filtered.filter((r) => r.type === "product"),
+          service: filtered.filter((r) => r.type === "service"),
+        };
 
-  const flat = [...grouped.recent, ...grouped.page, ...grouped.product, ...grouped.service];
+    return {
+      flat: [...groups.recent, ...groups.page, ...groups.product, ...groups.service],
+      grouped: groups,
+      showDefault: isDefault,
+    };
+  }, [query, recent]);
 
   const navigate = useCallback(
     (href: string) => {
@@ -137,6 +159,12 @@ export default function CommandPalette() {
     },
     [router]
   );
+
+  const scrollToItem = useCallback((idx: number) => {
+    if (!listRef.current) return;
+    const el = listRef.current.querySelectorAll("[data-result]")[idx] as HTMLElement;
+    el?.scrollIntoView({ block: "nearest" });
+  }, []);
 
   // Keyboard navigation
   useEffect(() => {
@@ -162,13 +190,7 @@ export default function CommandPalette() {
     };
     document.addEventListener("keydown", keydown);
     return () => document.removeEventListener("keydown", keydown);
-  }, [open, flat, selected, navigate]);
-
-  const scrollToItem = (idx: number) => {
-    if (!listRef.current) return;
-    const el = listRef.current.querySelectorAll("[data-result]")[idx] as HTMLElement;
-    el?.scrollIntoView({ block: "nearest" });
-  };
+  }, [open, flat, selected, navigate, scrollToItem]);
 
   const typeConfig = (type: string) => {
     if (type === "recent") return { Icon: Clock, color: "text-[#94A3B8]", bg: "bg-[#F8FAFC] border-[#E2E8F0]" };

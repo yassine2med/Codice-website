@@ -624,6 +624,7 @@ export const navigation = [
       { label: 'Our Story', href: '/our-story', description: 'Our 16-year journey in government tech.' },
       { label: 'Clients & Partners', href: '/clients', description: '17 DC agencies and industry partners we serve.' },
       { label: 'Case Studies', href: '/case-studies', description: 'Real outcomes for real government agencies.' },
+      { label: 'Careers', href: '/careers', description: 'Join a team building technology for public service.' },
     ]
   },
   {
@@ -653,12 +654,16 @@ export const navigation = [
     ]
   },
   {
+    title: 'EVENTS',
+    items: [
+      { label: 'News & Events', href: '/news', description: 'Latest updates, launches, and milestones.' },
+    ]
+  },
+  {
     title: 'CONNECT',
     items: [
       { label: 'Articles', href: '/articles', description: 'Deep dives into tech trends and solutions.' },
       { label: 'Capability Statement', href: '/capability', description: 'Certifications, NAICS codes, and past performance.' },
-      { label: 'Careers', href: '/careers', description: 'Join a team building technology for public service.' },
-      { label: 'News & Events', href: '/news', description: 'Latest updates, launches, and milestones.' },
       { label: 'Contact', href: '/contact', description: 'Get in touch for your next project.' },
     ]
   }

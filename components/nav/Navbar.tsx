@@ -108,8 +108,13 @@ export default function Navbar() {
                   ? "bg-white border-[#E2E8F0] text-[#0F172A]"
                   : "bg-white/10 border-white/20 text-[#0F172A]"
             }`}
-            onClick={() => setMobileOpen(!mobileOpen)}
+            onClick={() => {
+              const newState = !mobileOpen;
+              setMobileOpen(newState);
+              window.dispatchEvent(new CustomEvent("codice:mobile-menu", { detail: newState }));
+            }}
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
           >
             {mobileOpen ? <X size={18} /> : <Menu size={18} />}
           </button>

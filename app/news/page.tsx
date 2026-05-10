@@ -64,7 +64,14 @@ export default function NewsPage() {
       <section className="relative overflow-hidden pt-28 sm:pt-40 pb-16 sm:pb-24 bg-[#0A0F1E]">
         {/* Background photo */}
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=1600&q=60" alt="" className="w-full h-full object-cover object-center" style={{ opacity: 0.07 }} />
+          <Image
+            src="https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=1600&q=60"
+            alt=""
+            fill
+            className="object-cover object-center"
+            style={{ opacity: 0.07 }}
+            sizes="100vw"
+          />
           <div className="absolute inset-0 bg-linear-to-b from-[#0A0F1E]/30 via-transparent to-[#0A0F1E]/60" />
         </div>
         <div className="absolute inset-0 dot-grid opacity-[0.15] pointer-events-none" />

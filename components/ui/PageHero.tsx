@@ -15,7 +15,6 @@ export function PageHero({
   title,
   subtitle,
   label,
-  gradient = "from-[#2563EB]/20 to-transparent",
   bgImage,
 }: PageHeroProps) {
   return (
