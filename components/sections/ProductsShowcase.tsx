@@ -153,6 +153,7 @@ export default function ProductsShowcase() {
                         alt={product.name}
                         fill
                         className="object-cover group-hover/stage:scale-[1.03] transition-transform duration-700"
+                        onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0'; }}
                       />
                     </motion.div>
                   </AnimatePresence>

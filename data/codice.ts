@@ -266,8 +266,8 @@ export const products = [
     logo: '/images/products/codicepay.png',
     showcaseImages: [
       '/images/products/showcase/codicepay.png',
-      '/images/products/showcase/codicepay_2.png',
-      '/images/products/showcase/codicepay_3.png'
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80',
+      'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1600&q=80',
     ],
     isNew: false,
     slug: 'codicepay',
@@ -289,8 +289,8 @@ export const products = [
     logo: '/images/products/celermed.png',
     showcaseImages: [
       '/images/products/showcase/celermed.png',
-      '/images/products/showcase/celermed_2.png',
-      '/images/products/showcase/celermed_3.png'
+      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=80',
+      'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=1600&q=80',
     ],
     isNew: false,
     slug: 'celermed',
@@ -312,8 +312,8 @@ export const products = [
     logo: '/images/products/celercase.png',
     showcaseImages: [
       '/images/products/showcase/celercase.png',
-      '/images/products/showcase/celercase_2.png',
-      '/images/products/showcase/celercase_3.png'
+      'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=1600&q=80',
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&q=80',
     ],
     isNew: false,
     slug: 'celercase',
@@ -335,6 +335,8 @@ export const products = [
     logo: '',
     showcaseImages: [
       '/images/products/showcase/cypms.png',
+      'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80',
+      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80',
     ],
     isNew: false,
     slug: 'cypms',
