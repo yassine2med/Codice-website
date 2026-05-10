@@ -52,9 +52,15 @@ export default function CaseStudies({ showHeader = true }: { showHeader?: boolea
                     {study.client}
                   </h3>
 
-                  <div className="text-4xl md:text-5xl font-black tracking-tighter mb-8 bg-linear-to-br from-[#0F172A] via-[#1E40AF] to-[#2563EB] bg-clip-text text-transparent opacity-90 group-hover:opacity-100 transition-opacity font-[family-name:var(--font-dm-mono)]">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.4, filter: "blur(10px)" }}
+                    whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.65, delay: 0.1, ease: [0.34, 1.56, 0.64, 1] }}
+                    className="text-4xl md:text-5xl font-black tracking-tighter mb-8 bg-linear-to-br from-[#0F172A] via-[#1E40AF] to-[#2563EB] bg-clip-text text-transparent group-hover:opacity-100 transition-opacity font-[family-name:var(--font-dm-mono)]"
+                  >
                     {study.metric}
-                  </div>
+                  </motion.div>
 
                   <div className="mt-auto space-y-5 pt-6 border-t border-[#F1F5F9] group-hover:border-[#2563EB]/10 transition-colors">
                     <div className="space-y-1.5">

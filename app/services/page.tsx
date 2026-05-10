@@ -120,20 +120,35 @@ export default function ServicesPage() {
                   ))}
                 </div>
 
-                <div className="flex items-center justify-between pt-7 border-t border-[#F1F5F9] mt-auto">
-                  <div className="flex gap-2">
-                    {service.techStack?.slice(0, 2).map((tech) => (
-                      <span key={tech} className="px-3 py-1 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] text-[10px] font-bold tracking-widest uppercase text-[#94A3B8]">
-                        {tech}
-                      </span>
-                    ))}
+                <div className="pt-7 border-t border-[#F1F5F9] mt-auto">
+                  {/* Tech stack — shows 2 by default, reveals all on hover */}
+                  <div className="flex flex-wrap gap-2 mb-5 overflow-hidden" style={{ maxHeight: "2rem" }}>
+                    <div className="flex flex-wrap gap-2 transition-all duration-500 group-hover:gap-2">
+                      {service.techStack?.slice(0, 2).map((tech) => (
+                        <span key={tech} className="px-3 py-1 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] text-[10px] font-bold tracking-widest uppercase text-[#94A3B8] group-hover:bg-[#F0F6FF] group-hover:border-[#2563EB]/20 group-hover:text-[#2563EB] transition-all duration-300">
+                          {tech}
+                        </span>
+                      ))}
+                      {(service.techStack?.length ?? 0) > 2 && (
+                        <span className="px-3 py-1 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] text-[10px] font-bold tracking-widest uppercase text-[#CBD5E1] group-hover:hidden transition-all">
+                          +{(service.techStack?.length ?? 0) - 2} more
+                        </span>
+                      )}
+                      {service.techStack?.slice(2).map((tech) => (
+                        <span key={tech} className="hidden group-hover:inline-flex px-3 py-1 rounded-lg bg-[#F0F6FF] border border-[#2563EB]/20 text-[10px] font-bold tracking-widest uppercase text-[#2563EB] transition-all duration-300">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="inline-flex items-center gap-2 text-[#2563EB] font-bold text-xs tracking-[0.2em] uppercase group/link"
-                  >
-                    View Details <ArrowRight size={14} className="group-hover/link:translate-x-1.5 transition-transform" />
-                  </Link>
+                  <div className="flex justify-end">
+                    <Link
+                      href={`/services/${service.slug}`}
+                      className="inline-flex items-center gap-2 text-[#2563EB] font-bold text-xs tracking-[0.2em] uppercase group/link"
+                    >
+                      View Details <ArrowRight size={14} className="group-hover/link:translate-x-1.5 transition-transform" />
+                    </Link>
+                  </div>
                 </div>
               </motion.div>
             ))}

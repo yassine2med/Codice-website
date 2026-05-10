@@ -31,6 +31,10 @@ import {
 
 const trustedLogos = clientLogos;
 
+// Build a logo-path → agency-name lookup from the full clients dataset
+const logoNameMap: Record<string, string> = {};
+clients.forEach((cat) => cat.items.forEach((c) => { logoNameMap[c.logo] = c.name; }));
+
 const proofPoints = [
   {
     icon: ShieldCheck,
@@ -179,19 +183,28 @@ export default function ClientsPage() {
                       "right-[34%] top-[67%]",
                     ];
 
+                    const agencyName = logoNameMap[logo];
                     return (
                       <div
                         key={logo}
-                        className={`absolute ${positions[index]} flex h-16 w-24 items-center justify-center rounded-xl border border-[#E2E8F0] bg-white p-3 shadow-[0_4px_16px_rgba(15,23,42,0.08)] animate-float`}
+                        className={`absolute ${positions[index]} group/logo flex h-16 w-24 items-center justify-center rounded-xl border border-[#E2E8F0] bg-white p-3 shadow-[0_4px_16px_rgba(15,23,42,0.08)] animate-float hover:border-[#2563EB]/40 hover:shadow-[0_8px_24px_rgba(37,99,235,0.12)] transition-all duration-300 cursor-default`}
                         style={{ animationDelay: `${index * 0.4}s` }}
                       >
                         <Image
                           src={logo}
-                          alt={`CODICE client constellation logo ${index + 1}`}
+                          alt={agencyName ?? `CODICE client ${index + 1}`}
                           width={240}
                           height={120}
                           className="max-h-10 w-auto max-w-full object-contain"
                         />
+                        {agencyName && (
+                          <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 opacity-0 group-hover/logo:opacity-100 transition-opacity duration-200 pointer-events-none z-30">
+                            <div className="bg-[#0F172A] text-white text-[9px] font-bold tracking-wide px-3 py-1.5 rounded-lg whitespace-nowrap shadow-lg">
+                              {agencyName}
+                            </div>
+                            <div className="w-2 h-2 bg-[#0F172A] rotate-45 mx-auto -mt-1" />
+                          </div>
+                        )}
                       </div>
                     );
                   })}

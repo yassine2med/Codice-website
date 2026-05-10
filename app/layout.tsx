@@ -3,6 +3,8 @@ import { Inter, DM_Mono, Outfit } from "next/font/google";
 import "./globals.css";
 import CursorGlow from "@/components/ui/CursorGlow";
 import ScrollProgress from "@/components/ui/ScrollProgress";
+import ScrollToTop from "@/components/ui/ScrollToTop";
+import FloatingCTA from "@/components/ui/FloatingCTA";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -66,6 +68,8 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-white text-[#0F172A] antialiased font-[family-name:var(--font-inter)] selection:bg-[#2563EB]/15 selection:text-[#1D4ED8]">
         <ScrollProgress />
         <CursorGlow />
+        <ScrollToTop />
+        <FloatingCTA />
         {children}
       </body>
     </html>
