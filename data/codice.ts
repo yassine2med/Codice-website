@@ -9,7 +9,7 @@ export const company = {
   revenue: '$6.4M',
   employees: 137,
   linkedinFollowers: 4423,
-  logo: '/images/brand/codice-logo-full.png',
+  logo: '/images/brand/codice-logo-red.png',
   phone: '+1 202-808-9399',
   email: 'info@codicetech.com',
   address: '1101 Vermont Avenue NW Suite 400, Washington, DC 20005',

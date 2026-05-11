@@ -47,7 +47,7 @@ export default function Footer() {
           <div className="md:col-span-4">
             <Link href="/" className="inline-block mb-6">
               <Image
-                src="/images/brand/codice-logo-full.png"
+                src="/images/brand/codice-logo-red.png"
                 alt="CODICE Technology"
                 width={800}
                 height={240}
