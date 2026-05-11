@@ -27,7 +27,7 @@ export default function ProductsShowcase() {
   }, [images]);
 
   return (
-    <section id="products" className="py-24 px-6 max-w-7xl mx-auto relative">
+    <section id="products" className="py-16 px-6 max-w-7xl mx-auto relative">
       <SectionHeader
         label="Proprietary Platforms"
         title="Modernizing Government Operations"

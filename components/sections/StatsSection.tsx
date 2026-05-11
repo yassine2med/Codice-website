@@ -13,9 +13,9 @@ const descriptions: Record<string, string> = {
 
 export default function StatsSection() {
   return (
-    <section id="stats" className="py-20 px-6 bg-[#F8FAFC] border-y border-[#E2E8F0]">
+    <section id="stats" className="py-14 px-6 bg-[#F8FAFC] border-y border-[#E2E8F0]">
       <div className="max-w-6xl mx-auto">
-        <p className="text-center text-[10px] font-bold tracking-[0.3em] uppercase text-brand-primary mb-14">
+        <p className="text-center text-[10px] font-bold tracking-[0.3em] uppercase mb-14" style={{ color: "#EA580C" }}>
           By the Numbers
         </p>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-0">

@@ -17,12 +17,12 @@ const certs = [
 
 export default function TrustStrip() {
   return (
-    <section className="py-16 bg-white border-y border-[#E2E8F0] overflow-hidden">
+    <section className="py-12 bg-white border-y border-[#E2E8F0] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-primary mb-2">Certified & Compliant</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] mb-2" style={{ color: "#EA580C" }}>Certified & Compliant</p>
             <h2 className="text-2xl font-bold text-[#0F172A] leading-tight">
               Every credential government procurement requires.
             </h2>

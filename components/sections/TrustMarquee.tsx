@@ -33,13 +33,13 @@ export default function TrustMarquee() {
   }, [hovered, firstControls, secondControls]);
 
   return (
-    <section className="relative overflow-hidden border-y border-[#E2E8F0] bg-[#F8FAFC] py-20">
+    <section className="relative overflow-hidden border-y border-[#E2E8F0] bg-[#F8FAFC] py-14">
       {/* Subtle dot grid */}
       <div className="absolute inset-0 dot-grid opacity-40 pointer-events-none" />
       <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-brand-primary/20 to-transparent" />
 
       <div className="relative z-10 mx-auto mb-12 max-w-7xl px-6 text-center">
-        <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-brand-primary">
+        <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em]" style={{ color: "#EA580C" }}>
           Trusted by Washington DC&apos;s Leading Agencies
         </p>
         <h2 className="mx-auto max-w-3xl text-[clamp(28px,4vw,48px)] font-bold leading-tight tracking-tight text-[#0F172A]">

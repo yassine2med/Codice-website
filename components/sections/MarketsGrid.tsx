@@ -23,7 +23,7 @@ const item = {
 
 export default function MarketsGrid() {
   return (
-    <section id="markets" className="py-24 px-6 max-w-7xl mx-auto relative">
+    <section id="markets" className="py-16 px-6 max-w-7xl mx-auto relative">
       <SectionHeader
         label="Sectors We Serve"
         title="Built for Every Corner of Government"
@@ -37,7 +37,7 @@ export default function MarketsGrid() {
         viewport={{ once: true }}
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10"
       >
-        {markets.map((market) => {
+        {markets.slice(0, 9).map((market) => {
           const Icon = iconMap[market.icon] || Building2;
           return (
             <motion.div key={market.id} variants={item} className="group">

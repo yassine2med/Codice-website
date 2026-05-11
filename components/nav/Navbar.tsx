@@ -30,7 +30,7 @@ export default function Navbar() {
 
   useEffect(() => {
     if (!scrolled) return;
-    const id = setInterval(() => setLogoIdx(i => (i + 1) % 4), 600);
+    const id = setInterval(() => setLogoIdx(i => (i + 1) % 4), 1000);
     return () => clearInterval(id);
   }, [scrolled]);
 
@@ -135,48 +135,75 @@ export default function Navbar() {
         </div>
       </motion.nav>
 
-      {/* ── Scrolled: centered logo pill ── */}
+      {/* ── Scrolled: floating logo pill ── */}
       <AnimatePresence>
         {scrolled && (
           <motion.div
             key="logo-pill"
-            initial={{ opacity: 0, y: -40, scale: 0.85 }}
+            initial={{ opacity: 0, y: -44, scale: 0.82 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -30, scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 340, damping: 28 }}
+            exit={{ opacity: 0, y: -32, scale: 0.88 }}
+            transition={{ type: "spring", stiffness: 380, damping: 30 }}
             className="fixed left-0 right-0 z-[70] flex justify-center pointer-events-none"
-            style={{ top: "calc(var(--banner-h, 0px) + 16px)" }}
+            style={{ top: "calc(var(--banner-h, 0px) + 14px)" }}
           >
-            {/* Animated gradient border wrapper */}
+
+            {/* Soft ambient glow that matches logo color */}
             <motion.div
-              className="relative pointer-events-auto rounded-xl p-[2px]"
-              animate={{ background: `linear-gradient(90deg, ${pillBgs[logoIdx].border}, ${pillBgs[logoIdx].border})` }}
-              transition={{ duration: 0.3 }}
-              style={{ backgroundSize: "300% 100%", animation: "gradientShift 2.4s linear infinite" }}
-            >
-              <style>{`@keyframes gradientShift { 0% { background-position: 0% 50% } 100% { background-position: 300% 50% } }`}</style>
+              animate={{ background: `radial-gradient(ellipse, ${pillBgs[logoIdx].border.split(",")[0].trim()}55 0%, transparent 70%)` }}
+              transition={{ duration: 0.8 }}
+              style={{
+                position: "absolute",
+                width: "260px", height: "60px",
+                filter: "blur(18px)",
+                pointerEvents: "none",
+                top: "50%", left: "50%",
+                transform: "translate(-50%,-50%)",
+              }}
+            />
+
+            {/* Pill */}
             <motion.button
               onClick={scrollToTop}
               whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-              className="flex items-center px-4 py-1.5 rounded-[10px] cursor-pointer"
-              animate={{ background: pillBgs[logoIdx].bg, boxShadow: pillBgs[logoIdx].glow }}
-              transition={{ duration: 0.3 }}
+              whileTap={{ scale: 0.96 }}
               aria-label="Back to top"
+              className="pointer-events-auto relative overflow-hidden"
+              style={{
+                borderRadius: "9999px",
+                padding: "9px 32px",
+                cursor: "pointer",
+                border: "1px solid rgba(255,255,255,0.10)",
+              }}
+              animate={{
+                background: pillBgs[logoIdx].bg,
+                boxShadow: pillBgs[logoIdx].glow + ", inset 0 1px 0 rgba(255,255,255,0.07)",
+              }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="relative" style={{ height: "30px", width: "150px", transform: "scale(3.5) translateY(1px)", transformOrigin: "center" }}>
-                <Image
-                  key={cyclingLogos[logoIdx]}
-                  src={cyclingLogos[logoIdx]}
-                  alt="CODICE Technology"
-                  fill
-                  className="object-contain"
-                  sizes="200px"
-                  priority
-                />
+              {/* Subtle top-edge highlight */}
+              <div style={{
+                position: "absolute", top: 0, left: "15%", right: "15%", height: "1px",
+                background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent)",
+                pointerEvents: "none",
+              }} />
+
+              {/* Logo crossfade */}
+              <div style={{ position: "relative", height: "30px", width: "150px", transform: "scale(3.5) translateY(1px)", transformOrigin: "center" }}>
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={logoIdx}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                    style={{ position: "absolute", inset: 0 }}
+                  >
+                    <Image src={cyclingLogos[logoIdx]} alt="CODICE Technology" fill className="object-contain" sizes="200px" priority />
+                  </motion.div>
+                </AnimatePresence>
               </div>
             </motion.button>
-            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

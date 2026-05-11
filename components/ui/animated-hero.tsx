@@ -254,8 +254,8 @@ function Hero() {
             <motion.div variants={itemVariants} className="flex flex-col gap-3">
               {/* Accent rule */}
               <div className="flex items-center gap-3">
-                <div className="w-8 h-[2px] bg-brand-primary rounded-full" />
-                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-brand-primary">Washington DC · Est. 2009</span>
+                <div className="w-8 h-[2px] rounded-full" style={{ backgroundColor: "#F97316" }} />
+                <span className="text-[10px] font-bold tracking-[0.3em] uppercase" style={{ color: "#EA580C" }}>Washington DC · Est. 2009</span>
               </div>
 
               <h1 className="text-[clamp(40px,5.5vw,76px)] font-extrabold tracking-tighter leading-[0.90] text-[#0F172A]">

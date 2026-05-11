@@ -19,7 +19,7 @@ const card = {
 
 export default function NewsEvents() {
   return (
-    <section id="news" className="py-20 px-6 max-w-7xl mx-auto">
+    <section id="news" className="py-16 px-6 max-w-7xl mx-auto">
       <SectionHeader
         label="News & Insights"
         title="Latest from CODICE"

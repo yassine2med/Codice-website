@@ -92,7 +92,7 @@ export default function BeamSection() {
   const beamDelays = [0, 0.8, 1.6, 2.4];
 
   return (
-    <section className="relative py-28 px-6 overflow-hidden" style={{ background: "linear-gradient(135deg, #FFF7ED 0%, #FFF9F5 40%, #F8FAFC 100%)" }}>
+    <section className="relative py-16 px-6 overflow-hidden" style={{ background: "linear-gradient(135deg, #FFF7ED 0%, #FFF9F5 40%, #F8FAFC 100%)" }}>
       {/* Orange border accents */}
       <div className="absolute inset-x-0 top-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(249,115,22,0.3), transparent)" }} />
       <div className="absolute inset-x-0 bottom-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(249,115,22,0.15), transparent)" }} />
@@ -108,7 +108,7 @@ export default function BeamSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
           <span className="text-[10px] font-bold tracking-[0.3em] uppercase inline-block mb-6 px-4 py-2 rounded-full border" style={{ color: "#EA580C", backgroundColor: "rgba(254,215,170,0.4)", borderColor: "rgba(249,115,22,0.25)" }}>
             How It Works

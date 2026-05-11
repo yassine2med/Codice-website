@@ -199,10 +199,10 @@ function NormalCard({ service, delay = 0 }: { service: CardProps["service"]; del
 
 export default function ServicesBento() {
   return (
-    <section id="services" className="py-24 px-6 max-w-7xl mx-auto">
+    <section id="services" className="py-16 px-6 max-w-7xl mx-auto">
       {/* Section header */}
       <motion.div {...fadeUp(0)} className="text-center mb-14">
-        <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-brand-primary mb-4">Our Expertise</p>
+        <p className="text-[10px] font-bold tracking-[0.3em] uppercase mb-4" style={{ color: "#EA580C" }}>Our Expertise</p>
         <h2 className="text-[clamp(28px,4vw,52px)] font-bold text-[#0F172A] tracking-tight">
           Government Technology Services
         </h2>

@@ -8,12 +8,6 @@ import Globe from "@/components/ui/Globe";
 import { BorderBeam } from "@/components/ui/BorderBeam";
 import MagneticButton from "@/components/ui/MagneticButton";
 
-const stats = [
-  { val: "16+", label: "Years" },
-  { val: "12+", label: "Agencies" },
-  { val: "100%", label: "Retention" },
-  { val: "99.9%", label: "Uptime" },
-];
 
 const badges = [
   { icon: Shield, text: "FedRAMP Aligned" },
@@ -104,19 +98,6 @@ export default function CTABanner() {
             ))}
           </div>
 
-          {/* Stats row */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-white/8">
-            {stats.map((s) => (
-              <div key={s.label} className="flex flex-col gap-1">
-                <span className="text-2xl font-bold text-white tracking-tight font-(family-name:--font-dm-mono)">
-                  {s.val}
-                </span>
-                <span className="text-[9px] font-bold uppercase tracking-widest text-[#60A5FA]/70">
-                  {s.label}
-                </span>
-              </div>
-            ))}
-          </div>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4">
