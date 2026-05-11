@@ -36,7 +36,7 @@ export default function Navbar() {
         >
           {/* Logo */}
           <Link href="/" className="flex items-center relative z-50 group">
-            <div className="relative h-11 w-48 md:h-12 md:w-56 transition-transform duration-500 group-hover:scale-105">
+            <div className="relative h-16 w-72 md:h-20 md:w-96 transition-transform duration-500 group-hover:scale-105">
               <Image
                 src="/images/brand/codice-logo-full.png"
                 alt="CODICE Technology"
@@ -44,7 +44,7 @@ export default function Navbar() {
                 className="object-contain"
                 loading="eager"
                 priority
-                sizes="160px"
+                sizes="400px"
               />
             </div>
           </Link>

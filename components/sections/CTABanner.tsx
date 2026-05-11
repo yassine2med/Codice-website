@@ -34,6 +34,7 @@ export default function CTABanner() {
           className="object-cover object-center"
           sizes="100vw"
           priority={false}
+          unoptimized
         />
         {/* Dark overlay — keeps text readable, gives the dark premium feel */}
         <div className="absolute inset-0 bg-[#060E1A]/88" />

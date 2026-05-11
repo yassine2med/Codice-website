@@ -30,7 +30,7 @@ export default function Footer() {
     <footer className="relative bg-[#0A0F1E] overflow-hidden">
 
       {/* Top accent line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#2563EB]/50 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-brand-primary/50 to-transparent" />
 
       {/* Subtle background glow — very soft */}
       <div className="absolute bottom-0 left-[-10%] w-[600px] h-[400px] rounded-full pointer-events-none"
@@ -41,7 +41,7 @@ export default function Footer() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-20 pb-10">
 
         {/* Main grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/[0.06]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/6">
 
           {/* Brand — wider column */}
           <div className="md:col-span-4">
@@ -49,9 +49,9 @@ export default function Footer() {
               <Image
                 src="/images/brand/codice-logo-full.png"
                 alt="CODICE Technology"
-                width={400}
-                height={120}
-                className="h-10 w-auto object-contain"
+                width={600}
+                height={180}
+                className="h-24 w-auto object-contain"
               />
             </Link>
             <p className="text-[#94A3B8] text-sm leading-relaxed mb-8 max-w-xs">
@@ -67,7 +67,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={name}
-                  className="w-9 h-9 rounded-xl border border-white/[0.08] bg-white/[0.04] flex items-center justify-center text-[#64748B] hover:text-white hover:border-[#2563EB]/50 hover:bg-[#2563EB]/10 transition-all duration-200"
+                  className="w-9 h-9 rounded-xl border border-white/8 bg-white/4 flex items-center justify-center text-[#64748B] hover:text-white hover:border-brand-primary/50 hover:bg-brand-primary/10 transition-all duration-200"
                 >
                   {svg}
                 </a>
@@ -77,7 +77,7 @@ export default function Footer() {
 
           {/* Services */}
           <div className="md:col-span-2">
-            <p className="text-[9px] font-bold tracking-[0.3em] uppercase text-[#2563EB] mb-6">Services</p>
+            <p className="text-[9px] font-bold tracking-[0.3em] uppercase text-brand-primary mb-6">Services</p>
             <ul className="flex flex-col gap-3">
               {services.map((s) => (
                 <li key={s.id}>
@@ -91,7 +91,7 @@ export default function Footer() {
 
           {/* Platforms */}
           <div className="md:col-span-3">
-            <p className="text-[9px] font-bold tracking-[0.3em] uppercase text-[#2563EB] mb-6">Platforms</p>
+            <p className="text-[9px] font-bold tracking-[0.3em] uppercase text-brand-primary mb-6">Platforms</p>
             <ul className="flex flex-col gap-3">
               {products.map((p) => (
                 <li key={p.id}>
@@ -105,7 +105,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="md:col-span-3">
-            <p className="text-[9px] font-bold tracking-[0.3em] uppercase text-[#2563EB] mb-6">Contact</p>
+            <p className="text-[9px] font-bold tracking-[0.3em] uppercase text-brand-primary mb-6">Contact</p>
             <div className="flex flex-col gap-6">
               {company.offices.map((office) => (
                 <div key={office.city + office.address}>
@@ -115,7 +115,7 @@ export default function Footer() {
                   <p className="text-sm text-[#64748B] leading-relaxed">{office.address}</p>
                 </div>
               ))}
-              <div className="flex flex-col gap-2 pt-2 border-t border-white/[0.06]">
+              <div className="flex flex-col gap-2 pt-2 border-t border-white/6">
                 <a href={`mailto:${company.email}`} className="text-sm text-[#64748B] hover:text-white transition-colors">
                   {company.email}
                 </a>
@@ -136,8 +136,8 @@ export default function Footer() {
             <a href="#" className="hover:text-[#64748B] transition-colors">Privacy</a>
             <a href="#" className="hover:text-[#64748B] transition-colors">Terms</a>
             <Link href="/contact" className="hover:text-[#64748B] transition-colors">Accessibility</Link>
-            <span className="text-[#2563EB]/60">·</span>
-            <span className="text-[#2563EB] font-bold">DC Small Business of the Year 2025</span>
+            <span className="text-brand-primary/60">·</span>
+            <span className="text-brand-primary font-bold">DC Small Business of the Year 2025</span>
           </div>
         </div>
 

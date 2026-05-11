@@ -91,7 +91,7 @@ export default function ArticlesPage() {
       <section className="relative pt-28 sm:pt-40 pb-16 sm:pb-24 overflow-hidden bg-[#0A0F1E]">
         {/* Background photo */}
         <div className="absolute inset-0 pointer-events-none">
-          <Image src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1600&q=60" alt="" fill className="object-cover object-center" style={{ opacity: 0.07 }} />
+          <Image src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1600&q=60" alt="" fill className="object-cover object-center" style={{ opacity: 0.07 }} unoptimized />
           <div className="absolute inset-0 bg-linear-to-b from-[#0A0F1E]/30 via-transparent to-[#0A0F1E]/60" />
         </div>
         <div className="absolute inset-0 dot-grid opacity-[0.15] pointer-events-none" />

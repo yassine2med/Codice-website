@@ -118,6 +118,7 @@ export default function CareersPage() {
             className="object-cover object-center"
             style={{ opacity: 0.07 }}
             sizes="100vw"
+            unoptimized
           />
           <div className="absolute inset-0 bg-linear-to-b from-[#0A0F1E]/20 via-transparent to-[#0A0F1E]/60" />
         </div>

@@ -1,28 +1,41 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useSyncExternalStore } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowRight, Trophy } from "lucide-react";
 import Link from "next/link";
 
 const DISMISS_KEY = "codice-banner-v2";
+const BANNER_EVENT = "codice:banner-change";
 const BANNER_H = "44px";
 
-function getInitialVisibility() {
-  if (typeof window === "undefined") return false;
+function getBannerSnapshot() {
   return !localStorage.getItem(DISMISS_KEY);
 }
 
+function getServerSnapshot() {
+  return false;
+}
+
+function subscribeToBanner(callback: () => void) {
+  window.addEventListener("storage", callback);
+  window.addEventListener(BANNER_EVENT, callback);
+  return () => {
+    window.removeEventListener("storage", callback);
+    window.removeEventListener(BANNER_EVENT, callback);
+  };
+}
+
 export default function AnnouncementBanner() {
-  const [visible, setVisible] = useState(getInitialVisibility);
+  const visible = useSyncExternalStore(subscribeToBanner, getBannerSnapshot, getServerSnapshot);
 
   useEffect(() => {
     document.documentElement.style.setProperty("--banner-h", visible ? BANNER_H : "0px");
   }, [visible]);
 
   const dismiss = () => {
-    setVisible(false);
     localStorage.setItem(DISMISS_KEY, "1");
+    window.dispatchEvent(new Event(BANNER_EVENT));
     document.documentElement.style.setProperty("--banner-h", "0px");
   };
 

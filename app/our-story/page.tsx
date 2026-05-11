@@ -169,6 +169,7 @@ export default function OurStoryPage() {
             className="object-cover object-center"
             style={{ opacity: 0.08 }}
             sizes="100vw"
+            unoptimized
           />
           <div className="absolute inset-0 bg-linear-to-b from-[#0A0F1E]/40 via-transparent to-[#0A0F1E]/70" />
         </div>
@@ -232,6 +233,7 @@ export default function OurStoryPage() {
             className="object-cover object-center"
             style={{ opacity: 0.055 }}
             sizes="100vw"
+            unoptimized
           />
           <div className="absolute inset-0 bg-linear-to-r from-white/95 via-white/80 to-white/95" />
         </div>

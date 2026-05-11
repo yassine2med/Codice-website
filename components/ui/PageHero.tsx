@@ -31,6 +31,7 @@ export function PageHero({
             style={{ opacity: 0.08 }}
             sizes="100vw"
             priority
+            unoptimized={bgImage.startsWith("http")}
           />
           <div className="absolute inset-0 bg-linear-to-b from-[#0A0F1E]/30 via-transparent to-[#0A0F1E]/60" />
         </div>

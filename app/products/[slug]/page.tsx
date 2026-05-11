@@ -79,6 +79,7 @@ export default function ProductDetailPage() {
                     alt={product!.name}
                     fill
                     className="object-cover"
+                    unoptimized={product!.showcaseImages[imageIndex].startsWith("http")}
                     onError={(e) => { (e.target as HTMLImageElement).parentElement!.style.display = 'none'; }}
                   />
                 </motion.div>

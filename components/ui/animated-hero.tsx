@@ -60,8 +60,8 @@ function MissionDashboard() {
       className="relative w-full max-w-[560px] ml-auto"
     >
       {/* Ambient glow behind panel */}
-      <div className="absolute -inset-10 bg-[#2563EB]/8 blur-[80px] rounded-[80px] pointer-events-none animate-drift-slow" />
-      <div className="absolute -inset-6 bg-[#60A5FA]/4 blur-[40px] rounded-[60px] pointer-events-none" />
+      <div className="absolute -inset-10 bg-brand-primary/8 blur-[80px] rounded-[80px] pointer-events-none animate-drift-slow" />
+      <div className="absolute -inset-6 bg-[#60A5FA]/4 blur-2xl rounded-[60px] pointer-events-none" />
 
       <div className="relative rounded-[28px] bg-white overflow-hidden" style={{ border: "1px solid #E2E8F0", boxShadow: "0 32px 80px rgba(15,23,42,0.12), 0 4px 24px rgba(37,99,235,0.08), inset 0 0 0 1px rgba(37,99,235,0.06)" }}>
 
@@ -147,7 +147,7 @@ function MissionDashboard() {
         {/* Footer strip */}
         <div className="px-4 pb-4">
           <div className="flex items-center gap-2 bg-[#F8FAFC] border border-[#F1F5F9] rounded-xl px-4 py-2.5">
-            <Zap size={10} className="text-[#2563EB] shrink-0" />
+            <Zap size={10} className="text-brand-primary shrink-0" />
             <span className="text-[9px] font-semibold text-[#64748B] tracking-wide">
               12+ DC agencies · FedRAMP aligned · 99.9% SLA · HIPAA compliant
             </span>
@@ -178,7 +178,7 @@ function MissionDashboard() {
         transition={{ delay: 1.4, duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
         className="hidden sm:flex absolute -bottom-5 -left-5 bg-[#0F172A] border border-[#1E293B] shadow-[0_8px_32px_rgba(0,0,0,0.25)] rounded-2xl px-4 py-2.5 items-center gap-2.5 z-20"
       >
-        <div className="w-7 h-7 rounded-full bg-[#2563EB]/15 border border-[#2563EB]/25 flex items-center justify-center">
+        <div className="w-7 h-7 rounded-full bg-brand-primary/15 border border-brand-primary/25 flex items-center justify-center">
           <Award size={13} className="text-[#60A5FA]" />
         </div>
         <div>
@@ -212,6 +212,7 @@ function Hero() {
           style={{ opacity: 0.06 }}
           sizes="100vw"
           priority
+          unoptimized
         />
         {/* Photo fade mask — white at bottom so it blends */}
         <div className="absolute inset-0 bg-linear-to-b from-white/20 via-transparent to-white/40" />
@@ -232,15 +233,15 @@ function Hero() {
 
       {/* ── Layer 4: Subtle corner rings ── */}
       <div className="absolute top-0 right-0 w-[420px] h-[420px] pointer-events-none overflow-hidden opacity-30">
-        <div className="absolute top-[-80px] right-[-80px] w-[340px] h-[340px] border border-[#2563EB]/10 rounded-full" />
-        <div className="absolute top-[-30px] right-[-30px] w-[200px] h-[200px] border border-[#2563EB]/6 rounded-full" />
+        <div className="absolute top-[-80px] right-[-80px] w-[340px] h-[340px] border border-brand-primary/10 rounded-full" />
+        <div className="absolute top-[-30px] right-[-30px] w-[200px] h-[200px] border border-brand-primary/6 rounded-full" />
       </div>
 
       {/* ── Bottom rule ── */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#E2E8F0] to-transparent" />
 
       {/* ── Content ── */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-32 pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-48 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">
 
           {/* ── Left: copy ── */}
@@ -259,7 +260,7 @@ function Hero() {
                 </div>
                 <div className="w-px h-3 bg-[#E2E8F0]" />
                 <div className="flex items-center gap-1.5">
-                  <Shield size={10} className="text-[#2563EB]" />
+                  <Shield size={10} className="text-brand-primary" />
                   <span className="text-[10px] font-bold tracking-[0.16em] uppercase text-[#475569]">GSA Schedule Holder</span>
                 </div>
               </div>
@@ -269,8 +270,8 @@ function Hero() {
             <motion.div variants={itemVariants} className="flex flex-col gap-3">
               {/* Accent rule */}
               <div className="flex items-center gap-3">
-                <div className="w-8 h-[2px] bg-[#2563EB] rounded-full" />
-                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#2563EB]">Washington DC · Est. 2009</span>
+                <div className="w-8 h-[2px] bg-brand-primary rounded-full" />
+                <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-brand-primary">Washington DC · Est. 2009</span>
               </div>
 
               <h1 className="text-[clamp(40px,5.5vw,76px)] font-extrabold tracking-tighter leading-[0.90] text-[#0F172A]">
@@ -278,7 +279,7 @@ function Hero() {
                   initial={{ opacity: 0, y: 12, filter: "blur(4px)" }}
                   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   transition={{ delay: 0.3, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-                  className="inline font-[family-name:var(--font-dm-mono)] text-[#2563EB]"
+                  className="inline font-(family-name:--font-dm-mono) text-brand-primary"
                 >
                   Modernizing
                 </motion.span>{" "}
@@ -289,7 +290,7 @@ function Hero() {
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ delay: 1.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className="absolute -bottom-1 left-0 right-0 h-[3px] bg-linear-to-r from-[#2563EB] to-[#60A5FA] rounded-full origin-left"
+                    className="absolute -bottom-1 left-0 right-0 h-[3px] bg-linear-to-r from-brand-primary to-[#60A5FA] rounded-full origin-left"
                   />
                 </span>{" "}
                 at the Speed of Mission.
@@ -308,7 +309,7 @@ function Hero() {
                       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                       exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
                       transition={{ duration: 0.4, ease: "easeInOut" }}
-                      className="absolute font-bold text-[#2563EB]"
+                      className="absolute font-bold text-brand-primary"
                     >
                       {words[wordIndex]}
                     </motion.span>
@@ -328,7 +329,7 @@ function Hero() {
               <MagneticButton strength={0.28}>
                 <Link
                   href="/contact"
-                  className="group relative inline-flex items-center justify-center gap-2.5 bg-[#2563EB] text-white font-bold text-base px-8 py-4 rounded-xl transition-all duration-300 shadow-[0_8px_32px_rgba(37,99,235,0.30)] hover:shadow-[0_12px_48px_rgba(37,99,235,0.45)] hover:-translate-y-0.5 overflow-hidden"
+                  className="group relative inline-flex items-center justify-center gap-2.5 bg-brand-primary text-white font-bold text-base px-8 py-4 rounded-xl transition-all duration-300 shadow-[0_8px_32px_rgba(37,99,235,0.30)] hover:shadow-[0_12px_48px_rgba(37,99,235,0.45)] hover:-translate-y-0.5 overflow-hidden"
                 >
                   {/* Shimmer sweep */}
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-linear-to-r from-transparent via-white/15 to-transparent" />
@@ -339,10 +340,10 @@ function Hero() {
               <MagneticButton strength={0.22}>
                 <Link
                   href="/services"
-                  className="group inline-flex items-center justify-center gap-2.5 bg-white border border-[#E2E8F0] hover:border-[#2563EB]/35 text-[#0F172A] font-bold text-base px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-[0_4px_20px_rgba(37,99,235,0.10)] hover:-translate-y-0.5"
+                  className="group inline-flex items-center justify-center gap-2.5 bg-white border border-[#E2E8F0] hover:border-brand-primary/35 text-[#0F172A] font-bold text-base px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-[0_4px_20px_rgba(37,99,235,0.10)] hover:-translate-y-0.5"
                 >
                   Explore Services
-                  <ChevronRight size={16} className="text-[#2563EB] group-hover:translate-x-0.5 transition-transform" />
+                  <ChevronRight size={16} className="text-brand-primary group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </MagneticButton>
             </motion.div>
@@ -356,9 +357,9 @@ function Hero() {
               ].map(({ icon: Icon, text }) => (
                 <div
                   key={text}
-                  className="inline-flex items-center gap-2 bg-white border border-[#E2E8F0] hover:border-[#2563EB]/30 px-4 py-2 rounded-full transition-colors duration-200 cursor-default shadow-sm"
+                  className="inline-flex items-center gap-2 bg-white border border-[#E2E8F0] hover:border-brand-primary/30 px-4 py-2 rounded-full transition-colors duration-200 cursor-default shadow-sm"
                 >
-                  <Icon size={11} className="text-[#2563EB]" />
+                  <Icon size={11} className="text-brand-primary" />
                   <span className="text-[10px] font-bold tracking-widest uppercase text-[#64748B]">{text}</span>
                 </div>
               ))}
@@ -382,7 +383,7 @@ function Hero() {
                   transition={{ delay: 0.8 + i * 0.08, duration: 0.5 }}
                   className="flex flex-col gap-1 group cursor-default"
                 >
-                  <span className="text-2xl lg:text-3xl font-bold text-[#0F172A] tracking-tighter font-[family-name:var(--font-dm-mono)] group-hover:text-[#2563EB] transition-colors duration-300">
+                  <span className="text-2xl lg:text-3xl font-bold text-[#0F172A] tracking-tighter font-(family-name:--font-dm-mono) group-hover:text-brand-primary transition-colors duration-300">
                     {s.val}
                   </span>
                   <span className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#94A3B8]">{s.label}</span>
@@ -409,7 +410,7 @@ function Hero() {
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="w-px h-8 bg-linear-to-b from-[#2563EB]/40 to-transparent"
+          className="w-px h-8 bg-linear-to-b from-brand-primary/40 to-transparent"
         />
       </motion.div>
     </section>
