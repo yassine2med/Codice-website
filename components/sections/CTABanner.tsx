@@ -36,6 +36,8 @@ export default function CTABanner() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_100%,rgba(37,99,235,0.22),transparent)]" />
         {/* Left glow */}
         <div className="absolute left-0 top-0 bottom-0 w-1/2 bg-[radial-gradient(ellipse_60%_80%_at_0%_50%,rgba(37,99,235,0.12),transparent)]" />
+        {/* Soft red accent — top-right corner */}
+        <div className="absolute top-0 right-0 w-[600px] h-[500px] bg-[radial-gradient(ellipse_60%_70%_at_100%_0%,rgba(220,38,38,0.12),transparent)] pointer-events-none" />
       </div>
 
       {/* Dot grid */}
@@ -149,7 +151,7 @@ export default function CTABanner() {
                   mapSamples: 20000,
                   mapBrightness: 6,
                   baseColor: [0.1, 0.14, 0.22] as [number, number, number],
-                  markerColor: [0.37, 0.6, 0.92] as [number, number, number],
+                  markerColor: [0.86, 0.15, 0.15] as [number, number, number],
                   glowColor: [0.1, 0.25, 0.6] as [number, number, number],
                   markers: [
                     { location: [38.9072, -77.0369] as [number, number], size: 0.14 },

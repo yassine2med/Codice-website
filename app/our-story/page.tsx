@@ -154,7 +154,20 @@ export default function OurStoryPage() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
 
   return (
-    <main id="main-content" className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
+    <main id="main-content" className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden relative">
+      {/* Floating blue rings */}
+      <style>{`@keyframes ringPulse { 0% { transform: scale(0.8); opacity: 0.18; } 100% { transform: scale(1.3); opacity: 0; } }`}</style>
+      {[
+        { top: "12%", left: "2%",  size: 40, delay: "0s",   dur: "5s" },
+        { top: "35%", right: "3%", size: 28, delay: "1.5s", dur: "6s" },
+        { top: "58%", left: "4%",  size: 36, delay: "3s",   dur: "4.5s" },
+        { top: "78%", right: "5%", size: 24, delay: "0.8s", dur: "5.5s" },
+        { top: "90%", left: "8%",  size: 20, delay: "2s",   dur: "6.5s" },
+      ].map((r, i) => (
+        <div key={i} className="absolute pointer-events-none" style={{ top: r.top, left: (r as {left?:string}).left, right: (r as {right?:string}).right, zIndex: 0 }}>
+          <div style={{ width: r.size, height: r.size, borderRadius: "50%", border: "1.5px solid rgba(37,99,235,0.35)", animation: `ringPulse ${r.dur} ease-out ${r.delay} infinite` }} />
+        </div>
+      ))}
       <TeamModal isOpen={modalOpen} onClose={() => setModalOpen(false)} member={selectedMember} />
       <Navbar />
 

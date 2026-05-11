@@ -27,7 +27,51 @@ export default function ProductsShowcase() {
   }, [images]);
 
   return (
-    <section id="products" className="py-16 px-6 max-w-7xl mx-auto relative">
+    <section id="products" className="py-16 px-6 max-w-7xl mx-auto relative overflow-hidden">
+      {/* Floating red stars */}
+      <style>{`
+        @keyframes floatStar { 0% { transform: translateY(0px) scale(1); opacity: 0.18; } 100% { transform: translateY(-18px) scale(1.15); opacity: 0.38; } }
+      `}</style>
+      {[
+        { top: "8%",  left: "2%",   size: 5, delay: "0s",    dur: "6s"   },
+        { top: "35%", left: "1%",   size: 3, delay: "1.2s",  dur: "8s"   },
+        { top: "60%", left: "3%",   size: 4, delay: "2.8s",  dur: "7s"   },
+        { top: "82%", left: "7%",   size: 3, delay: "0.5s",  dur: "9s"   },
+        { top: "15%", left: "12%",  size: 2, delay: "3.5s",  dur: "5.5s" },
+        { top: "70%", left: "10%",  size: 3, delay: "1.8s",  dur: "7.5s" },
+        { top: "45%", left: "5%",   size: 2, delay: "4s",    dur: "6.5s" },
+        { top: "10%", right: "3%",  size: 4, delay: "0.8s",  dur: "9s"   },
+        { top: "30%", right: "1%",  size: 3, delay: "2s",    dur: "6s"   },
+        { top: "55%", right: "5%",  size: 5, delay: "3.2s",  dur: "8s"   },
+        { top: "75%", right: "2%",  size: 2, delay: "1s",    dur: "7s"   },
+        { top: "88%", right: "9%",  size: 3, delay: "2.6s",  dur: "5.8s" },
+        { top: "22%", right: "11%", size: 2, delay: "4.2s",  dur: "9.5s" },
+        // corners
+        { top: "2%",  left: "1%",   size: 3, delay: "0.3s",  dur: "7s"   },
+        { top: "2%",  right: "1%",  size: 3, delay: "1.4s",  dur: "6s"   },
+        { top: "95%", left: "1%",   size: 3, delay: "2.1s",  dur: "8s"   },
+        { top: "95%", right: "1%",  size: 3, delay: "3.3s",  dur: "7.5s" },
+        // top middle
+        { top: "2%",  left: "46%",  size: 4, delay: "0.7s",  dur: "6.5s" },
+        { top: "4%",  left: "40%",  size: 2, delay: "2.5s",  dur: "9s"   },
+        { top: "4%",  left: "53%",  size: 2, delay: "1.6s",  dur: "7.5s" },
+      ].map((s, i) => (
+        <div
+          key={i}
+          className="absolute pointer-events-none"
+          style={{
+            top: s.top,
+            left: (s as {left?: string}).left,
+            right: (s as {right?: string}).right,
+            width: s.size,
+            height: s.size,
+            background: "#DC2626",
+            borderRadius: "50%",
+            animation: `floatStar ${s.dur} ease-in-out ${s.delay} infinite alternate`,
+            boxShadow: `0 0 ${s.size * 3}px rgba(220,38,38,0.55)`,
+          }}
+        />
+      ))}
       <SectionHeader
         label="Proprietary Platforms"
         title="Modernizing Government Operations"

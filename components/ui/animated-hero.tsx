@@ -211,6 +211,11 @@ function Hero() {
         className="absolute bottom-[-15%] right-[-5%] w-[600px] h-[500px] rounded-full pointer-events-none animate-drift-slow"
         style={{ background: "radial-gradient(circle, rgba(96,165,250,0.04) 0%, transparent 70%)" }}
       />
+      {/* Soft red accent orb — top-left, echoes logo color */}
+      <div
+        className="absolute top-[5%] left-[-8%] w-[500px] h-[400px] rounded-full pointer-events-none animate-drift-slow"
+        style={{ background: "radial-gradient(circle, rgba(220,38,38,0.10) 0%, transparent 68%)" }}
+      />
 
       {/* ── Layer 3: Dot grid ── */}
       <div className="absolute inset-0 dot-grid opacity-40 pointer-events-none" />

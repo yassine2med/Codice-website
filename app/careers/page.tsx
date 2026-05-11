@@ -104,7 +104,20 @@ function QuickApplyForm() {
 
 export default function CareersPage() {
   return (
-    <main id="main-content" className="min-h-screen overflow-x-hidden bg-white text-[#0F172A]">
+    <main id="main-content" className="min-h-screen overflow-x-hidden bg-white text-[#0F172A] relative">
+      {/* Floating dashes */}
+      <style>{`@keyframes floatDash { 0% { transform: translateY(0) scaleX(1); opacity: 0.12; } 100% { transform: translateY(-14px) scaleX(1.2); opacity: 0.24; } }`}</style>
+      {[
+        { top: "8%",  left: "2%",  w: 20, delay: "0s",   dur: "6s"   },
+        { top: "22%", right: "4%", w: 14, delay: "1.6s", dur: "7s"   },
+        { top: "40%", left: "3%",  w: 18, delay: "3s",   dur: "5.5s" },
+        { top: "60%", right: "2%", w: 16, delay: "0.8s", dur: "8s"   },
+        { top: "75%", left: "5%",  w: 12, delay: "2.2s", dur: "6.5s" },
+        { top: "90%", right: "6%", w: 20, delay: "4s",   dur: "7.5s" },
+      ].map((d, i) => (
+        <div key={i} className="absolute pointer-events-none rounded-full bg-[#EA580C]"
+          style={{ top: d.top, left: (d as {left?:string}).left, right: (d as {right?:string}).right, width: d.w, height: 2, animation: `floatDash ${d.dur} ease-in-out ${d.delay} infinite alternate`, zIndex: 0 }} />
+      ))}
       <Navbar />
 
       {/* Hero */}

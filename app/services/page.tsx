@@ -22,7 +22,20 @@ const stagger = {
 
 export default function ServicesPage() {
   return (
-    <main id="main-content" className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
+    <main id="main-content" className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden relative">
+      {/* Floating + crosses */}
+      <style>{`@keyframes floatCross { 0% { transform: translateY(0) rotate(0deg); opacity: 0.12; } 100% { transform: translateY(-20px) rotate(15deg); opacity: 0.22; } }`}</style>
+      {[
+        { top: "8%",  left: "2%",  delay: "0s",   dur: "7s",  size: 14 },
+        { top: "25%", right: "3%", delay: "1.8s", dur: "6s",  size: 10 },
+        { top: "50%", left: "1%",  delay: "3.2s", dur: "8s",  size: 12 },
+        { top: "70%", right: "2%", delay: "0.6s", dur: "5.5s",size: 8  },
+        { top: "88%", left: "5%",  delay: "2.4s", dur: "7.5s",size: 10 },
+        { top: "40%", right: "6%", delay: "4s",   dur: "6.5s",size: 14 },
+      ].map((c, i) => (
+        <div key={i} className="absolute pointer-events-none select-none font-black text-brand-primary"
+          style={{ top: c.top, left: (c as {left?:string}).left, right: (c as {right?:string}).right, fontSize: c.size, lineHeight: 1, animation: `floatCross ${c.dur} ease-in-out ${c.delay} infinite alternate`, zIndex: 0 }}>+</div>
+      ))}
       <Navbar />
 
       {/* Hero Section */}

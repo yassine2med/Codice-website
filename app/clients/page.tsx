@@ -87,7 +87,22 @@ const deliverySignals = [
 
 export default function ClientsPage() {
   return (
-    <main id="main-content" className="min-h-screen overflow-x-hidden bg-white text-[#0F172A]">
+    <main id="main-content" className="min-h-screen overflow-x-hidden bg-white text-[#0F172A] relative">
+      {/* Twinkling silver dots */}
+      <style>{`@keyframes twinkle { 0%,100% { opacity: 0.08; transform: scale(0.9); } 50% { opacity: 0.28; transform: scale(1.2); } }`}</style>
+      {[
+        { top: "6%",  left: "3%",  size: 4, delay: "0s"   },
+        { top: "18%", right: "4%", size: 3, delay: "0.9s" },
+        { top: "32%", left: "1%",  size: 5, delay: "1.8s" },
+        { top: "48%", right: "2%", size: 3, delay: "0.5s" },
+        { top: "62%", left: "6%",  size: 4, delay: "2.4s" },
+        { top: "76%", right: "5%", size: 3, delay: "1.2s" },
+        { top: "90%", left: "2%",  size: 4, delay: "3s"   },
+        { top: "85%", right: "8%", size: 2, delay: "2s"   },
+      ].map((d, i) => (
+        <div key={i} className="absolute rounded-full pointer-events-none"
+          style={{ top: d.top, left: (d as {left?:string}).left, right: (d as {right?:string}).right, width: d.size, height: d.size, background: "#94A3B8", animation: `twinkle 3s ease-in-out ${d.delay} infinite`, zIndex: 0, boxShadow: `0 0 ${d.size * 2}px rgba(148,163,184,0.5)` }} />
+      ))}
       <Navbar />
 
       <PageHero
