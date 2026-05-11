@@ -11,120 +11,177 @@ import { DropdownNavigation } from "@/components/ui/dropdown-navigation";
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [logoIdx, setLogoIdx] = useState(0);
   const pathname = usePathname();
 
+  const cyclingLogos = [
+    "/images/brand/codice-logo-blue.png",
+    "/images/brand/codice-logo-green.png",
+    "/images/brand/codice-logo-red.png",
+    "/images/brand/codice-logo-orange.png",
+  ];
+
+  const pillBgs = [
+    { bg: "linear-gradient(135deg, #020818 0%, #0a1628 50%, #0f2044 100%)", glow: "0 0 32px rgba(37,99,235,0.5), 0 4px 16px rgba(0,0,0,0.4)", border: "#2563EB, #3B82F6, #2563EB" },
+    { bg: "linear-gradient(135deg, #011208 0%, #052014 50%, #083d1c 100%)", glow: "0 0 32px rgba(34,197,94,0.5), 0 4px 16px rgba(0,0,0,0.4)",  border: "#16A34A, #22C55E, #16A34A" },
+    { bg: "linear-gradient(135deg, #160205 0%, #2a0510 50%, #3d0714 100%)", glow: "0 0 32px rgba(239,68,68,0.5), 0 4px 16px rgba(0,0,0,0.4)",   border: "#DC2626, #EF4444, #DC2626" },
+    { bg: "linear-gradient(135deg, #150800 0%, #2a1200 50%, #3d1a00 100%)", glow: "0 0 32px rgba(249,115,22,0.5), 0 4px 16px rgba(0,0,0,0.4)",  border: "#EA580C, #F97316, #EA580C" },
+  ];
+
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    if (!scrolled) return;
+    const id = setInterval(() => setLogoIdx(i => (i + 1) % 4), 600);
+    return () => clearInterval(id);
+  }, [scrolled]);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (
-    <nav
-      className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "py-3" : "py-6"
-      }`}
-      style={{ top: "var(--banner-h, 0px)" }}
-    >
-      <div className={`max-w-7xl mx-auto px-6 transition-all duration-500 ${scrolled ? "scale-[0.97]" : "scale-100"}`}>
-        <div
-          className={`flex items-center justify-between px-4 sm:px-8 py-3.5 rounded-2xl transition-all duration-500 ${
-            scrolled
-              ? "bg-white/92 backdrop-blur-2xl border border-[#E2E8F0] shadow-[0_4px_24px_rgba(15,23,42,0.08)]"
-              : "bg-transparent border-transparent"
-          }`}
-        >
-          {/* Logo */}
-          <Link href="/" className="flex items-center relative z-50 group">
-            <div className="relative h-16 w-72 md:h-20 md:w-96 transition-transform duration-500 group-hover:scale-105">
-              <Image
-                src="/images/brand/codice-logo-full.png"
-                alt="CODICE Technology"
-                fill
-                className="object-contain"
-                loading="eager"
-                priority
-                sizes="400px"
-              />
-            </div>
-          </Link>
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-          {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center">
-            <DropdownNavigation navItems={navigation.map((group, idx) => ({
-              id: idx,
-              label: group.title,
-              subMenus: group.sections
-                ? group.sections.map(section => ({
-                    title: section.title,
-                    items: section.items.map(item => ({
-                      label: item.label,
-                      description: item.description || "",
-                      icon: section.title === "Services" ? Cpu : section.title === "Products" ? Layers : Globe,
-                      href: item.href
-                    }))
-                  }))
-                : group.items && group.items.length > 1
-                  ? [{
-                      title: group.title,
-                      items: group.items.map(item => ({
+  return (
+    <>
+      {/* ── Full navbar — visible only at top ── */}
+      <motion.nav
+        initial={false}
+        animate={{ opacity: scrolled ? 0 : 1, y: scrolled ? -20 : 0, pointerEvents: scrolled ? "none" : "auto" }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        className="fixed left-0 right-0 z-[70] py-6"
+        style={{ top: "var(--banner-h, 0px)" }}
+      >
+        <div className="max-w-7xl mx-auto pr-6">
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center pl-0 pr-4 sm:pr-6 py-3.5 rounded-2xl bg-transparent">
+            {/* Logo */}
+            <Link href="/" className="flex items-center relative z-50 group justify-self-start -ml-44">
+              <div className="relative h-24 w-[26rem] md:h-28 md:w-[36rem] transition-transform duration-500 group-hover:scale-105">
+                <Image
+                  src="/images/brand/codice-logo-full.png"
+                  alt="CODICE Technology"
+                  fill
+                  className="object-contain"
+                  loading="eager"
+                  priority
+                  sizes="576px"
+                />
+              </div>
+            </Link>
+
+            {/* Desktop Nav */}
+            <div className="hidden lg:flex items-center justify-center">
+              <DropdownNavigation navItems={navigation.map((group, idx) => ({
+                id: idx,
+                label: group.title,
+                subMenus: group.sections
+                  ? group.sections.map(section => ({
+                      title: section.title,
+                      items: section.items.map(item => ({
                         label: item.label,
                         description: item.description || "",
-                        icon: group.title === "Services" ? Cpu : Globe,
+                        icon: section.title === "Services" ? Cpu : section.title === "Products" ? Layers : Globe,
                         href: item.href
                       }))
-                    }]
-                  : undefined,
-              link: group.items && group.items.length === 1 ? group.items[0].href : undefined
-            }))} />
-          </div>
+                    }))
+                  : group.items && group.items.length > 1
+                    ? [{
+                        title: group.title,
+                        items: group.items.map(item => ({
+                          label: item.label,
+                          description: item.description || "",
+                          icon: group.title === "Services" ? Cpu : Globe,
+                          href: item.href
+                        }))
+                      }]
+                    : undefined,
+                link: group.items && group.items.length === 1 ? group.items[0].href : undefined
+              }))} />
+            </div>
 
-          {/* CTA Group */}
-          <div className="hidden lg:flex items-center gap-3">
+            {/* CTA Group */}
+            <div className="hidden lg:flex items-center gap-3 justify-self-end">
+              <button
+                onClick={() => window.dispatchEvent(new Event("codice:open-palette"))}
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl border border-white/20 text-[#94A3B8] hover:border-white/40 hover:text-[#0F172A] bg-white/80 transition-all duration-300"
+                aria-label="Search"
+              >
+                <Search size={13} />
+                <span className="text-[10px] font-bold tracking-wider hidden xl:block">Search</span>
+                <kbd className="hidden xl:flex items-center px-1.5 py-0.5 rounded-md bg-[#F8FAFC] border border-[#E2E8F0] text-[9px] font-bold text-[#B0BEC5]">⌘K</kbd>
+              </button>
+              <Link
+                href="/contact"
+                className="bg-brand-primary text-white text-xs font-bold tracking-widest uppercase px-5 py-2.5 rounded-xl hover:bg-brand-accent transition-all duration-300 shadow-[0_4px_16px_rgba(37,99,235,0.25)]"
+              >
+                Consultation
+              </Link>
+            </div>
+
+            {/* Mobile toggle */}
             <button
-              onClick={() => window.dispatchEvent(new Event("codice:open-palette"))}
-              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl border transition-all duration-300 ${
-                scrolled
-                  ? "border-[#E2E8F0] text-[#94A3B8] hover:border-brand-primary/40 hover:text-[#0F172A] bg-white"
-                  : "border-white/20 text-[#94A3B8] hover:border-white/40 hover:text-[#0F172A] bg-white/80"
-              }`}
-              aria-label="Search"
+              className="lg:hidden justify-self-end relative z-50 p-2 rounded-xl w-11 h-11 flex items-center justify-center border bg-white/10 border-white/20 text-[#0F172A] transition-all duration-300"
+              onClick={() => {
+                const newState = !mobileOpen;
+                setMobileOpen(newState);
+                window.dispatchEvent(new CustomEvent("codice:mobile-menu", { detail: newState }));
+              }}
+              aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
             >
-              <Search size={13} />
-              <span className="text-[10px] font-bold tracking-wider hidden xl:block">Search</span>
-              <kbd className="hidden xl:flex items-center px-1.5 py-0.5 rounded-md bg-[#F8FAFC] border border-[#E2E8F0] text-[9px] font-bold text-[#B0BEC5]">⌘K</kbd>
+              {mobileOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
-            <Link
-              href="/contact"
-              className="bg-brand-primary text-white text-xs font-bold tracking-widest uppercase px-5 py-2.5 rounded-xl hover:bg-brand-accent transition-all duration-300 shadow-[0_4px_16px_rgba(37,99,235,0.25)] hover:shadow-[0_6px_24px_rgba(37,99,235,0.35)]"
-            >
-              Consultation
-            </Link>
           </div>
-
-          {/* Mobile toggle */}
-          <button
-            className={`lg:hidden relative z-50 p-2 rounded-xl w-11 h-11 flex items-center justify-center border transition-all duration-300 ${
-              mobileOpen
-                ? "bg-white border-[#E2E8F0] text-[#0F172A]"
-                : scrolled
-                  ? "bg-white border-[#E2E8F0] text-[#0F172A]"
-                  : "bg-white/10 border-white/20 text-[#0F172A]"
-            }`}
-            onClick={() => {
-              const newState = !mobileOpen;
-              setMobileOpen(newState);
-              window.dispatchEvent(new CustomEvent("codice:mobile-menu", { detail: newState }));
-            }}
-            aria-label="Toggle menu"
-            aria-expanded={mobileOpen}
-          >
-            {mobileOpen ? <X size={18} /> : <Menu size={18} />}
-          </button>
         </div>
-      </div>
+      </motion.nav>
 
-      {/* Mobile Menu — Precision White */}
+      {/* ── Scrolled: centered logo pill ── */}
+      <AnimatePresence>
+        {scrolled && (
+          <motion.div
+            key="logo-pill"
+            initial={{ opacity: 0, y: -40, scale: 0.85 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -30, scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 340, damping: 28 }}
+            className="fixed left-0 right-0 z-[70] flex justify-center pointer-events-none"
+            style={{ top: "calc(var(--banner-h, 0px) + 16px)" }}
+          >
+            {/* Animated gradient border wrapper */}
+            <motion.div
+              className="relative pointer-events-auto rounded-xl p-[2px]"
+              animate={{ background: `linear-gradient(90deg, ${pillBgs[logoIdx].border}, ${pillBgs[logoIdx].border})` }}
+              transition={{ duration: 0.3 }}
+              style={{ backgroundSize: "300% 100%", animation: "gradientShift 2.4s linear infinite" }}
+            >
+              <style>{`@keyframes gradientShift { 0% { background-position: 0% 50% } 100% { background-position: 300% 50% } }`}</style>
+            <motion.button
+              onClick={scrollToTop}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              className="flex items-center px-4 py-1.5 rounded-[10px] cursor-pointer"
+              animate={{ background: pillBgs[logoIdx].bg, boxShadow: pillBgs[logoIdx].glow }}
+              transition={{ duration: 0.3 }}
+              aria-label="Back to top"
+            >
+              <div className="relative" style={{ height: "30px", width: "150px", transform: "scale(3.5) translateY(1px)", transformOrigin: "center" }}>
+                <Image
+                  key={cyclingLogos[logoIdx]}
+                  src={cyclingLogos[logoIdx]}
+                  alt="CODICE Technology"
+                  fill
+                  className="object-contain"
+                  sizes="200px"
+                  priority
+                />
+              </div>
+            </motion.button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -132,11 +189,9 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ type: "spring", damping: 30, stiffness: 400 }}
-            className="fixed inset-0 bg-white z-40 flex flex-col p-8 overflow-y-auto"
+            className="fixed inset-0 bg-white z-[65] flex flex-col p-8 overflow-y-auto"
           >
-            {/* Subtle dot grid background */}
             <div className="absolute inset-0 dot-grid opacity-50 pointer-events-none" />
-
             <motion.div
               initial="hidden"
               animate="show"
@@ -187,7 +242,6 @@ export default function Navbar() {
                   </div>
                 </motion.div>
               ))}
-
               <Link
                 href="/contact"
                 className="bg-brand-primary text-white text-center font-bold py-5 rounded-2xl text-lg shadow-[0_8px_32px_rgba(37,99,235,0.25)] mt-6 hover:bg-brand-accent transition-colors"
@@ -199,6 +253,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </>
   );
 }

@@ -38,7 +38,7 @@ export default function NewsEvents() {
             key={i}
             variants={card}
             whileHover={{ y: -5, transition: { duration: 0.2 } }}
-            className="group bg-white border border-[#E2E8F0] rounded-2xl overflow-hidden hover:border-[#2563EB]/40 hover:shadow-[0_8px_32px_rgba(37,99,235,0.10)] transition-all duration-300 shadow-[0_2px_8px_rgba(15,23,42,0.05)]"
+            className="group bg-white border border-[#E2E8F0] rounded-2xl overflow-hidden hover:border-brand-primary/40 hover:shadow-[0_8px_32px_rgba(37,99,235,0.10)] transition-all duration-300 shadow-[0_2px_8px_rgba(15,23,42,0.05)]"
           >
             {article.image && (
               <div className="relative w-full h-48 overflow-hidden">
@@ -61,7 +61,7 @@ export default function NewsEvents() {
                 </span>
               </div>
 
-              <h3 className="text-base font-bold text-[#0F172A] mb-3 group-hover:text-[#2563EB] transition-colors duration-300 leading-snug">
+              <h3 className="text-base font-bold text-[#0F172A] mb-3 group-hover:text-brand-primary transition-colors duration-300 leading-snug">
                 {article.title}
               </h3>
 
@@ -73,7 +73,7 @@ export default function NewsEvents() {
                 href={article.slug}
                 target={article.slug.startsWith("http") ? "_blank" : undefined}
                 rel={article.slug.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="inline-flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-[#2563EB] hover:text-[#1D4ED8] transition-colors group/link"
+                className="inline-flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-brand-primary hover:text-brand-accent transition-colors group/link"
               >
                 Read more
                 <ArrowRight size={12} className="group-hover/link:translate-x-1 transition-transform duration-200" />

@@ -22,14 +22,14 @@ export default function TrustStrip() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#2563EB] mb-2">Certified & Compliant</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-primary mb-2">Certified & Compliant</p>
             <h2 className="text-2xl font-bold text-[#0F172A] leading-tight">
               Every credential government procurement requires.
             </h2>
           </div>
           <Link
             href="/capability"
-            className="shrink-0 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-[#64748B] hover:text-[#2563EB] transition-colors"
+            className="shrink-0 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-[#64748B] hover:text-brand-primary transition-colors"
           >
             View Capability Statement →
           </Link>
@@ -47,22 +47,22 @@ export default function TrustStrip() {
               className={`group flex flex-col items-center gap-3 p-4 rounded-2xl border text-center transition-all duration-300 ${
                 highlight
                   ? "bg-[#FFF7ED] border-orange-200 hover:border-orange-400 hover:shadow-[0_4px_20px_rgba(249,115,22,0.12)]"
-                  : "bg-[#F8FAFC] border-[#E2E8F0] hover:border-[#2563EB]/40 hover:bg-[#F0F6FF] hover:shadow-[0_4px_20px_rgba(37,99,235,0.08)]"
+                  : "bg-[#F8FAFC] border-[#E2E8F0] hover:border-brand-primary/40 hover:bg-[#F0F6FF] hover:shadow-[0_4px_20px_rgba(37,99,235,0.08)]"
               }`}
             >
               <div className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-300 ${
                 highlight
                   ? "bg-orange-100 border border-orange-200 group-hover:bg-orange-500 group-hover:border-orange-500"
-                  : "bg-white border border-[#E2E8F0] group-hover:bg-[#2563EB] group-hover:border-[#2563EB]"
+                  : "bg-white border border-[#E2E8F0] group-hover:bg-brand-primary group-hover:border-brand-primary"
               }`}>
                 <Icon size={16} className={highlight
                   ? "text-orange-500 group-hover:text-white transition-colors duration-300"
-                  : "text-[#2563EB] group-hover:text-white transition-colors duration-300"
+                  : "text-brand-primary group-hover:text-white transition-colors duration-300"
                 } />
               </div>
               <div>
                 <p className={`text-[10px] font-bold leading-tight mb-0.5 transition-colors duration-300 ${
-                  highlight ? "text-orange-700 group-hover:text-orange-800" : "text-[#0F172A] group-hover:text-[#2563EB]"
+                  highlight ? "text-orange-700 group-hover:text-orange-800" : "text-[#0F172A] group-hover:text-brand-primary"
                 }`}>{label}</p>
                 <p className="text-[9px] text-[#94A3B8] font-medium leading-tight">{sub}</p>
               </div>

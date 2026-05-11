@@ -92,8 +92,15 @@ export default function BeamSection() {
   const beamDelays = [0, 0.8, 1.6, 2.4];
 
   return (
-    <section className="py-28 px-6 bg-[#F8FAFC] border-y border-[#E2E8F0] overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+    <section className="relative py-28 px-6 overflow-hidden" style={{ background: "linear-gradient(135deg, #FFF7ED 0%, #FFF9F5 40%, #F8FAFC 100%)" }}>
+      {/* Orange border accents */}
+      <div className="absolute inset-x-0 top-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(249,115,22,0.3), transparent)" }} />
+      <div className="absolute inset-x-0 bottom-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(249,115,22,0.15), transparent)" }} />
+      {/* Soft orange glow orb */}
+      <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(251,146,60,0.08) 0%, transparent 70%)" }} />
+      <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(249,115,22,0.05) 0%, transparent 70%)" }} />
+
+      <div className="max-w-6xl mx-auto relative z-10">
 
         {/* Header */}
         <motion.div
@@ -103,11 +110,11 @@ export default function BeamSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-brand-primary bg-[#F0F6FF] border border-brand-primary/20 px-4 py-2 rounded-full inline-block mb-6">
+          <span className="text-[10px] font-bold tracking-[0.3em] uppercase inline-block mb-6 px-4 py-2 rounded-full border" style={{ color: "#EA580C", backgroundColor: "rgba(254,215,170,0.4)", borderColor: "rgba(249,115,22,0.25)" }}>
             How It Works
           </span>
           <h2 className="text-[clamp(28px,4vw,52px)] font-bold text-[#0F172A] tracking-tight">
-            Agencies. Connected. Delivered.
+            One hub. Every agency. Every platform.
           </h2>
           <p className="mt-4 text-[#64748B] text-lg max-w-2xl mx-auto leading-relaxed">
             CODICE sits at the center — routing technology, compliance, and data
@@ -284,14 +291,14 @@ export default function BeamSection() {
             className="relative flex flex-col items-center gap-3 z-10 shrink-0"
           >
             {/* Pulsing ring */}
-            <div className="absolute inset-0 rounded-full border-2 border-brand-primary/20 animate-ping scale-150 pointer-events-none" />
-            <div className="absolute inset-0 rounded-full border border-brand-primary/10 scale-[2] pointer-events-none" />
+            <div className="absolute inset-0 rounded-full border-2 border-orange-400/25 animate-ping scale-150 pointer-events-none" />
+            <div className="absolute inset-0 rounded-full border border-orange-300/15 scale-[2] pointer-events-none" />
 
-            <div className="w-20 h-20 rounded-full bg-brand-primary border-4 border-white flex items-center justify-center shadow-[0_8px_40px_rgba(37,99,235,0.35)] relative z-10">
+            <div className="w-20 h-20 rounded-full border-4 border-white flex items-center justify-center relative z-10" style={{ background: "linear-gradient(135deg, #F97316 0%, #EA580C 100%)", boxShadow: "0 8px_40px rgba(249,115,22,0.45)" }}>
               <Cpu size={30} className="text-white" />
             </div>
-            <div className="bg-white border border-[#E2E8F0] rounded-xl px-4 py-2 shadow-[0_4px_16px_rgba(15,23,42,0.06)] text-center">
-              <p className="text-[10px] font-black tracking-[0.25em] uppercase text-brand-primary">CODICE</p>
+            <div className="bg-white border border-orange-100 rounded-xl px-4 py-2 shadow-[0_4px_16px_rgba(249,115,22,0.10)] text-center">
+              <p className="text-[10px] font-black tracking-[0.25em] uppercase" style={{ color: "#EA580C" }}>CODICE</p>
               <p className="text-[8px] text-[#94A3B8] tracking-widest uppercase mt-0.5">Technology Hub</p>
             </div>
           </motion.div>
@@ -337,16 +344,6 @@ export default function BeamSection() {
           </div>
         </div>
 
-        {/* Bottom note */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="text-center text-[11px] font-bold tracking-[0.2em] uppercase text-[#94A3B8] mt-12"
-        >
-          12+ DC agencies · 8 proprietary platforms · 16 years of continuous delivery
-        </motion.p>
       </div>
     </section>
   );

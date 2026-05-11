@@ -145,7 +145,7 @@ export default function ProductMockup({ category, name }: { category: string; na
   const cfg = configs[category] ?? fallback;
 
   return (
-    <div className="absolute inset-0 flex flex-col overflow-hidden rounded-[inherit] bg-[#F8FAFC] font-[family-name:var(--font-inter)]">
+    <div className="absolute inset-0 flex flex-col overflow-hidden rounded-[inherit] bg-[#F8FAFC] font-(family-name:--font-inter)">
       {/* Browser chrome */}
       <div
         className="flex items-center gap-2 px-4 py-3 shrink-0"

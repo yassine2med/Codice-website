@@ -155,22 +155,6 @@ function MissionDashboard() {
         </div>
       </div>
 
-      {/* Floating badge — top right */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.7, y: 12 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
-        className="hidden sm:flex absolute -top-5 -right-5 bg-white border border-[#E2E8F0] shadow-[0_8px_32px_rgba(15,23,42,0.14),0_2px_8px_rgba(37,99,235,0.08)] rounded-2xl px-4 py-2.5 items-center gap-2.5 z-20"
-      >
-        <div className="w-7 h-7 rounded-full bg-[#F0FDF4] border border-emerald-100 flex items-center justify-center">
-          <CheckCircle size={14} className="text-emerald-500" />
-        </div>
-        <div>
-          <p className="text-[9px] font-bold text-[#0F172A] leading-tight">100% Client Retention</p>
-          <p className="text-[8px] text-[#94A3B8] mt-0.5">16 consecutive years</p>
-        </div>
-      </motion.div>
-
       {/* Floating badge — bottom left */}
       <motion.div
         initial={{ opacity: 0, scale: 0.7, y: -12 }}
@@ -319,8 +303,7 @@ function Hero() {
               </div>
               <p className="text-lg text-[#475569] max-w-lg leading-relaxed">
                 Washington DC&apos;s premier partner for{" "}
-                <span className="text-[#0F172A] font-semibold">high-fidelity government technology</span>.{" "}
-                16 years of delivery. 100% client retention.
+                <span className="text-[#0F172A] font-semibold">high-fidelity government technology</span>.
               </p>
             </motion.div>
 
@@ -365,31 +348,6 @@ function Hero() {
               ))}
             </motion.div>
 
-            {/* Stats row */}
-            <motion.div
-              variants={itemVariants}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-6 border-t border-[#E2E8F0] pt-8 mt-1"
-            >
-              {[
-                { label: "Client Retention", val: "100%" },
-                { label: "Years of Service",  val: "16+"  },
-                { label: "Platforms Built",   val: "8"    },
-                { label: "Gov Agencies",      val: "12+"  },
-              ].map((s, i) => (
-                <motion.div
-                  key={s.label}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 + i * 0.08, duration: 0.5 }}
-                  className="flex flex-col gap-1 group cursor-default"
-                >
-                  <span className="text-2xl lg:text-3xl font-bold text-[#0F172A] tracking-tighter font-(family-name:--font-dm-mono) group-hover:text-brand-primary transition-colors duration-300">
-                    {s.val}
-                  </span>
-                  <span className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#94A3B8]">{s.label}</span>
-                </motion.div>
-              ))}
-            </motion.div>
           </motion.div>
 
           {/* ── Right: Mission Dashboard ── */}

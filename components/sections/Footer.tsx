@@ -49,9 +49,9 @@ export default function Footer() {
               <Image
                 src="/images/brand/codice-logo-full.png"
                 alt="CODICE Technology"
-                width={600}
-                height={180}
-                className="h-24 w-auto object-contain"
+                width={800}
+                height={240}
+                className="h-36 w-auto object-contain"
               />
             </Link>
             <p className="text-[#94A3B8] text-sm leading-relaxed mb-8 max-w-xs">

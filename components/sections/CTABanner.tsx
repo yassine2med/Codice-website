@@ -23,7 +23,7 @@ const badges = [
 
 export default function CTABanner() {
   return (
-    <section id="cta" className="relative overflow-hidden bg-[#060E1A] py-0">
+    <section id="cta" className="relative overflow-hidden bg-brand-dark py-0">
 
       {/* ── Photography background layer ── */}
       <div className="absolute inset-0">
@@ -37,7 +37,7 @@ export default function CTABanner() {
           unoptimized
         />
         {/* Dark overlay — keeps text readable, gives the dark premium feel */}
-        <div className="absolute inset-0 bg-[#060E1A]/88" />
+        <div className="absolute inset-0 bg-brand-dark/88" />
         {/* Blue radial glow from bottom */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_100%,rgba(37,99,235,0.22),transparent)]" />
         {/* Left glow */}
@@ -54,7 +54,7 @@ export default function CTABanner() {
       />
 
       {/* Top shimmer */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#2563EB]/50 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-brand-primary/50 to-transparent" />
 
       {/* ── Content ── */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-28 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -69,7 +69,7 @@ export default function CTABanner() {
         >
           {/* Badge */}
           <div>
-            <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.3em] uppercase text-[#60A5FA] bg-[#2563EB]/12 border border-[#2563EB]/25 px-4 py-2 rounded-full">
+            <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.3em] uppercase text-[#60A5FA] bg-brand-primary/12 border border-brand-primary/25 px-4 py-2 rounded-full">
               <span className="w-1.5 h-1.5 rounded-full bg-[#60A5FA] animate-pulse" />
               Washington DC&apos;s Premier Gov-Tech Partner
             </span>
@@ -108,7 +108,7 @@ export default function CTABanner() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-white/8">
             {stats.map((s) => (
               <div key={s.label} className="flex flex-col gap-1">
-                <span className="text-2xl font-bold text-white tracking-tight font-[family-name:var(--font-dm-mono)]">
+                <span className="text-2xl font-bold text-white tracking-tight font-(family-name:--font-dm-mono)">
                   {s.val}
                 </span>
                 <span className="text-[9px] font-bold uppercase tracking-widest text-[#60A5FA]/70">
@@ -123,7 +123,7 @@ export default function CTABanner() {
             <MagneticButton strength={0.3}>
               <Link
                 href="/contact"
-                className="relative overflow-hidden inline-flex items-center justify-center gap-3 bg-[#2563EB] hover:bg-[#3B82F6] text-white font-bold px-9 py-4 rounded-xl text-base transition-all duration-300 shadow-[0_8px_32px_rgba(37,99,235,0.35)] hover:shadow-[0_12px_40px_rgba(37,99,235,0.5)] hover:-translate-y-0.5"
+                className="relative overflow-hidden inline-flex items-center justify-center gap-3 bg-brand-primary hover:bg-brand-secondary text-white font-bold px-9 py-4 rounded-xl text-base transition-all duration-300 shadow-[0_8px_32px_rgba(37,99,235,0.35)] hover:shadow-[0_12px_40px_rgba(37,99,235,0.5)] hover:-translate-y-0.5"
               >
                 Schedule a Briefing <ArrowRight size={17} />
               </Link>
@@ -131,7 +131,7 @@ export default function CTABanner() {
             <MagneticButton strength={0.2}>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center gap-3 bg-transparent border border-white/15 hover:border-[#2563EB]/60 text-white font-bold px-9 py-4 rounded-xl text-base transition-all duration-300 hover:bg-white/5 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-3 bg-transparent border border-white/15 hover:border-brand-primary/60 text-white font-bold px-9 py-4 rounded-xl text-base transition-all duration-300 hover:bg-white/5 hover:-translate-y-0.5"
               >
                 Explore Services <ArrowRight size={17} />
               </Link>
@@ -149,7 +149,7 @@ export default function CTABanner() {
         >
           <div className="relative w-full max-w-[520px] aspect-square">
             {/* Outer glow ring */}
-            <div className="absolute inset-0 rounded-full bg-[#2563EB]/10 blur-[60px]" />
+            <div className="absolute inset-0 rounded-full bg-brand-primary/10 blur-[60px]" />
 
             {/* Globe container — dark card with BorderBeam */}
             <div className="relative w-full h-full rounded-full overflow-hidden border border-white/8">
@@ -192,7 +192,7 @@ export default function CTABanner() {
               transition={{ delay: 0.8, duration: 0.5 }}
               className="absolute top-8 right-0 bg-[#0F172A]/90 backdrop-blur-xl border border-white/10 rounded-2xl px-4 py-2.5 flex items-center gap-2.5 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
             >
-              <div className="w-2 h-2 rounded-full bg-[#2563EB] animate-pulse" />
+              <div className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
               <span className="text-[10px] font-bold text-white tracking-widest uppercase">Washington, DC</span>
             </motion.div>
 
@@ -212,7 +212,7 @@ export default function CTABanner() {
       </div>
 
       {/* Bottom shimmer */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#2563EB]/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-brand-primary/30 to-transparent" />
     </section>
   );
 }

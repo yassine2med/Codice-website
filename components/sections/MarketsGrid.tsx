@@ -42,12 +42,12 @@ export default function MarketsGrid() {
           return (
             <motion.div key={market.id} variants={item} className="group">
               <TiltCard intensity={4} className="h-full">
-              <SpotlightCard className="p-8 h-full flex flex-col hover:border-[#2563EB]/40 hover:shadow-[0_8px_32px_rgba(37,99,235,0.10)] transition-all duration-500 shadow-[0_2px_8px_rgba(15,23,42,0.04)]">
+              <SpotlightCard className="p-8 h-full flex flex-col hover:border-brand-primary/40 hover:shadow-[0_8px_32px_rgba(37,99,235,0.10)] transition-all duration-500 shadow-[0_2px_8px_rgba(15,23,42,0.04)]">
                 <div className="relative z-10 flex-1">
-                  <div className="w-12 h-12 rounded-2xl bg-[#F0F6FF] border border-[#2563EB]/15 flex items-center justify-center mb-6 group-hover:bg-[#2563EB] group-hover:border-[#2563EB] transition-all duration-300">
-                    <Icon size={22} className="text-[#2563EB] group-hover:text-white transition-colors duration-300" />
+                  <div className="w-12 h-12 rounded-2xl bg-[#F0F6FF] border border-brand-primary/15 flex items-center justify-center mb-6 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-300">
+                    <Icon size={22} className="text-brand-primary group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0F172A] mb-3 group-hover:text-[#2563EB] transition-colors">
+                  <h3 className="text-xl font-bold text-[#0F172A] mb-3 group-hover:text-brand-primary transition-colors">
                     {market.name}
                   </h3>
                   <p className="text-[#64748B] text-sm leading-relaxed mb-6">
@@ -55,9 +55,9 @@ export default function MarketsGrid() {
                   </p>
                 </div>
 
-                <div className="pt-5 border-t border-[#F1F5F9] group-hover:border-[#2563EB]/15 transition-colors mt-auto">
+                <div className="pt-5 border-t border-[#F1F5F9] group-hover:border-brand-primary/15 transition-colors mt-auto">
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-brand-primary" />
                     <p className="text-[9px] font-bold tracking-widest uppercase text-[#94A3B8]">Mission Impact</p>
                   </div>
                   <p className="text-xs text-[#94A3B8] leading-relaxed italic">

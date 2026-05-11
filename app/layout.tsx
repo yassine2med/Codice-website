@@ -8,6 +8,7 @@ import FloatingCTA from "@/components/ui/FloatingCTA";
 import ChatWidget from "@/components/ui/ChatWidget";
 import CommandPalette from "@/components/ui/CommandPalette";
 import AnnouncementBanner from "@/components/ui/AnnouncementBanner";
+import Navbar from "@/components/nav/Navbar";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -75,6 +76,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         <AnnouncementBanner />
+        <Navbar />
         <ScrollProgress />
         <CursorGlow />
         <ScrollToTop />
