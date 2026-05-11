@@ -5,7 +5,6 @@ import TrustMarquee from "@/components/sections/TrustMarquee";
 import StatsSection from "@/components/sections/StatsSection";
 import ServicesBento from "@/components/sections/ServicesBento";
 import ProductsShowcase from "@/components/sections/ProductsShowcase";
-import MarketsGrid from "@/components/sections/MarketsGrid";
 import Testimonials from "@/components/sections/Testimonials";
 import NewsEvents from "@/components/sections/NewsEvents";
 import CTABanner from "@/components/sections/CTABanner";
@@ -59,19 +58,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Markets */}
-      <section className="relative bg-white border-t border-[#E2E8F0]">
-        <MarketsGrid />
-        <div className="flex justify-center pb-24 -mt-4 relative z-10">
-          <Link
-            href="/markets"
-            className="group inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest uppercase text-[#64748B] hover:text-[#0F172A] border border-[#E2E8F0] hover:border-brand-primary/40 bg-white hover:shadow-[0_4px_16px_rgba(37,99,235,0.08)] px-6 py-3 rounded-full transition-all duration-300"
-          >
-            View All Markets
-            <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform duration-300 text-brand-primary" />
-          </Link>
-        </div>
-      </section>
 
       {/* Testimonials */}
       <Testimonials />

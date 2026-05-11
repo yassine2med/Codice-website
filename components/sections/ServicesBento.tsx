@@ -121,8 +121,7 @@ function WideCard({ service, delay = 0 }: { service: CardProps["service"]; delay
                   src={service.icon}
                   alt={service.title}
                   fill
-                  className="object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
-                  style={{ filter: "saturate(0) opacity(0.5)" }}
+                  className="object-contain saturate-0 opacity-50 group-hover:saturate-100 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all duration-300"
                   sizes="32px"
                 />
               </div>
@@ -169,7 +168,7 @@ function NormalCard({ service, delay = 0 }: { service: CardProps["service"]; del
                 src={service.icon}
                 alt={service.title}
                 fill
-                className="object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                className="object-contain saturate-0 opacity-50 group-hover:saturate-100 group-hover:opacity-100 group-hover:brightness-0 group-hover:invert transition-all duration-300"
                 style={{ filter: "saturate(0) opacity(0.5)" }}
                 sizes="24px"
               />

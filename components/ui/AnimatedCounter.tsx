@@ -15,7 +15,7 @@ export function AnimatedCounter({ value, suffix = "", duration = 2.5 }: Animated
   return (
     <motion.span
       animate={{ color: done ? "#22C55E" : "#0F172A" }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <CountUp
         end={value}
@@ -23,6 +23,7 @@ export function AnimatedCounter({ value, suffix = "", duration = 2.5 }: Animated
         duration={duration}
         enableScrollSpy
         scrollSpyDelay={200}
+        onStart={() => setDone(false)}
         onEnd={() => setDone(true)}
       />
     </motion.span>

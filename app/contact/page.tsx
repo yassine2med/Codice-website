@@ -2,52 +2,54 @@
 
 import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/sections/Footer";
-import { company } from "@/data/codice";
-import { ArrowRight, Clock, ExternalLink, Mail, MapPin, Phone, ShieldCheck, CalendarCheck, Users } from "lucide-react";
-import { motion } from "framer-motion";
+import { company, team } from "@/data/codice";
+import Image from "next/image";
+import { ArrowRight, Mail, Phone, Clock, CalendarCheck, ShieldCheck, Users, CheckCircle2, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-const trustSignals = [
-  { icon: ShieldCheck, text: "100% client retention" },
-  { icon: Clock,       text: "Response within 1 business day" },
-  { icon: CalendarCheck, text: "Available for FY2026 projects" },
-  { icon: Users,       text: "137 professionals on staff" },
+const steps = [
+  { n: "01", title: "Submit Your Brief", desc: "Tell us your agency, timeline, and mission challenge. Takes 2 minutes." },
+  { n: "02", title: "We Review & Match", desc: "Our solutions team reviews within 1 business day and assigns the right architect." },
+  { n: "03", title: "Technical Briefing", desc: "A 30-minute call with a senior engineer — no sales pitch, just real answers." },
+];
+
+
+const faqs = [
+  { q: "How quickly can CODICE start a new engagement?", a: "Typically 2–4 weeks from contract award. For urgent needs we can mobilize a core team in under 10 business days." },
+  { q: "Do you work with agencies outside Washington DC?", a: "Yes — we serve federal agencies and state governments across the US, with active projects in MD, VA, and federal civilian agencies." },
+  { q: "What contract vehicles do you hold?", a: "GSA Schedule 70 (Multiple Award Schedule), SBA 8(a), and we are eligible for sole-source and competitive set-aside awards." },
+  { q: "Can we see a capability statement before the call?", a: "Absolutely. Download our full capability statement from the Capability page, or we can email it directly after you submit this form." },
 ];
 
 export default function ContactPage() {
-  const [formState, setFormState] = useState({ name: "", email: "", agency: "", message: "" });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", agency: "", role: "", message: "" });
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [dcTime, setDcTime] = useState("");
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const options: Intl.DateTimeFormatOptions = { 
-        timeZone: "America/New_York", 
-        hour: "2-digit", 
-        minute: "2-digit", 
-        hour12: true 
-      };
-      setDcTime(new Intl.DateTimeFormat("en-US", options).format(now));
+    const tick = () => {
+      setDcTime(new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", hour: "2-digit", minute: "2-digit", hour12: true }).format(new Date()));
     };
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    const subject = encodeURIComponent(`Website Inquiry from ${formState.name}${formState.agency ? ` — ${formState.agency}` : ""}`);
-    const body = encodeURIComponent(`Name: ${formState.name}\nEmail: ${formState.email}\nAgency: ${formState.agency || "Not provided"}\n\nMessage:\n${formState.message}`);
+    setSubmitting(true);
+    const subject = encodeURIComponent(`Website Inquiry — ${form.name}${form.agency ? ` · ${form.agency}` : ""}`);
+    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\nAgency: ${form.agency || "—"}\nRole: ${form.role || "—"}\n\nMessage:\n${form.message}`);
     window.location.href = `mailto:${company.email}?subject=${subject}&body=${body}`;
     setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormState({ name: "", email: "", agency: "", message: "" });
-      setTimeout(() => setIsSubmitted(false), 6000);
+      setSubmitting(false);
+      setSubmitted(true);
+      setForm({ name: "", email: "", agency: "", role: "", message: "" });
+      setTimeout(() => setSubmitted(false), 7000);
     }, 800);
   };
 
@@ -55,266 +57,314 @@ export default function ContactPage() {
     <main id="main-content" className="min-h-screen bg-white text-[#0F172A] overflow-x-hidden">
       <Navbar />
 
-      {/* ── Background Decorative Layer ── */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute inset-0 dot-grid opacity-[0.25]" />
-        
-        {/* Animated Orbs */}
-        <motion.div 
-          animate={{ 
-            x: [0, 40, 0], 
-            y: [0, -30, 0],
-            scale: [1, 1.1, 1]
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] bg-brand-primary/6 blur-[140px] rounded-full" 
-        />
-        <motion.div 
-          animate={{ 
-            x: [0, -50, 0], 
-            y: [0, 40, 0],
-            scale: [1, 1.05, 1]
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-[-15%] left-[-10%] w-[600px] h-[600px] bg-brand-accent/4 blur-[120px] rounded-full" 
-        />
-        
-        {/* Floating background glyphs or shapes for "life" */}
-        <div className="absolute inset-0 overflow-hidden opacity-[0.03]">
-          {[...Array(6)].map((_, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0 }}
-              animate={{ 
-                opacity: [0.3, 0.6, 0.3],
-                y: [0, -100, 0],
-                rotate: [0, 360]
-              }}
-              transition={{ 
-                duration: 15 + i * 5, 
-                repeat: Infinity, 
-                delay: i * 2,
-                ease: "linear"
-              }}
-              className="absolute text-[200px] font-black"
-              style={{ 
-                top: `${20 * i}%`, 
-                left: `${15 * i}%`,
-                color: "#2563EB"
-              }}
-            >
-              +
-            </motion.div>
-          ))}
-        </div>
+      {/* ── Hero ── */}
+      <section className="relative bg-[#060D1C] overflow-hidden pt-40 pb-24">
+        {/* Background glows */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-brand-primary/10 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[300px] bg-[#EA580C]/8 blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute inset-0 dot-grid opacity-[0.04] pointer-events-none" />
 
-        {/* Subtle top rule gradient */}
-        <div className="absolute top-0 left-0 right-0 h-[500px] bg-linear-to-b from-[#F8FAFC] to-white pointer-events-none" />
-      </div>
+        {/* Top border accent */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-brand-primary/40 to-transparent" />
 
-      <section className="relative z-10 pt-32 sm:pt-48 pb-32">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-28 items-start">
-
-          {/* ── Left Column: Branding & Info ── */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col gap-12"
+        <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
+          <motion.p
+            initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
+            className="text-[10px] font-bold tracking-[0.35em] uppercase mb-6"
+            style={{ color: "#EA580C" }}
           >
-            {/* Status & Time Badge */}
-            <div className="flex flex-wrap items-center gap-3">
-              <motion.div 
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-2.5 px-4 py-2 rounded-2xl border border-brand-primary/10 bg-[#F0F6FF]/60 backdrop-blur-md w-fit shadow-sm"
-              >
-                <div className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
-                <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-brand-primary">Nexus Connection</span>
-              </motion.div>
+            Get In Touch
+          </motion.p>
 
-              <motion.div 
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="inline-flex items-center gap-2.5 px-4 py-2 rounded-2xl border border-[#E2E8F0] bg-white/60 backdrop-blur-md w-fit shadow-sm"
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-[clamp(38px,7vw,80px)] font-black tracking-tighter leading-[0.92] text-white mb-6"
+          >
+            Let&apos;s build something<br />
+            <span className="text-brand-primary">Washington DC</span> will use for years.
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg text-white/50 max-w-2xl mx-auto leading-relaxed mb-10"
+          >
+            16 years. 12+ agencies. 100% retention. Tell us your mission — we&apos;ll tell you exactly how we&apos;d approach it.
+          </motion.p>
+
+          {/* Live badges */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex flex-wrap items-center justify-center gap-3"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#22C55E]/25 bg-[#22C55E]/8 text-[11px] font-bold text-[#22C55E] tracking-wide">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse" />
+              Accepting FY2026 Engagements
+            </div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[11px] font-bold text-white/50 tracking-wide">
+              <Clock size={11} />
+              DC Local: {dcTime}
+            </div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[11px] font-bold text-white/50 tracking-wide">
+              <ShieldCheck size={11} />
+              Response within 1 business day
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── How It Works ── */}
+      <section className="py-20 bg-[#F8FAFC] border-b border-[#E2E8F0]">
+        <div className="max-w-5xl mx-auto px-6">
+          <p className="text-center text-[10px] font-bold tracking-[0.3em] uppercase mb-12" style={{ color: "#EA580C" }}>What Happens Next</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {steps.map(({ n, title, desc }, i) => (
+              <motion.div
+                key={n}
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="relative bg-white rounded-3xl border border-[#E2E8F0] p-8 shadow-[0_2px_8px_rgba(15,23,42,0.04)] hover:border-brand-primary/30 hover:shadow-[0_8px_32px_rgba(37,99,235,0.08)] transition-all duration-300"
               >
-                <Clock size={12} className="text-[#64748B]" />
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#64748B]">DC Local: {dcTime}</span>
+                <span className="text-[42px] font-black text-[#F1F5F9] leading-none block mb-4">{n}</span>
+                <h3 className="text-base font-bold text-[#0F172A] mb-2">{title}</h3>
+                <p className="text-sm text-[#64748B] leading-relaxed">{desc}</p>
+                {i < steps.length - 1 && (
+                  <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-px bg-[#E2E8F0]" />
+                )}
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Main: Form + Info ── */}
+      <section id="contact-form" className="pt-24 pb-10 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-16 lg:gap-20 items-start">
+
+          {/* Left: Info */}
+          <motion.div
+            initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="flex flex-col gap-10"
+          >
+            <div>
+              <h2 className="text-3xl font-black text-[#0F172A] tracking-tight mb-3">Reach us directly</h2>
+              <p className="text-[#64748B] leading-relaxed">Every inquiry goes to a real person on our solutions team — not a ticketing queue.</p>
             </div>
 
-            {/* Main Typography */}
-            <div className="space-y-8">
-              <h1 className="text-[clamp(44px,7.5vw,84px)] font-black tracking-tighter leading-[0.92] text-[#0F172A]">
-                Let&apos;s build<br />
-                <span className="relative inline-block text-brand-primary">
-                  something that lasts.
-                  <motion.div 
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    transition={{ delay: 1, duration: 1, ease: "circOut" }}
-                    className="absolute -bottom-2 left-0 right-0 h-[4px] bg-linear-to-r from-brand-primary to-brand-accent rounded-full origin-left"
-                  />
-                </span>
-              </h1>
-              <p className="text-xl text-[#475569] leading-relaxed max-w-lg font-medium">
-                CODICE has supported Washington DC agencies for 16 years. Tell us your mission — we&apos;ll tell you how we&apos;d approach it.
-              </p>
-            </div>
-
-            {/* Contact Channels Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
-              <a
-                href={`mailto:${company.email}`}
-                className="group flex items-center gap-5 p-5 rounded-[24px] border border-[#E2E8F0] bg-white/50 backdrop-blur-sm hover:bg-white hover:border-brand-primary/30 hover:shadow-[0_12px_40px_rgba(15,23,42,0.06)] transition-all duration-500"
-              >
-                <div className="w-12 h-12 rounded-2xl bg-[#F0F6FF] border border-brand-primary/10 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-500">
-                  <Mail size={18} className="text-brand-primary group-hover:text-white transition-colors duration-500" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#94A3B8] mb-1">Electronic Mail</p>
-                  <p className="text-base font-bold text-[#0F172A] truncate group-hover:text-brand-primary transition-colors">{company.email}</p>
-                </div>
-              </a>
-
-              <a
-                href={`tel:${company.phone}`}
-                className="group flex items-center gap-5 p-5 rounded-[24px] border border-[#E2E8F0] bg-white/50 backdrop-blur-sm hover:bg-white hover:border-brand-primary/30 hover:shadow-[0_12px_40px_rgba(15,23,42,0.06)] transition-all duration-500"
-              >
-                <div className="w-12 h-12 rounded-2xl bg-[#F0F6FF] border border-brand-primary/10 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-500">
-                  <Phone size={18} className="text-brand-primary group-hover:text-white transition-colors duration-500" />
-                </div>
-                <div className="flex-1">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#94A3B8] mb-1">Direct Line</p>
-                  <p className="text-base font-bold text-[#0F172A] group-hover:text-brand-primary transition-colors">{company.phone}</p>
-                </div>
-              </a>
-
-              <div className="flex items-center gap-5 p-5 rounded-[24px] border border-[#E2E8F0] bg-white/40 backdrop-blur-sm col-span-1 sm:col-span-2 lg:col-span-1">
-                <div className="w-12 h-12 rounded-2xl bg-[#F0F6FF] border border-brand-primary/10 flex items-center justify-center shrink-0">
-                  <MapPin size={18} className="text-brand-primary" />
+            {/* Contact cards */}
+            <div className="flex flex-col gap-3">
+              <a href={`mailto:${company.email}`}
+                className="group flex items-center gap-4 p-5 rounded-2xl border border-[#E2E8F0] bg-white hover:border-brand-primary/30 hover:shadow-[0_8px_24px_rgba(37,99,235,0.08)] transition-all duration-300">
+                <div className="w-11 h-11 rounded-xl bg-[#F0F6FF] border border-brand-primary/15 flex items-center justify-center shrink-0 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-300">
+                  <Mail size={16} className="text-brand-primary group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#94A3B8] mb-1">Washington, DC — HQ</p>
-                  <p className="text-sm font-bold text-[#334155] leading-snug">{company.address}</p>
+                  <p className="text-[9px] font-bold uppercase tracking-widest text-[#94A3B8] mb-0.5">Email</p>
+                  <p className="text-sm font-bold text-[#0F172A] group-hover:text-brand-primary transition-colors">{company.email}</p>
                 </div>
-              </div>
-            </div>
+              </a>
 
-            {/* Trust Signals & Socials */}
-            <div className="flex flex-wrap items-center gap-3">
-              {trustSignals.map(({ icon: Icon, text }, idx) => (
-                <motion.div 
-                  key={text}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + (idx * 0.1) }}
-                  className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-2xl border border-[#E2E8F0] bg-white/60 text-[11px] font-bold tracking-wide text-[#64748B] hover:border-brand-primary/20 transition-colors"
-                >
-                  <Icon size={14} className="text-brand-primary" /> {text}
-                </motion.div>
-              ))}
-              <Link
-                href={company.social.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2.5 px-5 py-2.5 rounded-2xl bg-[#0A66C2] text-white text-[11px] font-bold shadow-lg shadow-[#0A66C2]/20 hover:scale-105 transition-all"
-              >
-                <ExternalLink size={14} /> LinkedIn
+              <a href={`tel:${company.phone}`}
+                className="group flex items-center gap-4 p-5 rounded-2xl border border-[#E2E8F0] bg-white hover:border-brand-primary/30 hover:shadow-[0_8px_24px_rgba(37,99,235,0.08)] transition-all duration-300">
+                <div className="w-11 h-11 rounded-xl bg-[#F0F6FF] border border-brand-primary/15 flex items-center justify-center shrink-0 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-300">
+                  <Phone size={16} className="text-brand-primary group-hover:text-white transition-colors duration-300" />
+                </div>
+                <div>
+                  <p className="text-[9px] font-bold uppercase tracking-widest text-[#94A3B8] mb-0.5">Phone</p>
+                  <p className="text-sm font-bold text-[#0F172A] group-hover:text-brand-primary transition-colors">{company.phone}</p>
+                </div>
+              </a>
+
+              <Link href="/capability"
+                className="group flex items-center gap-4 p-5 rounded-2xl border border-[#E2E8F0] bg-white hover:border-brand-primary/30 hover:shadow-[0_8px_24px_rgba(37,99,235,0.08)] transition-all duration-300">
+                <div className="w-11 h-11 rounded-xl bg-[#F0F6FF] border border-brand-primary/15 flex items-center justify-center shrink-0 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-300">
+                  <CalendarCheck size={16} className="text-brand-primary group-hover:text-white transition-colors duration-300" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-[9px] font-bold uppercase tracking-widest text-[#94A3B8] mb-0.5">Capability Statement</p>
+                  <p className="text-sm font-bold text-[#0F172A] group-hover:text-brand-primary transition-colors">Download our full GSA capability statement</p>
+                </div>
+                <ArrowRight size={14} className="text-[#94A3B8] group-hover:text-brand-primary group-hover:translate-x-1 transition-all duration-300" />
               </Link>
             </div>
-          </motion.div>
 
-          {/* ── Right Column: Interactive Form ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <div className="relative p-1 md:p-1.5 rounded-[40px] bg-linear-to-br from-[#E2E8F0] via-white to-[#E2E8F0] shadow-[0_32px_80px_rgba(15,23,42,0.14)]">
-              <div className="p-8 md:p-12 rounded-[36px] bg-white/90 backdrop-blur-2xl relative overflow-hidden">
-                {/* Form Background Accent */}
-                <div className="absolute -top-24 -right-24 w-48 h-48 bg-brand-primary/3 blur-[60px] rounded-full pointer-events-none" />
-                
-                <div className="mb-10 relative">
-                  <div className="flex items-center justify-between mb-4">
-                    <h2 className="text-3xl font-black text-[#0F172A] tracking-tight">Request a Briefing</h2>
-                    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#22C55E]/10 border border-[#22C55E]/20">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse" />
-                      <span className="text-[10px] font-bold text-[#166534] uppercase tracking-wider">Accepting Inquiries</span>
-                    </div>
-                  </div>
-                  <p className="text-[#64748B] text-lg font-medium leading-relaxed max-w-sm">Schedule a technical consultation with our architecture team within 24 hours.</p>
+            {/* Trust signals */}
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                { icon: ShieldCheck, label: "100% Client Retention" },
+                { icon: Users, label: "137 Professionals" },
+                { icon: CalendarCheck, label: "FY2026 Available" },
+                { icon: Clock, label: "24hr Response" },
+              ].map(({ icon: Icon, label }) => (
+                <div key={label} className="flex items-center gap-2.5 p-3.5 rounded-xl border border-[#F1F5F9] bg-[#F8FAFC]">
+                  <Icon size={14} className="text-brand-primary shrink-0" />
+                  <span className="text-[11px] font-bold text-[#475569]">{label}</span>
                 </div>
-
-                <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <Field
-                      label="Full Name"
-                      type="text"
-                      required
-                      value={formState.name}
-                      onChange={(v) => setFormState({ ...formState, name: v })}
-                    />
-                    <Field
-                      label="Inquiry Email"
-                      type="email"
-                      required
-                      value={formState.email}
-                      onChange={(v) => setFormState({ ...formState, email: v })}
-                    />
-                  </div>
-                  <Field
-                    label="Goverment Agency / Organization"
-                    type="text"
-                    value={formState.agency}
-                    onChange={(v) => setFormState({ ...formState, agency: v })}
-                  />
-                  <div className="relative group">
-                    <textarea
-                      required
-                      rows={5}
-                      value={formState.message}
-                      onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                      className="peer w-full bg-[#F8FAFC]/50 border-2 border-[#F1F5F9] rounded-3xl px-6 pt-10 pb-6 text-[#0F172A] text-base font-medium focus:outline-none focus:border-brand-primary focus:bg-white transition-all resize-none placeholder-transparent"
-                      placeholder="Message"
-                    />
-                    <label className="absolute left-6 top-3.5 text-[10px] font-bold tracking-[0.25em] uppercase text-[#94A3B8] transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:normal-case peer-placeholder-shown:tracking-normal peer-focus:top-3.5 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-[0.25em] peer-focus:text-brand-primary">
-                      Mission Requirements & Context
-                    </label>
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting || isSubmitted}
-                    className={`group relative w-full flex items-center justify-center gap-3 font-bold px-10 py-5 rounded-3xl text-base tracking-wide transition-all duration-500 overflow-hidden ${
-                      isSubmitted
-                        ? "bg-emerald-50 text-emerald-700 border-2 border-emerald-200"
-                        : "bg-[#0F172A] text-white hover:bg-brand-primary shadow-[0_20px_48px_rgba(15,23,42,0.2)] hover:shadow-[0_20px_48px_rgba(37,99,235,0.3)] hover:-translate-y-1 disabled:opacity-70"
-                    }`}
-                  >
-                    {/* Shimmer Effect */}
-                    {!isSubmitted && !isSubmitting && (
-                      <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
-                    )}
-
-                    {isSubmitting ? (
-                      <><div className="w-5 h-5 border-3 border-white/20 border-t-white rounded-full animate-spin" />Processing...</>
-                    ) : isSubmitted ? (
-                      "✓ Message Dispatched Successfully"
-                    ) : (
-                      <>
-                        Initiate Connection 
-                        <ArrowRight size={18} className="group-hover:translate-x-1.5 transition-transform duration-500" />
-                      </>
-                    )}
-                  </button>
-                </form>
-              </div>
+              ))}
             </div>
           </motion.div>
+
+          {/* Right: Form */}
+          <motion.div
+            initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+          >
+            <div className="bg-white rounded-3xl border border-[#E2E8F0] shadow-[0_8px_48px_rgba(15,23,42,0.08)] overflow-hidden">
+              {/* Form header */}
+              <div className="px-8 pt-8 pb-6 border-b border-[#F1F5F9]">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h2 className="text-2xl font-black text-[#0F172A] tracking-tight">Request a Briefing</h2>
+                    <p className="text-sm text-[#64748B] mt-1">We&apos;ll schedule a 30-min technical consultation within 24 hours.</p>
+                  </div>
+                  <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#22C55E]/10 border border-[#22C55E]/20 shrink-0">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse" />
+                    <span className="text-[9px] font-bold text-[#166534] uppercase tracking-wider">Open</span>
+                  </div>
+                </div>
+              </div>
+
+              <form onSubmit={handleSubmit} className="p-8 flex flex-col gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <Field label="Full Name" type="text" required value={form.name} onChange={(v) => setForm({ ...form, name: v })} />
+                  <Field label="Work Email" type="email" required value={form.email} onChange={(v) => setForm({ ...form, email: v })} />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <Field label="Agency / Organization" type="text" value={form.agency} onChange={(v) => setForm({ ...form, agency: v })} />
+                  <Field label="Your Role / Title" type="text" value={form.role} onChange={(v) => setForm({ ...form, role: v })} />
+                </div>
+                <div className="relative">
+                  <textarea
+                    required rows={5}
+                    value={form.message}
+                    onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    className="peer w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl px-5 pt-9 pb-4 text-[#0F172A] text-sm font-medium focus:outline-none focus:border-brand-primary focus:bg-white transition-all resize-none placeholder-transparent"
+                    placeholder="Message"
+                  />
+                  <label className="absolute left-5 top-3 text-[9px] font-bold tracking-[0.25em] uppercase text-[#94A3B8] peer-focus:text-brand-primary transition-colors">
+                    Project Brief / Requirements
+                  </label>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={submitting || submitted}
+                  className={`group relative w-full flex items-center justify-center gap-3 font-bold px-8 py-4 rounded-2xl text-sm tracking-wide transition-all duration-400 overflow-hidden ${
+                    submitted
+                      ? "bg-[#22C55E]/10 text-[#166534] border border-[#22C55E]/30"
+                      : "bg-[#0F172A] text-white hover:bg-brand-primary shadow-[0_4px_20px_rgba(15,23,42,0.2)] hover:shadow-[0_8px_32px_rgba(37,99,235,0.3)] hover:-translate-y-0.5 disabled:opacity-60"
+                  }`}
+                >
+                  {!submitted && (
+                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-linear-to-r from-transparent via-white/8 to-transparent pointer-events-none" />
+                  )}
+                  {submitting ? (
+                    <><div className="w-4 h-4 border-2 border-white/20 border-t-white rounded-full animate-spin" /> Sending...</>
+                  ) : submitted ? (
+                    <><CheckCircle2 size={16} /> Message sent — we&apos;ll be in touch within 24 hours</>
+                  ) : (
+                    <>Send Request <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform duration-300" /></>
+                  )}
+                </button>
+
+                <p className="text-center text-[10px] text-[#94A3B8]">
+                  Or email us directly at{" "}
+                  <a href={`mailto:${company.email}`} className="text-brand-primary font-bold hover:underline">{company.email}</a>
+                </p>
+              </form>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Meet the Team ── */}
+      <section className="py-20 px-6 border-b border-[#E2E8F0]">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-[10px] font-bold tracking-[0.3em] uppercase mb-3 text-center" style={{ color: "#EA580C" }}>Who You&apos;ll Work With</p>
+          <h2 className="text-2xl font-black text-[#0F172A] tracking-tight text-center mb-12">Meet the leadership team</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[team[1], team[0], ...team.slice(2)].map((member, i) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group flex flex-col items-center text-center p-6 rounded-2xl border border-[#E2E8F0] bg-white hover:border-brand-primary/30 hover:shadow-[0_8px_32px_rgba(37,99,235,0.08)] transition-all duration-300"
+              >
+                <div className="relative w-20 h-20 rounded-2xl overflow-hidden mb-4 border-2 border-[#F1F5F9] group-hover:border-brand-primary/30 transition-colors duration-300">
+                  {member.photo ? (
+                    <Image src={member.photo} alt={member.name} fill className={`object-cover ${member.name === "Dash Kiridena" ? "scale-[1.1]" : "object-top"}`} style={member.name === "Dash Kiridena" ? { objectPosition: "center 15%" } : undefined} sizes="80px" />
+                  ) : (
+                    <div className="w-full h-full bg-[#F0F6FF] flex items-center justify-center text-brand-primary font-black text-xl">
+                      {member.name.split(" ").map(n => n[0]).join("")}
+                    </div>
+                  )}
+                </div>
+                <h3 className="text-sm font-bold text-[#0F172A] mb-1">{member.name}</h3>
+                <p className="text-[11px] text-brand-primary font-semibold mb-3 leading-tight">{member.title}</p>
+                <p className="text-[11px] text-[#94A3B8] leading-relaxed line-clamp-3">{member.bio}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Map ── */}
+      <section className="py-20 bg-[#F8FAFC] border-b border-[#E2E8F0]">
+        <div className="max-w-5xl mx-auto px-6">
+          <p className="text-[10px] font-bold tracking-[0.3em] uppercase mb-3 text-center" style={{ color: "#EA580C" }}>Find Us</p>
+          <h2 className="text-2xl font-black text-[#0F172A] tracking-tight text-center mb-10">Washington, DC Headquarters</h2>
+          <div className="rounded-3xl overflow-hidden border border-[#E2E8F0] shadow-[0_4px_24px_rgba(15,23,42,0.08)]">
+            <iframe
+              title="CODICE Technology HQ"
+              src="https://maps.google.com/maps?q=1101+Vermont+Avenue+NW+Washington+DC&output=embed&z=15"
+              width="100%"
+              height="400"
+              style={{ border: 0, display: "block" }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+          <p className="text-center text-sm text-[#94A3B8] mt-4 font-medium">{company.address}</p>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[10px] font-bold tracking-[0.3em] uppercase mb-3 text-center" style={{ color: "#EA580C" }}>FAQ</p>
+          <h2 className="text-2xl font-black text-[#0F172A] tracking-tight text-center mb-10">Common questions</h2>
+          <div className="flex flex-col gap-3">
+            {faqs.map(({ q, a }, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.07 }}
+                className={`rounded-2xl border transition-all duration-300 overflow-hidden ${openFaq === i ? "border-brand-primary/30 shadow-[0_4px_20px_rgba(37,99,235,0.08)]" : "border-[#E2E8F0]"}`}
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                >
+                  <span className="text-sm font-bold text-[#0F172A]">{q}</span>
+                  <motion.div animate={{ rotate: openFaq === i ? 180 : 0 }} transition={{ duration: 0.25 }}>
+                    <ChevronDown size={16} className="text-[#94A3B8] shrink-0" />
+                  </motion.div>
+                </button>
+                <AnimatePresence>
+                  {openFaq === i && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      <p className="px-6 pb-5 text-sm text-[#64748B] leading-relaxed border-t border-[#F1F5F9] pt-4">{a}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -323,22 +373,18 @@ export default function ContactPage() {
   );
 }
 
-function Field({
-  label, type, required, value, onChange,
-}: {
+function Field({ label, type, required, value, onChange }: {
   label: string; type: string; required?: boolean; value: string; onChange: (v: string) => void;
 }) {
   return (
-    <div className="relative group">
+    <div className="relative">
       <input
-        type={type}
-        required={required}
-        value={value}
+        type={type} required={required} value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="peer w-full bg-[#F8FAFC]/50 border-2 border-[#F1F5F9] rounded-[24px] px-6 pt-9 pb-4 text-[#0F172A] text-base font-bold focus:outline-none focus:border-brand-primary focus:bg-white transition-all placeholder-transparent"
+        className="peer w-full bg-[#F8FAFC] border border-[#E2E8F0] rounded-2xl px-5 pt-8 pb-3 text-[#0F172A] text-sm font-medium focus:outline-none focus:border-brand-primary focus:bg-white transition-all placeholder-transparent"
         placeholder={label}
       />
-      <label className="absolute left-6 top-3.5 text-[10px] font-bold tracking-[0.25em] uppercase text-[#94A3B8] transition-all peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-placeholder-shown:normal-case peer-placeholder-shown:tracking-normal peer-focus:top-3.5 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-[0.25em] peer-focus:text-brand-primary">
+      <label className="absolute left-5 top-2.5 text-[9px] font-bold tracking-[0.25em] uppercase text-[#94A3B8] peer-focus:text-brand-primary transition-colors">
         {label}
       </label>
     </div>

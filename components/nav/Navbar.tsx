@@ -111,7 +111,7 @@ export default function Navbar() {
                 <kbd className="hidden xl:flex items-center px-1.5 py-0.5 rounded-md bg-[#F8FAFC] border border-[#E2E8F0] text-[9px] font-bold text-[#B0BEC5]">⌘K</kbd>
               </button>
               <Link
-                href="/contact"
+                href="/contact#contact-form"
                 className="bg-brand-primary text-white text-xs font-bold tracking-widest uppercase px-5 py-2.5 rounded-xl hover:bg-brand-accent transition-all duration-300 shadow-[0_4px_16px_rgba(37,99,235,0.25)]"
               >
                 Consultation
@@ -270,7 +270,7 @@ export default function Navbar() {
                 </motion.div>
               ))}
               <Link
-                href="/contact"
+                href="/contact#contact-form"
                 className="bg-brand-primary text-white text-center font-bold py-5 rounded-2xl text-lg shadow-[0_8px_32px_rgba(37,99,235,0.25)] mt-6 hover:bg-brand-accent transition-colors"
                 onClick={() => setMobileOpen(false)}
               >

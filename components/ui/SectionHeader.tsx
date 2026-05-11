@@ -30,7 +30,7 @@ export function SectionHeader({ label, title, subtitle, className = "", light = 
     >
       {label && (
         <motion.div custom={0} variants={fadeUp} className="inline-flex items-center justify-center mb-6">
-          <span className="text-[10px] md:text-[11px] font-bold tracking-[0.3em] uppercase text-[#2563EB] bg-[#2563EB]/8 border border-[#2563EB]/20 px-4 py-2 rounded-full">
+          <span className="text-[10px] md:text-[11px] font-bold tracking-[0.3em] uppercase text-[#EA580C] bg-[#EA580C]/8 border border-[#EA580C]/20 px-4 py-2 rounded-full">
             {label}
           </span>
         </motion.div>

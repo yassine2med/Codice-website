@@ -44,7 +44,7 @@ export default function FloatingCTA() {
           <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
           <span className="text-sm font-semibold text-white/80">Ready to modernize your agency?</span>
           <Link
-            href="/contact"
+            href="/contact#contact-form"
             onClick={() => setDismissed(true)}
             className="inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-accent text-white text-xs font-bold px-5 py-2.5 rounded-full transition-colors shadow-[0_4px_16px_rgba(37,99,235,0.35)]"
           >

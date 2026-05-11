@@ -2,7 +2,7 @@
 
 import { products } from "@/data/codice";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
@@ -50,7 +50,10 @@ export default function ProductsShowcase() {
                 : "bg-white border-[#E2E8F0] text-[#64748B] hover:border-brand-primary/40 hover:text-[#0F172A] hover:shadow-[0_2px_8px_rgba(37,99,235,0.08)]"
             }`}
           >
-            <span className="text-[11px] font-bold tracking-widest uppercase relative z-10">{p.name}</span>
+            <span className="flex items-center gap-1.5 text-[11px] font-bold tracking-widest uppercase relative z-10">
+              <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${active === p.id ? "bg-white animate-pulse" : "bg-[#22C55E] animate-pulse"}`} />
+              {p.name}
+            </span>
             {p.isNew && (
               <span className="absolute -top-2 -right-2 bg-linear-to-r from-orange-500 to-red-500 text-white text-[8px] font-black px-2 py-0.5 rounded-full shadow-md">
                 NEW
@@ -120,9 +123,7 @@ export default function ProductsShowcase() {
                 >
                   {product.highlights.map((h) => (
                     <div key={h} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#F0F6FF] border border-brand-primary/15 flex items-center justify-center shrink-0">
-                        <Sparkles size={9} className="text-brand-primary" />
-                      </div>
+                      <CheckCircle2 size={15} className="text-brand-primary shrink-0" />
                       <span className="text-sm font-medium text-[#334155]">{h}</span>
                     </div>
                   ))}
@@ -141,8 +142,8 @@ export default function ProductsShowcase() {
 
             {/* Visual Stage */}
             <div
-              className="lg:w-[520px] bg-[#F8FAFC] border-t lg:border-t-0 lg:border-l border-[#E2E8F0] relative overflow-hidden group/stage cursor-pointer"
-              onClick={() => setLightboxOpen(true)}
+              className={`lg:w-[520px] bg-[#0A1628] border-t lg:border-t-0 lg:border-l border-[#1E293B] relative overflow-hidden group/stage ${images.length > 0 ? "cursor-pointer" : ""}`}
+              onClick={() => images.length > 0 && setLightboxOpen(true)}
             >
               {images.length > 0 ? (
                 <div className="relative w-full h-full min-h-[380px]">
@@ -178,13 +179,13 @@ export default function ProductsShowcase() {
 
                   {/* Product logo overlay */}
                   <div className="absolute bottom-8 left-8 z-20">
-                    <div className="bg-white/90 backdrop-blur-sm border border-[#E2E8F0] p-5 rounded-2xl shadow-[0_4px_20px_rgba(15,23,42,0.12)] group-hover/stage:-translate-y-1 transition-transform duration-500">
+                    <div className="bg-white/90 backdrop-blur-sm border border-[#E2E8F0] p-3 rounded-xl shadow-[0_4px_20px_rgba(15,23,42,0.12)] group-hover/stage:-translate-y-1 transition-transform duration-500">
                       {product.logo && (
-                        <div className="relative w-28 h-8 mb-3">
+                        <div className="relative w-20 h-5 mb-2">
                           <Image src={product.logo} alt={product.name} fill className="object-contain" />
                         </div>
                       )}
-                      <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-brand-primary">Status: Operational</p>
+                      <p className="text-[8px] font-bold tracking-[0.25em] uppercase text-brand-primary">Status: Operational</p>
                     </div>
                   </div>
                 </div>
@@ -192,8 +193,11 @@ export default function ProductsShowcase() {
                 <div className="relative w-full min-h-[380px] overflow-hidden">
                   <ProductMockup category={product.category} name={product.name} />
                   {/* Status badge */}
-                  <div className="absolute bottom-6 left-6 z-20 bg-white/90 backdrop-blur-xl border border-[#E2E8F0] rounded-2xl px-4 py-2.5 shadow-[0_4px_20px_rgba(15,23,42,0.08)]">
-                    <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-brand-primary">Status: Operational</p>
+                  <div className="absolute bottom-6 left-6 z-20 bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl px-4 py-2.5">
+                    <div className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse" />
+                      <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-white/70">Status: Operational</p>
+                    </div>
                   </div>
                 </div>
               )}

@@ -62,7 +62,9 @@
       "Bash(awk '/^export const products/,/^export const markets/' \"D:\\\\Codex\\\\Codice-website-fresh\\\\data\\\\codice.ts\")",
       "Bash(awk '/^export const services/,/^export const products/' \"D:\\\\Codex\\\\Codice-website-fresh\\\\data\\\\codice.ts\")",
       "Bash(awk '/^export const markets/,/^export const clients/' \"D:\\\\Codex\\\\Codice-website-fresh\\\\data\\\\codice.ts\")",
-      "Bash(24[0-9]\" 2>/dev/null)"
+      "Bash(24[0-9]\" 2>/dev/null)",
+      "Bash(sed -i 's/py-24 px-6 max-w-7xl mx-auto relative/py-16 px-6 max-w-7xl mx-auto relative/' components/sections/ProductsShowcase.tsx)",
+      "Bash(sed -i 's/py-24 px-6 max-w-7xl mx-auto relative/py-16 px-6 max-w-7xl mx-auto relative/' components/sections/MarketsGrid.tsx)"
     ]
   }
 }

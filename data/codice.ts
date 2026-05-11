@@ -518,7 +518,7 @@ export const team = [
     bio: '20+ years in healthcare and government technology. Founded CODICE in 2009 with a vision to modernize government IT from the ground up.',
     fullBio: 'Dash Kiridena is the Founder and President of CODICE Technology LLC, a Washington DC-based government technology firm he established in 2009 with a singular vision: to modernize public-sector IT with the same rigor and innovation applied to the private sector.\n\nWith more than 20 years of experience spanning healthcare IT, enterprise software, and government operations, Dash has led CODICE through 16 consecutive years of growth — building an organization trusted by over 12 Washington DC agencies including DDOT, DOH, DOES, DCRA, OAG, and DHCF. Under his leadership, CODICE has achieved a 100% client retention rate and expanded from a services firm into a proprietary product company with 8 purpose-built government platforms.\n\nDash is known for his hands-on approach to delivery — working directly with agency stakeholders to understand mission requirements, compliance constraints, and operational realities. His philosophy centers on building systems that outlast political cycles and deliver continuous value to the communities they serve.\n\nIn 2025, CODICE was named Washington DC\'s Small Business of the Year, a recognition Dash attributes entirely to his team\'s commitment to "high-fidelity government technology — on time, on budget, with zero compromise."',
     education: 'MBA, Johns Hopkins University · BA Economics, Clarion University',
-    photo: '/images/team/dash.jpg',
+    photo: '/images/team/emmash.jpg',
   },
   {
     name: 'Emmash Sudusinghe',
@@ -526,7 +526,7 @@ export const team = [
     bio: 'CPA and CMA with deep expertise in government financial operations and compliance auditing.',
     fullBio: 'Emmash Sudusinghe serves as Chief Financial Officer of CODICE Technology, where he oversees all financial operations, strategic planning, government contract compliance, and corporate governance for the firm.\n\nA Certified Public Accountant (CPA) and Certified Management Accountant (CMA), Emmash brings deep expertise in government financial management, GAAP/GASB compliance, and the specific reporting requirements of DC and federal contracting environments. His background spans cost accounting, indirect rate structures, DCAA audit readiness, and financial systems implementation for government-facing organizations.\n\nAt CODICE, Emmash has been instrumental in scaling the company\'s financial infrastructure to support multi-year government contracts, GSA Schedule administration, and the financial rigor required by agency clients. He has led CODICE through multiple audit cycles and contract renewals, maintaining the organization\'s strong compliance posture.\n\nBefore joining CODICE, Emmash held senior finance roles in both the public and private sectors, developing a reputation for translating complex financial data into strategic insight for executive leadership.',
     education: "Master's Finance, American University · BS Accounting, University of Maryland Eastern Shore",
-    photo: '/images/team/emmash.jpg',
+    photo: '/images/team/dash.jpg',
   },
   {
     name: 'Ashanthi Kiridena',
