@@ -23,7 +23,7 @@ export function AnimatedCounter({ value, suffix = "", duration = 2.5 }: Animated
         duration={duration}
         enableScrollSpy
         scrollSpyDelay={200}
-        onStart={() => setDone(false)}
+        scrollSpyOnce
         onEnd={() => setDone(true)}
       />
     </motion.span>
